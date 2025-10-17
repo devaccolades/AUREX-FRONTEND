@@ -1,9 +1,14 @@
 import Image from "next/image";
+import FAQ from "./(home)/FAQ";
+import Footer from "./(home)/Footer";
+import DreamsInThrissur from "./(home)/DreamsInThrissur";
 
 export default function Home() {
   return (
     <div >
-      <p className="text-center font-urban text-3xl">Hello  world</p>
+      <DreamsInThrissur />
+      <FAQ />
+      <Footer />
     </div>
   );
 }
