@@ -15,3 +15,8 @@ body {
 .bg-secondary {
   background-color: #ececec;
 }
+
+.containers{
+    width: 80%;
+    margin: 0 auto;
+}
