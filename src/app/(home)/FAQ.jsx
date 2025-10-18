@@ -56,7 +56,13 @@ const FAQ = () => {
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
                   className="w-full flex justify-between items-center text-left p-5"
                 >
-                  <span className="text-[15px] font-medium text-gray-800 leading-snug">
+                  <span
+                    className={`leading-snug font-medium transition-all duration-300 ${
+                      openIndex === index
+                        ? "text-[17px] text-gray-900"
+                        : "text-[15px] text-gray-800"
+                    }`}
+                  >
                     {index + 1}. {faq.question}
                   </span>
                   {openIndex === index ? (
