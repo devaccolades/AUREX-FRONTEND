@@ -1,11 +1,47 @@
+
 "use client";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
+    // --- 🔗 Quick Links Data ---
+    const quickLinks = [
+        { name: "Home", href: "/" },
+        { name: "Projects", href: "/projects" },
+        { name: "Services", href: "/services" },
+        { name: "Gallery", href: "/gallery" },
+        { name: "About Us", href: "/about" },
+        { name: "Blog", href: "/blog" },
+        { name: "Contact Us", href: "/contact" },
+        { name: "Careers", href: "/careers" },
+    ];
+
+    // --- 🏠 Residential Data ---
+    const residentialProjects = [
+        { name: "Aurex Laird", href: "/projects/aurex-laird" },
+        { name: "Aurex Cascade City", href: "/projects/aurex-cascade-city" },
+    ];
+
+    // --- 🏢 Commercial Data ---
+    const commercialProjects = [
+        { name: "Aurum Complex", href: "/projects/aurum-complex" },
+        { name: "Aurum Galleria", href: "/projects/aurum-galleria" },
+    ];
+
+    // --- 🧱 Contracts Data ---
+    const contractProjects = [
+        { name: "Vattekat Arcade", href: "/projects/vattekat-arcade" },
+        { name: "ShajiKhan Arcade", href: "/projects/shajikhan-arcade" },
+        { name: "N.S.S. Building", href: "/projects/nss-building" },
+        { name: "Royal Enclave", href: "/projects/royal-enclave" },
+        { name: "Varnaz", href: "/projects/varnaz" },
+        { name: "Adithya Arcade", href: "/projects/adithya-arcade" },
+        { name: "Aravind Arcade", href: "/projects/aravind-arcade" },
+        { name: "Yahvi", href: "/projects/yahvi" },
+    ];
+
     return (
-        // <footer className="bg-[#002B24] text-white py-12 px-6 md:px-12 lg:px-20"
-        <footer className="relative bg-[#002B24] text-white py-12 px-6 md:px-12 lg:px-20 overflow-hidden">
+        <footer className="relative bg-[#052D23] text-white py-12 px-6 md:px-12 lg:px-20 overflow-hidden">
             {/* background layer */}
             <div
                 className="absolute inset-0 bg-center bg-no-repeat bg-cover opacity-15"
@@ -14,23 +50,18 @@ export default function Footer() {
                     backgroundSize: "1000px 600px",
                 }}
             ></div>
+
             <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr_2.5fr_1fr] gap-6 md:gap-10 lg:gap-12">
                 {/* --- Left Section --- */}
                 <div>
                     <div className="flex items-center space-x-2">
                         <Image
-                            src="/images/footer/icon1.svg" // replace with your logo
+                            src="/images/footer/icon1.svg"
                             alt="Aurex Builders"
                             width={50}
                             height={50}
                             className="object-contain"
                         />
-                        {/* <div>
-              <h2 className="text-lg font-semibold tracking-wide">AUREX</h2>
-              <p className="text-[10px] uppercase tracking-widest text-gray-300">
-                Builders
-              </p>
-            </div> */}
                     </div>
 
                     <p className="text-sm text-gray-300 mt-4 leading-relaxed max-w-sm">
@@ -40,44 +71,18 @@ export default function Footer() {
                         and return on investment.
                     </p>
 
-                    {/* Social Icons Placeholder */}
                     <div className="flex space-x-3 mt-5">
-                        <div className="w-5 h-5 rounded">
-                            <Image
-                                src="/images/footer/linked.svg" // replace with your logo
-                                alt="Aurex Builders"
-                                width={50}
-                                height={50}
-                                className="object-contain"
-                            />
-                        </div>
-                        <div className="w-5 h-5  rounded">
-                            <Image
-                                src="/images/footer/icon4.svg" // replace with your logo
-                                alt="Aurex Builders"
-                                width={50}
-                                height={50}
-                                className="object-contain"
-                            />
-                        </div>
-                        <div className="w-5 h-5  rounded">
-                            <Image
-                                src="/images/footer/icon3.svg" // replace with your logo
-                                alt="Aurex Builders"
-                                width={50}
-                                height={50}
-                                className="object-contain"
-                            />
-                        </div>
-                        <div className="w-5 h-5  rounded">
-                            <Image
-                                src="/images/footer/icon2.svg" // replace with your logo
-                                alt="Aurex Builders"
-                                width={50}
-                                height={50}
-                                className="object-contain"
-                            />
-                        </div>
+                        {["linked.svg", "icon4.svg", "icon3.svg", "icon2.svg"].map((icon, i) => (
+                            <div key={i} className="w-5 h-5 rounded">
+                                <Image
+                                    src={`/images/footer/${icon}`}
+                                    alt="Social Icon"
+                                    width={50}
+                                    height={50}
+                                    className="object-contain"
+                                />
+                            </div>
+                        ))}
                     </div>
                 </div>
 
@@ -85,19 +90,10 @@ export default function Footer() {
                 <div>
                     <h3 className="text-base font-semibold mb-4">Quick Links</h3>
                     <ul className="space-y-2 text-sm text-gray-300">
-                        {[
-                            "Home",
-                            "Projects",
-                            "Services",
-                            "Gallery",
-                            "About Us",
-                            "Blog",
-                            "Contact Us",
-                            "Careers",
-                        ].map((item) => (
-                            <li key={item}>
-                                <Link href="#" className="hover:text-[#C19A5D] transition">
-                                    {item}
+                        {quickLinks.map((item) => (
+                            <li key={item.name}>
+                                <Link href={item.href} className="hover:text-[#C19A5D] transition">
+                                    {item.name}
                                 </Link>
                             </li>
                         ))}
@@ -112,8 +108,13 @@ export default function Footer() {
                             Residential
                         </span>
                         <ul className="space-y-1">
-                            <li><Link href="#">Aurex Laird</Link></li>
-                            <li><Link href="#">Aurex Cascade City</Link></li>
+                            {residentialProjects.map((item) => (
+                                <li key={item.name}>
+                                    <Link href={item.href} className="hover:text-[#C19A5D] transition">
+                                        {item.name}
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
@@ -123,8 +124,13 @@ export default function Footer() {
                             Commercial
                         </span>
                         <ul className="space-y-1">
-                            <li><Link href="#">Aurum Complex</Link></li>
-                            <li><Link href="#">Aurum Galleria</Link></li>
+                            {commercialProjects.map((item) => (
+                                <li key={item.name}>
+                                    <Link href={item.href} className="hover:text-[#C19A5D] transition">
+                                        {item.name}
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
@@ -134,19 +140,10 @@ export default function Footer() {
                             Contracts
                         </span>
                         <ul className="space-y-1">
-                            {[
-                                "Vattekat Arcade",
-                                "ShajiKhan Arcade",
-                                "N.S.S. Building",
-                                "Royal Enclave",
-                                "Varnaz",
-                                "Adithya Arcade",
-                                "Aravind Arcade",
-                                "Yahvi",
-                            ].map((item) => (
-                                <li key={item}>
-                                    <Link href="#" className="hover:text-[#C19A5D] transition">
-                                        {item}
+                            {contractProjects.map((item) => (
+                                <li key={item.name}>
+                                    <Link href={item.href} className="hover:text-[#C19A5D] transition">
+                                        {item.name}
                                     </Link>
                                 </li>
                             ))}
@@ -166,7 +163,7 @@ export default function Footer() {
             </div>
 
             {/* --- Bottom Bar --- */}
-            <div className=" mt-10 pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-gray-400">
+            <div className="mt-10 pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-gray-400">
                 <p>
                     Copyright © 2025{" "}
                     <span className="text-[#C19A5D]">Aurex Builders</span>. All Rights Reserved
