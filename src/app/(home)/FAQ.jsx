@@ -34,11 +34,11 @@ const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="py-20 px-6 md:px-16 lg:px-24 bg-white">
+    <section className="containers py-20   bg-white">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
         {/* LEFT SIDE */}
         <div>
-          <h2 className="text-[20px] font-semibold mb-6 text-gray-800 tracking-wide">
+          <h2 className="text-[24px] leading-[24px] font-urban font-semibold mb-6 text-gray-800 tracking-wide">
             FREQUENTLY ASKED QUESTIONS
           </h2>
 
@@ -56,7 +56,13 @@ const FAQ = () => {
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
                   className="w-full flex justify-between items-center text-left p-5"
                 >
-                  <span className="text-[15px] font-medium text-gray-800 leading-snug">
+                  <span
+                    className={`leading-snug font-medium font-urban transition-all duration-300 ${
+                      openIndex === index
+                        ? "text-[20px] text-gray-900"
+                        : "text-[16px] text-gray-800"
+                    }`}
+                  >
                     {index + 1}. {faq.question}
                   </span>
                   {openIndex === index ? (
@@ -74,7 +80,7 @@ const FAQ = () => {
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="px-5 pb-5 text-sm text-gray-600 leading-relaxed">
+                      <div className=" px-5 pb-5 text-sm text-gray-600 leading-relaxed">
                         {faq.answer}
                       </div>
                     </motion.div>
@@ -92,7 +98,7 @@ const FAQ = () => {
               <h3 className="font-semibold text-gray-800 text-lg mb-2">
                 Building Dreams in the Heart of Thrissur
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-gray-600  text-sm leading-relaxed">
                 At Aurex Builders, we believe a great building begins with a great vision.
                 Rooted in the vibrant culture of Thrissur, we’ve been shaping the skyline with
                 residential and commercial projects that combine modern aesthetics with enduring
