@@ -117,15 +117,15 @@ export default function WhyChooseUs() {
   return (
     <section
       id="why-section"
-      className="containers relative w-full bg-white text-black py-1 px-6 md:px-12 lg:px-20 overflow-hidden"
+      className=" border relative w-full bg-white text-black py-1 px-6 md:px-12 lg:px-20 overflow-hidden"
     >
       {/* Elephant background */}
-      <div className="absolute left-[10px] top-0 h-full w-1/4 opacity-20">
+      <div className="absolute border-l-2  left-[10px] top-0 h-full w-1/4 opacity-20">
         <Image
           src={bg}
           alt="Elephant background"
           fill
-          className="object-contain object-left scale-x-[-1]"
+          className="object-contain object-left border-r-2 border-bg-gray-600 scale-x-[-1]"
         />
       </div>
 
@@ -143,7 +143,7 @@ export default function WhyChooseUs() {
             trust and quality.
           </p>
 
-          <MagneticButton
+          <MagneticButton 
             text="Book a free <br /> consultation"
             arrowSrc="/images/home/button-arrow.svg"
             parentSelector="#why-section"
