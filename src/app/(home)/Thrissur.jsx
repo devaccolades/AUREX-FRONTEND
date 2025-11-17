@@ -6,7 +6,7 @@ import mapImage from "../../../public/images/home/tsrmap.png";
 
 export default function Thrissur() {
     return (
-        <section className="relative w-full rounded-3xl overflow-hidden h-[650px] md:h-[580px]">
+        <section className="relative w-full  rounded-3xl overflow-hidden h-[650px] md:h-[580px]">
             {/* Background Image */}
             <Image
                 src={bgImage}
@@ -17,11 +17,11 @@ export default function Thrissur() {
             />
 
             {/* Dark Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
+            <div className=" absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
 
 
             {/* Content Wrapper */}
-            <div className="flex flex-col  md:flex-row absolute inset-0 z-10  items-center">
+            <div className=" flex flex-col  md:flex-row absolute inset-0 z-10  items-center">
                 <div className="flex  flex-col md:flex-row px-6 md:px-12  items-center ">
 
                     {/* LEFT SIDE → Map + Malayalam Heading */}
