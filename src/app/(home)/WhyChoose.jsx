@@ -3,8 +3,11 @@
 import Image from "next/image";
 import MagneticButton from "@/Components/Button";
 import bg from "../../../public/images/home/why-bg.png";
+import { useState } from "react";
+import ModalForm from "@/Components/forms/ModalForm";
 
 export default function WhyChooseUs() {
+  const [openModal, setOpenModal] = useState(false)
   const Box = ({ title, text, className = "" }) => (
     <div className={`relative p-3 lg:p-8 ${className}`}>
       {/* corner highlights */}
@@ -20,13 +23,14 @@ export default function WhyChooseUs() {
       <span className="absolute bottom-0 right-0 w-8 h-[2px] bg-gray-200"></span>
       <span className="absolute bottom-0 right-0 w-[2px] h-6 bg-gray-200"></span>
 
-      <h3 className="font-semibold text-[13px] md:text-[18px] lg:text-[24px] leading-[12px] md:leading-[18px] lg:leading-[24px] mb-0 max-w-[220px] h-[50px] md:h-[70px] lg:h-[100px]">{title}</h3>
+      <h3 className="font-semibold text-[13px] md:text-[18px] lg:text-[24px] leading-[12px] md:leading-[18px] lg:leading-[24px] mb-0 max-w-[220px] h-[50px] md:h-[70px] ">{title}</h3>
       <p className="text-gray-700 text-[12px] md:text-[12px] lg:text-[14px] leading-[18px] py-2 lg:py-8 ">{text}</p>
     </div>
   );
 
   return (
-    <div id="why-section" className="border">
+    <>
+    <div id="why-section" onClick={() => setOpenModal(true)} className="border">
       <section  
         className="w-[90%] lg:w-[80%] m-auto border  relative  bg-white text-black py-0 px-0  overflow-hidden"
       >
@@ -44,7 +48,7 @@ export default function WhyChooseUs() {
               />
             </div>
             <div className="px-4 ">
-            <h2 className="text-[40px] lg:text-[64px] leading-[1.1] font-urban font-medium">
+            <h2 className=" text-[40px] lg:text-[64px] leading-[1.1] font-urban font-medium">
               WHY <br /> CHOOSE US
             </h2>
 
@@ -60,8 +64,15 @@ export default function WhyChooseUs() {
               text="Book a free <br /> consultation"
               arrowSrc="/images/home/button-arrow.svg"
               parentSelector="#why-section"
-              onClick={() => console.log("Button clicked!")}
+              onClick={(e) => {
+    e.stopPropagation(); // prevents section click
+    setOpenModal(true);
+  }}
             />
+            
+
+          
+
           </div>
 
           {/* Right Section */}
@@ -89,5 +100,21 @@ export default function WhyChooseUs() {
         </div>
       </section>
     </div>
+     {openModal && (
+        <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/40 backdrop-blur-sm">
+          <div className="bg-white rounded-2xl p-8 w-[90%] max-w-lg relative">
+
+            <button
+              className="absolute top-4 right-4 text-xl"
+              onClick={() => setOpenModal(false)}
+            >
+              ✕
+            </button>
+
+            <ModalForm />
+          </div>
+        </div>
+      )}
+      </>
   );
 }
