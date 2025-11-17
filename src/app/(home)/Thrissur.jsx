@@ -6,7 +6,7 @@ import mapImage from "../../../public/images/home/tsrmap.png";
 
 export default function Thrissur() {
     return (
-        <section className="relative w-full rounded-3xl overflow-hidden h-[500px] md:h-[580px]">
+        <section className="relative w-full rounded-3xl overflow-hidden h-[650px] md:h-[580px]">
             {/* Background Image */}
             <Image
                 src={bgImage}
@@ -17,35 +17,43 @@ export default function Thrissur() {
             />
 
             {/* Dark Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/10 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
 
 
             {/* Content Wrapper */}
-            <div className="absolute inset-0 z-10 flex items-center">
-                <div className="px-6 md:px-16 flex items-center gap-6 md:gap-10">
+            <div className="flex flex-col  md:flex-row absolute inset-0 z-10  items-center">
+                <div className="flex  flex-col md:flex-row px-6 md:px-12  items-center ">
 
                     {/* LEFT SIDE → Map + Malayalam Heading */}
-                    <div className="flex items-center gap-4 md:gap-6">
+                    <div className="flex  items-start md:items-center "> 
                         {/* Map Image (fixed at bottom-left area) */}
                         <Image
                             src={mapImage}
                             alt="Kerala Map Highlight"
-                            className="w-22 md:w-100 object-contain translate-y-35 ml-16"
+                            className="w-100 md:w-140 lg:w-100 object-cover translate-y-28 md:translate-y-35 ml-0 md:-ml-10 lg:ml-0 xl:ml-16"
                         />
 
-                    </div>
-                    <div className="flex flex-col-2 gap-6 md:gap-10 mr-26 top-1/2 translate-y-[100px]">
                         <div className="">
-                            <h1 className=" text-white text-xl md:text-xl font-bold leading-snug -ml-6 mt-10 ">
+                            <h1 className="absolute text-white text-[28px] xl:text-4xl font-semibold leading-snug -ml-70 md:-ml-66 lg:-ml-86 xl:-ml-76 mt-40 md:mt-16 lg:mt-26 ">
                                 തൃശ്ശൂരിന്റെ <br />
-                                ഹൃദയത്തിൽ, നിങ്ങളുടെ<br />
+                                ഹൃദയത്തിൽ,
+                                <br className="md:hidden" />    {/* shows only on mobile */}
+                                <span className="hidden md:inline">
+                                    <br className="lg:hidden" />  {/* visible on md but hidden on lg */}
+                                </span>
+                                നിങ്ങളുടെ<br />
                                 സ്വപ്നങ്ങൾക്കായി.
                             </h1>
                         </div>
-                        <div>
 
-                            {/* RIGHT SIDE → English Paragraph */}
-                            <p className="max-w-md text-[14px] text-white/85 leading-[18px] ">
+                    </div>
+
+
+
+                    <div className="ml-0  lg:ml-30  xl:ml-70 top-1/2 translate-y-[160px] md:translate-y-[140px]">
+
+                        <div>
+                            <p className="max-w-xl text-[13px] text-white/85 leading-[18px] ">
                                 Known as the Cultural Capital of Kerala, Thrissur is where tradition,
                                 architecture, and artistry come alive. From the grand spectacle of
                                 Thrissur Pooram to the timeless grace of its temples and palaces, the
