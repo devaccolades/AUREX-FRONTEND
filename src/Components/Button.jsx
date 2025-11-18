@@ -122,7 +122,7 @@ export default function MagneticButton({
 
       {/* PULSE OUTER AURA */}
       <motion.div
-        className="absolute inset-0 w-48 h-48 -top-6 -left-6 rounded-full bg-green-400/20 blur-xl"
+        className="absolute inset-0 w-48 h-48 -top-6 -left-6 rounded-full bg-gray-600/20 blur-xl"
         animate={{ scale: [1, 1.15, 1] }}
         transition={{ repeat: Infinity, duration: 2.2, ease: "easeInOut" }}
       />

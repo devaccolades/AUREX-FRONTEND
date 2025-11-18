@@ -10,6 +10,9 @@ body {
 .font-urban {
   font-family: var(--font-urbanist), sans-serif;
 }
+.font-poppins {
+  font-family: var(--font-poppins), sans-serif;
+}
 
 .bg-primary {
   background-color: #cba045;
@@ -144,3 +147,29 @@ body {
   margin-left: 0 !important;
   margin-right: -80px; 
 } */
+
+
+.torn-edge {
+  --tear-width: 40px;
+
+  mask-image: radial-gradient(circle at left center, transparent 0, black 70%);
+  mask-size: 200% 100%;
+  mask-position: left;
+  position: relative;
+}
+
+.torn-edge::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--tear-width);
+  height: 100%;
+  background: white;
+  mix-blend-mode: lighten;
+
+  /* jagged textured edge */
+  mask-image: url("https://i.imgur.com/Rv1tEZi.png"); /* noise mask */
+  mask-size: cover;
+  mask-repeat: no-repeat;
+}
