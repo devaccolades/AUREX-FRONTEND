@@ -5,16 +5,21 @@ import Testiminials from "./(home)/Testiminials";
 import Footer from "../Components/Footer";
 import WhyChooseUs from "./(home)/WhyChoose";
 import Thrissur from "./(home)/Thrissur";
+import ChairmanMessage from "./(home)/ChairmanMessage";
+import HeroSection from "./(home)/HeroSection";
 
 export default function Home() {
   return (
     <div>
+      <HeroSection />
+      <ChairmanMessage />
       <WhyChooseUs />
       <Thrissur />
+      
       {/* <Testiminials />
-      <DreamsInThrissur /> */}
+      <DreamsInThrissur />
       <FAQ />
-      {/* <Footer /> */}
+      <Footer /> */}
     </div>
   );
 }
