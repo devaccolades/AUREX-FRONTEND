@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import GlassSurface from "@/Components/GlassSurface";
+
 
 const projects = [
   {
@@ -41,19 +43,19 @@ export default function HeroSection() {
       </div>
 
       {/* OVERLAY GRADIENT */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent z-10"></div>
 
       {/* CONTENT */}
       <div className="relative z-20 w-full h-full flex flex-col justify-between pb-6">
 
         {/* TOP AREA */}
-        <div className="flex justify-between items-start px-6 md:px-16 mt-20">
+        <div className="flex justify-between items-start px-6 md:px-34 mt-26">
 
           {/* LEFT TEXT */}
           <div className="max-w-md  text-white font-urban">
             <p className="text-lg opacity-90 justify-center">At the heart of Thrissur,</p>
 
-            <h1 className="text-5xl md:text-[48px] font-urban justify-center font-semibold leading-[43px] ">
+            <h1 className="text-5xl md:text-[48px] font-urban items-center-safe justify-center font-semibold leading-[43px] ">
               inspired by your <br /> dreams.
             </h1>
 
@@ -63,8 +65,8 @@ export default function HeroSection() {
           </div>
 
           {/* RIGHT TEXT */}
-          <div className="text-right font-urban text-white">
-            <p className="text-sm tracking-wider opacity-80">
+          <div className="text-right  font-urban text-white">
+            <p className="text-sm tracking-wider opacity-80 mb-2">
               AMENITIES THAT DEFINE
             </p>
 
@@ -79,45 +81,40 @@ export default function HeroSection() {
           </div>
         </div>
 
+       
         {/* BOTTOM PROJECT INFO */}
         <div className="w-full flex justify-center px-4">
-          <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-lg p-4 flex items-center gap-6 md:gap-10">
+          <GlassSurface className="flex p-0 items-center gap-6 md:gap-10">
 
             {/* LOGO */}
             <div className="relative w-20 h-12">
-              <Image
-                src={project.logo}
-                alt="Logo"
-                fill
-                className="object-contain"
-              />
+              <Image src={project.logo} alt="Logo" fill className="object-contain" />
             </div>
 
             {/* DETAILS */}
             <div>
-              <h4 className="font-semibold">{project.name}</h4>
-              <p className="text-xs text-gray-600">{project.location}</p>
+              <h4 className="font-semibold text-[14px] leading-[16px] text-white">{project.name}</h4>
+              <p className="text-xs text-white">{project.location}</p>
             </div>
 
             {/* QR */}
             <div className="relative w-16 h-16">
-              <Image
-                src={project.qrcode}
-                alt="QR Code"
-                fill
-                className="object-contain"
-              />
+              <Image src={project.qrcode} alt="QR Code" fill className="object-contain" />
             </div>
 
             {/* RERA */}
-            <p className="text-xs text-gray-800 whitespace-nowrap">
+            <p className="text-[10px] leading-[16px] text-white whitespace-nowrap">
               RERA REG. NO <br /> {project.rera}
             </p>
 
-            {/* LOCATION ICON */}
-            <div className="w-10 h-10 bg-gray-200 rounded-full"></div>
-          </div>
+            <div className="relative w-14 h-14 bg-gray-200 rounded-full">
+              <Image src="/images/home/g-map.svg" alt="google map" fill className="object-contain w-10 h-10" />
+            </div>
+
+          </GlassSurface>
         </div>
+
+
 
         {/* SLIDE CONTROLS */}
         <div className="absolute bottom-6 right-10 text-white flex items-center gap-3">

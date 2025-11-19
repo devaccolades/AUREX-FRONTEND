@@ -7,9 +7,9 @@ export default function ChairmanMessage() {
     <div className="py-6">
     <section className="containers  flex flex-col md:flex-row justify-between  rounded-3xl overflow-hidden border border-gray-200 ">
       {/* LEFT CONTENT */}
-      <div className="flex flex-row justify-between p-8 md:p-2 max-w-[55%]">
+      <div className="flex flex-row justify-between p-8 md:p-6 max-w-[55%]">
         <div>
-       <p className="text-[#00A99D] font-poppins font-normal mb-2"><span className="text-[#006A54] font-poppins">#Chairman's</span> <span className="text-gray-500 font-poppins">Message</span></p>
+       <p className="font-poppins font-normal mb-2"><span className="text-[#006A54] font-poppins">#Chairman's</span> <span className="text-gray-500 font-poppins">Message</span></p>
         <h2 className="text-xl md:text-[36px] font-bold font-urban leading-[36px] mb-6">
           BUILDING MORE THAN <br /> STRUCTURES — ADORNING LIVES
         </h2>
