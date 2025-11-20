@@ -1,7 +1,7 @@
 
 "use client";
 import Image from "next/image";
-import MagneticButton from "@/Components/Button";
+import MagneticButton from "@/Components/MagneticButton";
 import bg from "../../../public/images/home/why-bg.png";
 import { useState } from "react";
 import ModalForm from "@/Components/forms/ModalForm";
