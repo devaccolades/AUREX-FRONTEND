@@ -7,19 +7,23 @@ import WhyChooseUs from "./(home)/WhyChoose";
 import Thrissur from "./(home)/Thrissur";
 import ChairmanMessage from "./(home)/ChairmanMessage";
 import HeroSection from "./(home)/HeroSection";
+import AboutSection from "./(home)/AboutSection";
+import BrandAmbassador from "./(home)/BrandAmbassador";
 
 export default function Home() {
   return (
     <div>
       <HeroSection />
+      <BrandAmbassador />
       <ChairmanMessage />
+      <AboutSection />
       <WhyChooseUs />
       <Thrissur />
       
-      {/* <Testiminials />
+      <Testiminials />
       <DreamsInThrissur />
       <FAQ />
-      <Footer /> */}
+      <Footer />
     </div>
   );
 }

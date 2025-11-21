@@ -149,7 +149,7 @@ const Squares = ({
   return (
     <canvas
       ref={canvasRef}
-      className="w-full h-full border-none block relative z-0"
+      className="w-full h-full border-none block relative z-0 opacity-20"
     ></canvas>
   );
 };
