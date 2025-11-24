@@ -9,6 +9,7 @@ import ChairmanMessage from "./(home)/ChairmanMessage";
 import HeroSection from "./(home)/HeroSection";
 import AboutSection from "./(home)/AboutSection";
 import BrandAmbassador from "./(home)/BrandAmbassador";
+import GallerySection from "./(home)/Gallery";
 
 export default function Home() {
   return (
@@ -17,13 +18,15 @@ export default function Home() {
       <BrandAmbassador />
       <ChairmanMessage />
       <AboutSection />
+      <GallerySection />
       <WhyChooseUs />
       <Thrissur />
       
-      <Testiminials />
+      
+      {/* <Testiminials />
       <DreamsInThrissur />
       <FAQ />
-      <Footer />
+      <Footer /> */}
     </div>
   );
 }
