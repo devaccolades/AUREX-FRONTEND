@@ -10,6 +10,7 @@ import HeroSection from "./(home)/HeroSection";
 import AboutSection from "./(home)/AboutSection";
 import BrandAmbassador from "./(home)/BrandAmbassador";
 import GallerySection from "./(home)/Gallery";
+import SignatureProjects from "./(home)/SignatureProjects";
 
 export default function Home() {
   return (
@@ -21,7 +22,7 @@ export default function Home() {
       <GallerySection />
       <WhyChooseUs />
       <Thrissur />
-      
+      <SignatureProjects />
       
       {/* <Testiminials />
       <DreamsInThrissur />
