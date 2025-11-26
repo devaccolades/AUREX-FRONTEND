@@ -18,11 +18,12 @@ export default function Home() {
       <HeroSection />
       <BrandAmbassador />
       <ChairmanMessage />
+      <SignatureProjects />
       <AboutSection />
       <GallerySection />
       <WhyChooseUs />
       <Thrissur />
-      <SignatureProjects />
+      
       
       {/* <Testiminials />
       <DreamsInThrissur />
