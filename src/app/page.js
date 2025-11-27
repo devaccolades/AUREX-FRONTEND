@@ -11,6 +11,7 @@ import AboutSection from "./(home)/AboutSection";
 import BrandAmbassador from "./(home)/BrandAmbassador";
 import GallerySection from "./(home)/Gallery";
 import SignatureProjects from "./(home)/SignatureProjects";
+import Services from "./(home)/Services";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <SignatureProjects />
       <AboutSection />
       <GallerySection />
+      <Services />
       <WhyChooseUs />
       <Thrissur />
       
