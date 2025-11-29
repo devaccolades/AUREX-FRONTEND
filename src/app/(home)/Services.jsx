@@ -271,11 +271,13 @@ const services = [
       { src: "/images/home/services/ma2.png", x: 60, y: 20 },
       { src: "/images/home/services/ma3.png", x: 75, y: 65 },
       { src: "/images/home/services/ma1.png", x: 25, y: 80 },
+      { src: "/images/home/services/ma3.png", x: 95, y: 85 },
+      { src: "/images/home/services/ma1.png", x: 15, y: 98 },
     ],
   },
 ];
 
-export default function ServicesFinal() {
+export default function Services() {
   const containerRef = useRef(null);
   const groupsRef = useRef(null);
   const titleRefs = useRef([]);
@@ -352,19 +354,19 @@ export default function ServicesFinal() {
         //   "<"
         // );
         tl.to(
-  {},
-  {
-    duration: 0.1,
-    onUpdate: () => {
-      const current = i + 2; // 2,3, etc
-      counterRef.current.innerHTML = `
+          {},
+          {
+            duration: 0.1,
+            onUpdate: () => {
+              const current = i + 2; // 2,3, etc
+              counterRef.current.innerHTML = `
         <span style="color:#D4A017;">0${current}</span>
         <span style="color:#000;"> / 0${total}</span>
       `;
-    },
-  },
-  "<"
-);
+            },
+          },
+          "<"
+        );
 
         // Outgoing images
         tl.to(
@@ -419,19 +421,19 @@ export default function ServicesFinal() {
 
         {/* Counter */}
         <div
-  ref={counterRef}
-  className="text-[16px] leading-[32px] font-urban font-semibold tracking-widest mb-4 flex items-center gap-1"
->
-  <span className="text-[#D4A017]">01</span>
-  <span className="text-black">/ 03</span>
-</div>
+          ref={counterRef}
+          className="text-[16px] leading-[32px] font-urban font-semibold tracking-widest mb-14 xl:mb-10 flex items-center gap-1"
+        >
+          <span className="text-[#D4A017]">01</span>
+          <span className="text-black">/ 03</span>
+        </div>
         {/* Title — separate absolute layer */}
-        <div className="relative h-24 w-full flex items-center justify-center pointer-events-none z-50">
+        <div className="relative h-24 w-full flex items-center justify-center pointer-events-none z-50 py-8">
           {services.map((s, i) => (
             <h2
               key={i}
               ref={(el) => (titleRefs.current[i] = el)}
-              className="absolute text-[40px] md:text-[60px] lg:text-[72px] font-normal text-black tracking-tight text-center leading-tight"
+              className="absolute text-[40px] md:text-[60px] lg:text-[72px] font-normal text-black tracking-tight text-center leading-tight "
               style={{
                 opacity: i === 0 ? 1 : 0,
                 transform:
@@ -447,22 +449,22 @@ export default function ServicesFinal() {
 
         {/* Button */}
         <button
-              // onClick={onClick}
-              className="flex items-center gap-2  text-black px-5 py-2 rounded-full font-urban text-[12px] leading-[16px] font-bold  hover:scale-[1.03] transition ${className}"
-            >
-             <Image
-                src="/images/home/enq.svg"
-                alt="Arrow"
-                width={20}
-                height={20}
-                className=""/>
-              <span className="flex items-center gap-1">
+          // onClick={onClick}
+          className="flex items-center gap-2 mt-8 xl:mt-4 text-black px-5 py-2 rounded-full font-urban text-[12px] leading-[16px] font-bold  hover:scale-[1.03] transition "
+        >
+          <Image
+            src="/images/home/enq.svg"
+            alt="Arrow"
+            width={20}
+            height={20}
+            className="" />
+          <span className="flex items-center gap-1">
             ENQUIRE
             <span className="flex bg-[#FF0000] w-12 h-12 rounded-full items-center justify-center text-white font-bold">
               NOW
             </span>
           </span>
-            </button>
+        </button>
       </div>
 
       {/* Slide Images Wrapper */}
@@ -475,26 +477,38 @@ export default function ServicesFinal() {
           {services.map((service, slideIndex) => (
             <div key={slideIndex} className="relative w-full h-screen">
               {service.images.map((img, j) => (
+                
+
                 <div
                   key={j}
                   data-slide-img
                   data-slide={slideIndex}
-                  className="absolute"
+                  className="
+    absolute 
+    -translate-x-1/2 
+    -translate-y-1/2
+    w-[140px]        /* mobile */
+    h-[140px]
+    md:w-[200px]     /* tablet */
+    md:h-[200px]
+    lg:w-[260px]     /* desktop */
+    lg:h-[260px]
+    xl:w-[280px]     /* large desktop */
+    xl:h-[280px]
+  "
                   style={{
                     left: `${img.x}%`,
                     top: `${img.y}%`,
-                    transform: "translate(-50%, -50%)",
-                    width: "250px",
                   }}
                 >
                   <Image
                     src={img.src}
                     alt=""
-                    width={300}
-                    height={300}
-                    className="rounded-xl shadow-xl object-cover"
+                    fill
+                    className="object-cover  shadow-xl"
                   />
                 </div>
+
               ))}
             </div>
           ))}

@@ -12,10 +12,12 @@ import BrandAmbassador from "./(home)/BrandAmbassador";
 import GallerySection from "./(home)/Gallery";
 import SignatureProjects from "./(home)/SignatureProjects";
 import Services from "./(home)/Services";
+import Header from "@/Components/Header";
 
 export default function Home() {
   return (
     <div>
+      <Header />
       <HeroSection />
       <BrandAmbassador />
       <ChairmanMessage />
