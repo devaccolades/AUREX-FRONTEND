@@ -110,7 +110,7 @@ export default function GallerySection() {
 
         {/* MAIN IMAGE */}
         <div className="md:col-span-5">
-          <div className="relative overflow-hidden border-x border-gray-200 py-18">
+          <div className="relative overflow-hidden border-x border-gray-200 py-30">
 
             {/* IMAGE MODE */}
             {activeImage.type === "image" && (
@@ -119,7 +119,7 @@ export default function GallerySection() {
                 alt={activeImage.image_alt}
                 width={900}
                 height={600}
-                className="w-[565px] h-[565px] md:h-[460px] object-cover transition-all duration-300"
+                className="w-[565px] h-[460px] object-cover transition-all duration-300"
               />
             )}
 
@@ -134,7 +134,7 @@ export default function GallerySection() {
                       alt={activeImage.image_alt}
                       width={900}
                       height={600}
-                      className="w-[565px] h-[565px] md:h-[460px] object-cover"
+                      className="w-[565px] h-[460px] object-cover"
                     />
 
                     {/* PLAY BUTTON */}
@@ -165,7 +165,7 @@ export default function GallerySection() {
 
 
         {/* RIGHT SIDE THUMBNAIL SLIDER */}
-        <div className="md:col-span-2 h-[500px] border-x border-gray-300 overflow-y-auto hide-scrollbar space-y-4">
+        <div className="md:col-span-2 h-[684px] border-x border-gray-300 overflow-y-auto hide-scrollbar space-y-4">
           {gallery.map((item, i) => (
             <div
               key={i}
@@ -181,7 +181,7 @@ export default function GallerySection() {
                   alt={item.image_alt}
                   width={300}
                   height={180}
-                  className="w-[169px] h-[120px] object-cover"
+                  className="w-[169px] h-[140px] object-cover"
                 />
               )}
 
