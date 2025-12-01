@@ -32,6 +32,17 @@ body {
   width: 80%;
   margin: 0 auto;
 }
+@media (min-width: 320px) {  /* sm */
+  .containers {
+    width: 90%;
+  }
+}
+@media (min-width: 768px) {  /* md */
+  .containers {
+    width: 90%;
+  }
+}
+
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
