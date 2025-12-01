@@ -61,7 +61,7 @@ export default function Header() {
           <Image src="/images/aurex-logo.svg" width={60} height={60} alt="logo" />
         </div> */}
         <div
-          className={`flex justify-center transition-all duration-[1000ms] ${scrolled ? "w-20" : "w-16 md:w-32"
+          className={`flex justify-center transition-all duration-300 ${scrolled ? "w-20" : "w-16 md:w-32"
             }`}
         >
           <Image
@@ -69,7 +69,7 @@ export default function Header() {
             width={scrolled ? (isMobile ? 30 : 40) : (isMobile ? 45 : 60)}
             height={scrolled ? (isMobile ? 30 : 40) : (isMobile ? 45 : 60)}
             alt="logo"
-            className="transition-all duration-[1000ms]"
+            className="transition-all duration-300"
           />
         </div>
         <div className="w-[24px] h-[24px] flex justify-end">
