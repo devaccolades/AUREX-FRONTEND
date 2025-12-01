@@ -165,7 +165,7 @@ export default function GallerySection() {
 
 
         {/* RIGHT SIDE THUMBNAIL SLIDER */}
-        <div className="md:col-span-2 h-[500px] border-x border-gray-300 overflow-y-auto no-scrollbar space-y-4">
+        <div className="md:col-span-2 h-[500px] border-x border-gray-300 overflow-y-auto hide-scrollbar space-y-4">
           {gallery.map((item, i) => (
             <div
               key={i}
@@ -208,6 +208,15 @@ export default function GallerySection() {
             </div>
           ))}
         </div>
+        <style jsx>{`
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+`}</style>
 
 
       </div>
