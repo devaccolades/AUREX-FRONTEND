@@ -16,7 +16,9 @@ body {
 .font-anek {
   font-family: var(--font-anek-malayalam), sans-serif;
 }
-
+.font-roboto {
+  font-family: var(--font-roboto), sans-serif;
+}
 
 .bg-primary {
   background-color: #cba045;
@@ -176,4 +178,20 @@ body {
   mask-image: url("https://i.imgur.com/Rv1tEZi.png"); /* noise mask */
   mask-size: cover;
   mask-repeat: no-repeat;
+}
+
+
+/* Hide scrollbar for Chrome, Safari, Edge */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for IE + old Edge */
+.hide-scrollbar {
+  -ms-overflow-style: none;
 }
