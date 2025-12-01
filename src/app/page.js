@@ -17,18 +17,18 @@ import Header from "@/Components/Header";
 export default function Home() {
   return (
     <div>
-      {/* <Header />
+      <Header />
       <HeroSection />
       <BrandAmbassador />
       <ChairmanMessage />
-      <SignatureProjects /> */}
+      <SignatureProjects />
       <AboutSection />
-      {/* <GallerySection />
+      <GallerySection />
       <Services />
       <WhyChooseUs />
       <Thrissur /> 
       <Testiminials />
-      <DreamsInThrissur /> */}
+      <DreamsInThrissur />
       <FAQ />
       <Footer />
     </div>
