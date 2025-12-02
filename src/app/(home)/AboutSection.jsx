@@ -10,24 +10,24 @@ export default function AboutSection() {
                     alt="decor-left"
                     width={800}
                     height={800}
-                    className="w-[356px] object-contain "
+                    className="w-[118px] md:w-[241px] lg:w-[330px] xl:w-[356px] object-contain "
                 />
                 <Image
                     src="/images/home/right-ele.png"
                     alt="decor-right"
                     width={800}
                     height={800}
-                    className="w-[356px] object-contain  "
+                    className="w-[118px] md:w-[241px] lg:w-[330px] xl:w-[356px] object-contain  "
                 />
             </div>
 
-            <div className="relative max-w-[690px] mx-auto py-20 text-center px-6">
-                <h4 className="text-[16px] leading-[20px] font-poppins font-normal mb-4 "> <span className="text-black">#About</span> <span className="text-gray-500">Us</span></h4>
-                <h2 className="text-[40px] font-semibold font-urban leading-[40px] mb-6">
-                    MANIFESTING YOUR DREAM <br /> INTO A MAGNIFICENT REALITY
+            <div className="container relative max-w-[520px] lg:max-w-[580px] xl:max-w-[680px] mx-auto py-10 lg:py-20 text-center ">
+                <h4 className="text-[14px] lg:text-[16px] leading-[20px] font-poppins font-normal mb-2 "> <span className="text-[#006A54]">#About</span> <span className="text-gray-500">Us</span></h4>
+                <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-semibold font-urban leading-[24px] md:leading-[32px] lg:leading-[40px] mb-4">
+                    MANIFESTING  <br className="md:hidden block"/>  YOUR DREAM <br className="hidden md:block"/> INTO <br className="md:hidden block"/> A MAGNIFICENT <br className="md:hidden block"/> REALITY
                 </h2>
 
-                <p className="text-gray-700 font-inter leading-[156%] text-[14px] md:text-[14px] mb-10">
+                <p className="text-black font-inter leading-[156%] text-[13px] md:text-[14px]mb-4 lg:mb-10">
                     Aurex builders ensures to fulfill the dream of our customers by gifting them with quality home spaces,
                     contemporary architecture, environment- friendly designs, timely delivery, after-sales service and return
                     on investment. Aurex builders brings you a new world of happiness, security and prosperity, delivering
@@ -41,7 +41,7 @@ export default function AboutSection() {
                 >
                     <span className="flex items-center text-black gap-1">
                         KNOW
-                        <span className="flex bg-[#FF0000] w-12 h-12 rounded-full items-center justify-center text-white font-bold">
+                        <span className="flex bg-[#FF0000] w-8 md:w-12 h-8 md:h-12 rounded-full items-center justify-center text-white font-bold">
                             MORE
                         </span>
                     </span>
