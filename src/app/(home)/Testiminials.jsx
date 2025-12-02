@@ -14,7 +14,7 @@ const Testiminials = () => {
           hoverFillColor="#dbdbdb"
         ></Squares>
       </div>
-      <div className="containers pt-[45px] relative z-10">
+      <div className="container pt-[45px] relative z-10">
         <div className="flex flex-col gap-[10px] items-center w-full ">
           <p className="text-[#A2A2A2] text-[16px] leading-[20px] tracking-[-2%]">
             <span className="text-[#006A54]">#Smiles</span> We’ve Created{" "}

@@ -28,17 +28,17 @@ body {
   background-color: #ececec;
 }
 
-.containers {
+.container {
   width: 80%;
   margin: 0 auto;
 }
-@media (min-width: 320px) {  /* sm */
-  .containers {
+@media (min-width: 320px) {  
+  .container {
     width: 90%;
   }
 }
-@media (min-width: 768px) {  /* md */
-  .containers {
+@media (min-width: 768px) { 
+  .container {
     width: 90%;
   }
 }

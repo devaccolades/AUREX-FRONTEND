@@ -32,7 +32,7 @@ export default function WhyChooseUs() {
     <>
       <div id="why-section" onClick={() => setOpenModal(true)} className="border">
         <section
-          className="w-[90%] lg:w-[80%] m-auto border  relative  bg-white text-black py-0 px-0  overflow-hidden"
+          className="container m-auto border  relative  bg-white text-black py-0 px-0  overflow-hidden"
         >
 
           <div className="relative grid grid-cols-1 md:grid-cols-2 gap-0 lg:gap-12 items-center">

@@ -44,7 +44,7 @@ const FAQ = () => {
           className="object-cover md:object-contain md:object-left w-full h-full"
         />
       </div>
-      <div className="containers grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="container grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* LEFT SIDE */}
         <div>
           <h2 className="text-[16px] md:text-[20px] lg:text-[24px] leading-[24px] font-urban font-bold mb-6 text-gray-800 tracking-wide">

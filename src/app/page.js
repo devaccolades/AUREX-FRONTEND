@@ -20,15 +20,15 @@ export default function Home() {
       <Header />
       <HeroSection />
       <BrandAmbassador />
-      <ChairmanMessage />
+      {/* <ChairmanMessage />
       <SignatureProjects />
       <AboutSection />
       <GallerySection />
       <Services />
       <WhyChooseUs />
-      <Thrissur /> 
-      <Testiminials />
-      <DreamsInThrissur />
+      <Thrissur />  */}
+      {/* <Testiminials />
+      <DreamsInThrissur /> */}
       <FAQ />
       <Footer />
     </div>

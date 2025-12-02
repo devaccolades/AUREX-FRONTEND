@@ -5,7 +5,7 @@ import React from "react";
 export default function ChairmanMessage() {
   return (
     <div className="py-6">
-    <section className="containers  flex flex-col md:flex-row justify-between  rounded-3xl overflow-hidden border border-gray-200 ">
+    <section className="container  flex flex-col md:flex-row justify-between  rounded-3xl overflow-hidden border border-gray-200 ">
       {/* LEFT CONTENT */}
       <div className="flex flex-row justify-between p-8 md:p-6 max-w-[55%]">
         <div>

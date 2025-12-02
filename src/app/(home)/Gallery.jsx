@@ -67,28 +67,30 @@ export default function GallerySection() {
           backgroundSize: "1400px 800px",
         }}
       ></div>
-      <div className="relative w-[90%] md:w-[80%] mx-auto    grid grid-cols-1 md:grid-cols-12 gap-10 items-start border-x border-gray-200">
+      {/* <div className="relative containers mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-10 items-start border-x border-gray-200"> */}
+
+      <div className="relative container mx-auto    grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-10 items-start  border-x border-gray-200">
 
         {/* LEFT CONTENT */}
-        <div className="md:col-span-5 py-18">
+         <div className="col-span-12 md:col-span-5 lg:col-span-5 py-8 lg:py-28">
           <p className="text-[#006A54] font-poppins font-regular text-[16px]  leading-[20px]">#Gallery</p>
-          <h1 className="text-4xl md:text-[64px] font-regular leading-[60px] mt-2">
-            Where Every <br /> Corner Tells <br /> a Story
+          <h1 className="text-[32px] md:text-[40px] xl:text-[64px] font-urban font-medium leading-[32px] md:leading-[40px] xl:leading-[60px] mt-2">
+            Where Every <br className="hidden md:block"/> Corner Tells <br className="hidden md:block"/> a Story
           </h1>
-          <p className="text-black text-[14px] leading-[156%] mt-4 max-w-sm">
+          <p className="text-black text-[13px] lg:text-[14px]  leading-[156%] mt-4 max-w-sm">
             Step inside a world where modern design meets timeless tranquility.
             From lush landscapes to luxurious interiors.
           </p>
 
-          <div className="flex items-center justify-between mt-0">
+          <div className="flex items-center justify-between ">
 
             {/* Left Text */}
-            <p className="text-[13px] leading-[100%] text-black italic cursor-pointer">
-              Love What You See? Book a Site <br /> Visit Today
+            <p className="text-[13px] leading-[100%] text-black italic cursor-pointer ">
+              Love What You See? Book a Site <br className="hidden md:block" /> Visit Today
             </p>
 
             {/* Button */}
-            <button className="flex items-center gap-2 text-black px-5 py-2 rounded-full font-urban text-[12px] leading-[16px] font-bold hover:scale-[1.03] transition">
+            <button className="flex items-center gap-0 text-black px-5 py-2 rounded-full font-urban text-[12px] leading-[16px] font-bold hover:scale-[1.03] transition">
               <Image
                 src="/images/home/enq.svg"
                 alt="Arrow"
@@ -96,9 +98,9 @@ export default function GallerySection() {
                 height={20}
               />
 
-              <span className="flex items-center gap-1">
+              <span className="flex items-center gap-0">
                 ENQUIRE
-                <span className="flex bg-[#FF0000] w-12 h-12 rounded-full items-center justify-center text-white font-bold">
+                <span className="flex bg-[#FF0000] w-8 lg:w-12 h-8 lg:h-12 rounded-full items-center justify-center text-white font-bold">
                   NOW
                 </span>
               </span>
@@ -108,9 +110,13 @@ export default function GallerySection() {
 
         </div>
 
+       
+           <div className="col-span-12 md:col-span-7 lg:col-span-7 flex gap-2 md:gap-10 border-t border-gray-300">
+
         {/* MAIN IMAGE */}
-        <div className="md:col-span-5">
-          <div className="relative overflow-hidden border-x border-gray-200 py-30">
+        {/* <div className="col-span-5 lg:col-span-5 border-x border-gray-200"> */}
+        <div className=" border-x border-gray-200">
+          <div className="relative overflow-hidden  py-13 lg:py-30">
 
             {/* IMAGE MODE */}
             {activeImage.type === "image" && (
@@ -119,7 +125,7 @@ export default function GallerySection() {
                 alt={activeImage.image_alt}
                 width={900}
                 height={600}
-                className="w-[565px] h-[460px] object-cover transition-all duration-300"
+                className="w-[242px] md:w-[343px] lg:w-[565px] h-[239px] md:h-[280px] lg:h-[460px] object-cover transition-all duration-300"
               />
             )}
 
@@ -134,7 +140,7 @@ export default function GallerySection() {
                       alt={activeImage.image_alt}
                       width={900}
                       height={600}
-                      className="w-[565px] h-[460px] object-cover"
+                      className="w-[242px] md:w-[343px] lg:w-[565px] h-[239px] md:h-[280px] lg:h-[460px]  object-cover"
                     />
 
                     {/* PLAY BUTTON */}
@@ -155,7 +161,7 @@ export default function GallerySection() {
                     src={activeImage.video}
                     controls
                     autoPlay
-                    className="w-[565px] h-[565px] md:h-[460px] object-cover"
+                    className="w-[242px] md:w-[343px] lg:w-[565px] h-[239px] md:h-[280px] lg:h-[460px]  object-cover"
                   />
                 )}
               </>
@@ -163,9 +169,10 @@ export default function GallerySection() {
           </div>
         </div>
 
-
+     
         {/* RIGHT SIDE THUMBNAIL SLIDER */}
-        <div className="md:col-span-2 h-[684px] border-x border-gray-300 overflow-y-auto hide-scrollbar space-y-4">
+        {/* <div className="col-span-2 lg:col-span-2 h-[384px] lg:h-[684px] border-x border-gray-300 overflow-y-auto hide-scrollbar space-y-4"> */}
+        <div className="h-[384px] lg:h-[700px]  border-l border-gray-300 overflow-y-auto hide-scrollbar space-y-4">
           {gallery.map((item, i) => (
             <div
               key={i}
@@ -181,7 +188,7 @@ export default function GallerySection() {
                   alt={item.image_alt}
                   width={300}
                   height={180}
-                  className="w-[169px] h-[140px] object-cover"
+                  className="w-[93px] lg:w-[179px] h-[77px] lg:h-[140px] object-cover"
                 />
               )}
 
@@ -193,7 +200,7 @@ export default function GallerySection() {
                     alt={item.image_alt}
                     width={300}
                     height={180}
-                    className="w-[169px] h-[120px] object-cover"
+                    className="w-[93px] lg:w-[179px] h-[77px] lg:h-[140px] object-cover"
                   />
 
                   {/* Play Icon Overlay */}
@@ -208,6 +215,8 @@ export default function GallerySection() {
             </div>
           ))}
         </div>
+        </div>
+
         <style jsx>{`
   .hide-scrollbar::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera */
