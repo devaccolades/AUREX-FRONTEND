@@ -21,8 +21,8 @@ export default function Thrissur() {
 
 
             {/* Content Wrapper */}
-            <div className=" flex flex-col  md:flex-row absolute inset-0 z-10  items-center">
-                <div className="flex  flex-col md:flex-row px-6 md:px-12  items-center ">
+            <div className="container flex flex-col  md:flex-row absolute inset-0 z-10  items-center">
+                <div className="flex  flex-col md:flex-row px-0 md:px-12  items-center ">
 
                     {/* LEFT SIDE → Map + Malayalam Heading */}
                     <div className="flex  items-start md:items-center "> 
@@ -34,7 +34,7 @@ export default function Thrissur() {
                         />
 
                         <div className="">
-                            <h1 className=" font-anek absolute text-white text-[34px] xl:text-[48px] font-medium leading-[36px] lg:leading-[48px] -ml-72 md:-ml-70 lg:-ml-86 xl:-ml-76 mt-40 md:mt-16 lg:mt-26 ">
+                            <h1 className=" font-anek absolute text-white text-[34px] xl:text-[48px] font-medium leading-[36px] lg:leading-[48px] -ml-73 md:-ml-70 lg:-ml-86 xl:-ml-76 mt-40 md:mt-16 lg:mt-26 ">
                                 തൃശ്ശൂരിന്റെ <br />
                                 ഹൃദയത്തിൽ,
                                 <br className="md:hidden" />    {/* shows only on mobile */}

@@ -34,7 +34,7 @@ const Testimonials = () => {
     rtl: false,
   };
   return (
-    <div className="relative z-40 overflow-x-hidden containers pb-10 pt-10">
+    <div className="relative z-40 overflow-x-hidden container pb-10 pt-10">
       <Slider {...settings}>
         {imgs.map((img, index) => (
           <Card key={index} bg={img} />

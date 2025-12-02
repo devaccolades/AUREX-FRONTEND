@@ -13,7 +13,7 @@ import bank8 from "../../../public/images/dreamsInThrissur/hdfc.png";
 const DreamsInThrissur = () => {
   const banks = [bank1, bank2, bank3, bank4, bank5, bank6, bank7, bank8];
   return (
-    <section className="containers bg-secondary py-[64px] px-[66px] rounded-[40px] ">
+    <section className="container bg-secondary py-[64px] px-[66px] rounded-[40px] ">
       <div className="flex flex-col md:flex-row gap-8 md:gap-0 justify-between items-center">
         <div className="flex flex-col w-full md:w-[350px]">
           <div>
