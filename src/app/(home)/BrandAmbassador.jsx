@@ -157,7 +157,7 @@ export default function BrandAmbassador() {
         />
       </div>
 
-      <div className="relative grid grid-cols-1 md:grid-cols-3 gap-0 mx-16">
+      <div className="container relative grid grid-cols-1 md:grid-cols-3 gap-0 mx-16">
 
         {/* LEFT CONTENT */}
         <motion.div
@@ -185,7 +185,8 @@ export default function BrandAmbassador() {
             relative 
             max-w-[520px] 
             mt-0
-            h-[600px]
+            h-[400px]
+            lg:h-[600px]
             xl:h-[800px]
             overflow-visible
             z-10
@@ -209,7 +210,7 @@ export default function BrandAmbassador() {
           style={{ opacity: textOpacity, y: textY }}
           className="relative w-full right-20 flex flex-col justify-center items-start py-0 text-left"
         >
-          <h3 className="text-[20px] xl:text-[32px] font-urban font-semibold py-2 leading-[20px] xl:leading-[32px] -mt-30 xl:-mt-80">
+          <h3 className="text-[20px] xl:text-[32px] font-urban font-semibold py-2 leading-[20px] xl:leading-[32px] -mt-32 lg:-mt-30 xl:-mt-80">
             WE ARE PLEASED TO <br /> INTRODUCE OUR <br /> BRAND AMBASSADOR.
           </h3>
 
@@ -228,7 +229,7 @@ export default function BrandAmbassador() {
             />
           </div> */}
           <div
-            className="relative z-10 bottom-0 right-0 md:right-[-280px] md:bottom-[-200px] 
+            className="relative z-10 bottom-[-110px] right-[-150px] lg:right-[-280px] lg:bottom-[-200px] 
              w-[140px] h-[90px] rounded-lg overflow-hidden shadow-lg 
              cursor-pointer group"
             onClick={() => setOpenVideo(true)}
