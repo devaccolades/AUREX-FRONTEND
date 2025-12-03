@@ -49,7 +49,7 @@ export default function SignatureProjects() {
   const activeCard = hovered ? hovered : defaultExpanded;
 
   return (
-    <section className="relative py-20">
+    <section className="relative py-10 lg:py-20">
       {/* Background Pattern */}
       <div className="absolute inset-0 flex w-full h-full justify-start opacity-10 pointer-events-none">
         <Image
@@ -61,21 +61,21 @@ export default function SignatureProjects() {
       </div>
 
       {/* Heading */}
-      <div className="text-center mb-14 relative z-10">
+      <div className="container text-center mb-24 relative z-10">
         <h4 className="text-[16px] font-poppins mb-0">
           <span className="text-[#006A54]">#Residential </span>
           <span className="text-gray-600">Projects</span>
         </h4>
-        <h2 className="text-[32px] md:text-[38px] font-urban font-medium leading-[48px] text-black">
+        <h2 className="text-[32px] md:text-[38px] font-urban font-medium leading-[32px] md:leading-[48px] text-black">
           OUR SIGNATURE PROJECTS
         </h2>
-        <p className="text-black text-[14px] leading-[100%] opacity-90">
+        <p className="text-black text-[14px] leading-[100%] opacity-90 mb-0 md:mb-10">
           Turning your ideas into reality through meticulous planning and expert execution.
         </p>
       </div>
 
       {/* CARD SECTION */}
-      <div className="w-[90%] xl:w-[80%] mx-auto md:flex hidden gap-0 xl:gap-6 overflow-hidden no-scrollbar px-0 xl:px-10">
+      <div className="container items-center justify-center md:flex hidden gap-1 lg:gap-4 overflow-hidden no-scrollbar  ">
         {projects.map((p) => (
           <div
             key={p.id}
@@ -83,9 +83,9 @@ export default function SignatureProjects() {
             onMouseLeave={() => setHovered(null)}
             className={`relative rounded-2xl transition-all duration-500 cursor-pointer overflow-hidden shadow-xl
                 ${activeCard === p.id
-                ? "min-w-[520px] lg:min-w-[620px] xl:min-w-[850px] h-[460px] lg:h-[460px] xl:h-[520px]"
-                : "min-w-[240px] xl:min-w-[300px] h-[460px] lg:h-[460px] xl:h-[520px] scale-[.96] opacity-85"
-              }`} 
+                ? "w-[511px] lg:w-[600px] xl:w-[880px] 2xl:w-[1000px] h-[347px] lg:h-[460px] xl:h-[520px]"
+                : "w-[200px] lg:w-[300px] xl:w-[360px] 2xl:w-[420px] h-[347px] lg:h-[460px] xl:h-[520px]  opacity-85"
+              }`}
           >
             {/* Cover Image */}
             <Image
@@ -100,58 +100,57 @@ export default function SignatureProjects() {
 
             {/* TOP BADGE ROW */}
             {activeCard === p.id && (
-              <div className="absolute top-5 left-5 right-5 flex flex-wrap gap-3 z-20">
+              <div className="absolute top-5 left-5 right-5 flex flex-wrap gap-2 lg:gap-4 z-20">
 
                 {/* PROJECT STATS ROW */}
-                <div className="flex flex-wrap items-center gap-4 mt-5">
 
-                  <div className="flex items-center  bg-[#A8731C] text-white px-3 py-2 rounded-full shadow-sm">
-                    <span className="text-[13px] leading-[13px] font-medium">{p.status}</span>
+                <div className="flex flex-wrap items-center gap-0 mt-0 lg:mt-5">
+                  <div className="flex items-center  bg-[#A8731C] text-white px-[10px] py-[10px] rounded-[24px] shadow-sm">
+                    <span className="text-[12px] lg:text-[13px] leading-[13px] font-urban font-medium">{p.status}</span>
                   </div>
+                </div>
+
+                <div className="flex flex-wrap items-center font-urban gap-0 mt-0 lg:mt-5">
                   {/* TOTAL AREA */}
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-0">
 
                     {/* LABEL BLOCK */}
-                    <div className="flex items-center gap-2 bg-white px-3 py-2 rounded-full shadow-sm">
-                      <Image src="/images/home/area.svg" width={16} height={16} alt="area icon" />
-                      <span className="text-[13px] leading-[13px] font-medium">Total Area</span>
+                    <div className="flex items-center gap-2 bg-white px-[10px] py-[10px] lg:py-[8px] rounded-[24px] shadow-sm">
+                      <Image src="/images/home/area.svg" width={18} height={18} alt="area icon" />
+                      <span className="text-[12px] lg:text-[13px] leading-[13px] font-medium">Total Area</span>
                     </div>
-
                     {/* VALUE BLOCK (Dynamic) */}
-                    <div className="bg-white px-3 py-2 rounded-full shadow-sm">
-                      <span className="text-[13px] leading-[13px] font-semibold">{p.totalArea}</span>
+                    <div className="bg-white px-[10px] py-[8px] rounded-[24px] shadow-sm">
+                      <span className="text-[12px] lg:text-[13px] leading-[13px] font-semibold">{p.totalArea}</span>
                     </div>
                   </div>
+                </div>
 
+                <div className="flex flex-wrap items-center font-urban gap-0 mt-0 lg:mt-5">
                   {/* TOTAL UNITS */}
-                  <div className="flex items-center gap-2">
-
+                  <div className="flex items-center gap-0">
                     {/* LABEL BLOCK */}
-                    <div className="flex items-center gap-2 bg-white px-3 py-2 rounded-full shadow-sm">
-                      <Image src="/images/home/appart.svg" width={16} height={16} alt="units icon" />
-                      <span className="text-[13px] leading-[13px] font-medium">Total Units</span>
+                    <div className="flex items-center gap-2 bg-white px-[10px] py-[10px] lg:py-[8px] rounded-[24px] shadow-sm">
+                      <Image src="/images/home/appart.svg" width={18} height={18} alt="units icon" />
+                      <span className="text-[12px] lg:text-[13px] leading-[13px] font-medium">Total Units</span>
                     </div>
-
                     {/* VALUE BLOCK */}
-                    <div className="bg-white px-3 py-2 rounded-full shadow-sm">
-                      <span className="text-[13px] leading-[13px] font-semibold">{p.totalUnits}</span>
+                    <div className="bg-white px-[10px] py-[8px] rounded-[24px] shadow-sm">
+                      <span className="text-[12px] lg:text-[13px] leading-[13px] font-semibold">{p.totalUnits}</span>
                     </div>
                   </div>
-
                 </div>
 
 
-                <div className="flex items-center gap-2">
-
+                <div className="flex items-center font-urban gap-0 mt-0 lg:mt-5">
                   {/* LABEL BLOCK */}
-                  <div className="flex items-center gap-2 bg-white px-3 py-2 rounded-full shadow-sm">
+                  <div className="flex items-center gap-2 bg-white px-[10px] py-[8px] rounded-[24px] shadow-sm">
                     <Image src="/images/home/rera.svg" width={14} height={14} alt="units icon" />
-                    <span className="text-[13px] leading-[13px] font-medium">K-RERA</span>
+                    <span className="text-[12px] lg:text-[13px] leading-[13px] font-medium">K-RERA</span>
                   </div>
-
                   {/* VALUE BLOCK */}
-                  <div className="bg-white px-3 py-2 rounded-full shadow-sm">
-                    <span className="text-[13px] leading-[13px] font-semibold">{p.rera}</span>
+                  <div className="bg-white px-[10px] py-[8px] rounded-[24px] shadow-sm">
+                    <span className="text-[12px] lg:text-[13px] leading-[13px] font-semibold">{p.rera}</span>
                   </div>
                 </div>
 
@@ -159,35 +158,81 @@ export default function SignatureProjects() {
             )}
 
             {/* BOTTOM CONTENT */}
-            <div className="absolute bottom-0 p-6 w-full text-white z-20">
+            <div className="absolute bottom-0 p-4 lg:p-6 w-full text-white z-20">
 
               {activeCard === p.id && (
-                <Image src={p.logo} alt="logo" width={130} height={50} className="mb-3 opacity-90" />
+                <Image src={p.logo} alt="logo" width={100} height={30} className="mb-1 lg:mb-3 w-[80px] lg:w-[103px] h-[32px] lg:h-[42px] opacity-90" />
               )}
 
-              <p className="text-[13px]  leading-[100%] font-urban opacity-80">{p.location}</p>
-              <h3 className="text-[24px] leading-[24px] font-urban font-semibold mt-1">{p.title}</h3>
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/images/icons/locu.svg"   // <-- your location icon path
+                  alt="location"
+                  width={14}
+                  height={14}
+                  className="opacity-80"
+                />
+
+                <p className="text-[12px] leading-[100%] opacity-80 font-urban">
+                  {p.location}
+                </p>
+              </div>
+              <h3 className="text-[20px] lg:text-[24px] leading-[24px] font-urban font-semibold mt-1">{p.title}</h3>
 
               {activeCard === p.id && (
-                <p className="text-[13px] leading-[100%] mt-2 opacity-95 max-w-[80%]">{p.description}</p>
+                <p className="text-[12px] lg:text-[13px] leading-[100%] mt-0 lg:mt-2 opacity-95 max-w-[80%]">{p.description}</p>
               )}
 
-              <div className="flex gap-4 mt-5">
+              <div className="flex items-center gap-3 mt-3 lg:mt-5">
                 {activeCard === p.id ? (
                   <>
-                    <button className="px-6 py-2 font-urban text-[14px] leading-[100%] bg-white text-black rounded-full font-normal">
-                      BROCHURE
+                    {/* LEFT OUTLINE BUTTON */}
+                    <button
+                      className="
+          px-6 py-2 
+          font-urban text-[14px] leading-[100%] 
+          border border-white text-white 
+          rounded-[10px] font-medium 
+          flex items-center justify-between gap-2
+          min-w-[200px] lg:min-w-[260px] xl:min-w-[400px]
+        "
+                    >
+                      VIEW PROJECT DETAILS
+                      <Image
+                        src="/images/icons/download.svg"
+                        alt="download"
+                        width={18}
+                        height={18}
+                      />
                     </button>
-                    <button className="px-6 py-2 font-urban text-[14px] leading-[100%] bg-[#0A6E50] text-white rounded-full font-semibold flex items-center gap-2">
-                      BOOK SITE VISIT <span>↗</span>
+
+                    {/* RIGHT GREEN BUTTON */}
+                    <button
+                      className="
+          px-6 py-2 
+          font-urban text-[14px] leading-[100%] 
+          bg-[#0A6E50] text-white 
+          rounded-[10px] font-semibold 
+          flex items-center justify-between gap-2
+          min-w-[200px] lg:min-w-[260px] xl:min-w-[400px]
+        "
+                    >
+                      BOOK SITE VISIT
+                      <Image
+                        src="/images/icons/arrow-up.svg"
+                        alt="arrow"
+                        width={18}
+                        height={18}
+                      />
                     </button>
                   </>
                 ) : (
-                  <button className="px-6 py-2 text-sm bg-white/20 border border-white text-white rounded-full font-semibold">
+                  <button className="px-6 py-2 text-sm border border-white text-white rounded-[10px] font-semibold">
                     View Project →
                   </button>
                 )}
               </div>
+
             </div>
           </div>
         ))}
@@ -200,7 +245,7 @@ export default function SignatureProjects() {
 
 
         {/* PROJECT LIST (GRID COL-1) */}
-        <div className="grid grid-cols-1 gap-6">
+        <div className="grid grid-cols-1 gap-4">
 
           {projects.map((p) => (
             <div
@@ -208,7 +253,7 @@ export default function SignatureProjects() {
               className="relative w-full rounded-2xl overflow-hidden shadow-lg"
             >
               {/* IMAGE */}
-              <div className="h-[350px] w-full relative">
+              <div className="h-[400px] w-full relative">
                 <Image
                   src={p.bigImage}
                   alt={p.title}
@@ -220,31 +265,43 @@ export default function SignatureProjects() {
               </div>
 
               {/* CONTENT */}
-              <div className="absolute bottom-0 p-5 w-full text-white">
+              <div className="absolute bottom-0 p-3 w-full text-white">
 
                 {/* LOGO */}
                 <Image
                   src={p.logo}
                   alt="logo"
-                  width={120}
-                  height={50}
+                  width={83}
+                  height={34}
                   className="mb-2 opacity-90"
                 />
 
                 {/* LOCATION */}
-                <p className="text-xs opacity-80">{p.location}</p>
+                <div className="flex items-center gap-2">
+                  <Image
+                    src="/images/icons/locu.svg"   // <-- your location icon path
+                    alt="location"
+                    width={14}
+                    height={14}
+                    className="opacity-80"
+                  />
+
+                  <p className="text-[12px] leading-[100%] opacity-80 font-urban">
+                    {p.location}
+                  </p>
+                </div>
 
                 {/* TITLE */}
-                <h3 className="text-xl font-semibold mt-1">{p.title}</h3>
+                <h3 className="font-urban text-[20px] leading-[24px] font-semibold mt-1">{p.title}</h3>
 
                 {/* DESCRIPTION */}
-                <p className="text-sm mt-2 opacity-95">
+                <p className=" text-[12px] leading-[100%] mt-2 opacity-95">
                   {p.description}
                 </p>
 
                 {/* BUTTONS */}
-                <div className="flex items-center justify-between mt-4">
-                  <button className="px-4 py-2 text-sm bg-white text-black rounded-full font-semibold">
+                <div className="flex items-start justify-between mt-4">
+                  <button className="px-4 py-2 text-[14px] min-w-[260px] leading-[16px] font-urban border border-white text-white rounded-[10px] font-semibold">
                     View Project →
                   </button>
                 </div>

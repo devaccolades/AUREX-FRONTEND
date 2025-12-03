@@ -19,18 +19,18 @@ export default function Home() {
     <div>
       {/* <Header />
       <HeroSection />
-      <BrandAmbassador />
+      <BrandAmbassador /> */}
       <ChairmanMessage />
       <SignatureProjects />
       <AboutSection />
-      <GallerySection />
+      {/* <GallerySection />
       <Services />
       <WhyChooseUs />
-      <Thrissur />  */}
+      <Thrissur /> 
       <Testiminials />
       <DreamsInThrissur />
       <FAQ />
-      {/* <Footer /> */}
+      <Footer /> */}
     </div>
   );
 }
