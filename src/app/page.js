@@ -20,17 +20,17 @@ export default function Home() {
       {/* <Header />
       <HeroSection />
       <BrandAmbassador />
-      <ChairmanMessage /> */}
+      <ChairmanMessage />
       <SignatureProjects />
       <AboutSection />
       <GallerySection />
-      {/* <Services />
+      <Services />
       <WhyChooseUs />
-      <Thrissur /> 
+      <Thrissur />  */}
       <Testiminials />
       <DreamsInThrissur />
       <FAQ />
-      <Footer /> */}
+      {/* <Footer /> */}
     </div>
   );
 }
