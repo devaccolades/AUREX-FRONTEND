@@ -49,7 +49,7 @@ export default function SignatureProjects() {
   const activeCard = hovered ? hovered : defaultExpanded;
 
   return (
-    <section className="relative py-10 lg:py-20">
+    <section className="relative py-10 md:py-16 lg:py-30">
       {/* Background Pattern */}
       <div className="absolute inset-0 flex w-full h-full justify-start opacity-10 pointer-events-none">
         <Image
@@ -59,6 +59,52 @@ export default function SignatureProjects() {
           className="object-cover md:object-contain md:object-left w-full h-full"
         />
       </div>
+
+      {/* === Decorative 4 Corner Arrows === */}
+<div className=" pointer-events-none absolute inset-0 z-20">
+
+  {/* Top Left */}
+  <div className="absolute top-6 left-2 md:left-6 lg:left-10 rotate-0">
+    <Image
+      src="/images/icons/topLeft.svg"
+      alt="corner"
+      width={24}
+      height={24}
+    />
+  </div>
+
+  {/* Top Right */}
+  <div className="absolute top-6 right-2 md:right-6 lg:right-10 rotate-0">
+    <Image
+      src="/images/icons/topRight.svg"
+      alt="corner"
+      width={24}
+      height={24}
+    />
+  </div>
+
+  {/* Bottom Right */}
+  <div className="absolute bottom-4 lg:bottom-6 right-2 md:right-6 lg:right-10 rotate-0">
+    <Image
+      src="/images/icons/downRight.svg"
+      alt="corner"
+      width={24}
+      height={24}
+    />
+  </div>
+
+  {/* Bottom Left */}
+  <div className="absolute bottom-4 lg:bottom-6 left-2 md:left-6 lg:left-10 rotate-0">
+    <Image
+      src="/images/icons/downLeft.svg"
+      alt="corner"
+      width={24}
+      height={24}
+    />
+  </div>
+
+</div>
+
 
       {/* Heading */}
       <div className="container text-center mb-24 relative z-10">
@@ -97,6 +143,19 @@ export default function SignatureProjects() {
 
             {/* Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+
+            {/* TOP RIGHT ICON */}
+            {activeCard !== p.id && (
+              <div className="absolute top-4 right-4 z-30  rounded-full w-[36px] h-[36px] flex items-center justify-center ">
+                <Image
+                  src="/images/icons/top-right.svg"  // <-- your icon path
+                  alt="open"
+                  width={30}
+                  height={30}
+                />
+              </div>
+            )}
+
 
             {/* TOP BADGE ROW */}
             {activeCard === p.id && (
@@ -158,11 +217,11 @@ export default function SignatureProjects() {
             )}
 
             {/* BOTTOM CONTENT */}
-            <div className="absolute bottom-0 p-4 lg:p-6 w-full text-white z-20">
+            <div className="absolute bottom-0 p-2 lg:p-6 w-full text-white z-20">
 
-              {activeCard === p.id && (
-                <Image src={p.logo} alt="logo" width={100} height={30} className="mb-1 lg:mb-3 w-[80px] lg:w-[103px] h-[32px] lg:h-[42px] opacity-90" />
-              )}
+              <Image src={p.logo} alt="logo" width={100} height={30} className="mb-1 lg:mb-3 w-[80px] lg:w-[103px] h-[32px] lg:h-[42px] opacity-90" />
+
+
 
               <div className="flex items-center gap-2">
                 <Image
@@ -179,23 +238,22 @@ export default function SignatureProjects() {
               </div>
               <h3 className="text-[20px] lg:text-[24px] leading-[24px] font-urban font-semibold mt-1">{p.title}</h3>
 
-              {activeCard === p.id && (
-                <p className="text-[12px] lg:text-[13px] leading-[100%] mt-0 lg:mt-2 opacity-95 max-w-[80%]">{p.description}</p>
-              )}
+              <p className="text-[12px] lg:text-[13px] leading-[100%] mt-0 lg:mt-2 opacity-95 ">{p.description}</p>
 
-              <div className="flex items-center gap-3 mt-3 lg:mt-5">
+
+              <div className="flex w-full gap-3 mt-3 lg:mt-5">
                 {activeCard === p.id ? (
                   <>
                     {/* LEFT OUTLINE BUTTON */}
                     <button
                       className="
-          px-6 py-2 
-          font-urban text-[14px] leading-[100%] 
-          border border-white text-white 
-          rounded-[10px] font-medium 
-          flex items-center justify-between gap-2
-          min-w-[200px] lg:min-w-[260px] xl:min-w-[400px]
-        "
+                          flex-1
+                          px-6 py-3
+                          font-urban text-[14px]
+                          border border-white text-white
+                          rounded-[10px] font-medium
+                          flex items-center justify-between gap-2
+                        "
                     >
                       VIEW PROJECT DETAILS
                       <Image
@@ -209,13 +267,13 @@ export default function SignatureProjects() {
                     {/* RIGHT GREEN BUTTON */}
                     <button
                       className="
-          px-6 py-2 
-          font-urban text-[14px] leading-[100%] 
-          bg-[#0A6E50] text-white 
-          rounded-[10px] font-semibold 
-          flex items-center justify-between gap-2
-          min-w-[200px] lg:min-w-[260px] xl:min-w-[400px]
-        "
+                        flex-1
+                        px-6 py-3
+                        font-urban text-[14px]
+                        bg-[#0A6E50] text-white
+                        rounded-[10px] font-semibold
+                        flex items-center justify-between gap-2
+                      "
                     >
                       BOOK SITE VISIT
                       <Image
@@ -227,11 +285,30 @@ export default function SignatureProjects() {
                     </button>
                   </>
                 ) : (
-                  <button className="px-6 py-2 text-sm border border-white text-white rounded-[10px] font-semibold">
-                    View Project →
+                  // <button className="px-6 py-2 text-sm border border-white text-white rounded-[10px] font-semibold">
+                  //   View Project →
+                  // </button>
+                  <button
+                    className="
+                          flex-1
+                          px-6 py-3
+                          font-urban text-[14px]
+                          border border-white text-white
+                          rounded-[10px] font-medium
+                          flex items-center justify-between gap-2
+                        "
+                  >
+                    VIEW PROJECT
+                    <Image
+                      src="/images/icons/arrow.svg"
+                      alt="download"
+                      width={8}
+                      height={8}
+                    />
                   </button>
                 )}
               </div>
+
 
             </div>
           </div>
@@ -301,8 +378,26 @@ export default function SignatureProjects() {
 
                 {/* BUTTONS */}
                 <div className="flex items-start justify-between mt-4">
-                  <button className="px-4 py-2 text-[14px] min-w-[260px] leading-[16px] font-urban border border-white text-white rounded-[10px] font-semibold">
+                  {/* <button className="px-4 py-2 text-[14px] min-w-[260px] leading-[16px] font-urban border border-white text-white rounded-[10px] font-semibold">
                     View Project →
+                  </button> */}
+                  <button
+                    className="
+                          flex-1
+                          px-6 py-3
+                          font-urban text-[14px]
+                          border border-white text-white
+                          rounded-[10px] font-medium
+                          flex items-center justify-between gap-2
+                        "
+                  >
+                    VIEW PROJECT
+                    <Image
+                      src="/images/icons/arrow.svg"
+                      alt="download"
+                      width={8}
+                      height={8}
+                    />
                   </button>
                 </div>
 
