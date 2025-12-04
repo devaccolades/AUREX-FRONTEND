@@ -14,7 +14,7 @@ export default function EnquireNowButton({ onClick, className = "" }) {
         className=""/>
       <span className="flex items-center gap-1">
     ENQUIRE
-    <span className="flex bg-[#FF0000] w-12 h-12 rounded-full items-center justify-center text-white font-bold">
+    <span className="flex bg-[#FF0000] w-8 md:w-12 h-8 md:h-12 rounded-full items-center justify-center text-white font-bold">
       NOW
     </span>
   </span>
