@@ -21,7 +21,7 @@ export default function Home() {
       <HeroSection />
       <BrandAmbassador /> */}
       <ChairmanMessage />
-      <SignatureProjects />
+      {/* <SignatureProjects /> */}
       <AboutSection />
       {/* <GallerySection />
       <Services />
