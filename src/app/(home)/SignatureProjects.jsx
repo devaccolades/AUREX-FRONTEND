@@ -49,7 +49,7 @@ export default function SignatureProjects() {
   const activeCard = hovered ? hovered : defaultExpanded;
 
   return (
-    <section className="relative py-10 md:py-16 lg:py-30">
+    <section className="relative py-10 md:py-16 lg:py-24 xl:py-22">
       {/* Background Pattern */}
       <div className="absolute inset-0 flex w-full h-full justify-start opacity-10 pointer-events-none">
         <Image
@@ -61,49 +61,49 @@ export default function SignatureProjects() {
       </div>
 
       {/* === Decorative 4 Corner Arrows === */}
-<div className=" pointer-events-none absolute inset-0 z-20">
+      <div className=" pointer-events-none absolute inset-0 z-20">
 
-  {/* Top Left */}
-  <div className="absolute top-6 left-2 md:left-6 lg:left-10 rotate-0">
-    <Image
-      src="/images/icons/topLeft.svg"
-      alt="corner"
-      width={24}
-      height={24}
-    />
-  </div>
+        {/* Top Left */}
+        <div className="absolute top-6 left-2 md:left-6 lg:left-10 rotate-0">
+          <Image
+            src="/images/icons/topLeft.svg"
+            alt="corner"
+            width={24}
+            height={24}
+          />
+        </div>
 
-  {/* Top Right */}
-  <div className="absolute top-6 right-2 md:right-6 lg:right-10 rotate-0">
-    <Image
-      src="/images/icons/topRight.svg"
-      alt="corner"
-      width={24}
-      height={24}
-    />
-  </div>
+        {/* Top Right */}
+        <div className="absolute top-6 right-2 md:right-6 lg:right-10 rotate-0">
+          <Image
+            src="/images/icons/topRight.svg"
+            alt="corner"
+            width={24}
+            height={24}
+          />
+        </div>
 
-  {/* Bottom Right */}
-  <div className="absolute bottom-4 lg:bottom-6 right-2 md:right-6 lg:right-10 rotate-0">
-    <Image
-      src="/images/icons/downRight.svg"
-      alt="corner"
-      width={24}
-      height={24}
-    />
-  </div>
+        {/* Bottom Right */}
+        <div className="absolute bottom-4 lg:bottom-6 right-2 md:right-6 lg:right-10 rotate-0">
+          <Image
+            src="/images/icons/downRight.svg"
+            alt="corner"
+            width={24}
+            height={24}
+          />
+        </div>
 
-  {/* Bottom Left */}
-  <div className="absolute bottom-4 lg:bottom-6 left-2 md:left-6 lg:left-10 rotate-0">
-    <Image
-      src="/images/icons/downLeft.svg"
-      alt="corner"
-      width={24}
-      height={24}
-    />
-  </div>
+        {/* Bottom Left */}
+        <div className="absolute bottom-4 lg:bottom-6 left-2 md:left-6 lg:left-10 rotate-0">
+          <Image
+            src="/images/icons/downLeft.svg"
+            alt="corner"
+            width={24}
+            height={24}
+          />
+        </div>
 
-</div>
+      </div>
 
 
       {/* Heading */}
