@@ -63,15 +63,17 @@ export default function ChairmanMessage() {
         </div>
 
         {/* RIGHT SIDE WITH TEAR EDGE + IMAGE */}
-        <div className="mt-6 md:mt-0 relative h-full  md:h-auto lg:h-[464px] overflow-hidden">
+        
+        {/* <div className="mt-6 md:mt-0 relative h-full  md:h-auto lg:h-[464px] overflow-hidden"> */}
+        <div className="mt-6 md:mt-0 relative h-[420px] md:h-auto lg:h-[464px] overflow-hidden">
 
           {/* Tear effect */}
-          <div className="absolute left-25  md:left-0 -top-56 md:top-0 h-full w-[50px] md:w-[46px] lg:w-[42px] z-20 block ">
+          <div className="absolute left-25  md:left-0 -top-56 md:top-0 h-full w-full md:w-[46px] lg:w-[42px] z-20 block ">
             <Image
               src="/images/home/Vector.svg"
               alt="Tear Effect"
               fill
-              className="object-cover rotate-90 md:rotate-180 scale-x-[-1] md:scale-x-[1]"
+              className="object-fill md:object-cover rotate-90 md:rotate-180 scale-x-[-1] md:scale-x-[1]"
             />
           </div>
 
