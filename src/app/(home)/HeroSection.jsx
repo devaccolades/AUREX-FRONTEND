@@ -138,8 +138,8 @@ export default function HeroSection() {
 
               {/* ===== ROW 1: LOGO + NAME + LOCATION ===== */}
               <div className="flex items-center justify-between gap-2">
-                <div className="relative w-[70px] h-[30px] shrink-0">
-                  <Image src={project.logo} alt="logo" fill className="object-contain" />
+                <div className="relative w-[72px] h-[30px] ">
+                  <Image src={project.logo} alt="logo" fill className="object-cover md:object-contain" />
                 </div>
 
                 <div className="text-white leading-tight">
