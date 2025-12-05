@@ -2,8 +2,16 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import GlassSurface from "@/Components/GlassSurface";
+// import GlassSurface from "@/Components/GlassSurface";
+const GlassSurface = dynamic(
+  () => import('@/Components/GlassSurface'),
+  {
+    // Important: Setting ssr: false tells Next.js NOT to render this component on the server.
+    ssr: false
+  }
+);
 import EnquireNowButton from "@/Components/EnquireNowButton";
+import dynamic from "next/dynamic";
 
 
 const projects = [
@@ -30,7 +38,7 @@ export default function HeroSection() {
   const project = projects[active];
 
   return (
-    <section className="relative w-full h-[678px]   md:h-[130vh] overflow-hidden flex items-center">
+    <section className="relative w-full h-[100vh]   md:h-[130vh] overflow-hidden flex items-center">
 
       {/* BACKGROUND IMAGE */}
       <div className="absolute inset-0">
@@ -89,7 +97,7 @@ export default function HeroSection() {
         {/* <div className="w-ful flex justify-center py-0 px-4"> */}
         <div className="hidden md:flex w-full justify-center py-4 px-4">
 
-         
+
           <GlassSurface className="w-full !flex !flex-col md:!flex-row !items-center !h-auto !overflow-visible p-4 md:p-2 gap-4 md:gap-10 text-white">
 
             {/* <GlassSurface  className="w-full flex flex-col md:flex-row items-center md:items-center p-4 md:p-0 gap-4 md:gap-10 text-white"> */}
@@ -122,7 +130,7 @@ export default function HeroSection() {
 
           </GlassSurface>
 
-         
+
         </div>
 
 

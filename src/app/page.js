@@ -1,5 +1,7 @@
 import Image from "next/image";
 import FAQ from "./(home)/FAQ";
+
+
 import DreamsInThrissur from "./(home)/DreamsInThrissur";
 import Testiminials from "./(home)/Testiminials";
 import Footer from "../Components/Footer";
@@ -13,6 +15,7 @@ import GallerySection from "./(home)/Gallery";
 import SignatureProjects from "./(home)/SignatureProjects";
 import Services from "./(home)/Services";
 import Header from "@/Components/Header";
+import dynamic from "next/dynamic";
 
 export default function Home() {
   return (
@@ -26,7 +29,7 @@ export default function Home() {
       <GallerySection />
       <Services />
       <WhyChooseUs />
-      <Thrissur /> 
+      <Thrissur />
       <Testiminials />
       <DreamsInThrissur />
       <FAQ />

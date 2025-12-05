@@ -3,7 +3,14 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Minus, Plus } from "lucide-react";
 import Image from "next/image";
-import GlassSurface from "@/Components/GlassSurface";
+import dynamic from "next/dynamic";
+const GlassSurface = dynamic(
+  () => import('@/Components/GlassSurface'),
+  {
+    // Important: Setting ssr: false tells Next.js NOT to render this component on the server.
+    ssr: false
+  }
+);
 const faqs = [
   {
     id: 1,
@@ -97,55 +104,54 @@ const FAQ = () => {
             ))}
           </div> */}
 
-<div className="space-y-4">
-  {faqs.map((faq, index) => (
-    <GlassSurface
-      key={faq.id}
-      borderRadius={18}
-      height="auto"
-      width="100%"
-      className="flex flex-col items-start justify-start p-0"
-    >
-      <button
-        onClick={() => setOpenIndex(openIndex === index ? null : index)}
-        className="w-full flex justify-between items-start text-left p-3 lg:p-4"
-      >
-        <span
-          className={`max-w-[220px] md:max-[400px] lg:max-w-[370px] xl:max-w-[420px]  font-bold text-[14px] md:text-[16px] leading-[18px] md:leading-[24px] font-urban transition-all duration-300 ${
-            openIndex === index
-              ? "text-[18px] md:text-[20px] text-gray-900"
-              : "text-[14px] md:text-[18px] text-gray-800"
-          }`}
-        >
-          {index + 1}. {faq.question}
-        </span>
-        {openIndex === index ? (
-          <Minus className="h-4 md:h-8 w-4 md:w-8 text-black font-bold" />
-        ) : (
-          <Plus className="h-4 md:h-8 w-4 md:w-8 text-black font-bold" />
-        )}
-      </button>
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <GlassSurface
+                key={faq.id}
+                borderRadius={18}
+                height="auto"
+                width="100%"
+                className="flex flex-col items-start justify-start p-0"
+              >
+                <button
+                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                  className="w-full flex justify-between items-start text-left p-3 lg:p-4"
+                >
+                  <span
+                    className={`max-w-[220px] md:max-[400px] lg:max-w-[370px] xl:max-w-[420px]  font-bold text-[14px] md:text-[16px] leading-[18px] md:leading-[24px] font-urban transition-all duration-300 ${openIndex === index
+                        ? "text-[18px] md:text-[20px] text-gray-900"
+                        : "text-[14px] md:text-[18px] text-gray-800"
+                      }`}
+                  >
+                    {index + 1}. {faq.question}
+                  </span>
+                  {openIndex === index ? (
+                    <Minus className="h-4 md:h-8 w-4 md:w-8 text-black font-bold" />
+                  ) : (
+                    <Plus className="h-4 md:h-8 w-4 md:w-8 text-black font-bold" />
+                  )}
+                </button>
 
-      <AnimatePresence>
-        {openIndex === index && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="px-5 pb-5 text-[12px] md:text-[13px] lg:text-[14px] text-gray-600 leading-[18px]">
-              {faq.answer}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </GlassSurface>
-  ))}
-</div>
+                <AnimatePresence>
+                  {openIndex === index && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <div className="px-5 pb-5 text-[12px] md:text-[13px] lg:text-[14px] text-gray-600 leading-[18px]">
+                        {faq.answer}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </GlassSurface>
+            ))}
+          </div>
 
 
- 
+
 
         </div>
 
