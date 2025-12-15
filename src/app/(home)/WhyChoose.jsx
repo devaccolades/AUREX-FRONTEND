@@ -5,6 +5,7 @@ import MagneticButton from "@/Components/MagneticButton";
 import bg from "../../../public/images/home/why-bg.png";
 import { useState } from "react";
 import ModalForm from "@/Components/forms/ModalForm";
+import FixedCTAButton from "@/Components/FixedMagneticButton";
 
 export default function WhyChooseUs() {
   const [openModal, setOpenModal] = useState(false)
@@ -51,7 +52,17 @@ export default function WhyChooseUs() {
                 <h2 className=" text-[40px] lg:text-[64px] leading-[1.1] font-urban font-medium">
                   WHY <br /> CHOOSE US
                 </h2>
-
+                
+            <FixedCTAButton 
+            className="md:hidden block"
+                text="Book a free <br /> consultation"
+                arrowSrc="/images/home/button-arrow.svg"
+                parentSelector="#why-section"
+                onClick={(e) => {
+                  e.stopPropagation(); // prevents section click
+                  setOpenModal(true);
+                }}
+                />
                 <p className="text-gray-700 w-[280px] lg:w-[400px]  pt-30 font-normal text-[13px] lg:text-[14px] leading-[18px]">
                   At Aurex Builders, we don’t just build homes — we craft experiences
                   that last a lifetime. Our passion for precision, design excellence,
@@ -60,7 +71,7 @@ export default function WhyChooseUs() {
                 </p>
               </div>
 
-              <MagneticButton
+              <MagneticButton className="hidden md:block"
                 text="Book a free <br /> consultation"
                 arrowSrc="/images/home/button-arrow.svg"
                 parentSelector="#why-section"

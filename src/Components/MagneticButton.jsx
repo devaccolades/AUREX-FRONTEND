@@ -111,7 +111,7 @@ export default function MagneticButton({
         left: floatX,
         top: floatY,
       }}
-      className="z-20 pointer-events-none" 
+      className="z-20 pointer-events-none hidden md:block" 
     >
       {/* ORBITING GLOW RING */}
       <motion.div
