@@ -89,11 +89,13 @@ export default function Header() {
 
       {/* SIDEBAR */}
       <div className={` 
-  fixed top-0 left-0 h-full w-[300px] bg-white shadow-xl z-[999] rounded-r-3xl
+  fixed top-0 left-0 h-screen w-[300px] bg-white shadow-xl z-[999] rounded-r-3xl
   transform transition-transform duration-300
   ${open ? "translate-x-0" : "-translate-x-full"}
 `}>
-        <div className="p-2 space-y-2 overflow-y-auto hide-scrollbar h-full">
+        {/* <div className="p-2 space-y-2 overflow-y-auto hide-scrollbar h-full"> */}
+        <div className="p-2 space-y-2 flex flex-col h-full overflow-y-auto hide-scrollbar">
+
 
           {/* CLOSE BUTTON */}
           <div className="flex items-end justify-between mb-0">
@@ -150,7 +152,7 @@ export default function Header() {
           </div>
 
           {/* TEXT BLOCK BELOW MAP */}
-          <div className="mt-4 gap-[10px] flex flex-col">
+          <div className=" pt-3 mt-auto gap-[10px] flex flex-col">
             <div className="">
               <p className="font-bold text-[14px] leading-[16px]">Need a hand from our Thrissur team?</p>
               <p className="text-gray-600 text-[12px] leading-[100%]">
