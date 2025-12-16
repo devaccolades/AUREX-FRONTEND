@@ -20,7 +20,7 @@ import dynamic from "next/dynamic";
 export default function Home() {
   return (
     <div>
-      <Header />
+      {/* <Header />
       <HeroSection />
       <BrandAmbassador />
       <ChairmanMessage />
@@ -30,7 +30,7 @@ export default function Home() {
       <Services />
       <WhyChooseUs />
       <Thrissur />
-      <Testiminials />
+      <Testiminials /> */}
       <DreamsInThrissur />
       <FAQ />
       <Footer />
