@@ -20,20 +20,20 @@ import dynamic from "next/dynamic";
 export default function Home() {
   return (
     <div>
-      {/* <Header />
+      <Header />
       <HeroSection />
       <BrandAmbassador />
-      <ChairmanMessage />
+      {/* <ChairmanMessage />
       <SignatureProjects />
       <AboutSection />
       <GallerySection />
       <Services />
       <WhyChooseUs />
       <Thrissur />
-      <Testiminials /> */}
+      <Testiminials />
       <DreamsInThrissur />
       <FAQ />
-      <Footer />
+      <Footer /> */}
     </div>
   );
 }
