@@ -1,14 +1,18 @@
 import Header from '@/Components/Header'
 import React from 'react'
-import VisionMission from './MissionVision'
 import LeadershipPillers from './LeadershipPillers'
+import MissionVision from './MissionVision'
+import Footer from '@/Components/Footer'
+import DreamsInThrissur from '../(home)/DreamsInThrissur'
 
 function page() {
   return (
     <div>
       <Header />
-      <VisionMission />
+      <MissionVision />
       <LeadershipPillers />
+      <DreamsInThrissur />
+      <Footer />
     </div>
   )
 }

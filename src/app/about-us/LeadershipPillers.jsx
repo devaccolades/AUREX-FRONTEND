@@ -18,7 +18,13 @@ export default function LeadershipPillers() {
 
             <div className="flex flex-col gap-4 md:gap-10">
                 {/* leader1 */}
-                <section className="container items-stretch  bg-[#F5F5F5] flex flex-col md:flex-row justify-between rounded-[10px] overflow-hidden border border-gray-400 mt-10 ">
+                <section className="relative container items-stretch  bg-[#F5F5F5] flex flex-col md:flex-row justify-between rounded-[10px] overflow-hidden border border-gray-400 mt-10 ">
+
+                    {/* Corner Highlights */}
+                    <span className="absolute top-0 left-0 w-4 h-4 border-t-4 border-l-4 border-black rounded-tl-[10px]" />
+                    <span className="absolute top-0 right-0 w-4 h-4 border-t-4 border-r-4 border-black rounded-tr-[10px]" />
+                    <span className="absolute bottom-0 left-0 w-4 h-4 border-b-4 border-l-4 border-black rounded-bl-[10px]" />
+                    <span className="absolute bottom-0 right-0 w-4 h-4 border-b-4 border-r-4 border-black rounded-br-[10px]" />
 
 
                     {/* LEFT SIDE – White Content Box */}
@@ -102,14 +108,19 @@ export default function LeadershipPillers() {
                             />
                         </div>
 
-
                     </div>
 
                 </section>
 
 
                 {/* leader2 */}
-                <section className="container items-stretchmt-20 bg-[#F5F5F5] flex flex-col md:flex-row-reverse justify-between rounded-[10px] overflow-hidden border border-gray-400 ">
+                <section className="relative container items-stretchmt-20 bg-[#F5F5F5] flex flex-col md:flex-row-reverse justify-between rounded-[10px] overflow-hidden border border-gray-400 ">
+
+                    {/* Corner Highlights */}
+                    <span className="absolute top-0 left-0 w-4 h-4 border-t-4 border-l-4 border-black rounded-tl-[10px]" />
+                    <span className="absolute top-0 right-0 w-4 h-4 border-t-4 border-r-4 border-black rounded-tr-[10px]" />
+                    <span className="absolute bottom-0 left-0 w-4 h-4 border-b-4 border-l-4 border-black rounded-bl-[10px]" />
+                    <span className="absolute bottom-0 right-0 w-4 h-4 border-b-4 border-r-4 border-black rounded-br-[10px]" />
 
                     {/* LEFT SIDE – White Content Box */}
                     {/* <div className="relative  md:w-[59%] lg:w-[70%] p-2 md:p-4 lg:p-4 xl:p-8 "> */}
@@ -129,12 +140,12 @@ export default function LeadershipPillers() {
                                 professional network, Balachandran continues to be a driving force-bringing value, vision, and
                                 sustainable growth to every venture he undertakes.
                             </p>
-                           
+
 
                         </div>
 
                         {/* NAME BLOCK */}
-                         {/* BOTTOM CONTENT */}
+                        {/* BOTTOM CONTENT */}
                         <div className="mt-auto pt-4">
                             <p className="text-[14px] md:text-[16px] lg:text-[16px] leading-[156%] text-black">
                                 Belief in “Adorning Lives “has been the most inspiring and driving factor for
@@ -147,11 +158,11 @@ export default function LeadershipPillers() {
                                     BALACHANDRAN
                                 </h4>
                                 <p className="font-urban font-normal text-[12px] lg:text-[14px] leading-[24px]">
-                                     MANAGING DIRECTOR, Aurex Builders
+                                    MANAGING DIRECTOR, Aurex Builders
                                 </p>
                             </div>
                         </div>
-                        
+
 
                     </div>
 
@@ -185,7 +196,13 @@ export default function LeadershipPillers() {
                 </section>
 
                 {/* leader3 */}
-                <section className="container items-stretch bg-[#F5F5F5] flex flex-col md:flex-row justify-between rounded-[10px] overflow-hidden border border-gray-400 mt-10 ">
+                <section className="relative container items-stretch bg-[#F5F5F5] flex flex-col md:flex-row justify-between rounded-[10px] overflow-hidden border border-gray-400 mt-10 ">
+
+                    {/* Corner Highlights */}
+                    <span className="absolute top-0 left-0 w-4 h-4 border-t-4 border-l-4 border-black rounded-tl-[10px]" />
+                    <span className="absolute top-0 right-0 w-4 h-4 border-t-4 border-r-4 border-black rounded-tr-[10px]" />
+                    <span className="absolute bottom-0 left-0 w-4 h-4 border-b-4 border-l-4 border-black rounded-bl-[10px]" />
+                    <span className="absolute bottom-0 right-0 w-4 h-4 border-b-4 border-r-4 border-black rounded-br-[10px]" />
 
 
                     {/* LEFT SIDE – White Content Box */}
@@ -209,11 +226,11 @@ export default function LeadershipPillers() {
 
 
 
-                           
+
                         </div>
 
                         {/* NAME BLOCK */}
-                         {/* BOTTOM CONTENT */}
+                        {/* BOTTOM CONTENT */}
                         <div className="mt-auto pt-4">
                             <p className="text-[14px] md:text-[16px] lg:text-[16px] leading-[156%] text-black">
                                 Thank you for being part of our journey. Together, let’s continue shaping the future
@@ -223,14 +240,14 @@ export default function LeadershipPillers() {
                             {/* NAME BLOCK */}
                             <div className="mt-2 xl:mt-4">
                                 <h4 className="font-bold font-urban text-[14px] lg:text-[16px]">
-                                      Ajith KUMAR
+                                    Ajith KUMAR
                                 </h4>
                                 <p className="font-urban font-normal text-[12px] lg:text-[14px] leading-[24px]">
-                                     DIRECTOR, Aurex Builders
+                                    DIRECTOR, Aurex Builders
                                 </p>
                             </div>
                         </div>
-                        
+
 
 
                     </div>
@@ -268,11 +285,17 @@ export default function LeadershipPillers() {
                 </section>
 
                 {/* leader4 */}
-                <section className="container items-stretch mt-20 bg-[#F5F5F5] flex flex-col md:flex-row-reverse justify-between rounded-[10px] overflow-hidden border border-gray-400 ">
+                <section className="relative container  items-stretch mt-20 bg-[#F5F5F5] flex flex-col md:flex-row-reverse justify-between rounded-[10px] overflow-hidden border border-gray-400 ">
+
+                    {/* Corner Highlights */}
+                    <span className="absolute top-0 left-0 w-4 h-4 border-t-4 border-l-4 border-black rounded-tl-[10px]" />
+                    <span className="absolute top-0 right-0 w-4 h-4 border-t-4 border-r-4 border-black rounded-tr-[10px]" />
+                    <span className="absolute bottom-0 left-0 w-4 h-4 border-b-4 border-l-4 border-black rounded-bl-[10px]" />
+                    <span className="absolute bottom-0 right-0 w-4 h-4 border-b-4 border-r-4 border-black rounded-br-[10px]" />
 
                     {/* LEFT SIDE – White Content Box */}
                     {/* <div className="relative  md:w-[59%] lg:w-[70%] p-2 md:p-4 lg:p-4 xl:p-8 "> */}
-                   <div className="relative md:w-[59%] lg:w-[60%] p-2 md:p-4 lg:p-4 xl:p-8 flex flex-col min-h-full">
+                    <div className="relative md:w-[59%] lg:w-[60%] p-2 md:p-4 lg:p-4 xl:p-8 flex flex-col min-h-full">
 
 
                         <h2 className="text-[20px] md:text-[28px] lg:text-[34px] font-medium font-urban leading-[20px] md:leading-[28px] lg:leading-[34px] mb-2 xl:mb-5">
@@ -290,18 +313,18 @@ export default function LeadershipPillers() {
 
                         </div>
 
-                        
-                         {/* BOTTOM CONTENT */}
+
+                        {/* BOTTOM CONTENT */}
                         <div className="mt-auto pt-4">
                             <p className="text-[14px] md:text-[16px] lg:text-[16px] leading-[156%] text-black">
-                                 Belief in “Adorning Lives “has been the most inspiring and driving factor for 
+                                Belief in “Adorning Lives “has been the most inspiring and driving factor for
                                 <span className="font-bold"> AUREX’s success.</span>
                             </p>
 
                             {/* NAME BLOCK */}
                             <div className="mt-2 xl:mt-4">
                                 <h4 className="font-bold font-urban text-[14px] lg:text-[16px]">
-                                     SURESH KUMAR 
+                                    SURESH KUMAR
                                 </h4>
                                 <p className="font-urban font-normal text-[12px] lg:text-[14px] leading-[24px]">
                                     DIRECTOR, Aurex Builders

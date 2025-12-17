@@ -23,7 +23,7 @@ const images = [
   
 ];
 
-export default function VisionMissionSection() {
+export default function MissionVision () {
   const itemsRef = useRef([]);
 
   useEffect(() => {
