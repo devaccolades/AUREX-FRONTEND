@@ -4,6 +4,7 @@ import LeadershipPillers from './LeadershipPillers'
 import MissionVision from './MissionVision'
 import Footer from '@/Components/Footer'
 import DreamsInThrissur from '../(home)/DreamsInThrissur'
+import WhyAurexBuilders from './WhyAurex'
 
 function page() {
   return (
@@ -11,6 +12,7 @@ function page() {
       <Header />
       <MissionVision />
       <LeadershipPillers />
+      <WhyAurexBuilders />
       <DreamsInThrissur />
       <Footer />
     </div>
