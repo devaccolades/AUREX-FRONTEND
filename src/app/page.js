@@ -23,7 +23,7 @@ export default function Home() {
       <Header />
       <HeroSection />
       <BrandAmbassador />
-      {/* <ChairmanMessage />
+      <ChairmanMessage />
       <SignatureProjects />
       <AboutSection />
       <GallerySection />
@@ -33,7 +33,7 @@ export default function Home() {
       <Testiminials />
       <DreamsInThrissur />
       <FAQ />
-      <Footer /> */}
+      <Footer />
     </div>
   );
 }
