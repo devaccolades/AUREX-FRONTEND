@@ -12,7 +12,7 @@ function page() {
       <Header />
       <MissionVision />
       <LeadershipPillers />
-      <WhyAurexBuilders />
+      {/* <WhyAurexBuilders /> */}
       <DreamsInThrissur />
       <Footer />
     </div>
