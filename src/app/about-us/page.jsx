@@ -7,6 +7,7 @@ import DreamsInThrissur from '../(home)/DreamsInThrissur'
 import WhyAurexBuilders from './WhyAurex'
 import HeroSection from './HeroSection'
 import OurJourney from './OurJourney'
+import BrandAmbassadorSection from './BrandAmbassadorSection'
 
 function page() {
   return (
@@ -15,6 +16,7 @@ function page() {
       <HeroSection />
       <OurJourney />
       <MissionVision />
+      <BrandAmbassadorSection />
       <LeadershipPillers />
       <WhyAurexBuilders />
       <DreamsInThrissur />
