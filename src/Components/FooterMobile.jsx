@@ -36,12 +36,12 @@ export default function FooterMobile() {
   ];
 
   return (
-    <footer className="md:hidden relative bg-[#052D23] text-white px-2 py-10 overflow-hidden">
+    <footer className="md:hidden relative bg-[#000000] text-white px-2 py-10 overflow-hidden">
       {/* Background Logo */}
       <div
-        className="absolute inset-0 opacity-10 bg-no-repeat bg-center"
+        className="absolute inset-0 opacity-50  bg-no-repeat bg-center"
         style={{
-          backgroundImage: "url('/images/footer/AUREX.svg')",
+          backgroundImage: "url('/images/footer/AUREX(1).svg')",
           backgroundSize: "280px",
         }}
       />
