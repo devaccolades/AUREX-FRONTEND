@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export default function BrandAmbassadorSection() {
   return (
-    <section className="relative w-full overflow-hidden pt-10 lg:pt-36 pb-36">
+    <section className="relative w-full overflow-hidden py-10 lg:py-36 ">
 
       {/* BACKGROUND LINES */}
       <div className="absolute inset-0 z-0">
@@ -30,7 +30,7 @@ export default function BrandAmbassadorSection() {
       </div>
 
       {/* CONTENT WRAPPER */}
-      <div className="relative container mx-auto px-4">
+      <div className="relative container ">
 
         {/* GRID */}
         <div className="relative grid grid-cols-1 md:grid-cols-3 items-center">
@@ -47,26 +47,70 @@ export default function BrandAmbassadorSection() {
             </h2>
 
             <p className="text-black text-[12px] md:text-[13px] lg:text-[14px] leading-[18px] mb-2 md:mb-4">
-              At Aurex Builders, our brand ambassador embodies the spirit of
-              everything we stand for — trust, quality, innovation, and a deep
-              connection with our community.
+              At Aurex Builders, our brand ambassador embodies the spirit of everything we stand for — trust,
+              quality, innovation, and a deep connection with our community.
             </p>
 
             <p className="text-black text-[12px] md:text-[13px] lg:text-[14px] leading-[18px]">
-              More than a face, our ambassador represents the dreams and
-              aspirations of every family that chooses Aurex.
+              More than a face, our ambassador represents the dreams and aspirations of every family
+              that chooses Aurex. With an unwavering belief in our philosophy of “Adorning Lives,” they
+              echo our commitment to creating spaces that inspire joy, belonging, and pride.
             </p>
           </div>
           {/* MOBILE IMAGE (normal flow) */}
-<div className="flex justify-center my-6 md:hidden">
-  <Image
-    src="/images/home/b.png"
-    alt="Brand Ambassador"
-    width={220}
-    height={360}
-    className="object-contain"
-    priority
-  />
+          {/* <div className="flex flex-row justify-between my-6 md:hidden">
+            <div>
+            <Image
+              src="/images/home/b.png"
+              alt="Brand Ambassador"
+              width={220}
+              height={360}
+              className="object-contain"
+              priority
+            />
+         </div>
+          <div className="relative z-20 mt-2 md:mt-0">
+            <p className="mb-2 md:mb-6 text-black text-[12px] md:text-[13px] lg:text-[14px] leading-[18px]">
+              Our brand ambassador’s values align seamlessly with Aurex’s promise —to
+              deliver not just homes, but a lifestyle defined by comfort, elegance, and authenticity.
+            </p>
+
+            <p className="text-black text-[12px] md:text-[13px] lg:text-[14px] leading-[18px]">
+              Through this partnership, we aim to strengthen our bond with customers by blending
+              credibility, culture, and class — celebrating the art of living that makes
+              every Aurex home truly exceptional.
+            </p>
+          </div>
+ </div> */}
+ {/* MOBILE IMAGE + RIGHT TEXT */}
+<div className="md:hidden flex items-start justify-between gap-2 my-6">
+
+  {/* IMAGE */}
+  <div className=" w-[100px] -mt-10">
+    <Image
+      src="/images/home/b.png"
+      alt="Brand Ambassador"
+      width={300}
+      height={480}
+      className="w-[108px] h-[302px] object-cover"
+      priority
+    />
+  </div>
+
+  {/* TEXT */}
+  <div className="flex-1 relative z-20">
+    <p className="mb-2 text-black text-[12px] leading-[18px]">
+      Our brand ambassador’s values align seamlessly with Aurex’s promise — to
+      deliver not just homes, but a lifestyle defined by comfort, elegance, and authenticity.
+    </p>
+
+    <p className="text-black text-[12px] leading-[18px]">
+      Through this partnership, we aim to strengthen our bond with customers by blending
+      credibility, culture, and class — celebrating the art of living that makes
+      every Aurex home truly exceptional.
+    </p>
+  </div>
+
 </div>
 
 
@@ -74,16 +118,16 @@ export default function BrandAmbassadorSection() {
           <div />
 
           {/* RIGHT TEXT */}
-          <div className="relative z-20 mt-2 md:mt-0">
+          <div className="hidden md:block relative z-20 mt-2 md:mt-0">
             <p className="mb-2 md:mb-6 text-black text-[12px] md:text-[13px] lg:text-[14px] leading-[18px]">
-              Our brand ambassador’s values align seamlessly with Aurex’s promise
-              — to deliver not just homes, but a lifestyle defined by comfort,
-              elegance, and authenticity.
+              Our brand ambassador’s values align seamlessly with Aurex’s promise —to
+              deliver not just homes, but a lifestyle defined by comfort, elegance, and authenticity.
             </p>
 
             <p className="text-black text-[12px] md:text-[13px] lg:text-[14px] leading-[18px]">
-              Through this partnership, we strengthen our bond with customers by
-              blending credibility, culture, and class.
+              Through this partnership, we aim to strengthen our bond with customers by blending
+              credibility, culture, and class — celebrating the art of living that makes
+              every Aurex home truly exceptional.
             </p>
           </div>
         </div>
