@@ -1,15 +1,17 @@
+
+
 "use client";
 
 import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full  overflow-hidden py-20">
+    <section className="relative w-full overflow-hidden py-20">
 
       {/* LEFT BACKGROUND – THRISSUR MAP */}
-      <div className="absolute left-0 top-0 h-full w-[45%] opacity-[0.12] z-[9999] pointer-events-none">
+      <div className="absolute left-0 top-0 h-full w-[45%] opacity-40 z-0 pointer-events-none">
         <Image
-          src="/images/bg1.svg"
+          src="/images/about/bg1.svg"
           alt="Thrissur Map"
           fill
           className="object-contain object-left"
@@ -17,24 +19,25 @@ export default function HeroSection() {
       </div>
 
       {/* RIGHT BACKGROUND – BLUEPRINT */}
-      <div className="absolute right-0 top-0 h-full w-[50%] opacity-[0.08] pointer-events-none">
+      <div className="absolute right-0 top-80 h-full w-[40%]  opacity-30 z-0 pointer-events-none">
         <Image
-          src="/images/about/bg2.svg"
+          src="/images/about/bg2.png"
           alt="Blueprint"
-          fill
-          className="object-contain object-right"
+          height={200}
+          width={800}
+          className="object-contain object-center "
         />
       </div>
 
       {/* CONTENT */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 lg:px-10">
+      <div className="relative z-10 max-w-7xl mx-auto px-0 md:px-4 lg:px-10 items-center justify-center">
 
         {/* TOP HEADING */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl lg:text-4xl font-semibold tracking-wide">
+        <div className="text-center max-w-3xl mx-auto mb-4 md:mb-10 lg:mb-16">
+          <h2 className="font-urban text-[24px] md:text-[32px] lg:text-[40px] font-bold leading-[24px] md:leading-[32px] lg:leading-[40px] tracking-wide">
             AUREX BUILDERS
           </h2>
-          <p className="mt-4 text-gray-600 leading-relaxed">
+          <p className="mt-4 text-black text-[12px] md:text-[13px]  leading-[16px] md:leading-[18px]">
             Aurex Builders is a trusted name in the construction industry,
             known for creating exceptional residential and commercial
             spaces across Thrissur and Kerala.
@@ -42,54 +45,119 @@ export default function HeroSection() {
         </div>
 
         {/* MAIN LAYOUT */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="hidden  md:grid grid-cols-2 gap-0 items-start">
 
-          {/* LEFT – IMAGE + BIG TEXT */}
-          <div className="relative grid grid-cols-[200px_1fr] gap-6 items-start">
+          {/* LEFT SIDE – BUILDING IMAGE */}
+          <div className="relative justify-self-center md:justify-self-end w-[150px] md:w-[170px] lg:w-[240px] xl:w-[280px] h-[118px] md:h-[180px] lg:h-[300px] xl:h-[320px] shadow-2xl z-20">
 
-            {/* Building image (center-left) */}
-            <div className="relative w-full h-[260px] z-10 shadow-xl">
-              <Image
-                src="/images/about/v1.webp"
-                alt="Residential Project"
-                fill
-                className="object-cover"
-              />
-            </div>
-
-            {/* Big statement text */}
-            <h3 className="text-3xl lg:text-4xl font-bold leading-tight">
-              BUILDING <br />
-              TRUST WITH <br />
-              EVERY <br />
-              PROJECT
-            </h3>
+          {/* <div className="-ml-2 md:ml-49 lg:ml-58 xl:ml-80 relative w-[150px] md:w-[170px] lg:w-[240px] xl:w-[280px] h-[118px] md:h-[180px] lg:h-[300px] xl:h-[320px] shadow-2xl z-20"> */}
+            <Image
+              src="/images/about/v1.webp"
+              alt="Residential Project"
+              fill
+              className="object-cover"
+            />
           </div>
 
-          {/* RIGHT – TEXT + IMAGE */}
-          <div className="relative grid grid-cols-1 gap-6">
-
-            <p className="text-gray-600 leading-relaxed max-w-md">
-              With a commitment to precision, innovation, and transparency,
-              we’ve grown into one of the most reliable builders in Thrissur,
-              delivering projects that reflect both quality and class.
-              <br /><br />
-              Our mission is simple — to transform ideas into lasting
-              structures that inspire confidence and comfort.
-            </p>
-
-            {/* Building image (center-right) */}
-            <div className="relative w-full h-[260px] z-10 shadow-xl">
-              <Image
-                src="/images/about/v3.webp"
-                alt="Commercial Project"
-                fill
-                className="object-cover"
-              />
+          {/* RIGHT SIDE – TEXT + IMAGE */}
+          <div className="grid grid-cols-1 gap-2 lg:gap-22 xl:gap-28">
+            
+            {/* Big statement text */}
+            <div>
+              <h3 className="font-urban text-[24px] md:text-[32px] lg:text-[40px] font-bold leading-[24px] md:leading-[32px] lg:leading-[40px] mb-10">
+                BUILDING <br />
+                TRUST WITH <br />
+                EVERY <br />
+                PROJECT
+              </h3>
             </div>
 
+            {/* Text and image side by side */}
+            <div className="grid grid-cols-2 gap-4 xl:gap-0 items-start">
+              
+              {/* Descriptive text */}
+              
+             
+              {/* Second building image */}
+              <div className="relative w-[164px] md:w-[170px] lg:w-[240px] xl:w-[280px] h-[118px] md:h-[180px] lg:h-[300px] xl:h-[320px] shadow-2xl z-20">
+                <Image
+                  src="/images/about/v3.webp"
+                  alt="Commercial Project"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+               <div className="hidden md:block text-black  text-[12px] md:text-[13px]  leading-[16px] md:leading-[18px]">
+                <p className="mb-4">
+                  With a commitment to precision, innovation, and transparency,
+                  we've grown into one of the most reliable builders in Thrissur,
+                  delivering projects that reflect both quality and class.
+                </p>
+                <p>
+                  Our mission is simple — to transform ideas into lasting
+                  structures that inspire confidence and comfort.
+                </p>
+              </div>
+
+
+            </div>
           </div>
         </div>
+
+
+  {/* MOBILE VIEW */}
+<div className="md:hidden flex flex-col items-center gap-0 ">
+  <div className="flex flex-row">
+
+  {/* Top building image */}
+  <div className="relative w-[144px] h-[160px] shadow-2xl">
+    <Image
+      src="/images/about/v1.webp"
+      alt="Residential Project"
+      fill
+      className="object-cover"
+    />
+  </div>
+
+  {/* Heading */}
+  <h3 className="font-urban text-[24px] font-bold leading-[26px] text-left ">
+    BUILDING <br />
+    TRUST WITH <br />
+    EVERY <br />
+    PROJECT
+  </h3>
+
+  </div>
+
+<div className="flex flex-row">
+  {/* Description text */}
+  <div className="max-w-[150px] text-[13px] leading-[18px] text-black">
+    <p className="mb-3">
+      With a commitment to precision, innovation, and transparency,
+      we've grown into one of the most reliable builders in Thrissur,
+      delivering projects that reflect both quality and class.
+    </p>
+    <p>
+      Our mission is simple — to transform ideas into lasting
+      structures that inspire confidence and comfort.
+    </p>
+  </div>
+
+  {/* Bottom building image */}
+  <div className="relative w-[150px] h-[160px] shadow-2xl">
+    <Image
+      src="/images/about/v3.webp"
+      alt="Commercial Project"
+      fill
+      className="object-cover"
+    />
+  </div>
+  </div>
+
+</div>
+
+
       </div>
     </section>
   );

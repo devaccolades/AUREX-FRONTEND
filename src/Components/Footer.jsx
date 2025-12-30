@@ -45,7 +45,7 @@ export default function Footer() {
         <footer className="relative bg-[#000000] text-white py-8 md:py-12 px-2 md:px-8 lg:px-12 xl:px-20 overflow-hidden">
             {/* background layer */}
             <div
-                className="absolute inset-0 bg-center bg-no-repeat bg-cover opacity-60"
+                className="absolute inset-0 bg-center bg-no-repeat bg-cover opacity-40"
                 style={{
                     backgroundImage: "url('/images/footer/AUREX.svg')",
                     backgroundSize: "1000px 600px",
