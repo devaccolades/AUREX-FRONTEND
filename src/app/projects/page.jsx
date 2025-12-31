@@ -3,6 +3,8 @@ import React from 'react'
 import HeroSection from './HeroSection'
 import Footer from '@/Components/Footer'
 import ProjectListing from './ProjectListing'
+import WhyChooseUs from '../(home)/WhyChoose'
+import HomeBuyingJourney from './HomeBuyingJourney'
 
 function page() {
   return (
@@ -10,6 +12,8 @@ function page() {
       <Header />
       <HeroSection />
       <ProjectListing />
+      <HomeBuyingJourney />
+      <WhyChooseUs />
       <Footer />
     </div>
   )

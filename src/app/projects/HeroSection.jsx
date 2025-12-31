@@ -20,7 +20,7 @@ export default function HeroSection() {
 
 
 
-      {/* ================= MOBILE EXPERIENCE CARD ================= */}
+      {/*  MOBILE EXPERIENCE CARD  */}
       <div
         className="
     md:hidden
@@ -53,7 +53,7 @@ export default function HeroSection() {
 
 
 
-      {/* ================= CENTER HEADING ================= */}
+      {/*  CENTER HEADING  */}
       <div className="relative z-10 container mx-auto pt-34 text-center">
         <p className="font-poppins uppercase tracking-widest text-sm text-[#B57C42] mb-1">
           #Projects
@@ -70,7 +70,7 @@ export default function HeroSection() {
         </p>
       </div>
 
-      {/* ================= LEFT AMBASSADOR ================= */}
+      {/*  LEFT AMBASSADOR  */}
       <div className="absolute bottom-[-40px] md:bottom-[-180px] lg:bottom-[-240px] xl:bottom-[-160px] left-[-50px] md:-left-10 z-10 w-[300px] md:w-[440px] lg:w-[500px] xl:w-[560px]">
         <Image
           src="/images/home/b.png"
@@ -83,7 +83,7 @@ export default function HeroSection() {
       </div>
 
 
-      {/* ================= RIGHT EXPERIENCE CARD ================= */}
+      {/* RIGHT EXPERIENCE CARD */}
       <div className="hidden md:block absolute right-6 md:right-16 top-[55%] lg:text-[45%] z-10 text-center">
         <h2 className="text-[44px] md:text-[64px] lg:text-[64px] leading-[40px] font-urban font-bold">20+</h2>
 
