@@ -41,13 +41,13 @@ export default function ProjectListing() {
 
   return (
     <section className=" py-16">
-         <div
+         {/* <div
                 className="absolute inset-0 bg-center bg-no-repeat bg-cover opacity-40"
                 style={{
                     backgroundImage: "url('/images/projects/bg.png')",
                     backgroundSize: "1000px 600px",
                 }}
-            ></div>
+            ></div> */}
      
       <div className="container mx-auto px-4">
 
