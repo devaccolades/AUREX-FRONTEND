@@ -50,10 +50,10 @@ export default function FloorPlansSection() {
         <div className="container text-center">
 
           {/* HEADING */}
-          <h2 className="text-[24px] md:text-[28px] font-urban font-medium">
+          <h2 className="text-[16px] md:text-[20px] leading-[16px] font-urban font-bold uppercase text-center mb-2">
             CHOOSE THE HOME THAT FITS YOUR LIFESTYLE
           </h2>
-          <p className="text-[14px] text-gray-500 mt-2">
+          <p className="text-[13px] text-black mt-2 max-w-2xl mx-auto">
             Whether you prefer compact elegance or spacious luxury, we offer thoughtfully designed layouts for every need.
           </p>
 
