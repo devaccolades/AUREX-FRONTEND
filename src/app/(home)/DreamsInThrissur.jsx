@@ -1,17 +1,14 @@
 import Image from "next/image";
 import React from "react";
-import bank1 from "../../../public/images/dreamsInThrissur/axis.png";
-import bank2 from "../../../public/images/dreamsInThrissur/icici.png";
-import bank3 from "../../../public/images/dreamsInThrissur/canara.png";
-import bank4 from "../../../public/images/dreamsInThrissur/cub.png";
-import bank5 from "../../../public/images/dreamsInThrissur/sbi.png";
-import bank6 from "../../../public/images/dreamsInThrissur/lic.png";
-import bank7 from "../../../public/images/dreamsInThrissur/Bob.png";
-import bank8 from "../../../public/images/dreamsInThrissur/hdfc.png";
+import bank3 from "../../../public/images/dreamsInThrissur/canara.svg";
+import bank4 from "../../../public/images/dreamsInThrissur/cub.svg";
+import bank5 from "../../../public/images/dreamsInThrissur/sbi.svg";
+import bank6 from "../../../public/images/dreamsInThrissur/lic.svg";
+import bank7 from "../../../public/images/dreamsInThrissur/bob.svg";
 // import bank1 from "/images/axis.png";
 
 const DreamsInThrissur = () => {
-  const banks = [bank1, bank2, bank3, bank4, bank5, bank6, bank7, bank8];
+  const banks = [ bank3, bank4, bank5, bank6, bank7, ];
   return (
     <section className="container bg-secondary py-[20px] md:py-[46px] lg:py-[64px] px-[20px] md:px-[40px] lg:px-[60px] xl:px-[66px] rounded-[20px] ">
       <div className="flex flex-col md:flex-row gap-8 md:gap-0 justify-between items-center">

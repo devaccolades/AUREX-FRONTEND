@@ -40,12 +40,12 @@ const steps = [
 
 export default function HomeBuyingJourney() {
   return (
-    <section className="py-16 overflow-hidden">
-      <div className="container mx-auto px-4">
+    <section className="py-8 md:py-16 overflow-hidden">
+      <div className="container ">
 
         {/* Heading */}
-        <div className="mb-10 max-w-xl">
-          <h2 className="text-[28px] md:text-[36px] leading-[36px] font-urban font-medium">
+        <div className="mb-6 md:mb-10 max-w-xl">
+          <h2 className="text-[24px] md:text-[32px] leading-[24px] md:leading-[36px] font-urban font-medium">
             OUR HOME BUYING JOURNEY
           </h2>
           <p className="mt-2 text-sm leading-[100%] text-black">
@@ -57,53 +57,76 @@ export default function HomeBuyingJourney() {
         {/* Swiper */}
         <Swiper
           modules={[Navigation]}
-          navigation
-        //   spaceBetween={24}
+          // navigation
           slidesPerView={1.1}
+          spaceBetween={16}
           breakpoints={{
-            640: { slidesPerView: 1.5, spaceBetween:24 },
-            768: { slidesPerView: 2.2, spaceBetween:24 },
-            1024: { slidesPerView: 3 , spaceBetween:24 },
-            1280: { slidesPerView: 3.5, spaceBetween:24 },
+            640: { slidesPerView: 1.5, spaceBetween: 24 },
+            768: { slidesPerView: 2.2, spaceBetween: 24 },
+            1024: { slidesPerView: 3, spaceBetween: 24 },
+            1280: { slidesPerView: 3.5, spaceBetween: 24 },
           }}
           className="homeJourneySwiper"
         >
-          {steps.map((step) => (
-            <SwiperSlide key={step.id}>
-              <div className="bg-white rounded-[20px] border border-gray-200 p-2 md:p-4 h-full">
+          {steps.map((step, index) => {
+            const isEven = index % 2 !== 0;
 
-                {/* Image */}
-                <div className="relative w-full h-[200px] rounded-xl overflow-hidden">
-                  <Image
-                    src={step.image}
-                    alt={step.title}
-                    fill
-                    className="object-cover"
-                  />
+            return (
+              <SwiperSlide key={step.id}>
+                <div className="bg-white rounded-[20px] border border-gray-200 min-h-[420px] overflow-hidden flex flex-col">
+
+                  {/* Image */}
+                  <div
+                    className={`relative w-full h-[200px] overflow-hidden ${isEven ? "order-2" : "order-1"
+                      }`}
+                  >
+                    <Image
+                      src={step.image}
+                      alt={step.title}
+                      fill
+                      className="object-cover"
+                    />
+
+                    {/* Gradient ONLY at junction */}
+                    <div
+                      className={`absolute left-0 w-full h-16 pointer-events-none ${isEven
+                          ? "top-0 bg-gradient-to-b from-white to-transparent"
+                          : "bottom-0 bg-gradient-to-t from-white to-transparent"
+                        }`}
+                    />
+                  </div>
+
+
+                  {/* Content */}
+                  <div
+                    className={`relative p-4 flex-1 ${isEven ? "order-1" : "order-2"
+                      }`}
+                  >
+                    {/* {isEven && (
+            <div className="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-white to-transparent" />
+          )} */}
+
+                    <span className="text-[20px] md:text-[24px] font-semibold font-urban text-black">
+                      {step.id}
+                    </span>
+
+                    <h3 className="mt-2 font-urban font-bold text-[16px] md:text-[20px] leading-[18px]">
+                      {step.title}
+                    </h3>
+
+                    <p className="mt-0 md:mt-2 text-[13px] text-black leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+
                 </div>
+              </SwiperSlide>
+            );
+          })}
 
-                {/* Content */}
-                <div className="h-full flex flex-col mt-4">
-                     <div>
-                  <span className="text-[20px] md:text-[24px] leading-[20px] md:leading-[24px] font-semibold text-black">
-                    {step.id}
-                  </span>
-
-                  <h3 className="mt-1 font-urban font-bold text-[16px] md:text-[20px] leading-[20px]">
-                    {step.title}
-                  </h3>
-</div>
-                  <p className="mt-auto text-[13px] text-gray-600 leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
-
-              </div>
-            </SwiperSlide>
-          ))}
         </Swiper>
 
       </div>
-    </section>
+    </section >
   );
 }
