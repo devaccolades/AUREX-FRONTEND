@@ -8,35 +8,21 @@ import {
   Building2,
   MapPin,
   Crown,
-  Route ,
+  Route,
   BadgeCheck,
 } from "lucide-react";
 
-/* =======================
-   PROJECT DATA
-======================= */
+/* ================= PROJECT DATA ================= */
+const project = {
+  title: "Aurex Liard",
+  location: "Mulangunnathukavu, Thrissur",
+  rera: "K-RERA/PRJ/TSR/178/2023",
+  description:
+    "A Home That Reflects Your Aspirations. Premium 2 & 3 BHK apartments at the heart of Thrissur with modern amenities and highway access.",
+  image: "/images/home/cas.jpg",
+};
 
-const projects = [
-  {
-    id: 2,
-    title: "AUREX LIARD",
-    logo: "/images/home/cascadelogo.svg",
-    location: "Mulagunnathukavu, Thrissur",
-    distance: "Near Medical College",
-    rera: "K-RERA/PRJ/TSR/178/2023",
-    totalArea: "48 Cents",
-    totalUnits: "52 (B+G+10)",
-    status: "Ready",
-    bigImage: "/images/home/cas.jpg",
-    description:
-      "This premium project seamlessly marries contemporary aesthetics with enduring quality.",
-  },
-];
-
-/* =======================
-   STATS
-======================= */
-
+/* ================= STATS ================= */
 const stats = [
   {
     label: "Property Type",
@@ -60,10 +46,7 @@ const stats = [
   },
 ];
 
-/* =======================
-   HIGHLIGHTS
-======================= */
-
+/* ================= HIGHLIGHTS ================= */
 const highlights = [
   {
     title: "Prime Location",
@@ -78,115 +61,115 @@ const highlights = [
   {
     title: "Highway Facing",
     desc: "Excellent Connectivity",
-    icon: Route ,
+    icon: Route,
   },
 ];
 
-/* =======================
-   COMPONENT
-======================= */
-
 export default function ProjectHero() {
-  const project = projects[0];
-
   return (
-    <section className="container py-12 lg:py-20">
-      {/* ================= HEADER ================= */}
-      <div className="grid lg:grid-cols-2 gap-10 items-center">
-        {/* LEFT */}
-        <div>
-          <Image
-            src={project.logo}
-            alt={project.title}
-            width={140}
-            height={50}
-            className="mb-4"
-          />
+    <section className="relative w-full">
+      {/* ================= HERO IMAGE ================= */}
+      <div className="relative h-[520px] lg:h-[640px] w-full">
+       <div className="relative h-[520px] lg:h-[640px] w-full overflow-hidden">
+  <Image
+    src={project.image}
+    alt={project.title}
+    fill
+    className="object-cover"
+  />
 
-          <h2 className="text-[32px] lg:text-[38px] font-urban font-semibold text-black">
-            {project.title}
-          </h2>
+  {/* Gradient */}
+  <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
 
-          <p className="text-[14px] text-gray-600 mt-3 max-w-xl">
-            {project.description}
-          </p>
+  {/* CURVE */}
+  <div className="absolute bottom-0 left-0 w-full">
+    <svg
+      viewBox="0 0 1440 120"
+      className="w-full h-[90px]"
+      preserveAspectRatio="none"
+    >
+      <path
+        d="M0,40 C240,100 480,100 720,70 960,40 1200,0 1440,30 L1440,120 L0,120 Z"
+        fill="#ffffff"
+      />
+    </svg>
+  </div>
+</div>
 
-          {/* LOCATION */}
-          <div className="flex items-center gap-2 mt-4">
-            <MapPin size={16} className="text-[#D8A95D]" />
-            <span className="text-[13px] text-gray-700">
-              {project.location}
+
+
+        {/* Gradient Overlay */}
+        {/* <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" /> */}
+
+        {/* ================= HERO CONTENT ================= */}
+        <div className="absolute inset-0 flex items-center">
+          <div className="container">
+            <span className="inline-block bg-[#1FA971] text-white text-xs px-3 py-1 rounded-full mb-4">
+              Ready to Move
             </span>
-          </div>
 
-          {/* RERA */}
-          <div className="flex items-center gap-2 mt-2">
-            <BadgeCheck size={16} className="text-[#0A6E50]" />
-            <span className="text-[13px] text-gray-700">
-              {project.rera}
-            </span>
-          </div>
-        </div>
+            <h1 className="text-white text-[32px] lg:text-[42px] font-semibold max-w-xl">
+              {project.title}
+            </h1>
 
-        {/* RIGHT IMAGE */}
-        <div className="relative h-[320px] lg:h-[420px] rounded-2xl overflow-hidden shadow-xl">
-          <Image
-            src={project.bigImage}
-            alt={project.title}
-            fill
-            className="object-cover"
-          />
+            <div className="flex items-center gap-2 mt-3 text-white/90">
+              <MapPin size={16} />
+              <span className="text-sm">{project.location}</span>
+            </div>
+
+            <p className="text-white/80 text-sm max-w-lg mt-4">
+              {project.description}
+            </p>
+
+            <div className="flex items-center gap-2 mt-4 text-white/90">
+              <BadgeCheck size={16} className="text-green-400" />
+              <span className="text-xs">{project.rera}</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* ================= STATS ================= */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-14">
-        {stats.map((item, i) => {
-          const Icon = item.icon;
-          return (
-            <div
-              key={i}
-              className="bg-white rounded-2xl shadow-md px-5 py-4 flex items-center gap-4"
-            >
-              <div className="w-12 h-12 bg-[#F6E8C6] rounded-xl flex items-center justify-center">
-                <Icon size={22} className="text-[#D8A95D]" />
+      {/* ================= FLOATING STATS ================= */}
+      <div className="container relative z-10 -mt-120">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4  rounded-2xl shadow-xl p-4">
+          {stats.map((item, i) => {
+            const Icon = item.icon;
+            return (
+              <div key={i} className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-[#F6E8C6] rounded-xl flex items-center justify-center">
+                  <Icon size={22} className="text-[#D8A95D]" />
+                </div>
+                <div>
+                  <p className="text-xs text-gray-500">{item.label}</p>
+                  <p className="text-sm font-semibold">{item.value}</p>
+                </div>
               </div>
-
-              <div>
-                <p className="text-[12px] text-gray-500">{item.label}</p>
-                <p className="text-[14px] font-semibold text-black">
-                  {item.value}
-                </p>
-              </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
 
       {/* ================= HIGHLIGHTS ================= */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">
-        {highlights.map((item, i) => {
-          const Icon = item.icon;
-          return (
-            <div
-              key={i}
-              className="bg-[#FFF8EB] rounded-2xl px-5 py-4 flex items-start gap-4"
-            >
-              <div className="w-11 h-11 bg-[#F6E8C6] rounded-xl flex items-center justify-center">
-                <Icon size={22} className="text-[#D8A95D]" />
+      <div className="container mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {highlights.map((item, i) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={i}
+                className="bg-[#FFF8EB] rounded-2xl px-5 py-4 flex gap-4"
+              >
+                <div className="w-11 h-11 bg-[#F6E8C6] rounded-xl flex items-center justify-center">
+                  <Icon size={22} className="text-[#D8A95D]" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-semibold">{item.title}</h4>
+                  <p className="text-xs text-gray-600 mt-1">{item.desc}</p>
+                </div>
               </div>
-
-              <div>
-                <h4 className="text-[14px] font-semibold text-black">
-                  {item.title}
-                </h4>
-                <p className="text-[12px] text-gray-600 mt-1">
-                  {item.desc}
-                </p>
-              </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </section>
   );
