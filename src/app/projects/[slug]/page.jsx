@@ -8,6 +8,7 @@ import NearbyConnectivity from './NearByConnectivity'
 import YoutubeEmbedSection from './Youtube'
 import FloorPlansSection from './FloorPlan'
 import ProjectHero from './ProjectHeroSection'
+import ConstructionUpdates from './ConstructionUpdate'
 
 function page() {
   return (
@@ -19,6 +20,7 @@ function page() {
       <PrecisionBuiltSection />
       <NearbyConnectivity />
       <YoutubeEmbedSection />
+      <ConstructionUpdates />
       <BankingPartners />
       <Footer />
     </div>
