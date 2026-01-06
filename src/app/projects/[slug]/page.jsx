@@ -9,12 +9,16 @@ import YoutubeEmbedSection from './Youtube'
 import FloorPlansSection from './FloorPlan'
 import ProjectHero from './ProjectHeroSection'
 import ConstructionUpdates from './ConstructionUpdate'
+import ProjectOverviewSection from './ProjectOverview'
+import AmenitiesSection from './Amenities'
 
 function page() {
   return (
     <div>
       <Header />
       <ProjectHero />
+      <ProjectOverviewSection />
+      <AmenitiesSection />
       <CommonFacilities />
       <FloorPlansSection />
       <PrecisionBuiltSection />
