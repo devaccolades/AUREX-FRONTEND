@@ -28,16 +28,16 @@ const DreamsInThrissur = () => {
             <p className="mt-[56px] text-[13px] md:text-[14px] lg:text-[16px] leading-[16px] font-bold mb-2 md:mb-[16px]">
               Our Banking Partners
             </p>
-            <div className="flex flex-wrap gap-[16px] md:gap-[16px] items-end gap-y-[10px]">
+            <div className="flex flex-wrap gap-[6px] md:gap-[6px] items-end gap-y-[10px]">
               {banks &&
                 banks.map((bank, index) => (
                   <Image
                     key={index}
                     src={bank}
-                    height={100}
-                    width={100}
+                    height={120}
+                    width={140}
                     alt="bank img"
-                    className="h-[26px] md:h-[24px] w-auto object-contain"
+                    className="h-[36px] md:h-[54px] w-auto object-contain"
                   />
                 ))}
             </div>
