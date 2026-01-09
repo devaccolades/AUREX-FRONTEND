@@ -22,14 +22,45 @@ export default function WhatsAppCTA() {
                         </div>
 
                         {/* Text */}
-                        <div>
+                        {/* <div>
                             <h2 className="text-[26px] md:text-[38px] xl:text-[48px] font-urban font-medium leading-[32px] md:leading-[40px] xl:leading-[48px] mt-2">
                                 HAVE A QUESTION? NEED <br className="xl:block hidden" /> QUICK PROJECT DETAILS?
                             </h2>
                             <p className="text-sm text-black mt-1">
                                 Skip the wait — chat with us directly on WhatsApp for instant assistance!
                             </p>
-                        </div>
+                        </div> */}
+                        <div className="flex flex-col items-start text-left gap-3">
+
+  <h2 className="text-[26px] md:text-[38px] xl:text-[48px] font-urban font-medium leading-[32px] md:leading-[40px] xl:leading-[48px]">
+    HAVE A QUESTION? NEED <br className="xl:block hidden" />
+    QUICK PROJECT DETAILS?
+  </h2>
+
+  <p className="text-sm text-black max-w-md">
+    Skip the wait — chat with us directly on WhatsApp for instant assistance!
+  </p>
+
+  {/* MOBILE + MD BUTTON — SAME START POINT */}
+  <a
+    href="https://wa.me/919846507474"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="lg:hidden flex items-center gap-3 mt-2"
+  >
+    <Image
+      src="/images/home/button-arrow.svg"
+      alt="Arrow"
+      width={28}
+      height={28}
+    />
+    <p className="text-[12px] font-medium uppercase leading-tight">
+      MESSAGE US ON <br /> WHATSAPP
+    </p>
+  </a>
+
+</div>
+
                     </div>
 
                     {/* Button */}
@@ -59,31 +90,7 @@ export default function WhatsAppCTA() {
                         </button>
                     </a>
 
-                    <a
-                        href="https://wa.me/919846507474"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-
-                        <button
-                            // onClick={onClick}
-                            className="relative right-18
-                            lg:hidden flex justify-start items-start 
-                            text-start text-[10px] md:text-[12px] font-medium uppercase 
-                            "
-                        >
-                            {/* ARROW */}
-                            <div className="flex  h-full">
-                                <Image src="/images/home/button-arrow.svg"
-                                    alt="Arrow" width={20} height={20}
-                                    className="w-[30px] md:w-[40px] h-auto md:h-auto " />
-                            </div>
-                            {/* TEXT */}
-                            <p>MESSAGE US ON  <br /> WHATSAPP</p>
-
-
-                        </button>
-                    </a>
+                   
                 </div>
             </div>
         </section>

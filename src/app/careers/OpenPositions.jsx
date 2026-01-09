@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 export default function OpenPositionsSection() {
   const jobs = [
@@ -7,7 +8,7 @@ export default function OpenPositionsSection() {
       location: "Thrissur",
       experience: "2–5 years",
       type: "Full Time",
-      description:
+      job_overview:
         "We’re looking for a skilled Site Engineer with a strong eye for detail and commitment to quality. The role involves overseeing on-site construction activities, ensuring timelines and safety standards are met, and coordinating between contractors, consultants, and candidates with a civil engineering background and prior experience in residential or commercial projects.",
     },
     {
@@ -15,7 +16,7 @@ export default function OpenPositionsSection() {
       location: "Thrissur",
       experience: "2–5 years",
       type: "Full Time",
-      description:
+      job_overview:
         "Aurex is seeking a creative Junior Architect to support our design and project teams. The ideal candidate will assist in conceptualising, planning, and designing architectural drawings, ensuring designs align with our quality standards. Proficiency in design tools and a flair for functional aesthetics are essential.",
     },
     {
@@ -23,7 +24,7 @@ export default function OpenPositionsSection() {
       location: "Thrissur",
       experience: "2–5 years",
       type: "Full Time",
-      description:
+      job_overview:
         "We’re on the lookout for a dynamic Marketing Executive to help expand our brand presence and project visibility. The role includes managing marketing campaigns, generating leads, building partnerships with clients, and promoting our real estate projects across digital and offline platforms.",
     },
     {
@@ -31,7 +32,7 @@ export default function OpenPositionsSection() {
       location: "Thrissur",
       experience: "2–5 years",
       type: "Full Time",
-      description:
+      job_overview:
         "We’re looking for a skilled Site Engineer with a strong eye for detail and commitment to quality. The role involves overseeing on-site construction activities, ensuring timelines and safety standards are met, and coordinating between contractors, consultants, and candidates with a civil engineering background and prior experience in residential or commercial projects.",
     },
     {
@@ -39,7 +40,7 @@ export default function OpenPositionsSection() {
       location: "Thrissur",
       experience: "2–5 years",
       type: "Full Time",
-      description:
+      job_overview:
         "Aurex is seeking a creative Junior Architect to support our design and project teams. The ideal candidate will assist in conceptualising, planning, and designing architectural drawings, ensuring designs align with our quality standards. Proficiency in design tools and a flair for functional aesthetics are essential.",
     },
     {
@@ -47,7 +48,7 @@ export default function OpenPositionsSection() {
       location: "Thrissur",
       experience: "2–5 years",
       type: "Full Time",
-      description:
+      job_overview:
         "We’re on the lookout for a dynamic Marketing Executive to help expand our brand presence and project visibility. The role includes managing marketing campaigns, generating leads, building partnerships with clients, and promoting our real estate projects across digital and offline platforms.",
     },
   ];
@@ -97,14 +98,16 @@ export default function OpenPositionsSection() {
                 </p>
 
                 <p className="text-[13px] lg:text-[14px] leading-[18px] text-black mb-6">
-                  {job.description}
+                  {job.job_overview}
                 </p>
               </div>
 
               {/* CTA */}
+             <Link href={`/careers/${job.slug}`}>
               <button className="mt-auto self-start font-medium font-urban text-[13px] leading-[13px] border border-black rounded-full px-4 py-2 hover:bg-black hover:text-white transition">
                 Read Job Description
               </button>
+              </Link>
             </div>
           ))}
         </div>
