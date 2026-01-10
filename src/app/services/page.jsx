@@ -3,6 +3,7 @@ import React from 'react'
 import HeroSection from './HeroSection'
 import Footer from '@/Components/Footer'
 import OurCoreServices from './OurCoreServices'
+import ExtendedExpertiseSection from './ExtendedExpertise'
 
 function page() {
   return (
@@ -10,6 +11,7 @@ function page() {
       <Header />
       <HeroSection />
       <OurCoreServices />
+      <ExtendedExpertiseSection />
       <Footer />
     </div>
   )

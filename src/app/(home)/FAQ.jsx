@@ -58,51 +58,7 @@ const FAQ = () => {
             FREQUENTLY ASKED QUESTIONS
           </h2>
 
-          {/* <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <div
-                key={faq.id}
-                className={`rounded-xl border transition-all duration-300 ${openIndex === index
-                    ? "bg-gray-100 border-gray-300"
-                    : "bg-gray-50 border-gray-200"
-                  }`}
-              >
-                <button
-                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  className="w-full flex justify-between items-center text-left p-3 lg:p-4"
-                >
-                  <span
-                    className={`max-w-[240px] md:max-[360px] lg:max-w-[380px] xl:max-w-[420px] font-bold text-[14px] md:text-[16px] leading-[18px] md:leading-[24px] font-urban transition-all duration-300 ${openIndex === index
-                        ? "text-[18px] md:text-[20px]"
-                        : "text-[14px] md:text-[18px]"
-                      }`}
-                  >
-                    {index + 1}. {faq.question}
-                  </span>
-                  {openIndex === index ? (
-                    <Minus className="h-4 md:h-8 w-4 md:w-8 text-black font-bold" />
-                  ) : (
-                    <Plus className="h-4 md:h-8 w-4 md:w-8 text-black font-bold" />
-                  )}
-                </button>
-
-                <AnimatePresence>
-                  {openIndex === index && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <div className=" px-5 pb-5 text-[12px] md:text-[13px] lg:text-[14px] text-gray-600 leading-[18px]">
-                        {faq.answer}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ))}
-          </div> */}
+        
 
           <div className="space-y-4">
             {faqs.map((faq, index) => (
