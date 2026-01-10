@@ -28,7 +28,7 @@ const projects = [
     location: "CHEMBUKKAVU, THRISSUR",
     rera: "K-RERA/PRJ/TSR/243/2024",
     logo: "/images/home/cascadelogo.svg",
-    project_image: "/images/home/hero.jpg",
+    project_image: "/images/home/cas.jpg",
     qrcode: "/images/home/qr.png",
   },
 ];
