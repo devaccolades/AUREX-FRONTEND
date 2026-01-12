@@ -120,7 +120,7 @@ export default function Header() {
           {/* MAP + ADDRESS */}
           <div className="bg-white p-2 rounded-2xl shadow border mt-1">
             <iframe
-              src="https://www.google.com/maps/place/Aurum+Complex/@10.535802,76.211348,15z/"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.553348542203!2d76.21134769999999!3d10.535801999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7ef1ba5f1780b%3A0x9e41cffc8c2dac05!2sAurum%20Complex!5e0!3m2!1sen!2sin!4v1767852750515!5m2!1sen!2sin"
               width="100%" height="140"
               className="rounded-lg"
               style={{ border: 0 }}
