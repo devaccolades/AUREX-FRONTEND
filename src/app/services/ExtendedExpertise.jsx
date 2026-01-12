@@ -17,18 +17,18 @@ export default function ExtendedExpertiseSection() {
         {/* Main Wrapper */}
         <div className="relative bg-[#F4F3F1] rounded-3xl  overflow-hidden">
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12 items-center">
             
             {/* LEFT CONTENT */}
-            <div className="relative z-10 pl-8 py-8">
-              <h2 className="text-[20px] lg:text-[32px] font-medium leading-[20px] lg:leading-[38px] font-urban  mb-10">
+            <div className="relative pr-2 md:pr-0 pl-2 md:pl-8 py-8">
+              <h2 className="text-[20px] lg:text-[32px] font-medium leading-[20px] lg:leading-[38px] font-urban mb-4  md:mb-10">
                 BEYOND CONSTRUCTION — <br />
                 OUR EXTENDED EXPERTISE
               </h2>
 
               <div className="space-y-8 max-w-md">
                 <div>
-                  <h4 className="text-sm lg:text-[16px] leading-[20px] font-bold mb-1">
+                  <h4 className="text-sm lg:text-[16px] leading-[20px] font-bold font-urban mb-1">
                     PROJECT MANAGEMENT
                   </h4>
                   <p className="text-[12px] lg:text-[13px] text-black leading-[100%]">
@@ -38,7 +38,7 @@ export default function ExtendedExpertiseSection() {
                 </div>
 
                 <div>
-                  <h4 className="text-sm lg:text-[16px] leading-[20px] font-bold mb-1">
+                  <h4 className="text-sm lg:text-[16px] leading-[20px] font-bold font-urban mb-1">
                     STRUCTURAL & ARCHITECTURAL DESIGN
                   </h4>
                   <p className="text-[12px] lg:text-[13px] text-black leading-[100%]">
@@ -48,7 +48,7 @@ export default function ExtendedExpertiseSection() {
                 </div>
 
                 <div>
-                  <h4 className="text-sm lg:text-[16px] leading-[20px] font-bold mb-1">
+                  <h4 className="text-sm lg:text-[16px] leading-[20px] font-bold font-urban mb-1">
                     AFTER-SALES SUPPORT
                   </h4>
                   <p className="text-[12px] lg:text-[13px] text-black leading-[100%]">
@@ -60,7 +60,7 @@ export default function ExtendedExpertiseSection() {
             </div>
 
             {/* RIGHT VISUAL */}
-            <div className="relative h-[420px] lg:h-[600px] ">
+            <div className="relative h-[290px] md:h-[420px] lg:h-[600px] ">
               {/* Blueprint Background */}
               <Image
                 src="/images/services/ex.svg" // replace with your blueprint image
@@ -70,13 +70,28 @@ export default function ExtendedExpertiseSection() {
               />
 
               {/* Glass Card */}
-              <div className="absolute right-60 top-1/2 -translate-y-1/2">
-  <GlassSurface
+              <div className="absolute left-1 md:right-20 xl:right-60 top-1/2 -translate-y-1/2">
+  {/* <GlassSurface
     width={360}
     height={300}
     borderRadius={18}
-    className="p-6"
-  >
+    className="p-4 lg:p-5 xl:p-6
+    h-[240px] 
+    sm:h-[260px] 
+    lg:h-[300px] 
+    xl:h-[340px]"
+  > */}
+  <GlassSurface
+  width="100%"
+  height="auto"
+  borderRadius={18}
+  style={{
+    width: "clamp(280px, 40vw, 360px)",
+    height: "clamp(240px, 30vw, 340px)",
+  }}
+  className="p-4 lg:p-5 xl:p-6"
+>
+
     <div className="flex flex-col gap-3 text-left">
       <h4 className="text-sm lg:text-[16px] leading-[20px] font-urban font-bold uppercase mb-1">
         We Don’t Just Build — We Add Value.

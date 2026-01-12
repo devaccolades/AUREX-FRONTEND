@@ -4,6 +4,7 @@ import HeroSection from './HeroSection'
 import Footer from '@/Components/Footer'
 import OurCoreServices from './OurCoreServices'
 import ExtendedExpertiseSection from './ExtendedExpertise'
+import ContactCtaSection from './ContactCTA'
 
 function page() {
   return (
@@ -12,6 +13,7 @@ function page() {
       <HeroSection />
       <OurCoreServices />
       <ExtendedExpertiseSection />
+      <ContactCtaSection />
       <Footer />
     </div>
   )
