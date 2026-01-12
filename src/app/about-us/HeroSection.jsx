@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full overflow-hidden py-20">
+    <section className="relative w-full overflow-hidden py-20 mt-10 md:mt-14">
 
       {/* LEFT BACKGROUND – THRISSUR MAP */}
       <div className="absolute left-0 top-0 h-full w-[45%] opacity-40 z-0 pointer-events-none">
