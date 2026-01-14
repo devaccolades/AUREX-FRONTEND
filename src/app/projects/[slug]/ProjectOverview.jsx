@@ -2,9 +2,8 @@
 
 export default function ProjectOverviewSection() {
   return (
-    <section className="w-full bg-white py-14">
+    <section className="relative w-full bg-white py-14">
       <div className="">
-
         {/* Download Button */}
         <div className="flex justify-center mb-8">
           <button className="flex items-center gap-2 bg-black text-white text-xs px-4 py-2 rounded-full hover:bg-gray-900 transition">
@@ -21,11 +20,11 @@ export default function ProjectOverviewSection() {
           </h2>
 
           <p className="mt-4 text-sm leading-[18px]  ">
-            Nestled in one of Thrissur’s most sought-after locations, Aurex Liard
-            combines architectural finesse with functional design to deliver a
-            perfect home for you and your family. With world-class amenities,
-            advanced security, and exceptional build quality, this project
-            promises a life of peace, prosperity, and pride.
+            Nestled in one of Thrissur’s most sought-after locations, Aurex
+            Liard combines architectural finesse with functional design to
+            deliver a perfect home for you and your family. With world-class
+            amenities, advanced security, and exceptional build quality, this
+            project promises a life of peace, prosperity, and pride.
           </p>
         </div>
 
@@ -44,7 +43,6 @@ export default function ProjectOverviewSection() {
             )}
           </div>
         </div>
-
       </div>
     </section>
   );
