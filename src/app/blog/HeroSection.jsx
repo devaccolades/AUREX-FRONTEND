@@ -71,8 +71,8 @@ const HeroSection = () => {
     },
   ];
   return (
-    <div className="mt-[106px] w-[90%] mx-auto xl:pl-[219px] flex flex-col md:flex-row md:justify-between ">
-      <div className="w-fit">
+    <div className="mt-[106px] w-[95%] xl:w-[80%] mx-auto  flex flex-col md:flex-row md:justify-between md:mt-[141px] xl:mt-[219px]">
+      <div className="w-fit md:fixed top-20 md:top-[141px] xl:top-[219px]">
         <p className="text-[13px] leading-[20px] tracking-[-2%] font-normal  text-[#006A54] md:text-[14px] xl:text-[16px]">
           #Blogs
         </p>
@@ -86,9 +86,9 @@ const HeroSection = () => {
         </p>
         <div className="mt-[8px] flex flex-wrap space-x-[6px] space-y-[6px] md:flex-col xl:mt-[31px]">
           {innovation.map((item, index) => (
-            <div
+            <button
               key={index}
-              className="flex items-center border-[1px] border-black rounded-full py-[8px] px-[10px] w-fit"
+              className="flex items-center border-[1px] border-black rounded-full py-[8px] px-[10px] w-fit hover:bg-black hover:text-white transition-all duration-300 hover:scale-[1.05] cursor-pointer"
             >
               <span className="text-[12px] leading-[12px] tracking-[0%] font-urban font-medium md:text-[13px]">
                 {item.img}
@@ -96,43 +96,48 @@ const HeroSection = () => {
               <span className="text-[12px] leading-[12px] tracking-[0%] font-urban font-medium md:text-[13px]">
                 {item.title}
               </span>
-            </div>
+            </button>
           ))}
         </div>
       </div>
-      <div className="mt-[28px] md:mt-[10px] md:mr-[10px] w-fit md:w-full">
-        {blog.map((item, index) => (
-          <div key={index} className="flex justify-between max-w-[500px]">
-            <p className="font-urban font-medium text-[12px] md:ml-[100px] leading-[14px] tracking-[-4%] text-[#9B9B9B]">
-              {item.date}
-            </p>
-            <div className="relative flex space-x-[4px] border-l-1  pl-[5px] md:pl-[20px] pb-[29px]">
-              <div className="absolute top-0 -left-1.5 h-[10px] w-[10px] rounded-full bg-[#D9D9D9]"></div>
-              <Image
-                src={item.img}
-                alt={item.title}
-                height={100}
-                width={100}
-                className="h-[98px] w-[92px] rounded-2xl "
-              />
-              <div>
-                <p className="font-urban font-medium text-[12px] leading-[13px] tracking-[0%]">
-                  {item.type}
-                </p>
-                <h2 className="font-urban font-bold text-[14px] leading-[14px] tracking-[0%] max-w-[140px] md:max-x-[173px] mt-[4px]">
-                  {item.title}
-                </h2>
-                <p className="font-normal text-[12px] leading-[16px] tracking-[0%] mt-[3px]">
-                  {item.desc}
-                </p>
+      <div className="md:flex w-full  flex-col justify-end items-end">
+        <div className="mt-[28px] md:mt-[10px]  w-fit md:w-[50%] flex flex-col items-start">
+          {blog.map((item, index) => (
+            <div
+              key={index}
+              className="flex justify-end "
+            >
+              <p className="font-urban font-medium text-[12px] mr-[7px] md:mr-[15px] leading-[14px] tracking-[-4%] text-[#9B9B9B] md:text-[14px] ">
+                {item.date}
+              </p>
+              <div className="relative flex space-x-[4px] border-l-1  pl-[7px] md:pl-[15px] pb-[29px] w-full lg:space-x-[12px]">
+                <div className="absolute top-0 -left-1.5 h-[10px] w-[10px] rounded-full bg-[#D9D9D9]"></div>
+                <Image
+                  src={item.img}
+                  alt={item.title}
+                  height={100}
+                  width={100}
+                  className="h-[98px] w-[92px] rounded-2xl object-cover lg:h-[119px] lg:w-[197px]"
+                />
+                <div className="w-full">
+                  <p className="font-urban font-medium text-[12px] leading-[13px] tracking-[0%] lg:text-[13px]">
+                    {item.type}
+                  </p>
+                  <h2 className="font-urban font-bold text-[14px] leading-[14px] tracking-[0%] max-w-[150px] md:max-w-[180px] md:max-x-[173px] mt-[4px] uppercase lg:text-[20px] lg:leading-[20px] lg:max-w-[250px]">
+                    {item.title}
+                  </h2>
+                  <p className="font-normal font-poppins text-[12px] leading-[16px] tracking-[0%] mt-[3px] lg:mt-[6px] max-w-[180px]">
+                    {item.desc}
+                  </p>
 
-                <button className="font-urban font-extrabold bg-black text-white text-[12px] leading-[13px] tracking-[0%] py-[6px] px-[8px] rounded-full">
-                  Read More
-                </button>
+                  <button className="font-urban font-extrabold bg-black text-white text-[12px] leading-[13px] tracking-[0%] py-[6px] px-[8px] rounded-full mt-[6px] cursor-pointer hover:scale-[1.05] transition-all duration-300 ">
+                    Read More
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
