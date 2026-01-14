@@ -1,5 +1,4 @@
 import React from "react";
-import image from "../../../public/images/blog/outer.png";
 import Image from "next/image";
 
 const HeroSection = () => {
@@ -71,8 +70,8 @@ const HeroSection = () => {
     },
   ];
   return (
-    <div className="mt-[106px] w-[95%] xl:w-[80%] mx-auto  flex flex-col md:flex-row md:justify-between md:mt-[141px] xl:mt-[219px]">
-      <div className="w-fit md:fixed top-20 md:top-[141px] xl:top-[219px]">
+    <div className="mt-[106px] w-[95%] xl:w-[80%] mx-auto  flex flex-col md:flex-row md:justify-between md:mt-[141px] xl:mt-[219px] h-[100vh]">
+      <div className="w-fit md:sticky top-20 md:top-[141px] xl:top-[219px]">
         <p className="text-[13px] leading-[20px] tracking-[-2%] font-normal  text-[#006A54] md:text-[14px] xl:text-[16px]">
           #Blogs
         </p>
@@ -105,7 +104,7 @@ const HeroSection = () => {
           {blog.map((item, index) => (
             <div
               key={index}
-              className="flex justify-end "
+              className="flex justify-end"
             >
               <p className="font-urban font-medium text-[12px] mr-[7px] md:mr-[15px] leading-[14px] tracking-[-4%] text-[#9B9B9B] md:text-[14px] ">
                 {item.date}
@@ -144,3 +143,7 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
+
+
+
