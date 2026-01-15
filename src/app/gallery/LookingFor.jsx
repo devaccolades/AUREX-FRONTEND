@@ -35,7 +35,7 @@ export default function LookingFor() {
                     </p>
 
                 {/* Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-2 lg:gap-4 bg-[#F2F2F2] rounded-[10px] p-2 lg:p-3">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-1 bg-[#F2F2F2] rounded-[10px] p-1">
                     {coreServices.map((service, index) => (
                         <div
                             key={index}
