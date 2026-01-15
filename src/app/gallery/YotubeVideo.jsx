@@ -62,7 +62,7 @@ export default function YoutubeVideoSection() {
 
 
   return (
-    <section className="w-full bg-whitepy-6 md:py-8 lg:py-10">
+    <section className="w-full bg-white pb-6 md:pb-8 lg:pb-10">
       <div className="relative w-full aspect-[21/9] rounded-[20px] overflow-hidden">
 
         {/* THUMBNAIL */}

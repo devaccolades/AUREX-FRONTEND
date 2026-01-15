@@ -390,8 +390,9 @@ export default function ImageSlider() {
               className="object-cover"
             />
           </span>
+            <span>IT&apos;S THE </span>
 
-          <span>IT&apos;S THE STORIES BEHIND THEM</span>
+          <span>STORIES BEHIND THEM</span>
         </h2>
 
         {/* Mobile title */}
@@ -416,7 +417,7 @@ export default function ImageSlider() {
           <span className="block">BEHIND THEM</span>
         </h2>
 
-        <p className="text-sm text-black max-w-2xl mx-auto">
+        <p className="text-sm text-black lg:w-full max-w-2xl mx-auto ">
           Experience our journey through photos and films that celebrate
           design, dedication, and dreams realized.
         </p>
