@@ -4,6 +4,7 @@ import React from 'react'
 import ImageSlider from './ImageSlider'
 import YoutubeVideoSection from './YotubeVideo'
 import LookingFor from './LookingFor'
+import Moments from './Moments'
 
 function page() {
   return (
@@ -11,6 +12,7 @@ function page() {
       <Header />
       <ImageSlider />
       <YoutubeVideoSection />
+      <Moments />
       <LookingFor />
       <Footer />
     </div>

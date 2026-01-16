@@ -376,8 +376,8 @@ export default function ImageSlider() {
         </p>
 
         {/* Desktop title */}
-        <h2 className="hidden md:flex flex-wrap items-center justify-center gap-4 text-[40px] lg:text-[64px] font-urban font-semibold leading-[40px] lg:leading-[62px] mb-4">
-          <span>MORE THAN BUILDINGS</span>
+        <h2 className="hidden md:flex flex-wrap items-center justify-center text-[40px] lg:text-[64px] font-urban font-semibold leading-[100%] mb-4">
+          <span>More Than Buildings</span>
 
           <span
             onClick={() => setIsVideoOpen(true)}
@@ -390,14 +390,14 @@ export default function ImageSlider() {
               className="object-cover"
             />
           </span>
-            <span>IT&apos;S THE </span>
+            <span>It&apos;s the </span>
 
-          <span>STORIES BEHIND THEM</span>
+          <span>Stories Behind Them</span>
         </h2>
 
         {/* Mobile title */}
         <h2 className="md:hidden text-[24px] font-urban font-semibold leading-[24px] mb-2">
-          <span className="block">MORE THAN BUILDINGS</span>
+          <span className="block">More Than Buildings</span>
 
           <span className="inline-flex items-center gap-3 my-2">
             <span
@@ -411,13 +411,13 @@ export default function ImageSlider() {
                 className="object-cover"
               />
             </span>
-            <span>IT&apos;S THE STORIES</span>
+            <span>It&apos;s the Stories</span>
           </span>
 
-          <span className="block">BEHIND THEM</span>
+          <span className="block">Behind Them</span>
         </h2>
 
-        <p className="text-sm text-black lg:w-full max-w-2xl mx-auto ">
+        <p className="text-sm text-black w-full mx-auto ">
           Experience our journey through photos and films that celebrate
           design, dedication, and dreams realized.
         </p>
