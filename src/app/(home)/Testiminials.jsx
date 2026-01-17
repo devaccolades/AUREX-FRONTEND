@@ -1,6 +1,6 @@
 import Squares from "@/Components/Squares";
 import React from "react";
-import Testimonials from "./components/Testimonials";
+import Testimonials from "./components1/Testimonials";
 
 const Testiminials = () => {
   return (
