@@ -1,4 +1,7 @@
 "use client";
+import { useState } from "react";
+import Swal from "sweetalert2";
+
 
 export default function ModalForm() {
   const [formData, setFormData] = useState({
@@ -65,32 +68,44 @@ export default function ModalForm() {
      HANDLE SUBMIT
   ======================= */
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (!validate()) return;
+  if (!validate()) return;
 
-    setIsSubmitting(true);
+  setIsSubmitting(true);
 
-    try {
-      // 🔗 Replace this with your API call
-      console.log("Form Submitted:", formData);
+  try {
+    // 🔗 Replace with real API call
+    console.log("Form Submitted:", formData);
 
-      // Reset form
-      setFormData({
-        name: "",
-        phone: "",
-        email: "",
-        message: "",
-      });
+    Swal.fire({
+  icon: "success",
+  title: "Thank You!",
+  text: "Your enquiry has been submitted successfully.",
+  timer: 2500,
+  showConfirmButton: false,
+});
 
-      alert("Enquiry submitted successfully!");
-    } catch (error) {
-      console.error(error);
-      alert("Something went wrong. Try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+
+    setFormData({
+      fullName: "",
+      phone: "",
+      email: "",
+      message: "",
+    });
+  } catch (error) {
+    Swal.fire({
+      icon: "error",
+      title: "Submission Failed",
+      text: "Something went wrong. Please try again.",
+      timer: 2500,
+      confirmButtonColor: "#000",
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
   return (
    <div className="bg-white rounded-[20px] p-[2px] md:p-[8px] lg:p-[10px] ">
           <p className="font-urbarn text-[16px] lg:text-[24px] leading-[16px] lg:leading-[28px] tracking-[-4%] font-medium">
@@ -139,10 +154,18 @@ export default function ModalForm() {
                   Email Address*
                 </p>
                 <input
-                  type="email"
+                   type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
                   placeholder="Enter your email address"
                   className="border-[#959595] border-1  text-[12px] leading-[100%]  w-full font-urban rounded-[6px] px-[10px] py-[16px]"
                 />
+                {errors.email && (
+            <p className="text-red-500 text-[12px] mt-1">
+              {errors.email}
+            </p>
+          )}
               </div>
               <div>
                 <p className="text-[12px] lg:text-[16px] leading-[16px] font-urban tracking-[0.3px] mb-[8px] font-medium">
@@ -150,12 +173,23 @@ export default function ModalForm() {
                 </p>
                 <input
                   type="text"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
                   placeholder="Enter message "
                   className="border-[#959595] border-1 text-[12px] leading-[100%]  w-full font-urban rounded-[6px] px-[10px] py-[16px]"
                 />
+                {errors.message && (
+            <p className="text-red-500 text-[12px] mt-1">
+              {errors.message}
+            </p>
+          )}
               </div>
-              <button className="mt-4 bg-primary text-[15px] leading-[20px] font-roboto text-white py-[10px] w-full rounded-[6px]">
-                Submit Enquiry
+              <button 
+              type="submit"
+          disabled={isSubmitting}
+              className="mt-4 bg-primary text-[15px] leading-[20px] font-roboto text-white py-[10px] w-full rounded-[6px]">
+                {isSubmitting ? "Submitting..." : "Submit Enquiry"}
               </button>
             </form>
           </div>
