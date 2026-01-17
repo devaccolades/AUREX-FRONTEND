@@ -108,8 +108,8 @@ export default function ProjectEnquiryModal() {
 
     return (
         <div className="bg-white rounded-[20px] p-[2px] md:p-[8px] lg:p-[10px]">
-            <div className="mb-6">
-                <p className="font-urban text-[12px] lg:text-[14px] text-black mb-1">
+            <div className="mb-2">
+                <p className="font-urban text-[12px] lg:text-[14px] text-black ">
                     Download Brochure of
                 </p>
 
@@ -117,7 +117,7 @@ export default function ProjectEnquiryModal() {
                     AUREX LIARD
                 </h2>
 
-                <p className="font-urban text-[12px] lg:text-[14px] text-gray-500 mt-1">
+                <p className="font-urban text-[12px] lg:text-[14px] text-black mt-1">
                     Get the complete project details instantly.
                 </p>
             </div>

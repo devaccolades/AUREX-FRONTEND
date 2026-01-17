@@ -1,9 +1,10 @@
 "use client";
 import { useState } from "react";
 import Swal from "sweetalert2";
+import { LeadSubmission } from "@/services/api";
 
 
-export default function ModalForm() {
+export default function ModalForm({ onClose }) {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -64,9 +65,7 @@ export default function ModalForm() {
     return Object.keys(newErrors).length === 0;
   };
 
-  /* =======================
-     HANDLE SUBMIT
-  ======================= */
+
   const handleSubmit = async (e) => {
   e.preventDefault();
 
@@ -75,42 +74,64 @@ export default function ModalForm() {
   setIsSubmitting(true);
 
   try {
-    // 🔗 Replace with real API call
-    console.log("Form Submitted:", formData);
+    const payload = {
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      message: formData.message,
+    };
 
-    Swal.fire({
-  icon: "success",
-  title: "Thank You!",
-  text: "Your enquiry has been submitted successfully.",
-  timer: 2500,
-  showConfirmButton: false,
-});
+    await LeadSubmission(payload);
 
-
+    // ✅ Reset form immediately
     setFormData({
       name: "",
       phone: "",
       email: "",
       message: "",
     });
+
+    // ✅ Show success popup
+    await Swal.fire({
+      icon: "success",
+      title: "Thank You!",
+      text: "Your enquiry has been submitted successfully.",
+      timer: 2000,
+      showConfirmButton: false,
+    });
+
+    // ✅ Close modal AFTER alert
+    if (onClose) onClose();
+
   } catch (error) {
     Swal.fire({
       icon: "error",
       title: "Submission Failed",
       text: "Something went wrong. Please try again.",
       timer: 2500,
-      confirmButtonColor: "#000",
+      showConfirmButton: false,
     });
   } finally {
     setIsSubmitting(false);
   }
 };
 
+
   return (
    <div className="bg-white rounded-[20px] p-[2px] md:p-[8px] lg:p-[10px]">
-          <p className="font-urbarn text-[16px] lg:text-[24px] leading-[16px] lg:leading-[28px] tracking-[-4%] font-medium">
-            WE ARE READY TO ANSWER ALL YOUR QUESTIONS
-          </p>
+         <div className="mb-2">
+                <p className="font-urban text-[12px] lg:text-[14px] text-black mb-1">
+                    Book Your
+                </p>
+
+                <h2 className="font-urban text-[22px] lg:text-[32px] font-semibold text-black leading-tight">
+                   Free Consultation
+                </h2>
+
+                <p className="font-urban text-[12px] lg:text-[14px] text-black mt-1">
+                    Get the complete project details instantly.
+                </p>
+            </div>
           <div>
             <form onSubmit={handleSubmit} className="flex flex-col gap-[10px] mt-[24px]">
               <div>
