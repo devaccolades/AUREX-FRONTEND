@@ -70,15 +70,15 @@ const HeroSection = () => {
     },
   ];
   return (
-    <div className="mt-[106px] w-[95%] xl:w-[80%] mx-auto  flex flex-col md:flex-row md:justify-between md:mt-[141px] xl:mt-[219px] h-[100vh]">
-      <div className="w-fit md:sticky top-20 md:top-[141px] xl:top-[219px]">
+    <div className="relative mt-[106px] w-[95%] xl:w-[80%] mx-auto  flex flex-col md:flex-row md:justify-between md:mt-[141px]">
+      <div className="w-fit md:sticky self-start top-20 md:top-[141px] xl:top-[220px] pb-10 ">
         <p className="text-[13px] leading-[20px] tracking-[-2%] font-normal  text-[#006A54] md:text-[14px] xl:text-[16px]">
           #Blogs
         </p>
-        <h1 className="text-[32px] leading-[32px] tracking-[0%] mt-[4px] max-w-[336px] font-semibold uppercase font-urban md:text-[36px] md:leading-[36px] md:mt-[10px] xl:text-[48px] xl:leading-[48px] ">
+        <h1 className="text-[32px] leading-[32px] tracking-[0%] mt-[4px] max-w-[336px] md:max-w-[460px] font-semibold uppercase font-urban md:text-[36px] md:leading-[36px] md:mt-[10px] xl:text-[48px] xl:leading-[48px] ">
           Insights, Inspiration & Innovation
         </h1>
-        <p className="mt-[5px] font-poppins max-w-[322px] text-[12px] leading-[18px] tracking-[0%] md:text-[13px] md:leading-[18px] md:mt-[8px] xl:text-[14px]">
+        <p className="mt-[5px] font-poppins max-w-[322px] md:max-w-[300px] text-[12px] leading-[18px] tracking-[0%] md:text-[13px] md:leading-[18px] md:mt-[8px] xl:text-[14px]">
           Explore the world of architecture, design trends, and lifestyle
           inspirations from Aurex Builders. Stay informed, get inspired, and see
           how we’re redefining modern living — one story at a time.
@@ -99,8 +99,8 @@ const HeroSection = () => {
           ))}
         </div>
       </div>
-      <div className="md:flex w-full  flex-col justify-end items-end">
-        <div className="mt-[28px] md:mt-[10px]  w-fit md:w-[50%] flex flex-col items-start">
+      <div className="md:flex w-full flex-col items-end xl:mt-[80px]">
+        <div className="mt-[28px] w-fit flex flex-col items-start">
           {blog.map((item, index) => (
             <div
               key={index}
