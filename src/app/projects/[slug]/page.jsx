@@ -11,11 +11,12 @@ import ProjectHero from './ProjectHeroSection'
 import ConstructionUpdates from './ConstructionUpdate'
 import ProjectOverviewSection from './ProjectOverview'
 import AmenitiesSection from './Amenities'
+import MapSection from './MapSection'
 
 function page() {
   return (
     <div>
-      <Header />
+      {/* <Header />
       <ProjectHero />
       <ProjectOverviewSection />
       <AmenitiesSection />
@@ -26,7 +27,8 @@ function page() {
       <YoutubeEmbedSection />
       <ConstructionUpdates />
       <BankingPartners />
-      <Footer />
+      <Footer /> */}
+      <MapSection />
     </div>
   )
 }
