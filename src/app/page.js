@@ -4,7 +4,7 @@ import FAQ from "./(home)/FAQ";
 
 import DreamsInThrissur from "./(home)/DreamsInThrissur";
 import Testiminials from "./(home)/Testiminials";
-import Footer from "../Components/Footer";
+import Footer from "../components2/Footer";
 import WhyChooseUs from "./(home)/WhyChoose";
 import Thrissur from "./(home)/Thrissur";
 import ChairmanMessage from "./(home)/ChairmanMessage";
@@ -14,7 +14,7 @@ import BrandAmbassador from "./(home)/BrandAmbassador";
 import GallerySection from "./(home)/Gallery";
 import SignatureProjects from "./(home)/SignatureProjects";
 import Services from "./(home)/Services";
-import Header from "@/Components/Header";
+import Header from "@/components2/Header";
 import dynamic from "next/dynamic";
 
 export default function Home() {

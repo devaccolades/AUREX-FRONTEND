@@ -1,6 +1,6 @@
 "use client";
 
-import EnquireNowButton from "@/Components/EnquireNowButton";
+import EnquireNowButton from "@/components2/EnquireNowButton";
 import Image from "next/image";
 
 export default function  HeroSection() {

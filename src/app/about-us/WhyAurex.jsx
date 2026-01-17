@@ -109,7 +109,7 @@
 
 "use client";
 
-import MagneticButton from "@/Components/MagneticButton";
+import MagneticButton from "@/components2/MagneticButton";
 import { Check } from "lucide-react";
 import Image from "next/image";
 

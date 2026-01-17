@@ -1,5 +1,5 @@
-import Footer from '@/Components/Footer'
-import Header from '@/Components/Header'
+import Footer from '@/components2/Footer'
+import Header from '@/components2/Header'
 import React from 'react'
 import JobApplySection from './JobApplySection'
 

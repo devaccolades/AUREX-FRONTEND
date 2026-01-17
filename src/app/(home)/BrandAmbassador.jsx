@@ -1,7 +1,7 @@
 
 "use client";
 
-import Squares from "@/Components/Squares";
+import Squares from "@/components2/Squares";
 import Image from "next/image";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { useRef, useState } from "react";

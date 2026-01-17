@@ -1,5 +1,5 @@
 "use client";
-import Squares from "@/Components/Squares";
+import Squares from "@/components2/Squares";
 
 export default function HeroSection() {
   return (

@@ -1,6 +1,6 @@
 import React from 'react'
 import BlogInner from './BlogInner'
-import Header from '@/Components/Header'
+import Header from '@/components2/Header'
 
 export default function page() {
   return (

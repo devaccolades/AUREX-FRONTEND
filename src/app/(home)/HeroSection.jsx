@@ -3,11 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 // import GlassSurface from "@/Components/GlassSurface";
-const GlassSurface = dynamic(() => import("@/Components/GlassSurface"), {
+const GlassSurface = dynamic(() => import("@/components2/GlassSurface"), {
   // Important: Setting ssr: false tells Next.js NOT to render this component on the server.
   ssr: false,
 });
-import EnquireNowButton from "@/Components/EnquireNowButton";
+import EnquireNowButton from "@/components2/EnquireNowButton";
 import dynamic from "next/dynamic";
 import { motion, AnimatePresence } from "framer-motion";
 

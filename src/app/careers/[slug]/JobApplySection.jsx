@@ -1,7 +1,7 @@
 "use client";
 
 import { UploadCloud } from "lucide-react";
-import Squares from "@/Components/Squares";
+import Squares from "@/components2/Squares";
 import { useState } from "react";
 
 export default function JobApplySection() {

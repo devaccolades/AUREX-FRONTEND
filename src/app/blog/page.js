@@ -1,7 +1,7 @@
-import Header from "@/components/Header";
+import Header from "@/components2/Header";
 import React from "react";
 import HeroSection from "./HeroSection";
-import Footer from "@/components/Footer";
+import Footer from "@/components2/Footer";
 
 const page = () => {
   return (

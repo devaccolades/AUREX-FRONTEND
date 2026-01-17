@@ -3,7 +3,7 @@
 import Image from "next/image";
 import dynamic from "next/dynamic";
 const GlassSurface = dynamic(
-  () => import('@/Components/GlassSurface'),
+  () => import('@/components2/GlassSurface'),
   {
     // Important: Setting ssr: false tells Next.js NOT to render this component on the server.
     ssr: false
