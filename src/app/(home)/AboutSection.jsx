@@ -64,7 +64,7 @@ export default function AboutSection() {
                             ✕
                         </button>
 {/* <ProjectEnquiryModal /> */}
-                        <ModalForm />
+                        <ModalForm onClose={() => setOpenModal(false)} />
                     </div>
                 </div>
             )}
