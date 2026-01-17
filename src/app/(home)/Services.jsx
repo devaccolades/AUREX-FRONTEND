@@ -4,8 +4,9 @@
 
 "use client";
 
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import Image from "next/image";
+import ModalForm from "@/components2/forms/ModalForm";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -46,6 +47,7 @@ const services = [
 ];
 
 export default function Services() {
+  const [openModal, setOpenModal] = useState(false)
   const containerRef = useRef(null);
   const groupsRef = useRef(null);
   const titleRefs = useRef([]);
@@ -82,27 +84,27 @@ export default function Services() {
       //   },
       // });
       const tl = gsap.timeline({
-  scrollTrigger: {
-    trigger: containerRef.current,
-    start: "top top",
-    end: `+=${scrollDistance}`,
-    scrub: 1,
-    pin: true,
-    onUpdate: (self) => {
-      const progress = self.progress;
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: `+=${scrollDistance}`,
+          scrub: 1,
+          pin: true,
+          onUpdate: (self) => {
+            const progress = self.progress;
 
-      // Calculate slide index
-      const slide = Math.round(progress * (total - 1)) + 1;
+            // Calculate slide index
+            const slide = Math.round(progress * (total - 1)) + 1;
 
-      if (counterRef.current) {
-        counterRef.current.innerHTML = `
+            if (counterRef.current) {
+              counterRef.current.innerHTML = `
           <span style="color:#D4A017;">0${slide}</span>
           <span style="color:#000;"> / 0${total}</span>
         `;
-      }
-    },
-  },
-});
+            }
+          },
+        },
+      });
 
 
       tl.set(counterRef.current, { opacity: 1 });
@@ -134,21 +136,21 @@ export default function Services() {
         );
 
         // Counter change
-        
-      //   tl.to(
-      //     {},
-      //     {
-      //       duration: 0.1,
-      //       onUpdate: () => {
-      //         const current = i + 2; // 2,3, etc
-      //         counterRef.current.innerHTML = `
-      //   <span style="color:#D4A017;">0${current}</span>
-      //   <span style="color:#000;"> / 0${total}</span>
-      // `;
-      //       },
-      //     },
-      //     "<"
-      //   );
+
+        //   tl.to(
+        //     {},
+        //     {
+        //       duration: 0.1,
+        //       onUpdate: () => {
+        //         const current = i + 2; // 2,3, etc
+        //         counterRef.current.innerHTML = `
+        //   <span style="color:#D4A017;">0${current}</span>
+        //   <span style="color:#000;"> / 0${total}</span>
+        // `;
+        //       },
+        //     },
+        //     "<"
+        //   );
 
         // Outgoing images
         tl.to(
@@ -199,7 +201,7 @@ export default function Services() {
       className="relative w-full h-screen border-t border-gray-300 overflow-hidden bg-white"
     >
       {/* CENTER STACK : Counter → Title → Button */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center z-40 pointer-events-none">
+      <div className="absolute inset-0 flex flex-col items-center justify-center z-40 ">
 
         {/* Counter */}
         <div
@@ -231,7 +233,7 @@ export default function Services() {
 
         {/* Button */}
         <button
-          // onClick={onClick}
+          onClick={() => setOpenModal(true)}
           className="flex items-center gap-2 mt-8 xl:mt-4 text-black px-5 py-2 rounded-full font-urban text-[12px] leading-[16px] font-bold  hover:scale-[1.03] transition "
         >
           <Image
@@ -259,7 +261,7 @@ export default function Services() {
           {services.map((service, slideIndex) => (
             <div key={slideIndex} className="relative w-full h-screen">
               {service.images.map((img, j) => (
-                
+
 
                 <div
                   key={j}
@@ -296,6 +298,21 @@ export default function Services() {
           ))}
         </div>
       </div>
+      {openModal && (
+        <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/40 backdrop-blur-sm">
+          <div className="bg-white rounded-2xl p-8 w-[90%] max-w-lg relative mt-26">
+
+            <button
+              className="absolute top-4 right-4 text-xl"
+              onClick={() => setOpenModal(false)}
+            >
+              ✕
+            </button>
+
+            <ModalForm />
+          </div>
+        </div>
+      )}
     </section>
   );
 }

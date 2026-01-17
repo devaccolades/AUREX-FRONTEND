@@ -88,7 +88,7 @@ export default function ModalForm() {
 
 
     setFormData({
-      fullName: "",
+      name: "",
       phone: "",
       email: "",
       message: "",
@@ -107,12 +107,12 @@ export default function ModalForm() {
 };
 
   return (
-   <div className="bg-white rounded-[20px] p-[2px] md:p-[8px] lg:p-[10px] ">
+   <div className="bg-white rounded-[20px] p-[2px] md:p-[8px] lg:p-[10px]">
           <p className="font-urbarn text-[16px] lg:text-[24px] leading-[16px] lg:leading-[28px] tracking-[-4%] font-medium">
             WE ARE READY TO ANSWER ALL YOUR QUESTIONS
           </p>
           <div>
-            <form className="flex flex-col gap-[10px] mt-[24px]">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-[10px] mt-[24px]">
               <div>
                 <p className="text-[12px] lg:text-[16px] leading-[16px] font-urban tracking-[0.3px] mb-[8px] font-medium">
                   Full Name*
@@ -120,7 +120,7 @@ export default function ModalForm() {
                 <input
                   type="text"
                   name="name"
-                  value={formData.fname}
+                  value={formData.name}
             onChange={handleChange}
                   placeholder="Enter your full name"
                   className="border-[#959595] border-1 text-[12px] leading-[100%]  w-full font-urban rounded-[6px] px-[10px] py-[16px]"

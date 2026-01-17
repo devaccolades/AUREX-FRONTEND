@@ -10,6 +10,7 @@ const GlassSurface = dynamic(() => import("@/components2/GlassSurface"), {
 import EnquireNowButton from "@/components2/EnquireNowButton";
 import dynamic from "next/dynamic";
 import { motion, AnimatePresence } from "framer-motion";
+import ModalForm from "@/components2/forms/ModalForm";
 
 const projects = [
   {
@@ -31,6 +32,7 @@ const projects = [
 ];
 
 export default function HeroSection() {
+  const [openModal, setOpenModal] = useState(false)
   const [active, setActive] = useState(0);
   const project = projects[active];
   const [open, setOpen] = useState(false);
@@ -99,7 +101,9 @@ export default function HeroSection() {
             <h2 className="text-[32px] md:text-[36px] leading-[16px] font-urban font-semibold my-2 md:my-4">
               PREMIUM LIVING!
             </h2>
-            <EnquireNowButton className="mx-auto" />
+            <EnquireNowButton
+             onClick={() => setOpenModal(true)}
+             className="mx-auto" />
           </div>
         </div>
 
@@ -299,6 +303,21 @@ export default function HeroSection() {
           </button>
         </div>
       </div>
+       {openModal && (
+                      <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/40 backdrop-blur-sm">
+                          <div className="bg-white rounded-2xl p-8 w-[90%] max-w-lg relative z-20">
+      
+                              <button
+                                  className="absolute top-4 right-4 text-xl"
+                                  onClick={() => setOpenModal(false)}
+                              >
+                                  ✕
+                              </button>
+      
+                              <ModalForm />
+                          </div>
+                      </div>
+                  )}
     </section>
   );
 }
