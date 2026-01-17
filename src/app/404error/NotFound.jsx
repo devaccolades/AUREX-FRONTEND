@@ -5,7 +5,7 @@ import Link from 'next/link'
 import AurexImg from '../../../public/images/404error/aurex-logo.svg'
 import Img1 from '../../../public/images/404error/img1.svg'
 import Img2 from '../../../public/images/404error/img2.svg'
-import Img3 from '../../../public/images/404error/img3.svg'
+import Img3 from '../../../public/images/404error/img3.png'
 import Img4 from '../../../public/images/404error/img4.svg'
 import arrow from '../../../public/images/404error/arrow.svg'
 
@@ -17,7 +17,7 @@ export default function NotFound() {
       <div className="absolute top-0 left-0 w-full flex justify-between items-start px-6 md:px-12 py-8 z-20">
 
         {/* Logo */}
-        <div className=''>
+        <div className='xl:w-[76px] xl:h-[120px]'>
         <Image
           src={AurexImg}
           alt="Aurex Builders"
@@ -26,7 +26,7 @@ export default function NotFound() {
         </div>
 
         {/* Menu */}
-        <div className="font-urbanist font-bold lg:text-[16px] text-[14px] space-y-2 text-right text-[rgba(52, 52, 46, 1)]">
+        <div className="font-urbanist font-bold lg:text-[16px] text-[14px] space-y- text-right text-[rgba(52, 52, 46, 1)]">
           <p>PROJECT</p>
           <p>SERVICES</p>
           <p>ABOUT</p>
@@ -47,41 +47,37 @@ export default function NotFound() {
       <div className="relative z-10 min-h-screen">
 
         {/* Main tall image */}
-        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[260px] md:w-[340px] h-[460px] md:h-[560px]">
+        <div className="absolute top-7 xl:top-6 left-102 xl:left-159 w-[230px] md:w-[340px] xl:w-[360px] xl:h-[560px] h-[460px]">
           <Image
-            src={Img1}
+            src={Img4}
             alt=""
-            fill
-            className="object-cover"
+            className="object-cover h-full w-full"
           />
         </div>
 
         {/* Right middle image */}
-        <div className="absolute top-[55%] left-[58%] w-[200px] md:w-[260px] h-[150px] md:h-[180px]">
+        <div className="absolute top-[57%] xl:top-[62%] left-[52%] w-[200px] md:w-[260px] xl:w-[255px] h-[150px] md:h-[180px] xl:h-[230px]">
           <Image
             src={Img2}
             alt=""
-            fill
             className="object-cover"
           />
         </div>
 
         {/* Bottom left image */}
-        <div className="absolute bottom-24 left-[32%] w-[220px] md:w-[280px] h-[160px] md:h-[200px]">
+        <div className="absolute xl:-bottom-10 xl:left-[37.3%] w-[220px] md:w-[280px] h-[160px] md:h-[200px]">
           <Image
-            src={Img3}
+            src={Img1}
             alt=""
-            fill
             className="object-cover"
           />
         </div>
 
         {/* Top small image */}
-        <div className="absolute top-0 left-[52%] w-[160px] md:w-[200px] h-[120px] md:h-[150px]">
+        <div className="absolute -top-28 xl:-top-48 left-[52%] w-[180px] xl:w-[280px]">
           <Image
-            src={Img4}
+            src={Img3}
             alt=""
-            fill
             className="object-cover"
           />
         </div>

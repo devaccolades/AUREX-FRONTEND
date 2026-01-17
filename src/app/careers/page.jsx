@@ -4,6 +4,7 @@ import React from 'react'
 import HeroSection from './Herosection'
 import OpenPositionsSection from './OpenPositions'
 import CareerCTASection from './CareerCTA'
+import NoJobs from './NoJobs'
 
 function page() {
   return (
