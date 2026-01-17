@@ -1,4 +1,4 @@
-import Squares from "@/Components/Squares";
+import Squares from "@/components2/Squares";
 import React from "react";
 import Testimonials from "./components1/Testimonials";
 

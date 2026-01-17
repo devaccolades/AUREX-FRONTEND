@@ -4,7 +4,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import ModalForm from "@/Components/forms/ModalForm";
+import ModalForm from "@/components2/forms/ModalForm";
 
 const amenities = [
   {

@@ -1,11 +1,11 @@
 
 "use client";
 import Image from "next/image";
-import MagneticButton from "@/Components/MagneticButton";
+import MagneticButton from "@/components2/MagneticButton";
 import bg from "../../../public/images/home/why-bg.png";
 import { useState } from "react";
-import ModalForm from "@/Components/forms/ModalForm";
-import FixedCTAButton from "@/Components/FixedMagneticButton";
+import ModalForm from "@/components2/forms/ModalForm";
+import FixedCTAButton from "@/components2/FixedMagneticButton";
 
 export default function WhyChooseUs() {
   const [openModal, setOpenModal] = useState(false)
