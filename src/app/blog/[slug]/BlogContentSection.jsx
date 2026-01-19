@@ -26,7 +26,7 @@ const relatedBlogs = [
     },
 ]
 
-export default function BlogContentSection() {
+export default function BlogContentSection({data}) {
     const [expanded, setExpanded] = useState(false)
 
     return (
