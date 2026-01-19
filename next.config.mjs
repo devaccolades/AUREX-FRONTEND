@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-      images: {
+  images: {
     remotePatterns: [
       {
-        protocol: 'http',
-        hostname: 'backend.aurexbuilders.com',
-        pathname: '/media/**',
+        protocol: "http",
+        hostname: "backend.aurexbuilders.com",
+        pathname: "/**",
       },
     ],
   },
