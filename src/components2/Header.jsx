@@ -44,26 +44,30 @@ export default function Header() {
 
   return (
     <>
-      <header
-        className="fixed top-0 left-0 w-full z-[99] flex items-center justify-between p-10 md:p-16"
-        style={{
-          height: "95px",
-          background: `
-            linear-gradient(
-              to bottom,
-              rgba(9,40,96,1) 0%,
-              rgba(8,48,115,0.92) 20%,
-              rgba(7,62,137,0.70) 40%,
-              rgba(6,58,132,0.45) 60%,
-              rgba(4,52,115,0.28) 75%,
-              rgba(3,44,100,0.15) 88%,
-              rgba(2,29,68,0.08) 94%,
-              rgba(0,0,0,0) 100%
-            )
-          `,
-          borderBottom: "0px solid rgba(255,255,255,0.15)",
-        }}
-      >
+<header
+  className={`fixed top-0 left-0 w-full z-[99] flex items-center justify-between transition-all duration-300 ${
+    scrolled 
+      ? "p-6 md:p-10"  
+      : "p-8 md:p-16"
+  }`}
+  style={{
+    height: scrolled ? "60px" : "110px", // Adjust these pixel values to your liking
+    background: `
+      linear-gradient(
+        to bottom,
+        rgba(1,75,131,1) 0%,
+        rgba(1,75,131,0.85) 20%,
+        rgba(1,75,131,0.60) 40%,
+        rgba(1,75,131,0.40) 60%,
+        rgba(1,75,131,0.25) 75%,
+        rgba(1,75,131,0.15) 88%,
+        rgba(1,75,131,0.08) 94%,
+        rgba(1,75,131,0) 100%
+      )
+    `,
+    borderBottom: "0px solid rgba(255,255,255,0.15)",
+  }}
+>
         <div
           className="w-[24px] h-[14px] flex items-center cursor-pointer"
           onClick={() => setOpen(true)}
@@ -77,16 +81,15 @@ export default function Header() {
         </div>
 
         <div
-          className={`flex justify-center transition-all duration-300 ${
-            scrolled ? "w-20" : "w-16 md:w-32"
-          }`}
+          className={`flex justify-center transition-all duration-300 ${scrolled ? "w-20" : "w-16 md:w-32"
+            }`}
         >
           <Image
             src={
               scrolled ? "/images/aurex-white.png" : "/images/aurex-logo.svg"
             }
-            width={scrolled ? (isMobile ? 30 : 40) : isMobile ? 45 : 60}
-            height={scrolled ? (isMobile ? 30 : 40) : isMobile ? 45 : 60}
+            width={scrolled ? (isMobile ? 30 : 40) : isMobile ? 40 : 50}
+            height={scrolled ? (isMobile ? 30 : 40) : isMobile ? 40 : 50}
             alt="logo"
             className="transition-all duration-300"
           />
@@ -130,7 +133,7 @@ export default function Header() {
               icon={item.icon}
               label={item.label}
               path={item.path}
-              // dropdown={item.dropdown}
+            // dropdown={item.dropdown}
             />
           ))}
 
