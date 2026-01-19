@@ -136,12 +136,12 @@ export default function HeroSection() {
               AMENITIES THAT DEFINE
             </p>
 
-            <h2 className="mt-[12px] text-[32px] md:text-[36px]  font-urban font-semibold my-2 md:my-4">
+            <h2 className=" text-[32px] md:text-[36px]  font-urban font-semibold">
               PREMIUM LIVING!
             </h2>
             <EnquireNowButton
               onClick={() => setOpenModal(true)}
-              className="mt-[17px] mx-auto"
+              className="mx-auto"
             />
           </div>
         </div>
@@ -163,9 +163,9 @@ export default function HeroSection() {
                 {/* ===== ROW 1: LOGO + NAME + LOCATION ===== */}
                 <div className="flex items-center justify-between gap-2">
                   <div className="relative w-[72px] h-[30px] ">
-                    {residentialProjects.logo && (
+                    {project.logo && (
                       <Image
-                        src={residentialProjects.logo}
+                        src={project.logo}
                         alt="logo"
                         fill
                         className="object-cover md:object-contain"
@@ -175,10 +175,10 @@ export default function HeroSection() {
 
                   <div className="text-white leading-tight">
                     <h4 className="text-[13px] leading-[16px] font-urban font-semibold">
-                      {residentialProjects.name}
+                      {project.name}
                     </h4>
                     <p className="text-[10px] leading-[16px] font-urban opacity-90">
-                      {residentialProjects.location}
+                      {project.location}
                     </p>
                   </div>
                 </div>
@@ -186,9 +186,9 @@ export default function HeroSection() {
                 {/* ===== ROW 2: QR + RERA ===== */}
                 <div className="flex items-center justify-between gap-2">
                   <div className="relative w-8 h-8 shrink-0 bg-white rounded p-0">
-                    {residentialProjects.qrcode && (
+                    {project.qr_code && (
                       <Image
-                        src={residentialProjects.qrcode}
+                        src={project.qr_code}
                         alt="qr"
                         fill
                         className="object-contain"
@@ -198,7 +198,7 @@ export default function HeroSection() {
 
                   <p className="text-[9px] leading-tight font-urban whitespace-nowrap text-white">
                     RERA REG. NO <br />
-                    {residentialProjects.rera}
+                    {project.rera}
                   </p>
 
                   {/* MAP ICON */}
