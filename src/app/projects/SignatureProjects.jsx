@@ -3,41 +3,47 @@
 import { ChevronRight, DoorOpen, Download } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
-export default function SignatureProjects() {
-  const projects = [
-    {
-      id: 1,
-      title: "AUREX CASCADE CITY",
-      logo: "/images/home/cascadelogo.svg",
-      location: "Chembukkavu, Thrissur",
-      distance: "900 mtr From Swaraj Round",
-      rera: "K-RERA/PRJ/TSR/263/2024",
-      totalArea: "32 Cents",
-      totalUnits: "45 (B+G+9)",
-      status: "Ongoing",
-      bigImage: "/images/home/hero.jpg",
-      description:
-        "This premium villa project seamlessly marries contemporary aesthetics with enduring quality.",
-    },
-    {
-      id: 2,
-      title: "AUREX LIARD",
-      logo: "/images/home/cascadelogo.svg",
-      location: "Mulagunnathukavu, Thrissur",
-      distance: "Near Medical College",
-      rera: "K-RERA/PRJ/TSR/178/2023",
-      totalArea: "48 Cents",
-      totalUnits: "52 (B+G+10)",
-      status: "Ready",
-      bigImage: "/images/home/cas.jpg",
-      description:
-        "This premium project seamlessly marries contemporary aesthetics with enduring quality.",
-    },
-  ];
 
+export default function SignatureProjects({data}) {
+  const projects = data?.filter(
+    (project) => project.project_type === "Residential"
+  ) || [];
+  // const projects = [
+  //   {
+  //     id: 1,
+  //     title: "AUREX CASCADE CITY",
+  //     logo: "/images/home/cascadelogo.svg",
+  //     location: "Chembukkavu, Thrissur",
+  //     distance: "900 mtr From Swaraj Round",
+  //     rera: "K-RERA/PRJ/TSR/263/2024",
+  //     totalArea: "32 Cents",
+  //     totalUnits: "45 (B+G+9)",
+  //     status: "Ongoing",
+  //     bigImage: "/images/home/hero.jpg",
+  //     description:
+  //       "This premium villa project seamlessly marries contemporary aesthetics with enduring quality.",
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "AUREX LIARD",
+  //     logo: "/images/home/cascadelogo.svg",
+  //     location: "Mulagunnathukavu, Thrissur",
+  //     distance: "Near Medical College",
+  //     rera: "K-RERA/PRJ/TSR/178/2023",
+  //     totalArea: "48 Cents",
+  //     totalUnits: "52 (B+G+10)",
+  //     status: "Ready",
+  //     bigImage: "/images/home/cas.jpg",
+  //     description:
+  //       "This premium project seamlessly marries contemporary aesthetics with enduring quality.",
+  //   },
+  // ];
+  const router = useRouter();
   const [activeId, setActiveId] = useState(projects[0].id);
   const activeProject = projects.find((p) => p.id === activeId);
+
 
   return (
     <section className="py-16 relative bg-gradient-to-b from-[#FFF7EA] to-white">
@@ -72,7 +78,7 @@ export default function SignatureProjects() {
               >
                 <Image
                   src={p.logo}
-                  alt={p.title}
+                  alt={p.image_alt}
                   width={140}
                   height={40}
                   className="mx-auto mb-2"
@@ -88,8 +94,8 @@ export default function SignatureProjects() {
         {/* RIGHT FEATURED PROJECT */}
         <div className="relative h-[520px] rounded-[24px] overflow-hidden shadow-xl">
           <Image
-            src={activeProject.bigImage}
-            alt={activeProject.title}
+            src={activeProject.image}
+            alt={activeProject.image_alt}
             fill
             className="object-cover"
             priority
@@ -111,7 +117,7 @@ export default function SignatureProjects() {
                   KERA
                 </span>
                 <span className="bg-white text-black px-4 py-2 rounded-[24px]">
-                  {activeProject.rera}
+                  {activeProject.k_rera}
                 </span>
               </div>
             </div>
@@ -119,7 +125,7 @@ export default function SignatureProjects() {
             {/* BOTTOM CONTENT */}
             <div>
               <span className="inline-block bg-red-600 px-3 py-1 text-xs rounded-full mb-2">
-                {activeProject.distance}
+                {activeProject.land_mark}
               </span>
 
               <div className="flex items-center gap-2">
@@ -137,16 +143,17 @@ export default function SignatureProjects() {
               </div>
 
               <h3 className="text-[20px] lg:text-[24px] leading-[24px] font-urban font-semibold mt-1">
-                {activeProject.title}
+                {activeProject.name}
               </h3>
 
               <p className="text-[12px] lg:text-[13px] leading-[100%] mt-0 lg:mt-2 opacity-95 ">
-                {activeProject.description}
+                {activeProject.short_description}
               </p>
 
               <div className="flex gap-4 mt-4">
                 {/* LEFT OUTLINE BUTTON */}
                 <button
+                 onClick={() => router.push(`/projects/${activeProject.slug}`)}
                   className="
                                          flex-1
                                          px-6 py-3
@@ -215,7 +222,7 @@ export default function SignatureProjects() {
               >
                 <Image
                   src={p.logo}
-                  alt={p.title}
+                  alt={p.logo_alt}
                   width={140}
                   height={40}
                   className="mx-auto mb-2"
@@ -234,8 +241,8 @@ export default function SignatureProjects() {
             className="relative rounded-2xl overflow-hidden shadow-lg h-[468px]"
           >
             <Image
-              src={p.bigImage}
-              alt={p.title}
+              src={p.image}
+              alt={p.image_alt}
               fill
               className="object-cover"
             />
@@ -265,7 +272,7 @@ export default function SignatureProjects() {
 
               <div className=" text-white">
                 <span className="inline-block bg-red-600 px-3 py-[6px] px-[10px] rounded-full mb-2 font-urban text-[14px] leading-[100%] tracking-[0%] font-black">
-                  {activeProject.distance}
+                  {activeProject.land_mark}
                 </span>
                 {/* <Image
                   src={p.logo}
@@ -287,11 +294,12 @@ export default function SignatureProjects() {
                     {p.location}
                   </p>
                 </div>
-                <h3 className="text-[20px] font-semibold mt-1">{p.title}</h3>
-                <p className="text-xs opacity-90 mt-1">{p.description}</p>
+                <h3 className="text-[20px] font-semibold mt-1">{p.name}</h3>
+                <p className="text-xs opacity-90 mt-1">{p.short_description}</p>
 
                 <div className="w-full flex justify-between gap-[10px]">
-                  <button className="flex gap-2 mt-4 border border-white px-[10px] py-[8px] rounded-2xl text-[11px] leading-[100%] tracking-[0%] max-w-[140px] w-full text-left">
+                  <button  onClick={() => router.push(`/projects/${activeProject.slug}`)}
+                  className="flex gap-2 mt-4 border border-white px-[10px] py-[8px] rounded-2xl text-[11px] leading-[100%] tracking-[0%] max-w-[140px] w-full text-left">
                     VIEW PROJECT DETAILS
                     <span className="h-[7px]">
                       <ChevronRight />

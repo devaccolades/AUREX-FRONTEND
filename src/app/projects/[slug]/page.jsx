@@ -12,6 +12,23 @@ import ConstructionUpdates from "./ConstructionUpdate";
 import ProjectOverviewSection from "./ProjectOverview";
 import AmenitiesSection from "./Amenities";
 import MapSection from "./MapSection";
+import { ProjectBySlugFetch } from "@/services/api";
+
+
+export async function generateMetadata({ params }) {
+  const { slug } = params;
+  const result = await ProjectBySlugFetch(slug); // calls /destinations/<slug>/
+
+  const pdata = result?.data || {};
+
+  console.log("Resolved pdata:", pdata);
+
+  return {
+    title: pdata?.meta_title || `Aurex Builders ${slug}`,
+    description:
+      pdata?.meta_description || `Aurex Builders  ${slug} `,
+  };
+}
 
 function page() {
   return (
