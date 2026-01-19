@@ -8,13 +8,32 @@ import HomeBuyingJourney from './HomeBuyingJourney'
 import BankingPartners from './BankingPartners'
 import SignatureProjects from './SignatureProjects'
 
-function page() {
+import { ProjectsFetch, SeoById } from '@/services/api';
+
+async function fetchSeoData(path) {
+  let data = {};
+  try {
+    const res = await SeoById(path);
+    console.log("Raw SEO API response:", res);
+    if (res?.data) {
+      data = res.data;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+  return data;
+}
+
+
+export default async function page() {
+  const projectsData = await ProjectsFetch();
+  // const branchDetails = await BranchDetailsFetch();
   return (
     <div>
       <Header />
       <HeroSection />
-      <SignatureProjects />
-      <ProjectListing />
+      <SignatureProjects data={projectsData}  />
+      <ProjectListing data={projectsData}/>
       <HomeBuyingJourney />
       <WhyChooseUs />
       <BankingPartners />
@@ -23,4 +42,4 @@ function page() {
   )
 }
 
-export default page
+
