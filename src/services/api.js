@@ -197,3 +197,25 @@ export const ProjectsYoutubeVideosFetch = async () => {
 export const ProjectYoutubeVideosBySlugFetch = async (slug) => {
     return fetchData(`/projects/youtube-videos/${slug}/`);
 };
+
+
+
+export const  SpaceGalleryFetch = async () => {
+    return fetchData(`/gallery/space-gallery/`);
+};
+
+export const  GalleryVideosFetch = async () => {
+    return fetchData(`/gallery/gallery-videos/`);
+};
+
+export const  EventsFetch = async () => {
+    return fetchData(`/gallery/events/`);
+};
+
+export const  EventGalleryFetch = async () => {
+    return fetchData(`/gallery/event-gallery/`);
+};
+
+export const EventGalleryByEventIdFetch = async (eventId) => {
+    return fetchData(`/event-gallery/${eventId}/`);
+};

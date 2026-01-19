@@ -10,6 +10,7 @@ import {
   Landmark,
   Building2,
 } from "lucide-react";
+import MapSection from "./MapSection";
 
 const data = [
   {
@@ -87,7 +88,7 @@ export default function NearbyConnectivity() {
       <div className="container">
 
         {/* HEADING */}
-        <div className="text-center mb-6">
+        {/* <div className="text-center mb-6">
           <h2 className="text-[16px] md:text-[20px] leading-[16px] font-urban font-bold uppercase text-center mb-2">
             EVERYTHING YOU NEED, JUST AROUND THE CORNER
           </h2>
@@ -95,7 +96,8 @@ export default function NearbyConnectivity() {
             Enjoy unmatched connectivity to Thrissur’s major landmarks, schools,
             and healthcare centers.
           </p>
-        </div>
+        </div> */}
+        <MapSection />
 
         {/* GRID */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-6">
