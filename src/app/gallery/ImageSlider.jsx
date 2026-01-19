@@ -300,15 +300,15 @@ import "swiper/css/navigation";
 
 /* ======================= DATA ======================= */
 
-const gallery = [
-  { id: 1, title: "ROOM", image: "/images/projects/c1.jpg" },
-  { id: 2, title: "HALL", image: "/images/projects/c2.jpg" },
-  { id: 3, title: "HALL", image: "/images/projects/c3.jpg" },
-  { id: 4, title: "ROOM", image: "/images/projects/c4.jpg" },
-  { id: 5, title: "ROOM", image: "/images/projects/c5.jpg" },
-  { id: 6, title: "ROOM", image: "/images/projects/c6.jpg" },
-  { id: 7, title: "ROOM", image: "/images/projects/c7.jpg" },
-];
+// const gallery = [
+//   { id: 1, title: "ROOM", image: "/images/projects/c1.jpg" },
+//   { id: 2, title: "HALL", image: "/images/projects/c2.jpg" },
+//   { id: 3, title: "HALL", image: "/images/projects/c3.jpg" },
+//   { id: 4, title: "ROOM", image: "/images/projects/c4.jpg" },
+//   { id: 5, title: "ROOM", image: "/images/projects/c5.jpg" },
+//   { id: 6, title: "ROOM", image: "/images/projects/c6.jpg" },
+//   { id: 7, title: "ROOM", image: "/images/projects/c7.jpg" },
+// ];
 
 const YOUTUBE_LINK =
   "https://www.youtube.com/watch?v=ryZG_2pjp4g&t=1s";
@@ -329,7 +329,8 @@ const getVideoIdFromUrl = (url) => {
 
 /* ======================= COMPONENT ======================= */
 
-export default function ImageSlider() {
+export default function ImageSlider({spaceGallery}) {
+  
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const playerRef = useRef(null);
@@ -377,7 +378,7 @@ export default function ImageSlider() {
 
         {/* Desktop title */}
         <h2 className="hidden md:flex flex-wrap items-center justify-center text-[40px] lg:text-[64px] font-urban font-semibold leading-[100%] mb-4">
-          <span>More Than Buildings</span>
+          <span>More Than Buildings&nbsp;</span>
 
           <span
             onClick={() => setIsVideoOpen(true)}
@@ -390,7 +391,7 @@ export default function ImageSlider() {
               className="object-cover"
             />
           </span>
-            <span>It&apos;s the </span>
+            <span>&nbsp;It&apos;s the </span>
 
           <span>Stories Behind Them</span>
         </h2>
@@ -435,7 +436,7 @@ export default function ImageSlider() {
           1024: { slidesPerView: 5.3 },
         }}
       >
-        {gallery.map((item, index) => {
+        {spaceGallery.map((item, index) => {
           const isActive = hoveredIndex === index;
 
           return (
@@ -456,7 +457,7 @@ export default function ImageSlider() {
               >
                 <Image
                   src={item.image}
-                  alt={item.title}
+                  alt={item.image_alt}
                   fill
                   className="object-cover"
                 />
