@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
-const YOUTUBE_LINK = "https://www.youtube.com/watch?v=ryZG_2pjp4g&t=1s";
+// const YOUTUBE_LINK = "https://www.youtube.com/watch?v=ryZG_2pjp4g&t=1s";
 
 const getVideoIdFromUrl = (url) => {
   try {
@@ -14,14 +14,14 @@ const getVideoIdFromUrl = (url) => {
   }
 };
 
-export default function YoutubeVideoSection() {
+export default function YoutubeVideoSection({galleryVideos}) {
   const [play, setPlay] = useState(false);
   const playerRef = useRef(null);
 
   useEffect(() => {
   if (!play) return;
 
-  const videoId = getVideoIdFromUrl(YOUTUBE_LINK);
+  const videoId = getVideoIdFromUrl(galleryVideos.main_video_url);
   if (!videoId) return;
 
   if (!window.YT) {
@@ -72,8 +72,8 @@ export default function YoutubeVideoSection() {
             className="absolute inset-0 z-10 group"
           >
             <Image
-              src="/images/gallery/thumb.webp"
-              alt="Play video"
+              src={galleryVideos.main_video_thumbnail}
+              alt={galleryVideos.main_video_alt}
               fill
               className="object-cover"
               priority
