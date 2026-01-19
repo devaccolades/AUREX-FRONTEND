@@ -23,12 +23,13 @@ function page() {
       <CommonFacilities />
       <FloorPlansSection />
       <PrecisionBuiltSection />
+      {/* <MapSection /> */}
       <NearbyConnectivity />
       <YoutubeEmbedSection />
       <ConstructionUpdates />
       <BankingPartners />
       <Footer />
-      <MapSection />
+      
     </div>
   );
 }
