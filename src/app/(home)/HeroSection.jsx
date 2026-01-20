@@ -15,25 +15,6 @@ import { useIsMobile } from "@/components2/hooks/useIsMobile";
 import { ProjectsFetch } from "@/services/api";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const projects = [
-  {
-    name: "AUREX CASCADE CITY",
-    location: "CHEMBUKKAVU, THRISSUR",
-    rera: "K-RERA/PRJ/TSR/243/2024",
-    logo: "/images/home/cascadelogo.svg",
-    project_image: "/images/home/hero.jpg",
-    mobile_project_image: "/images/home/heroMB.png",
-    qrcode: "/images/home/qr.png",
-  },
-  {
-    name: "AUREX LIARD",
-    location: "CHEMBUKKAVU, THRISSUR",
-    rera: "K-RERA/PRJ/TSR/243/2024",
-    logo: "/images/home/cascadelogo.svg",
-    project_image: "/images/home/cas.jpg",
-    qrcode: "/images/home/qr.png",
-  },
-];
 
 export default function HeroSection() {
   const [openModal, setOpenModal] = useState(false);
