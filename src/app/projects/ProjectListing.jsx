@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
-const filters = [ "Commercial", "Contracts", "Residential"];
+const filters = ["Commercial", "Contracts", "Residential"];
 
 // const projects = [
 //   {
@@ -87,64 +87,64 @@ export default function ProjectListing({ data = [] }) {
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6">
           {filteredProjects.map((project) => (
-  <div
-    key={project.id}
-    className="bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition"
-  >
-    {/* Map */}
-    <div className="w-full h-[180px] rounded-lg overflow-hidden">
-  {project.map_iframe ? (
-    <iframe
-      src={project.map_iframe}
-      className="w-full h-full border-0"
-      loading="lazy"
-      referrerPolicy="no-referrer-when-downgrade"
-      allowFullScreen
-    />
-  ) : (
-    <div className="flex items-center justify-center h-full text-xs text-gray-400">
-      Map not available
-    </div>
-  )}
-</div>
+            <div
+              key={project.id}
+              className="bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition"
+            >
+              {/* Map */}
+              <div className="w-full h-[180px] rounded-lg overflow-hidden">
+                {project.map_iframe ? (
+                  <iframe
+                    src={project.map_iframe}
+                    className="w-full h-full border-0"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    allowFullScreen
+                  />
+                ) : (
+                  <div className="flex items-center justify-center h-full text-xs text-gray-400">
+                    Map not available
+                  </div>
+                )}
+              </div>
 
-    {/* Content */}
-    <div className="mt-4">
-      <div className="flex items-center gap-2">
-        <Image
-          src="/images/projects/loc.svg"
-          alt="location"
-          width={10}
-          height={10}
-        />
-        <p className="text-[12px] opacity-80 font-urban">
-          {project.location}
-        </p>
-      </div>
+              {/* Content */}
+              <div className="mt-4">
+                <div className="flex items-center gap-2">
+                  <Image
+                    src="/images/projects/loc.svg"
+                    alt="location"
+                    width={10}
+                    height={10}
+                  />
+                  <p className="text-[12px] opacity-80 font-urban">
+                    {project.location}
+                  </p>
+                </div>
 
-      <h3 className="font-semibold font-urban text-[20px] mt-2">
-        {project.name}
-      </h3>
+                <h3 className="font-semibold font-urban text-[20px] mt-2">
+                  {project.name}
+                </h3>
 
-      <p className="text-[13px] mt-2">
-        {project.short_description}
-      </p>
-    </div>
+                <p className="text-[13px] mt-2">
+                  {project.short_description}
+                </p>
+              </div>
 
-    <div className="flex justify-center mt-3">
-      <a
-        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-          project.location
-        )}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="font-urban text-sm font-semibold text-[#357CFF]"
-      >
-        Get Direction
-      </a>
-    </div>
-  </div>
-))}
+              <div className="flex justify-center mt-3">
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                    project.location
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-urban text-sm font-semibold text-[#357CFF]"
+                >
+                  Get Direction
+                </a>
+              </div>
+            </div>
+          ))}
 
           {/* {filteredProjects.map((project) => (
             <div

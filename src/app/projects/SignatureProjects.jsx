@@ -3,7 +3,7 @@
 import { ChevronRight, DoorOpen, Download } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 
 export default function SignatureProjects({data}) {
@@ -40,7 +40,7 @@ export default function SignatureProjects({data}) {
   //       "This premium project seamlessly marries contemporary aesthetics with enduring quality.",
   //   },
   // ];
-  const router = useRouter();
+ 
   const [activeId, setActiveId] = useState(projects[0].id);
   const activeProject = projects.find((p) => p.id === activeId);
 
@@ -151,9 +151,10 @@ export default function SignatureProjects({data}) {
               </p>
 
               <div className="flex gap-4 mt-4">
+                <Link href={`/projects/${activeProject.slug}`}>
+
                 {/* LEFT OUTLINE BUTTON */}
                 <button
-                 onClick={() => router.push(`/projects/${activeProject.slug}`)}
                   className="
                                          flex-1
                                          px-6 py-3
@@ -171,6 +172,7 @@ export default function SignatureProjects({data}) {
                     height={18}
                   />
                 </button>
+                </Link>
 
                 {/* RIGHT GREEN BUTTON */}
                 <button
@@ -298,13 +300,16 @@ export default function SignatureProjects({data}) {
                 <p className="text-xs opacity-90 mt-1">{p.short_description}</p>
 
                 <div className="w-full flex justify-between gap-[10px]">
-                  <button  onClick={() => router.push(`/projects/${activeProject.slug}`)}
+                  <Link href={`/projects/${activeProject.slug}`}>
+
+                  <button  
                   className="flex gap-2 mt-4 border border-white px-[10px] py-[8px] rounded-2xl text-[11px] leading-[100%] tracking-[0%] max-w-[140px] w-full text-left">
                     VIEW PROJECT DETAILS
                     <span className="h-[7px]">
                       <ChevronRight />
                     </span>
                   </button>
+                  </Link>
                   <button className="flex justify-between text-left mt-4 bg-[#006A54] px-[10px] py-[8px] rounded-2xl text-[11px] leading-[100%] tracking-[0%] w-full">
                     DOWNLOAD BROCHURE
                     <span className="h-[7px]">
