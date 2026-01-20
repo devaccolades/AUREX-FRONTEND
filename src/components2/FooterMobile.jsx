@@ -209,10 +209,10 @@ export default function FooterMobile({ data, project_data }) {
           </h3>
           <ul className="space-y-2 text-[12px] leading-[100%] text-white flex flex-row gap-3">
             <li>
-              <Link href="#">Terms and Conditions</Link>
+              <Link href="/terms-and-conditions">Terms and Conditions</Link>
             </li>
             <li>
-              <Link href="#">Privacy & Policy</Link>
+              <Link href="/privacy-policy">Privacy & Policy</Link>
             </li>
           </ul>
         </div>
