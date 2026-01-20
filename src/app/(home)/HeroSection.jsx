@@ -13,6 +13,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import ModalForm from "@/components2/forms/ModalForm";
 import { useIsMobile } from "@/components2/hooks/useIsMobile";
 import { ProjectsFetch } from "@/services/api";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const projects = [
   {
@@ -82,10 +83,15 @@ export default function HeroSection() {
     }
   }, [project]);
 
+  const handleMouseEnter = () => {
+    console.log("Mouse entered map icon");
+    setOpen(true);
+  };
+
   if (!project) return <p>Loading...</p>;
 
   return (
-    <section className="relative w-full h-[100vh] overflow-hidden flex items-center">
+    <section className="relative w-full h-[100vh] md:h-[580px] lg:h-[100vh] overflow-hidden flex items-center">
       {/* BACKGROUND IMAGE */}
       <div ref={wrapperRef} className="hidden md:block absolute inset-0">
         <Image
@@ -107,15 +113,15 @@ export default function HeroSection() {
       </div>
 
       {/* OVERLAY GRADIENT */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent z-10"></div>
+      {/* <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent z-10"></div> */}
 
       {/* CONTENT */}
-      <div className="container relative z-20 w-full h-full flex flex-col justify-between pb-6 ">
+      <div className="container relative z-20 w-full h-full flex flex-col justify-between pb-6 xl:w-[80%]">
         {/* TOP AREA */}
 
-        <div className="flex flex-col md:flex-row justify-center md:justify-between items-center md:items-start mt-[100px] md:mt-36 lg:mt-56 gap-[17px] md:gap-0">
+        <div className="flex flex-col gap-[17px] mt-[94px] md:mt-[204px] md:flex-row md:items-center md:justify-between xl:mt-[211px]">
           {/* LEFT TEXT */}
-          <div className="text-white font-urban text-center ">
+          {/* <div className="text-white font-urban flex justify-start flex-col text-center ">
             <p className="text-[14px] lg:text-[20px] leading-[16px] lg:leading-[48px] opacity-90">
               At the heart of Thrissur,
             </p>
@@ -128,10 +134,24 @@ export default function HeroSection() {
               At Aurex Builders, we bring the spirit of Thrissur into every
               project
             </p>
+          </div> */}
+
+          <div className=" text-white text-center flex flex-col items-center">
+            <p className="font-urban font-semibold text-[14px] leading-[14px] tracking-[0%] xl:text-[20px] xl:leading-[20px] ">
+              At the heart of Thrissur,
+            </p>
+            <h1 className="font-urban font-semibold text-[36px] leading-[35px] tracking-[0%] mt-[6px] md:max-w-[270px] xl:text-[48px] xl:leading-[43px] xl:max-w-[382px]">
+              {" "}
+              inspired by your dreams.
+            </h1>
+            <p className="mt-[15px] font-poppins text-[14px] leading-[100%] tracking-[0%] max-w-[249px] md:text-[12px] md:mt-[13px] xl:mt-[26px] xl:text-[14px]">
+              At Aurex Builders, we bring the spirit of Thrissur into every
+              project
+            </p>
           </div>
 
           {/* RIGHT TEXT */}
-          <div className="text-center  font-urban text-white">
+          {/* <div className="text-center  font-urban text-white">
             <p className="font-urban font-bold text-[12px] leading-[16px] tracking-[0%] opacity-80 mt-2">
               AMENITIES THAT DEFINE
             </p>
@@ -143,6 +163,22 @@ export default function HeroSection() {
               onClick={() => setOpenModal(true)}
               className="mx-auto"
             />
+          </div> */}
+
+          <div className="flex flex-col items-center text-white font-urban">
+            <p className="text-[12px] leading-[16px] tracking-[0%] font-bold ">
+              AMENITIES THAT DEFINE
+            </p>
+            <h2 className="text-[32px] leading-[16px] tracking-[0%] font-bold mt-[12px] xl:text-[36px]">
+              PREMIUM LIVING!
+            </h2>
+
+            <div className="mt-[17px]">
+              <EnquireNowButton
+                onClick={() => setOpenModal(true)}
+                className="mx-auto"
+              />
+            </div>
           </div>
         </div>
 
@@ -152,6 +188,7 @@ export default function HeroSection() {
             {/* <div className="relative bg-white/20 backdrop-blur-xl rounded-2xl border border-white/20 p-3 flex items-center gap-3 overflow-hidden"> */}
 
             <GlassSurface
+              backgroundOpacity={0.5}
               width={252}
               height={110}
               borderRadius={10}
@@ -198,11 +235,11 @@ export default function HeroSection() {
 
                   <p className="text-[9px] leading-tight font-urban whitespace-nowrap text-white">
                     RERA REG. NO <br />
-                    {project.rera}
+                    {project.k_rera}
                   </p>
 
                   {/* MAP ICON */}
-                  <div className="relative w-10 h-10 bg-white rounded-full p-2 shrink-0">
+                  <div className="relative w-10 h-10 bg-white rounded-full p-2 shrink-0 cursor-pointer z-40">
                     <Image
                       src="/images/home/g-map.svg"
                       alt="map"
@@ -216,34 +253,41 @@ export default function HeroSection() {
             {/* </div> */}
           </div>
         ) : (
-          <div className="hidden md:flex w-full justify-center mb-[16px]">
-            <GlassSurface className="w-full !flex !flex-col md:!flex-row !items-center !h-auto !overflow-visible p-4 md:p-2 gap-4 md:gap-10 text-white">
+          <div className="hidden md:flex w-full justify-center mb-[16px] relative">
+            <GlassSurface
+              width={"480px"}
+              height={"54px"}
+              padding={"10px"}
+              backgroundOpacity={0.5}
+              // borderRadius={'10px'}
+              className="w-full !flex !flex-col md:!flex-row !items-center !h-auto text-white gap-[10px] rounded-[10px]"
+            >
               {/* <GlassSurface  className="w-full flex flex-col md:flex-row items-center md:items-center p-4 md:p-0 gap-4 md:gap-10 text-white"> */}
               {/* LOGO */}
-              <div className="relative w-24 h-10 z-50 mx-auto md:mx-0">
+              <div className="relative w-[73px] h-[30px] z-50 mx-auto md:mx-0">
                 {project.logo && (
                   <Image
                     src={project?.logo}
                     alt={project?.logo_alt || "Project Logo"}
                     fill
-                    className="object-contain"
+                    className="object-contain h-full w-full"
                   />
                 )}
               </div>
 
               {/* NAME + LOCATION */}
               <div className="text-center md:text-left">
-                <h4 className="font-semibold font-urban text-[14px] leading-[16px]">
+                <h4 className="font-extrabold font-urban text-[13px] leading-[16px] tracking-[0%]">
                   {project.name}
                 </h4>
-                <p className="text-[10px] leading-[16px] font-urban">
+                <p className="text-[10px] leading-[16px] tracking-[0%] font-bold font-urban">
                   {project.location}
                 </p>
               </div>
 
               {/* QR + RERA */}
-              <div className="flex items-center gap-3">
-                <div className="relative w-10 h-10 shrink-0">
+              <div className="flex items-center gap-[3px]">
+                <div className="relative w-[30px] h-[30px] shrink-0">
                   {project.qr_code && (
                     <Image
                       src={project.qr_code}
@@ -254,15 +298,15 @@ export default function HeroSection() {
                   )}
                 </div>
 
-                <p className="text-[10px] leading-[16px]font-urban  whitespace-nowrap">
+                <p className="text-[10px] leading-[16px] tracking-[0%] font-urban  whitespace-nowrap">
                   RERA REG. NO <br /> {project.k_rera}
                 </p>
               </div>
 
               {/* GOOGLE MAP */}
               <div
-                className="relative w-14 h-14 bg-white/20 rounded-full p-2 shrink-0"
-                onMouseEnter={() => setOpen(true)}
+                className="relative w-[34px] h-[34px] bg-white/20 rounded-full p-2 shrink-0 z-40 cursor-pointer"
+                onMouseEnter={handleMouseEnter}
               >
                 <Image
                   src="/images/home/g-map.svg"
@@ -284,7 +328,7 @@ export default function HeroSection() {
           bg-white rounded-2xl overflow-hidden
           shadow-[0_30px_60px_rgba(0,0,0,0.25)]
           transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]
-          flex flex-col justify-center items-center
+          flex flex-col justify-center items-center 
           ${
             open
               ? "opacity-100 translate-y-0 scale-100 pointer-events-auto"
@@ -331,10 +375,15 @@ export default function HeroSection() {
         {/* ================= MOBILE HERO PROJECT CARD ================= */}
 
         {/* SLIDE CONTROLS */}
-        <div className="absolute bottom-2 lg:bottom-6 right-4 text-white md:flex hidden items-center  gap-3">
-          <span className="text-sm">
-            {String(active + 1).padStart(2, "0")}/{residentialProjects.length}
-          </span>
+        <div className="absolute bottom-12 lg:bottom-6 right-4 text-white md:flex hidden items-center gap-[10px]  ">
+          <div className="">
+            <span className="font-urban font-medium text-[14px] leading-[32px] tracking-[0%]  text-[#D6A12B] ">
+              {String(active + 1).padStart(2, "0")}
+            </span>
+            <span className="font-urban font-medium text-[14px] leading-[32px] tracking-[0%] ">
+              /0{residentialProjects.length}
+            </span>
+          </div>
 
           <button
             onClick={() =>
@@ -342,9 +391,9 @@ export default function HeroSection() {
                 active === 0 ? residentialProjects.length - 1 : active - 1,
               )
             }
-            className="w-5 lg:w-8 h-5 lg:h-8 rounded-full border border-white flex items-center justify-center"
+            className="w-[18px] lg:w-[20px] h-[18px] lg:h-[20px] rounded-full border border-white flex items-center justify-center"
           >
-            ←
+            <ChevronLeft />
           </button>
 
           <button
@@ -353,14 +402,14 @@ export default function HeroSection() {
                 active === residentialProjects.length - 1 ? 0 : active + 1,
               )
             }
-            className="w-5 lg:w-8 h-5 lg:h-8 rounded-full border border-white flex items-center justify-center"
+            className="w-[18px] lg:w-[20px] h-[18px] lg:h-[20px] rounded-full border border-white flex items-center justify-center"
           >
-            →
+            <ChevronRight />
           </button>
         </div>
         {/* mobile slide bar */}
-        <div className="relative z-30 md:hidden">
-          <div className="absolute w-full bottom-[53px] right-0 lg:bottom-6  text-white flex md:hidden items-center justify-between  gap-3">
+        <div className="relative w-full z-30 md:hidden -bottom-6">
+          <div className="absolute w-full bottom-[53px] left-1/2 right-1/2 -translate-x-1/2 -translate-y-1/2 lg:bottom-6  text-white flex md:hidden items-center justify-between  gap-3">
             {/* <span className="text-sm">
             {String(active + 1).padStart(2, "0")}/{residentialProjectss.length}
           </span> */}
@@ -373,7 +422,7 @@ export default function HeroSection() {
               }
               className="w-5 lg:w-8 h-5 lg:h-8 rounded-full border border-white flex items-center justify-center"
             >
-              ←
+              <ChevronLeft />
             </button>
 
             <button
@@ -384,7 +433,7 @@ export default function HeroSection() {
               }
               className="w-5 lg:w-8 h-5 lg:h-8 rounded-full border border-white flex items-center justify-center"
             >
-              →
+              <ChevronRight />
             </button>
           </div>
         </div>
