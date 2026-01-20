@@ -4,6 +4,8 @@ import { UploadCloud } from "lucide-react";
 import Squares from "@/components2/Squares";
 import { useState, useRef } from "react";
 import { CareersApply } from "@/services/api";
+import SuccessModal from "@/components2/SuccessModal";
+import CareerModal from "@/components2/CareerModal";
 
 export const splitByCommaAndDot = (value = "") => {
     if (typeof value !== "string") return [];
@@ -25,7 +27,7 @@ export default function JobApplySection({ data }) {
 
     const [errors, setErrors] = useState({});
     const [submitting, setSubmitting] = useState(false);
-
+    const [success, setSuccess] = useState(false);
     /* ✅ ADDED */
     const [isDragging, setIsDragging] = useState(false);
 
@@ -144,10 +146,11 @@ export default function JobApplySection({ data }) {
         try {
             const payload = new FormData();
             payload.append("name", formData.name);
+            payload.append("position", data.job_title); 
             payload.append("email", formData.email);
-            payload.append("phone", formData.phone);
-            payload.append("resume", formData.resume);
-            payload.append("coverLetter", formData.coverLetter);
+            payload.append("number", formData.phone);
+            payload.append("cv_file", formData.resume);
+            payload.append("cover_letter", formData.coverLetter);
 
             // alert("Application submitted successfully!");
             console.log(payload);
@@ -160,6 +163,7 @@ export default function JobApplySection({ data }) {
                 resume: null,
                 coverLetter: "",
             });
+            setSuccess(true);
             setErrors({});
         } catch (err) {
             console.error(err);
@@ -353,6 +357,11 @@ export default function JobApplySection({ data }) {
                     </div>
                 </div>
             </div>
+            <CareerModal
+                isOpen={success}
+                projectName="Green Valley Residences"
+                onClose={() => setSuccess(false)}
+            />
         </section>
     );
 }
