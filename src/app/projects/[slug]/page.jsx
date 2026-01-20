@@ -12,7 +12,7 @@ import ConstructionUpdates from "./ConstructionUpdate";
 import ProjectOverviewSection from "./ProjectOverview";
 import AmenitiesSection from "./Amenities";
 import MapSection from "./MapSection";
-import { ProjectAmenitiesBySlugFetch, ProjectBySlugFetch, ProjectCommonFacilitiesBySlugFetch, ProjectFloorPlansBySlugFetch, ProjectLocationAdvantagesBySlugFetch, ProjectSpecificationsBySlugFetch, ProjectUpdatesBySlugFetch,  } from "@/services/api";
+import { ProjectAmenitiesBySlugFetch, ProjectBySlugFetch, ProjectCommonFacilitiesBySlugFetch, ProjectFloorPlansBySlugFetch, ProjectLocationAdvantagesBySlugFetch, ProjectSpecificationsBySlugFetch, ProjectUpdatesBySlugFetch, ProjectYoutubeVideosBySlugFetch,  } from "@/services/api";
 
 
 export default async function Page({ params }) {
@@ -25,6 +25,7 @@ export default async function Page({ params }) {
   const locationSpec = await ProjectLocationAdvantagesBySlugFetch(slug);
   const specifications = await ProjectSpecificationsBySlugFetch(slug);
   const updates = await ProjectUpdatesBySlugFetch(slug);
+  const projectVideos = await ProjectYoutubeVideosBySlugFetch(slug);
 
   return (
     <div>
@@ -37,7 +38,7 @@ export default async function Page({ params }) {
       <PrecisionBuiltSection specs={specifications} />
       {/* <MapSection /> */}
       <NearbyConnectivity data={locationSpec} />
-      <YoutubeEmbedSection />
+      <YoutubeEmbedSection projectVideos={projectVideos} />
       <ConstructionUpdates updates={updates} />
       <BankingPartners />
       <Footer />
