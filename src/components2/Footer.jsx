@@ -83,13 +83,13 @@ export default async function Footer() {
 
   return (
     <footer
-      className="text-white py-8 md:py-12 px-[5%] md:px-8 lg:px-12 xl:px-20 overflow-hidden bg-black bg-cover bg-center
+      className="text-white py-8 md:py-12 px-[5%] md:px-6 lg:px-12 xl:px-20 overflow-hidden bg-black bg-cover bg-center
     md:bg-[url('/images/footer/Group1000005994-tab.svg')] lg:bg-[url('/images/footer/Group1000005994.svg')]"
     >
       <div className="hidden md:block">
         <div className="grid grid-cols-1 lg:grid-cols-[25%_75%] xl:grid-cols-[20%_80%] gap-12 lg:gap-5">
           {/* --- Left Section --- */}
-          <div className="space-y-3 flex md:flex-row lg:flex-col justify-between">
+          <div className="space-y-3  flex md:flex-row lg:flex-col justify-between">
             <div className="flex items-center space-x-2">
               <Image
                 src="/images/footer/icon1.svg"
@@ -98,16 +98,16 @@ export default async function Footer() {
                 height={50}
                 className="object-contain"
               />
-            </div>
 
-            <div className="max-w-[200px] space-y-1">
-              <h3 className="text-[16px] lg:text-[20px] leading-[20px] font-urban ">
-                Aurex Builders Pvt Ltd
-              </h3>
-              <p className="text-[13px] lg:text-sm text-white mt-0 leading-[18px] ">
-                {/* Aurum Complex, Patturaikkal, Thrissur, Kerala - 680 020 */}
-                {data[0]?.address}
-              </p>
+              <div className="max-w-[200px] lg:space-y-1">
+                <h3 className="text-[16px] lg:text-[18px] xl:text-[20px] leading-[20px] font-urban ">
+                  Aurex Builders Pvt Ltd
+                </h3>
+                <p className="text-[13px] lg:text-sm text-white mt-0 leading-[18px] ">
+                  {/* Aurum Complex, Patturaikkal, Thrissur, Kerala - 680 020 */}
+                  {data[0]?.address}
+                </p>
+              </div>
             </div>
 
             <Link
