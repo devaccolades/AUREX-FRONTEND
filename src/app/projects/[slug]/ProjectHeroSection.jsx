@@ -176,6 +176,7 @@ export default function ProjectHero({ project }) {
               </h1>
             </div>
           </div> */}
+          
           {(qr_code || k_rera) && (
             <div className="flex gap-2 items-center">
               {qr_code && (
