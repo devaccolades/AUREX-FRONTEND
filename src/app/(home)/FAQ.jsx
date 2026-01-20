@@ -11,36 +11,11 @@ const GlassSurface = dynamic(
     ssr: false
   }
 );
-const faqs = [
-  {
-    id: 1,
-    question: "What makes Aurex Builders different from other builders in Thrissur?",
-    answer:
-      "Aurex Builders stands apart for our commitment to quality, transparency, and on-time project delivery. Every detail — from design to finishing — reflects our dedication to creating homes that combine modern living with the essence of Thrissur’s charm.",
-  },
-  {
-    id: 2,
-    question: "Do you offer ready-to-move-in apartments or only ongoing projects?",
-    answer:
-      "We offer both ready-to-move-in and ongoing projects, giving customers flexibility based on their timelines and preferences.",
-  },
-  {
-    id: 3,
-    question: "Can I customize the interiors of my apartment?",
-    answer:
-      "Yes, Aurex Builders allows interior customization options so homeowners can personalize their spaces to reflect their unique style.",
-  },
-  {
-    id: 4,
-    question: "How do you ensure the quality of construction?",
-    answer:
-      "We use top-grade materials and follow stringent quality control procedures at every stage of construction to ensure durability and excellence.",
-  },
-];
 
-const FAQ = () => {
+const FAQ = ({data}) => {
   const [openIndex, setOpenIndex] = useState(0);
-
+  console.log('faqs are :',data);
+  
   return (
     <section className="relative py-16 md:py-20   ">
       <div className="absolute inset-0 flex w-full h-full justify-start opacity-26 pointer-events-none">
@@ -61,7 +36,7 @@ const FAQ = () => {
         
 
           <div className="space-y-4">
-            {faqs.map((faq, index) => (
+            {data.map((faq, index) => (
               <GlassSurface
                 key={faq.id}
                 borderRadius={18}

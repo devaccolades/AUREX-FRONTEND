@@ -16,12 +16,15 @@ import SignatureProjects from "./(home)/SignatureProjects";
 import Services from "./(home)/Services";
 import Header from "@/components2/Header";
 import dynamic from "next/dynamic";
+import { FaqFetch } from "@/services/api";
 
-export default function Home() {
+export default async function Home() {
+    const faqData = await FaqFetch()
+
   return (
     <div>
       <Header />
-      <HeroSection />
+      <HeroSection  />
       <BrandAmbassador />
       <ChairmanMessage />
       <SignatureProjects />
@@ -32,7 +35,7 @@ export default function Home() {
       <Thrissur />
       <Testiminials />
       <DreamsInThrissur />
-      <FAQ />
+      <FAQ data={faqData} />
       <Footer />
     </div>
   );

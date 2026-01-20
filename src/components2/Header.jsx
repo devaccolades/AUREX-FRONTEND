@@ -51,7 +51,7 @@ export default function Header() {
       : "p-8 md:p-16"
   }`}
   style={{
-    height: scrolled ? "60px" : "110px", // Adjust these pixel values to your liking
+    height: scrolled ? "60px" : "50px md:110px",
     background: `
       linear-gradient(
         to bottom,
@@ -88,7 +88,7 @@ export default function Header() {
             src={
               scrolled ? "/images/aurex-white.png" : "/images/aurex-logo.svg"
             }
-            width={scrolled ? (isMobile ? 30 : 40) : isMobile ? 40 : 50}
+            width={scrolled ? (isMobile ? 30 : 40) : isMobile ? 35 : 50}
             height={scrolled ? (isMobile ? 30 : 40) : isMobile ? 40 : 50}
             alt="logo"
             className="transition-all duration-300"

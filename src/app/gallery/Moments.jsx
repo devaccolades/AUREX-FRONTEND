@@ -80,13 +80,13 @@ export default function Moments({ events, eventGallery }) {
       </div>
 
       {/* ================= GALLERY GRID ================= */}
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
         {filtered.slice(0, visible).map((item, index) => (
-          <div className="relative py-8 md:py-14" key={item.id}>
-            <Image src={arrow4} alt="" className="absolute top-0 left-0" />
+          <div className="relative " key={item.id}>
+            {/* <Image src={arrow4} alt="" className="absolute top-0 left-0" />
             <Image src={arrow3} alt="" className="absolute top-0 right-0" />
             <Image src={arrow2} alt="" className="absolute bottom-0 left-0" />
-            <Image src={arrow1} alt="" className="absolute bottom-0 right-0" />
+            <Image src={arrow1} alt="" className="absolute bottom-0 right-0" /> */}
 
             <div
               onClick={() => setSelectedIndex(index)}
