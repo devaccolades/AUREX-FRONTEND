@@ -1,31 +1,23 @@
-import React from "react";
+"use client";
+import React, { useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
-const HeroSection = ({data}) => {
-  const innovation = [
-    {
-      title: "Home Design",
-      img: "🏠",
-    },
-    {
-      title: "Sustainable Living",
-      img: "🌿",
-    },
-    {
-      title: "Lifestyle & Inspiration",
-      img: "💡",
-    },
-    {
-      title: "Project Updates",
-      img: "🏗️",
-    },
-    {
-      title: "Construction Tips",
-      img: "🧱",
-    },
-  ];
+const HeroSection = ({ data }) => {
+  const [activeType, setActiveType] = useState(null);
 
+  const innovation = useMemo(() => {
+    if (!data) return [];
+    const types = data.map(item => item.type).filter(Boolean);
+    return Array.from(new Set(types));
+  }, [data]);
+  const handleTypeClick = (type) => {
+    setActiveType(prev => (prev === type ? null : type));
+  };
+  const filteredData = activeType
+  ? data.filter(item => item.type === activeType)
+  : data;
   const blog = [
     {
       type: "🧱 Construction Tips",
@@ -84,25 +76,34 @@ const HeroSection = ({data}) => {
           inspirations from Aurex Builders. Stay informed, get inspired, and see
           how we’re redefining modern living — one story at a time.
         </p>
-        <div className="mt-[8px] flex flex-wrap space-x-[6px] space-y-[6px] md:flex-col xl:mt-[31px]">
+        <div className="mt-[8px] flex flex-wrap gap-[6px] md:flex-col xl:mt-[31px]">
           {innovation.map((item, index) => (
             <button
               key={index}
-              className="flex items-center border-[1px] border-black rounded-full py-[8px] px-[10px] w-fit hover:bg-black hover:text-white transition-all duration-300 hover:scale-[1.05] cursor-pointer"
+              onClick={() => handleTypeClick(item)}
+              className={`flex items-center border-[1px] border-black rounded-full 
+    py-[8px] px-[10px] w-fit transition-all duration-300 cursor-pointer
+    ${activeType === item
+                  ? "bg-black text-white scale-[1.05]"
+                  : "hover:bg-black hover:text-white hover:scale-[1.05]"
+                }`}
             >
               <span className="text-[12px] leading-[12px] tracking-[0%] font-urban font-medium md:text-[13px]">
-                {item.img}
+                {item.split(" ")[0]}
               </span>
               <span className="text-[12px] leading-[12px] tracking-[0%] font-urban font-medium md:text-[13px]">
-                {item.title}
+                {item.replace(/^[^\s]+\s/, "")}
               </span>
             </button>
           ))}
+
+
         </div>
+
       </div>
       <div className="md:flex w-full flex-col items-end xl:mt-[80px]">
         <div className="mt-[28px] w-fit flex flex-col items-start">
-          {data.map((item, index) => (
+          {filteredData.map((item, index) => (
             <div
               key={index}
               className="flex justify-end"
@@ -126,14 +127,14 @@ const HeroSection = ({data}) => {
                   <h2 className="font-urban font-bold text-[14px] leading-[14px] tracking-[0%] max-w-[150px] md:max-w-[180px] md:max-x-[173px] mt-[4px] uppercase lg:text-[20px] lg:leading-[20px] lg:max-w-[250px]">
                     {item.title}
                   </h2>
-                  <p className="font-normal font-poppins text-[12px] leading-[16px] tracking-[0%] mt-[3px] lg:mt-[6px] max-w-[180px]">
+                  {/* <p className="font-normal font-poppins text-[12px] leading-[16px] tracking-[0%] mt-[3px] lg:mt-[6px] max-w-[180px]">
                     {item.desc}
-                  </p>
-                 <Link href={`/blog/${item.slug}`}>
-                  <button className="font-urban font-extrabold bg-black text-white text-[12px] leading-[13px] tracking-[0%] py-[6px] px-[8px] rounded-full mt-[6px] cursor-pointer hover:scale-[1.05] transition-all duration-300 ">
-                    Read More
-                  </button>
-                 </Link>
+                  </p> */}
+                  <Link href={`/blog/${item.slug}`}>
+                    <button className="font-urban font-extrabold bg-black text-white text-[12px] leading-[13px] tracking-[0%] py-[6px] px-[8px] rounded-full mt-[6px] cursor-pointer hover:scale-[1.05] transition-all duration-300 ">
+                      Read More
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
