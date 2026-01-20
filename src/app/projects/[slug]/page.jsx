@@ -15,26 +15,17 @@ import MapSection from "./MapSection";
 import { ProjectBySlugFetch } from "@/services/api";
 
 
-export async function generateMetadata({ params }) {
-  const { slug } = params;
-  const result = await ProjectBySlugFetch(slug); // calls /destinations/<slug>/
+export default async function Page({ params }) {
+  const { slug } = await params; // ✅ REQUIRED
 
-  const pdata = result?.data || {};
+  const project = await ProjectBySlugFetch(slug);
 
-  console.log("Resolved pdata:", pdata);
 
-  return {
-    title: pdata?.meta_title || `Aurex Builders ${slug}`,
-    description:
-      pdata?.meta_description || `Aurex Builders  ${slug} `,
-  };
-}
 
-function page() {
   return (
     <div>
       <Header />
-      <ProjectHero />
+      <ProjectHero project={project}/>
       <ProjectOverviewSection />
       <AmenitiesSection />
       <CommonFacilities />
@@ -51,4 +42,3 @@ function page() {
   );
 }
 
-export default page;

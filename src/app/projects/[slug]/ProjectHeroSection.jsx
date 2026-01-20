@@ -10,102 +10,196 @@ import home from "../../../../public/images/projects/house 1.svg";
 import check from "../../../../public/images/projects/book-check 1.svg";
 import qr from "../../../../public/images/projects/REREA NUMBER LIARD 2.svg";
 
-const project = {
-  title: "Aurex Liard",
-  location: "Mulangunnathukavu, Thrissur",
-  rera: "K-RERA/PRJ/TSR/178/2023",
-  qr_code: qr,
-  short_title: "A Home That Reflects Your Aspirations",
-  description:
-    "Premium 2 & 3 BHK apartments at the heart of Thrissur with modern amenities and highway access.",
-  image: "/images/projects/aurexliard.jpg",
-};
+// const project = {
+//   title: "Aurex Liard",
+//   location: "Mulangunnathukavu, Thrissur",
+//   rera: "K-RERA/PRJ/TSR/178/2023",
+//   qr_code: qr,
+//   short_title: "A Home That Reflects Your Aspirations",
+//   description:
+//     "Premium 2 & 3 BHK apartments at the heart of Thrissur with modern amenities and highway access.",
+//   image: "/images/projects/aurexliard.jpg",
+// };
 
-const stats = [
-  {
-    label: "Property Type",
-    value: "2 & 3 BHK Apartments",
-    icon: building2,
-  },
-  {
-    label: "Total Area",
-    value: "23.4 Cents",
-    icon: ruler,
-  },
-  {
-    label: "Sqft Range",
-    value: "951 – 1508 sqft",
-    icon: home,
-  },
-  {
-    label: "Total Units",
-    value: "31 | Structure B+G+8",
-    icon: check,
-  },
-];
 
-const highlights = [
-  {
-    title: "Prime Location",
-    desc: "Mulangunnathukavu, Thrissur",
-    icon: map,
-  },
-  {
-    title: "Premium Apartments",
-    desc: "2 & 3 BHK Luxury Living",
-    icon: building,
-  },
-  {
-    title: "Highway Facing",
-    desc: "Excellent Connectivity",
-    icon: spark,
-  },
-];
 
-export default function ProjectHero() {
+// const stats = [
+//   {
+//     label: "Property Type",
+//     value: "2 & 3 BHK Apartments",
+//     icon: building2,
+//   },
+//   {
+//     label: "Total Area",
+//     value: "23.4 Cents",
+//     icon: ruler,
+//   },
+//   {
+//     label: "Sqft Range",
+//     value: "951 – 1508 sqft",
+//     icon: home,
+//   },
+//   {
+//     label: "Total Units",
+//     value: "31 | Structure B+G+8",
+//     icon: check,
+//   },
+// ];
+
+// const highlights = [
+//   {
+//     title: "Prime Location",
+//     desc: "Mulangunnathukavu, Thrissur",
+//     icon: map,
+//   },
+//   {
+//     title: "Premium Apartments",
+//     desc: "2 & 3 BHK Luxury Living",
+//     icon: building,
+//   },
+//   {
+//     title: "Highway Facing",
+//     desc: "Excellent Connectivity",
+//     icon: spark,
+//   },
+// ];
+
+
+
+export default function ProjectHero({ project }) {
+  if (!project) return null;
+
+  const {
+    name,
+    image,
+    image_alt,
+    location,
+    status,
+    qr_code,
+    k_rera,
+    sub_text,
+    short_description,
+    property_type,
+    total_area,
+    sqft_range,
+    total_units,
+    highlight_1,
+    highlight_text_1,
+    highlight_2,
+    highlight_text_2,
+    highlight_3,
+    highlight_text_3,
+  } = project;
+
+  const stats = [
+    {
+      label: "Property Type",
+      value: project.property_type,
+      icon: building2,
+    },
+    {
+      label: "Total Area",
+      value: project.total_area,
+      icon: ruler,
+    },
+    {
+      label: "Sqft Range",
+      value: project.sqft_range,
+      icon: home,
+    },
+    {
+      label: "Total Units",
+      value: project.total_units,
+      icon: check,
+    },
+  ];
+
+  const highlights = [
+    {
+      title: project.highlight_1,
+      desc: project.highlight_text_1,
+      icon: spark,
+    },
+    {
+      title: project.highlight_2,
+      desc: project.highlight_text_2,
+      icon: spark,
+    },
+    {
+      title: project.highlight_3,
+      desc: project.highlight_text_3,
+      icon: spark,
+    },
+  ].filter(h => h.title); // removes empty ones
+
+
   return (
     <main>
       <section className="relative w-full h-[80vh] md:h-[65vh] lg:h-[90vh] overflow-hidden">
-        <Image
-          src={project.image}
-          alt={project.title}
-          fill
-          className="object-cover object-center -z-10"
-        />
+        {image && (
+          <Image
+            src={image}
+            alt={image_alt || name}
+            fill
+            className="object-cover object-center -z-10"
+          />
+        )}
         <div className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/60 md:hidden z-10" />
         <div className="absolute bottom-[10%] left-[5%] md:top-[30%] flex flex-col gap-y-2 md:gap-y-4 z-20">
-          <button className="w-fit bg-[#006A54] text-white font-urban text-[16px] leading-[100%] font-extrabold  py-2 px-2.5 rounded-3xl">
-            Ready to Move
-          </button>
+
+          {status && (
+            <button className="w-fit bg-[#006A54] text-white font-urban text-[16px] leading-[100%] font-extrabold  py-2 px-2.5 rounded-3xl">
+              {status}
+            </button>
+          )}
           <h1 className="w-[80%] lg:w-full text-wrap space-y-1 font-urban font-semibold text-white text-[32px] md:text-[36px] lg:text-[48px] leading-[100%]">
-            {project.title}
+            {project.name}
           </h1>
-          <div className="w-fit flex gap-2 py-2 px-2.5 bg-white/20 backdrop-blur-[9.7px] border border-gray-400 rounded-3xl">
-            <Image src={loc} alt="icon" />
-            <h3 className="text-white text-[13px] font-bold">
-              {project.location}
-            </h3>
-          </div>
+
+          {location && (
+            <div className="w-fit flex gap-2 py-2 px-2.5 bg-white/20 backdrop-blur-[9.7px] border border-gray-400 rounded-3xl">
+              <Image src={loc} alt="icon" />
+              <h3 className="text-white text-[13px] font-bold">{location}</h3>
+            </div>
+          )}
         </div>
 
         <div className="absolute w-fit right-[5%] md:top-[30%] hidden md:grid grid-cols-1 gap-y-2 md:gap-y-4  ">
-          <div className="flex gap-2 items-center ">
-            <Image src={project.qr_code} alt="icon" className="w-10 h-10" />
+          {/* <div className="flex gap-2 items-center ">
+            <Image src={project.qr_code} alt="icon" width={40} height={40} className="w-10 h-10" />
             <div className="flex flex-col w-full">
               <h1 className="w-full text-wrap space-y-1 font-urban font-extrabold text-white text-[12px] leading-[100%]">
                 RERA REG. NO
               </h1>
               <h1 className="w-full text-wrap space-y-1 font-urban font-extrabold text-white text-[12px] leading-[100%] whitespace-nowrap">
-                {project.rera}
+                {project.k_rera}
               </h1>
             </div>
-          </div>
+          </div> */}
+          {(qr_code || k_rera) && (
+            <div className="flex gap-2 items-center">
+              {qr_code && (
+                <Image src={qr_code} alt="RERA QR" width={40} height={40} className="w-10 h-10" />
+              )}
+
+              {k_rera && (
+                <div className="flex flex-col w-full">
+                  <h1 className="w-full text-wrap space-y-1 font-urban font-extrabold text-white text-[12px] leading-[100%]">
+                    RERA REG. NO
+                  </h1>
+                  <h1 className="w-full text-wrap space-y-1 font-urban font-extrabold text-white text-[12px] leading-[100%] whitespace-nowrap">
+                    {project.k_rera}
+                  </h1>
+                </div>
+              )}
+            </div>
+          )}
           <div className="max-w-[250px] flex flex-col">
             <h3 className="font-urban font-medium text-[13px] leading-[156%] text-white">
-              {project.short_title}
+              {project.sub_text}
             </h3>
             <p className="font-urban font-semibold text-[16px] leading-[156%] text-white">
-              {project.description}
+              {project.short_description}
             </p>
           </div>
         </div>
@@ -156,7 +250,7 @@ export default function ProjectHero() {
 
       <div className=" w-[90%] mx-auto mb-5 md:hidden grid grid-cols-1 gap-y-2 md:gap-y-4">
         <div className="flex gap-2 items-center ">
-          <Image src={project.qr_code} alt="icon" className="w-10 h-10" />
+          <Image src={project.qr_code} alt="icon" width={40} height={40} className="w-10 h-10" />
           <div className="flex flex-col w-full">
             <h1 className="w-full text-wrap space-y-1 font-urban font-extrabold text-black text-[12px] leading-[100%]">
               RERA REG. NO
