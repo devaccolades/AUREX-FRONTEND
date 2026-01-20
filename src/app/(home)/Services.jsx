@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import { useLayoutEffect, useRef, useState } from "react";
@@ -17,7 +15,6 @@ const services = [
       { src: "/images/home/services/i1.jpg", x: 20, y: 25 },
       { src: "/images/home/services/i2.webp", x: 65, y: 15 },
       { src: "/images/home/services/i3.jpg", x: 40, y: 60 },
-      // { src: "/images/home/services/i1.jpg", x: 75, y: 45 },
     ],
   },
   {
@@ -27,7 +24,6 @@ const services = [
       { src: "/images/home/services/r1.webp", x: 25, y: 30 },
       { src: "/images/home/services/r2.jpg", x: 70, y: 25 },
       { src: "/images/home/services/r3.webp", x: 45, y: 70 },
-      // { src: "/images/home/services/i1.jpg", x: 15, y: 75 },
     ],
   },
   {
@@ -38,49 +34,60 @@ const services = [
       { src: "/images/home/services/m2.webp", x: 60, y: 20 },
       { src: "/images/home/services/m3.webp", x: 75, y: 65 },
       { src: "/images/home/services/m4.jpg", x: 25, y: 80 },
-      // { src: "/images/home/services/m3.jpg", x: 95, y: 85 },
-      // { src: "/images/home/services/m1.jpg", x: 15, y: 98 },
     ],
   },
 ];
 
 export default function Services() {
-  const [openModal, setOpenModal] = useState(false)
+  const [openModal, setOpenModal] = useState(false);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
   const containerRef = useRef(null);
   const groupsRef = useRef(null);
   const titleRefs = useRef([]);
   const counterRef = useRef(null);
   const buttonRef = useRef(null);
+  const loadedCountRef = useRef(0);
+
+  // Calculate total images
+  const totalImages = services.reduce((acc, service) => acc + service.images.length, 0);
+
+  // Handle image load
+  const handleImageLoad = () => {
+    loadedCountRef.current += 1;
+    if (loadedCountRef.current === totalImages) {
+      // Small delay to ensure DOM is fully settled
+      setTimeout(() => {
+        setImagesLoaded(true);
+      }, 100);
+    }
+  };
 
   useLayoutEffect(() => {
+    if (!imagesLoaded) return;
+
     const ctx = gsap.context(() => {
       const total = services.length;
       const scrollDistance = total * 1000;
 
+      // Refresh ScrollTrigger to recalculate positions
+      ScrollTrigger.refresh();
+
       gsap.set(titleRefs.current, { transformOrigin: "50% 50% -50px" });
 
-      // show first slide images normally
+      // Show first slide images normally
       gsap.set("[data-slide-img][data-slide='0']", {
         yPercent: 0,
         opacity: 1,
         scale: 1,
       });
 
-      // other slides start hidden
-      gsap.set(
-        "[data-slide-img]:not([data-slide='0'])",
-        { yPercent: 20, opacity: 0, scale: 0.98 }
-      );
+      // Other slides start hidden
+      gsap.set("[data-slide-img]:not([data-slide='0'])", {
+        yPercent: 20,
+        opacity: 0,
+        scale: 0.98,
+      });
 
-      // const tl = gsap.timeline({
-      //   scrollTrigger: {
-      //     trigger: containerRef.current,
-      //     start: "top top",
-      //     end: `+=${scrollDistance}`,
-      //     scrub: 1,
-      //     pin: true,
-      //   },
-      // });
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
@@ -88,22 +95,20 @@ export default function Services() {
           end: `+=${scrollDistance}`,
           scrub: 1,
           pin: true,
+          invalidateOnRefresh: true,
           onUpdate: (self) => {
             const progress = self.progress;
-
-            // Calculate slide index
             const slide = Math.round(progress * (total - 1)) + 1;
 
             if (counterRef.current) {
               counterRef.current.innerHTML = `
-          <span style="color:#D4A017;">0${slide}</span>
-          <span style="color:#000;"> / 0${total}</span>
-        `;
+                <span style="color:#D4A017;">0${slide}</span>
+                <span style="color:#000;"> / 0${total}</span>
+              `;
             }
           },
         },
       });
-
 
       tl.set(counterRef.current, { opacity: 1 });
       tl.set(buttonRef.current, { opacity: 1 });
@@ -132,23 +137,6 @@ export default function Services() {
           },
           "<"
         );
-
-        // Counter change
-
-        //   tl.to(
-        //     {},
-        //     {
-        //       duration: 0.1,
-        //       onUpdate: () => {
-        //         const current = i + 2; // 2,3, etc
-        //         counterRef.current.innerHTML = `
-        //   <span style="color:#D4A017;">0${current}</span>
-        //   <span style="color:#000;"> / 0${total}</span>
-        // `;
-        //       },
-        //     },
-        //     "<"
-        //   );
 
         // Outgoing images
         tl.to(
@@ -191,7 +179,7 @@ export default function Services() {
     });
 
     return () => ctx.revert();
-  }, []);
+  }, [imagesLoaded]);
 
   return (
     <section
@@ -199,8 +187,7 @@ export default function Services() {
       className="relative w-full h-screen border-t border-gray-300 overflow-hidden bg-white"
     >
       {/* CENTER STACK : Counter → Title → Button */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center z-40 ">
-
+      <div className="absolute inset-0 flex flex-col items-center justify-center z-40">
         {/* Counter */}
         <div
           ref={counterRef}
@@ -209,13 +196,14 @@ export default function Services() {
           <span className="text-[#D4A017]">01</span>
           <span className="text-black">/ 03</span>
         </div>
+
         {/* Title — separate absolute layer */}
         <div className="relative h-24 w-full flex items-center justify-center pointer-events-none z-50 py-8">
           {services.map((s, i) => (
             <h2
               key={i}
               ref={(el) => (titleRefs.current[i] = el)}
-              className="absolute text-[40px] md:text-[60px] lg:text-[72px] font-normal text-black tracking-tight text-center leading-tight "
+              className="absolute text-[40px] md:text-[60px] lg:text-[72px] font-normal text-black tracking-tight text-center leading-tight"
               style={{
                 opacity: i === 0 ? 1 : 0,
                 transform:
@@ -231,15 +219,16 @@ export default function Services() {
 
         {/* Button */}
         <button
+          ref={buttonRef}
           onClick={() => setOpenModal(true)}
-          className="flex items-center gap-2 mt-8 xl:mt-4 text-black px-5 py-2 rounded-full font-urban text-[12px] leading-[16px] font-bold  hover:scale-[1.03] transition "
+          className="flex items-center gap-2 mt-8 xl:mt-4 text-black px-5 py-2 rounded-full font-urban text-[12px] leading-[16px] font-bold hover:scale-[1.03] transition"
         >
           <Image
             src="/images/home/enq.svg"
             alt="Arrow"
             width={20}
             height={20}
-            className="" />
+          />
           <span className="flex items-center gap-1">
             ENQUIRE
             <span className="flex bg-[#FF0000] w-12 h-12 rounded-full items-center justify-center text-white font-bold">
@@ -259,25 +248,11 @@ export default function Services() {
           {services.map((service, slideIndex) => (
             <div key={slideIndex} className="relative w-full h-screen">
               {service.images.map((img, j) => (
-
-
                 <div
                   key={j}
                   data-slide-img
                   data-slide={slideIndex}
-                  className="
-    absolute 
-    -translate-x-1/2 
-    -translate-y-1/2
-    w-[140px]        /* mobile */
-    h-[140px]
-    md:w-[200px]     /* tablet */
-    md:h-[200px]
-    lg:w-[260px]     /* desktop */
-    lg:h-[260px]
-    xl:w-[280px]     /* large desktop */
-    xl:h-[280px]
-  "
+                  className="absolute -translate-x-1/2 -translate-y-1/2 w-[140px] h-[140px] md:w-[200px] md:h-[200px] lg:w-[260px] lg:h-[260px] xl:w-[280px] xl:h-[280px]"
                   style={{
                     left: `${img.x}%`,
                     top: `${img.y}%`,
@@ -287,26 +262,26 @@ export default function Services() {
                     src={img.src}
                     alt=""
                     fill
-                    className="object-cover  shadow-xl"
+                    className="object-cover shadow-xl"
+                    onLoad={handleImageLoad}
+                    priority={slideIndex === 0}
                   />
                 </div>
-
               ))}
             </div>
           ))}
         </div>
       </div>
+
       {openModal && (
         <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/40 backdrop-blur-sm">
           <div className="bg-white rounded-2xl p-8 w-[90%] max-w-lg relative mt-26">
-
             <button
               className="absolute top-4 right-4 text-xl"
               onClick={() => setOpenModal(false)}
             >
               ✕
             </button>
-
             <ModalForm />
           </div>
         </div>
