@@ -57,8 +57,12 @@ export const CareersFetch = async () => {
     return fetchData(`/careers/careers`);
 };
 
+export const CareersById = async (name) => {
+    return fetchData(`/careers/careers/${name}/`);
+};
+
 export const CareersApply = async (formData) => {
-  const url = `${BASE_URL}/career/job-application/`;
+  const url = `${BASE_URL}/careers/job-application/`;
 
   try {
     const response = await fetch(url, {

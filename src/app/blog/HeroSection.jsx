@@ -1,7 +1,8 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
-const HeroSection = () => {
+const HeroSection = ({data}) => {
   const innovation = [
     {
       title: "Home Design",
@@ -101,18 +102,18 @@ const HeroSection = () => {
       </div>
       <div className="md:flex w-full flex-col items-end xl:mt-[80px]">
         <div className="mt-[28px] w-fit flex flex-col items-start">
-          {blog.map((item, index) => (
+          {data.map((item, index) => (
             <div
               key={index}
               className="flex justify-end"
             >
               <p className="font-urban font-medium text-[12px] mr-[7px] md:mr-[15px] leading-[14px] tracking-[-4%] text-[#9B9B9B] md:text-[14px] ">
-                {item.date}
+                {item.date_added}
               </p>
               <div className="relative flex space-x-[4px] border-l-1  pl-[7px] md:pl-[15px] pb-[29px] w-full lg:space-x-[12px]">
                 <div className="absolute top-0 -left-1.5 h-[10px] w-[10px] rounded-full bg-[#D9D9D9]"></div>
                 <Image
-                  src={item.img}
+                  src={item.image}
                   alt={item.title}
                   height={100}
                   width={100}
@@ -128,10 +129,11 @@ const HeroSection = () => {
                   <p className="font-normal font-poppins text-[12px] leading-[16px] tracking-[0%] mt-[3px] lg:mt-[6px] max-w-[180px]">
                     {item.desc}
                   </p>
-
+                 <Link href={`/blog/${item.slug}`}>
                   <button className="font-urban font-extrabold bg-black text-white text-[12px] leading-[13px] tracking-[0%] py-[6px] px-[8px] rounded-full mt-[6px] cursor-pointer hover:scale-[1.05] transition-all duration-300 ">
                     Read More
                   </button>
+                 </Link>
                 </div>
               </div>
             </div>

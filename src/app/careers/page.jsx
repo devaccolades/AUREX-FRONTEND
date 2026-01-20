@@ -5,17 +5,19 @@ import HeroSection from './Herosection'
 import OpenPositionsSection from './OpenPositions'
 import CareerCTASection from './CareerCTA'
 import NoJobs from './NoJobs'
+import { CareersFetch } from '@/services/api'
 
-function page() {
+export default async function page (){
+  const jobdata = await CareersFetch();
+
   return (
     <div>
       <Header />
       <HeroSection />
-      <OpenPositionsSection />
+      <OpenPositionsSection data={jobdata}/>
       <CareerCTASection />
       <Footer />
     </div>
   )
 }
 
-export default page

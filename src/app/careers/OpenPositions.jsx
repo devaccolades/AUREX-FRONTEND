@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 
-export default function OpenPositionsSection() {
+export default function OpenPositionsSection({ data }) {
   const jobs = [
     {
       title: "SITE ENGINEER",
@@ -55,37 +55,37 @@ export default function OpenPositionsSection() {
 
   return (
     <section className="container  py-10 lg:py-16 bg-white">
-     
 
-        {/* SECTION TITLE */}
-        <p className=" font-bold font-urban text-[18px] lg:text-[20px] leading-[18px] lg:leading-[20px] text-black mb-6">
-          OUR OPEN POSITIONS
-        </p>
 
- <div className=" bg-[#F2F2F2] rounded-[10px] p-1 md:p-2">
+      {/* SECTION TITLE */}
+      <p className=" font-bold font-urban text-[18px] lg:text-[20px] leading-[18px] lg:leading-[20px] text-black mb-6">
+        OUR OPEN POSITIONS
+      </p>
+
+      <div className=" bg-[#F2F2F2] rounded-[10px] p-1 md:p-2">
         {/* GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
-          {jobs.map((job, index) => (
+          {data.map((job, index) => (
             <div
               key={index}
               className=" hover:border-black bg-white rounded-[20px] p-2 md:p-4 lg:p-6 flex flex-col justify-between hover:shadow-md transition"
             >
               {/* TITLE */}
               <h3 className=" font-bold font-urban text-[18px] lg:text-[20px] leading-[18px] lg:leading-[20px] text-black mb-3">
-                {job.title}
+                {job.job_title}
               </h3>
 
               {/* META */}
               <div className="text-[13px] leading-[100%] font-urban font-bold text-black mb-4 space-y-1">
                 <div className="flex items-center gap-4 mb-2 md:mb-4">
-    <p>
-      <span className="font-medium">Location:</span> {job.location}
-    </p>
-    |
-    <p>
-      <span className="font-medium">Experience:</span> {job.experience}
-    </p>
-  </div>
+                  <p>
+                    <span className="font-medium">Location:</span> {job.location}
+                  </p>
+                  |
+                  <p>
+                    <span className="font-medium">Experience:</span> {job.experience}
+                  </p>
+                </div>
                 <p>
                   <span className="font-medium">Type:</span> {job.type}
                 </p>
@@ -103,10 +103,10 @@ export default function OpenPositionsSection() {
               </div>
 
               {/* CTA */}
-             <Link href={`/careers/${job.slug}`}>
-              <button className="mt-auto self-start font-medium font-urban text-[13px] leading-[13px] border border-black rounded-full px-4 py-2 hover:bg-black hover:text-white transition">
-                Read Job Description
-              </button>
+              <Link href={`/careers/${job.slug}`}>
+                <button className="mt-auto self-start font-medium font-urban text-[13px] leading-[13px] border border-black rounded-full px-4 py-2 hover:bg-black hover:text-white transition">
+                  Read Job Description
+                </button>
               </Link>
             </div>
           ))}
