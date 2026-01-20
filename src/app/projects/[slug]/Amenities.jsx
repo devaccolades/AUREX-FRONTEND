@@ -6,35 +6,38 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import ModalForm from "@/components2/forms/ModalForm";
 
-const amenities = [
-  {
-    title: "Solar Power",
-    subtitle: "Sustainable energy solution",
-    image: "/images/projects/amenities/a1.webp",
-  },
-  {
-    title: "Rooftop Gathering Area",
-    subtitle: "Community space for events",
-    image: "/images/projects/amenities/a2.webp",
-  },
-  {
-    title: "Kids Play Area",
-    subtitle: "Safe & fun environment",
-    image: "/images/projects/amenities/a3.webp",
-  },
-  {
-    title: "EV Charging",
-    subtitle: "Future-ready living",
-    image: "/images/projects/amenities/a4.webp",
-  },
-  {
-    title: "Outdoor Lounge",
-    subtitle: "Relax & unwind",
-    image: "/images/projects/amenities/a5.webp",
-  },
-];
+// const amenities = [
+//   {
+//     title: "Solar Power",
+//     subtitle: "Sustainable energy solution",
+//     image: "/images/projects/amenities/a1.webp",
+//   },
+//   {
+//     title: "Rooftop Gathering Area",
+//     subtitle: "Community space for events",
+//     image: "/images/projects/amenities/a2.webp",
+//   },
+//   {
+//     title: "Kids Play Area",
+//     subtitle: "Safe & fun environment",
+//     image: "/images/projects/amenities/a3.webp",
+//   },
+//   {
+//     title: "EV Charging",
+//     subtitle: "Future-ready living",
+//     image: "/images/projects/amenities/a4.webp",
+//   },
+//   {
+//     title: "Outdoor Lounge",
+//     subtitle: "Relax & unwind",
+//     image: "/images/projects/amenities/a5.webp",
+//   },
+// ];
 
-export default function AmenitiesSection() {
+export default function AmenitiesSection({amenities}) {
+  if (!Array.isArray(amenities) || amenities.length === 0) {
+    return null; // ⛔ nothing to show
+  }
   const playerRef = useRef(null);
   const apiReadyRef = useRef(false);
   const [openVideo, setOpenVideo] = useState(false);
@@ -259,7 +262,7 @@ export default function AmenitiesSection() {
                 >
                   <Image
                     src={slide.image}
-                    alt={slide.title}
+                    alt={slide.image_alt || "Amenity Image"}
                     fill
                     className="object-cover"
                   />
@@ -297,10 +300,10 @@ export default function AmenitiesSection() {
           {/* TITLE + SUBTITLE */}
           <div className="text-center">
             <h4 className="text-sm md:text-[16px] leading-[20px] font-urban font-bold">
-              {amenities[activeIndex].title}
+              {amenities[activeIndex].name}
             </h4>
             <p className="text-[12px] md:text-xs leading-[156%] text-gray-500">
-              {amenities[activeIndex].subtitle}
+              {amenities[activeIndex].subtext}
             </p>
           </div>
 
