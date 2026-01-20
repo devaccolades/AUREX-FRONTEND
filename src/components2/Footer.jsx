@@ -89,7 +89,7 @@ export default async function Footer() {
       <div className="hidden md:block">
         <div className="grid grid-cols-1 lg:grid-cols-[25%_75%] xl:grid-cols-[20%_80%] gap-12 lg:gap-5">
           {/* --- Left Section --- */}
-          <div className="space-y-3  flex md:flex-row lg:flex-col justify-between">
+          <div className="space-y-3  flex md:flex-col lg:flex-col justify-between">
             <div className="flex items-center space-x-2">
               <Image
                 src="/images/footer/icon1.svg"
@@ -192,9 +192,9 @@ export default async function Footer() {
             </div>
           </div>
 
-          <div className="flex flex-row lg:grid  lg:grid-cols-[1fr_3.5fr_0.3fr] xl:grid-cols-[1fr_3.5fr_1fr] gap-6 md:gap-10 lg:gap-5">
+          <div className="grid grid-cols-[1fr_4.0fr_1fr] lg:grid  lg:grid-cols-[1fr_3.5fr_0.3fr] xl:grid-cols-[1fr_3.5fr_1fr] gap-6 md:gap-6 lg:gap-5">
             <div className="cursor-pointer">
-              <h3 className="text-base font-semibold mb-2 ">Quick Links</h3>
+              <h3 className="text-[14px] font-semibold mb-2 ">Quick Links</h3>
               <ul className="space-y-2 text-sm text-gray-300">
                 {quickLinks.map((item) => (
                   <li key={item.name} className="cursor-pointer">
