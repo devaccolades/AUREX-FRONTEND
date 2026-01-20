@@ -38,6 +38,11 @@ export const BlogsFetch = async () => {
 export const BlogsById = async (slug) => {
     return fetchData(`/general/blogs/${slug}/`);
 };
+
+export const FaqFetch = async () => {
+    return fetchData(`/general/faq`);
+};
+
 export const SeoFetch = async () => {
     return fetchData(`/general/seo`);
 };
