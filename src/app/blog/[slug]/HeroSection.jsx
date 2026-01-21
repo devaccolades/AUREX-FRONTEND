@@ -29,10 +29,10 @@ export default function HeroSection({ data }) {
       </div>
 
       {/* Right-center icons */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 flex-col gap-1 hidden lg:flex">
+      {/* <div className="absolute right-0 top-1/2 -translate-y-1/2 flex-col gap-1 hidden lg:flex">
         <Image src={whatsapp} alt="whatsapp-icon" className="cursor-pointer " />
         <Image src={chat} alt="chat-icon" className="cursor-pointer" />
-      </div>
+      </div> */}
     </div>
   )
 }

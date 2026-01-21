@@ -1,5 +1,6 @@
 import { Urbanist, Inter, Poppins , Anek_Malayalam, Roboto } from "next/font/google";
 import "./globals.css";
+import FloatingButtons from "@/components2/FloatingButton";
 
 
 
@@ -47,6 +48,7 @@ export default function RootLayout({ children }) {
         className={`${urban.variable} ${inter.variable} ${poppins.variable} ${anekMalayalam.variable} ${roboto.variable} antialiased`}
       >
         {children}
+        <FloatingButtons />
       </body>
     </html>
   );
