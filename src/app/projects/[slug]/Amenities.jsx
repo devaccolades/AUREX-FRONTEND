@@ -17,7 +17,7 @@ export default function AmenitiesSection({amenities,title}) {
   const apiReadyRef = useRef(false);
   const [openVideo, setOpenVideo] = useState(false);
   const [openForm, setOpenForm] = useState(false);
-
+  const [successOpen, setSuccessOpen] = useState(false);
   console.log(amenities);
   
   const YOUTUBE_URL = "https://www.youtube.com/watch?v=KhlPNZ_rFsA";
@@ -386,14 +386,9 @@ export default function AmenitiesSection({amenities,title}) {
 
             {/* FORM */}
             {openForm && (
-              // <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/20 backdrop-blur-sm">
               <div className="bg-white rounded-2xl p-8 w-[90%]  relative">
-
-
-
                 <ProjectEnquiryModal projectName={title}/>
               </div>
-              // </div>
             )}
 
           </div>
