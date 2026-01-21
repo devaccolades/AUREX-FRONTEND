@@ -6,33 +6,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import ModalForm from "@/components2/forms/ModalForm";
 
-// const amenities = [
-//   {
-//     title: "Solar Power",
-//     subtitle: "Sustainable energy solution",
-//     image: "/images/projects/amenities/a1.webp",
-//   },
-//   {
-//     title: "Rooftop Gathering Area",
-//     subtitle: "Community space for events",
-//     image: "/images/projects/amenities/a2.webp",
-//   },
-//   {
-//     title: "Kids Play Area",
-//     subtitle: "Safe & fun environment",
-//     image: "/images/projects/amenities/a3.webp",
-//   },
-//   {
-//     title: "EV Charging",
-//     subtitle: "Future-ready living",
-//     image: "/images/projects/amenities/a4.webp",
-//   },
-//   {
-//     title: "Outdoor Lounge",
-//     subtitle: "Relax & unwind",
-//     image: "/images/projects/amenities/a5.webp",
-//   },
-// ];
+
 
 export default function AmenitiesSection({amenities}) {
   if (!Array.isArray(amenities) || amenities.length === 0) {
