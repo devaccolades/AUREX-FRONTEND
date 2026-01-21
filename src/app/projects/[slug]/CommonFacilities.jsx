@@ -8,48 +8,7 @@ import * as LucideIcons from "lucide-react";
   return LucideIcons[iconName] || null;
 };
 
-// const facilities = [
-//   {
-//     title: "Standby Generator",
-//     desc: "24/7 power backup",
-//     icon: Zap,
-//   },
-//   {
-//     title: "Bio-metric Entry",
-//     desc: "Smart card access control",
-//     icon: Fingerprint,
-//   },
-//   {
-//     title: "Ample Parking Space",
-//     desc: "Covered parking for residents",
-//     icon: ParkingCircle,
-//   },
-//   {
-//     title: "24/7 Security",
-//     desc: "CCTV surveillance",
-//     icon: ShieldCheck,
-//   },
-//   {
-//     title: "Standby Generator",
-//     desc: "24/7 power backup",
-//     icon: Droplet,
-//   },
-//   {
-//     title: "Bio-metric Entry",
-//     desc: "Smart card access control",
-//     icon: Wind,
-//   },
-//   {
-//     title: "Ample Parking Space",
-//     desc: "Covered parking for residents",
-//     icon: BellRing,
-//   },
-//   {
-//     title: "24/7 Security",
-//     desc: "CCTV surveillance",
-//     icon: ShieldCheck,
-//   },
-// ];
+
 
 export default function CommonFacilities({facilities}) {
    if (!Array.isArray(facilities) || facilities.length === 0) {

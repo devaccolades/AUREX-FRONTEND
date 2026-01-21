@@ -10,50 +10,7 @@ import * as LucideIcons from "lucide-react";
 };
 
 
-// const specs = [
-//   {
-//     title: "Foundation & Structure",
-//     description:
-//       "Reinforced Cement Concrete framed structure with pile foundation and solid cement block partition walls. Earthquake resistance for zone 3.",
-//     icon: Building2,
-//   },
-//   {
-//     title: "Flooring",
-//     description:
-//       "Good quality vitrified tiles for the entire apartment. Common areas and lobbies use anti-skid quality designer tiles for entrance lobby & staircase. Antiskid ceramic tiles for kitchen and ceramic tiles for toilets.",
-//     icon: Layers,
-//   },
-//   {
-//     title: "Kitchen",
-//     description:
-//       "Good quality counter top with polished granite, single bowl stainless steel sink with drain board, glazed tile dado above and provision for exhaust fan.",
-//     icon: Utensils,
-//   },
-//   {
-//     title: "Plumbing & Sanitary Fittings",
-//     description:
-//       "Good quality plumbing materials, premium class CP fittings with wall mounted shower, towel rods, western style white wall mounted EWC, and provision for geyser in all toilets.",
-//     icon: Droplets,
-//   },
-//   {
-//     title: "Electrical",
-//     description:
-//       "Concealed channel wiring with high quality insulated copper wires suitable light, fan, A/C points etc., controlled by ELCB & MCB with individual meters. Provision for cable TV in living room & master bed room and telephone conduit point in the living room.",
-//     icon: Plug,
-//   },
-//   {
-//     title: "Doors & Windows",
-//     description:
-//       "Good quality Thick glass door for lobby entrance. Decorative factory moulded wooden frame & shutter for entrance. All internal door frames & shutters are good quality factory moulded engineered wood and engineered factory moulded doors for all toilets. Good quality UPVC sliding doors for balcony and windows with MS grills.",
-//     icon: DoorOpen,
-//   },
-//   {
-//     title: "Generator for Backup",
-//     description:
-//       "Generator backup for common area like lifts, pump sets, common lighting etc., and connected load up to 500 watts per apartment.",
-//     icon: Zap,
-//   },
-// ];
+
 
 export default function PrecisionBuiltSection({specs}) {
    if (!Array.isArray(specs) || specs.length === 0) {
