@@ -56,6 +56,7 @@ export default function SignatureProjects() {
 
   const defaultExpanded = projects[0]?.id;
   const activeCard = hovered ? hovered : defaultExpanded;
+  const [selectedProject, setSelectedProject] = useState(null);
 
   return (
     <section className="relative py-10 md:py-16 lg:py-24 xl:py-22">
@@ -135,11 +136,10 @@ export default function SignatureProjects() {
             onMouseEnter={() => setHovered(p.id)}
             onMouseLeave={() => setHovered(null)}
             className={`relative rounded-2xl transition-all duration-500 cursor-pointer overflow-hidden shadow-xl
-                ${
-                  activeCard === p.id
-                    ? "w-[511px] lg:w-[600px] xl:w-[880px] 2xl:w-[1000px] h-[347px] lg:h-[460px] xl:h-[520px]"
-                    : "w-[200px] lg:w-[300px] xl:w-[360px] 2xl:w-[420px] h-[347px] lg:h-[460px] xl:h-[520px]  opacity-85"
-                }`}
+                ${activeCard === p.id
+                ? "w-[511px] lg:w-[600px] xl:w-[880px] 2xl:w-[1000px] h-[347px] lg:h-[460px] xl:h-[520px]"
+                : "w-[200px] lg:w-[300px] xl:w-[360px] 2xl:w-[420px] h-[347px] lg:h-[460px] xl:h-[520px]  opacity-85"
+              }`}
           >
             {/* Cover Image */}
             <Image
@@ -304,7 +304,13 @@ export default function SignatureProjects() {
 
                     {/* RIGHT GREEN BUTTON */}
                     <button
-                      onClick={() => setModalOpen(true)}
+                      onClick={() => {
+
+                        setSelectedProject(p);
+                        setModalOpen(true);
+                      }
+                      }
+
                       className="
                         flex-1
                         px-6 py-3
@@ -440,7 +446,7 @@ export default function SignatureProjects() {
           ))}
         </div>
       </section>
-      {modalOpen && (
+     {modalOpen && selectedProject && (
         <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/40 backdrop-blur-sm">
           <div className="bg-white rounded-2xl p-8 w-[90%] max-w-lg relative  z-20">
             <button
@@ -449,7 +455,7 @@ export default function SignatureProjects() {
             >
               ✕
             </button>
-            <ProjectEnquiryModal />
+              <ProjectEnquiryModal projectName={selectedProject.name} />
           </div>
         </div>
       )}

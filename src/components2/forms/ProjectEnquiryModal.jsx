@@ -1,19 +1,33 @@
-
 "use client";
-import { useState } from "react";
+import { ProjectEnquiry } from "@/services/api";
+import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 
-
-export default function ProjectEnquiryModal() {
+export default function ProjectEnquiryModal({ projectName, showBrochure = false }) {
     const [formData, setFormData] = useState({
         name: "",
         phone: "",
         email: "",
         message: "",
+        preferred_unit: "",
+        project: "",
     });
 
     const [errors, setErrors] = useState({});
+    const [formError, setFormError] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
+
+    /* =======================
+       AUTO BIND PROJECT
+    ======================= */
+    useEffect(() => {
+        if (projectName) {
+            setFormData((prev) => ({
+                ...prev,
+                project: projectName,
+            }));
+        }
+    }, [projectName]);
 
     /* =======================
        HANDLE CHANGE
@@ -26,11 +40,12 @@ export default function ProjectEnquiryModal() {
             [name]: value,
         }));
 
-        // Clear error on change
         setErrors((prev) => ({
             ...prev,
             [name]: "",
         }));
+
+        setFormError("");
     };
 
     /* =======================
@@ -45,9 +60,16 @@ export default function ProjectEnquiryModal() {
 
         if (!formData.phone.trim()) {
             newErrors.phone = "Phone number is required";
-        } else if (!/^\d{10}$/.test(formData.phone)) {
-            newErrors.phone = "Enter a valid 10-digit phone number";
+        } else {
+            const phone = formData.phone.replace(/\s|-/g, "");
+
+            const phoneRegex = /^(\+91)?[6-9]\d{9}$/;
+
+            if (!phoneRegex.test(phone)) {
+                newErrors.phone = "Enter a valid phone number";
+            }
         }
+
 
         if (!formData.email.trim()) {
             newErrors.email = "Email address is required";
@@ -74,10 +96,10 @@ export default function ProjectEnquiryModal() {
         if (!validate()) return;
 
         setIsSubmitting(true);
+        setFormError("");
 
         try {
-            // 🔗 Replace with real API call
-            console.log("Form Submitted:", formData);
+            await ProjectEnquiry(formData);
 
             Swal.fire({
                 icon: "success",
@@ -87,21 +109,19 @@ export default function ProjectEnquiryModal() {
                 showConfirmButton: false,
             });
 
-
             setFormData({
                 name: "",
                 phone: "",
                 email: "",
                 message: "",
+                preferred_unit: "",
+                project: projectName || "",
             });
         } catch (error) {
-            Swal.fire({
-                icon: "error",
-                title: "Submission Failed",
-                text: "Something went wrong. Please try again.",
-                timer: 2500,
-                confirmButtonColor: "#000",
-            });
+            setFormError(
+                error?.response?.data?.message ||
+                "Something went wrong. Please try again."
+            );
         } finally {
             setIsSubmitting(false);
         }
@@ -110,12 +130,14 @@ export default function ProjectEnquiryModal() {
     return (
         <div className="bg-white rounded-[20px] p-[2px] md:p-[8px] lg:p-[10px]">
             <div className="mb-2">
-                <p className="font-urban text-[12px] lg:text-[14px] text-black ">
-                    Download Brochure of
-                </p>
+                {showBrochure && (
+                    <p className="font-urban text-[12px] lg:text-[14px] text-black ">
+                        Download Brochure of
+                    </p>
+                )}
 
                 <h2 className="font-urban text-[22px] lg:text-[32px] font-semibold text-black leading-tight">
-                    AUREX LIARD
+                    {projectName}
                 </h2>
 
                 <p className="font-urban text-[12px] lg:text-[14px] text-black mt-1">
@@ -135,12 +157,10 @@ export default function ProjectEnquiryModal() {
                             value={formData.name}
                             onChange={handleChange}
                             placeholder="Enter your full name"
-                            className="border-[#959595] border-1 text-[12px] leading-[100%]  w-full font-urban rounded-[6px] px-[10px] py-[16px]"
+                            className="border-[#959595] border-1 text-[12px] leading-[100%] w-full font-urban rounded-[6px] px-[10px] py-[16px]"
                         />
                         {errors.name && (
-                            <p className="text-red-500 text-[12px] mt-1">
-                                {errors.name}
-                            </p>
+                            <p className="text-red-500 text-[12px] mt-1">{errors.name}</p>
                         )}
                     </div>
 
@@ -154,14 +174,13 @@ export default function ProjectEnquiryModal() {
                             value={formData.phone}
                             onChange={handleChange}
                             placeholder="Enter your phone number"
-                            className="border-[#959595] border-1 w-full text-[12px] leading-[100%]  font-urban rounded-[6px] px-[10px] py-[16px]"
+                            className="border-[#959595] border-1 w-full text-[12px] leading-[100%] font-urban rounded-[6px] px-[10px] py-[16px]"
                         />
                         {errors.phone && (
-                            <p className="text-red-500 text-[12px] mt-1">
-                                {errors.phone}
-                            </p>
+                            <p className="text-red-500 text-[12px] mt-1">{errors.phone}</p>
                         )}
                     </div>
+
                     <div>
                         <p className="text-[12px] lg:text-[16px] leading-[16px] font-urban tracking-[0.3px] mb-[8px] font-medium">
                             Email Address*
@@ -172,14 +191,13 @@ export default function ProjectEnquiryModal() {
                             value={formData.email}
                             onChange={handleChange}
                             placeholder="Enter your email address"
-                            className="border-[#959595] border-1  text-[12px] leading-[100%]  w-full font-urban rounded-[6px] px-[10px] py-[16px]"
+                            className="border-[#959595] border-1 text-[12px] leading-[100%] w-full font-urban rounded-[6px] px-[10px] py-[16px]"
                         />
                         {errors.email && (
-                            <p className="text-red-500 text-[12px] mt-1">
-                                {errors.email}
-                            </p>
+                            <p className="text-red-500 text-[12px] mt-1">{errors.email}</p>
                         )}
                     </div>
+
                     <div>
                         <p className="text-[12px] lg:text-[16px] leading-[16px] font-urban tracking-[0.3px] mb-[8px] font-medium">
                             Preferred Unit Type**
@@ -190,14 +208,10 @@ export default function ProjectEnquiryModal() {
                             value={formData.preferred_unit}
                             onChange={handleChange}
                             placeholder="Select preferred unit type"
-                            className="border-[#959595] border-1 text-[12px] leading-[100%]  w-full font-urban rounded-[6px] px-[10px] py-[16px]"
+                            className="border-[#959595] border-1 text-[12px] leading-[100%] w-full font-urban rounded-[6px] px-[10px] py-[16px]"
                         />
-                        {errors.preferred_unit && (
-                            <p className="text-red-500 text-[12px] mt-1">
-                                {errors.preferred_unit}
-                            </p>
-                        )}
                     </div>
+
                     <div>
                         <p className="text-[12px] lg:text-[16px] leading-[16px] font-urban tracking-[0.3px] mb-[8px] font-medium">
                             Message*
@@ -207,19 +221,25 @@ export default function ProjectEnquiryModal() {
                             name="message"
                             value={formData.message}
                             onChange={handleChange}
-                            placeholder="Enter message "
-                            className="border-[#959595] border-1 text-[12px] leading-[100%]  w-full font-urban rounded-[6px] px-[10px] py-[16px]"
+                            placeholder="Enter message"
+                            className="border-[#959595] border-1 text-[12px] leading-[100%] w-full font-urban rounded-[6px] px-[10px] py-[16px]"
                         />
                         {errors.message && (
-                            <p className="text-red-500 text-[12px] mt-1">
-                                {errors.message}
-                            </p>
+                            <p className="text-red-500 text-[12px] mt-1">{errors.message}</p>
                         )}
                     </div>
+
+                    {formError && (
+                        <p className="text-red-500 text-[12px] mt-1 text-center">
+                            {formError}
+                        </p>
+                    )}
+
                     <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="mt-4 bg-primary text-[15px] leading-[20px] font-roboto text-white py-[10px] w-full rounded-[6px]">
+                        className="mt-4 bg-primary text-[15px] leading-[20px] font-roboto text-white py-[10px] w-full rounded-[6px]"
+                    >
                         {isSubmitting ? "Submitting..." : "Submit Enquiry"}
                     </button>
                 </form>
