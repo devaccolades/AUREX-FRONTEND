@@ -73,7 +73,7 @@ export default function GallerySection() {
   useEffect(() => {
     setActiveImage(gallery[0]);
   }, [gallery]);
-  
+
   useEffect(() => {
     console.log("active image changed:", activeImage?.image);
   }, [activeImage]);
@@ -140,12 +140,12 @@ export default function GallerySection() {
               {/* IMAGE MODE */}
               {/* {activeImage.type === "image" && ( */}
               <Image
-                    src={activeImage?.image}
-                    alt={activeImage?.image_alt}
-                    width={900}
-                    height={600}
-                    className="w-[242px] md:w-[343px] lg:w-[565px] h-[239px] md:h-[280px] lg:h-[460px] object-cover transition-all duration-300"
-                  />
+                src={activeImage?.image}
+                alt={activeImage?.image_alt}
+                width={900}
+                height={600}
+                className="w-[242px] md:w-[343px] lg:w-[565px] h-[239px] md:h-[280px] lg:h-[460px] object-cover transition-all duration-300"
+              />
               {/* )} */}
 
               {/* VIDEO MODE */}
@@ -197,17 +197,17 @@ export default function GallerySection() {
               >
                 {/* IMAGE TYPE THUMBNAIL */}
                 {/* {item.type === "image" && ( */}
-                  <Image
-                    src={item.image}
-                    alt={item.image_alt}
-                    width={300}
-                    height={180}
-                    className="w-[93px] lg:w-[179px] h-[77px] lg:h-[140px] object-cover"
-                  />
+                <Image
+                  src={item.image}
+                  alt={item.image_alt}
+                  width={300}
+                  height={180}
+                  className="w-[93px] lg:w-[179px] h-[77px] lg:h-[140px] object-cover"
+                />
                 {/* )} */}
 
                 {/* VIDEO TYPE THUMBNAIL */}
-                {item.type === "video" && (
+                {/* {item.type === "video" && (
                   <div className="relative">
                     <Image
                       src={item.image}
@@ -217,14 +217,13 @@ export default function GallerySection() {
                       className="w-[93px] lg:w-[179px] h-[77px] lg:h-[140px] object-cover"
                     />
 
-                    {/* Play Icon Overlay */}
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="w-10 h-10 bg-white/80 rounded-full flex items-center justify-center shadow-lg">
                         ▶
                       </div>
                     </div>
                   </div>
-                )}
+                )} */}
               </div>
             ))}
           </div>
