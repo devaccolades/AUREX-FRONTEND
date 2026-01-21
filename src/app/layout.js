@@ -35,6 +35,9 @@ const roboto = Roboto({
 export const metadata = {
   title: "Aurex Builders",
   description: "Aurex Builders",
+  icons: {
+    icon: "/favicon.ico",              
+  },
 };
 
 export default function RootLayout({ children }) {
