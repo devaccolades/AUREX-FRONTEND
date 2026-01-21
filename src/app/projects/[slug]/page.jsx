@@ -27,6 +27,8 @@ export default async function Page({ params }) {
   const updates = await ProjectUpdatesBySlugFetch(slug);
   const projectVideos = await ProjectYoutubeVideosBySlugFetch(slug);
 
+
+  const title = project?.name || "Project Details";
   return (
     <div>
       <Header />
@@ -34,7 +36,7 @@ export default async function Page({ params }) {
       <ProjectOverviewSection />
       <div id="amenities">
 
-        <AmenitiesSection amenities={amenities} />
+        <AmenitiesSection amenities={amenities} title={title}/>
       </div>
       <CommonFacilities facilities={facilities} />
       <div id="floor-plans">

@@ -21,11 +21,11 @@ export default function ProjectOverviewSection() {
           <button className="flex items-center gap-2 bg-black text-white text-xs px-4 py-2 rounded-full hover:bg-gray-900 transition cursor-pointer">
             DOWNLOAD BROCHURE
             <Image
-                                  src="/images/icons/download.svg"
-                                  alt="download"
-                                  width={18}
-                                  height={18}
-                                />
+              src="/images/icons/download.svg"
+              alt="download"
+              width={18}
+              height={18}
+            />
           </button>
         </div>
 

@@ -9,7 +9,7 @@ import ProjectEnquiryModal from "@/components2/forms/ProjectEnquiryModal";
 
 
 
-export default function AmenitiesSection({amenities}) {
+export default function AmenitiesSection({amenities,title}) {
   if (!Array.isArray(amenities) || amenities.length === 0) {
     return null; // ⛔ nothing to show
   }
@@ -18,7 +18,8 @@ export default function AmenitiesSection({amenities}) {
   const [openVideo, setOpenVideo] = useState(false);
   const [openForm, setOpenForm] = useState(false);
 
-
+  console.log(amenities);
+  
   const YOUTUBE_URL = "https://www.youtube.com/watch?v=KhlPNZ_rFsA";
   const getYoutubeId = (url) => {
     const match = url.match(/(?:youtu\.be\/|youtube\.com\/.*v=)([^&]+)/);
@@ -314,7 +315,7 @@ export default function AmenitiesSection({amenities}) {
           <button
             onClick={() => setOpenVideo(true)}
             className="flex items-center gap-2 px-5 py-2 border border-black rounded-full
-              font-bold font-urban text-xs md:text-sm leading-[13px] bg-white  transition"
+              font-bold font-urban text-xs md:text-sm leading-[13px] bg-white  transition cursor-pointer"
           >
             <Image
               src="/images/icons/yt.svg"
@@ -329,7 +330,7 @@ export default function AmenitiesSection({amenities}) {
           <button
             onClick={() => setOpenForm(true)}
             className="flex items-center gap-2 px-5 py-2 border border-black rounded-full
-               font-urban font-bold text-xs md:text-sm leading-[13px] bg-white  transition"
+               font-urban font-bold text-xs md:text-sm leading-[13px] bg-white  transition cursor-pointer"
           >
             <Image
               src="/images/icons/msg.svg"
@@ -390,7 +391,7 @@ export default function AmenitiesSection({amenities}) {
 
 
 
-                <ProjectEnquiryModal />
+                <ProjectEnquiryModal projectName={title}/>
               </div>
               // </div>
             )}
