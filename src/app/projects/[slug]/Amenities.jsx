@@ -5,6 +5,7 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import ModalForm from "@/components2/forms/ModalForm";
+import ProjectEnquiryModal from "@/components2/forms/ProjectEnquiryModal";
 
 
 
@@ -389,7 +390,7 @@ export default function AmenitiesSection({amenities}) {
 
 
 
-                <ModalForm />
+                <ProjectEnquiryModal />
               </div>
               // </div>
             )}
