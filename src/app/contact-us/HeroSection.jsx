@@ -3,6 +3,7 @@ import { useState } from "react";
 import Squares from "@/components2/Squares";
 import { LeadSubmission } from "@/services/api";
 import Swal from "sweetalert2";
+import ContactModal from "@/components2/ContactModal";
 
 export default function HeroSection() {
   const [formData, setFormData] = useState({
@@ -11,7 +12,7 @@ export default function HeroSection() {
     phone: "",
     message: "",
   });
-
+  const [showContactModal, setShowContactModal] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState({});
 
@@ -42,10 +43,12 @@ export default function HeroSection() {
       newErrors.email = "Enter a valid email address";
     }
 
-    if (!formData.phone.trim()) {
+    const normalizedPhone = formData.phone.replace(/[\s()-]/g, "");
+
+    if (!normalizedPhone) {
       newErrors.phone = "Phone number is required";
-    } else if (!/^[0-9]{10,15}$/.test(formData.phone)) {
-      newErrors.phone = "Enter a valid phone number";
+    } else if (!/^\+?[1-9]\d{7,14}$/.test(normalizedPhone)) {
+      newErrors.phone = "Enter a valid international phone number";
     }
 
     setErrors(newErrors);
@@ -70,12 +73,14 @@ export default function HeroSection() {
         message: "",
       });
 
-      Swal.fire({
-        icon: "success",
-        title: "Enquiry Submitted",
-        text: "We will get back to you within 24 hours.",
-        confirmButtonColor: "#006A54",
-      });
+      // Swal.fire({
+      //   icon: "success",
+      //   title: "Enquiry Submitted",
+      //   text: "We will get back to you within 24 hours.",
+      //   confirmButtonColor: "#006A54",
+      // });
+      setShowContactModal(true);
+
       console.log("API Response:", response);
     } catch (error) {
       console.error(error);
@@ -213,7 +218,9 @@ export default function HeroSection() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="mt-4 bg-primary text-[15px] leading-[20px] font-roboto text-white py-[10px] w-full rounded-[6px]"
+                className={`mt-4 bg-primary text-[15px] leading-[20px] font-roboto text-white py-[10px] w-full rounded-[6px]
+    ${isSubmitting ? "cursor-progress opacity-70" : "cursor-pointer"}
+  `}
               >
                 {isSubmitting ? "Submitting..." : "Submit Enquiry"}
               </button>
@@ -222,6 +229,10 @@ export default function HeroSection() {
                 We respond to every enquiry within 24 hours. Let’s make your
                 dream space a reality.
               </p>
+              <ContactModal
+                isOpen={showContactModal}
+                onClose={() => setShowContactModal(false)}
+              />
             </form>
           </div>
         </div>
