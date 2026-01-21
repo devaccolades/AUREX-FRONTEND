@@ -6,51 +6,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-export default function SignatureProjects() {
-  const [projects, setProjects] = useState([]);
-  // const projects = [
-  //   {
-  //     id: 1,
-  //     title: "AUREX CASCADE CITY",
-  //     logo: "/images/home/cascadelogo.svg",
-  //     brochur: "",
-  //     feature: "",
-  //     location: "Chembukkavu, Thrissur",
-  //     distance: "900 mtr From Swaraj Round",
-  //     rera: "K-RERA/PRJ/TSR/263/2024",
-  //     totalArea: "32 Cents",
-  //     totalUnits: "45 (B+G+9)",
-  //     status: "Ongoing",
-  //     tagColor: "#E7DB75",
-  //     smallImage: "/images/home/hero.jpg",
-  //     bigImage: "/images/home/hero.jpg",
-  //     description:
-  //       "This premium villa project seamlessly marries contemporary aesthetics with enduring quality.",
-  //   },
-  //   {
-  //     id: 2,
-  //     title: "AUREX LIARD",
-  //     logo: "/images/home/cascadelogo.svg",
-  //     brochur: "",
-  //     location: "Mulagunnathukavu, Thrissur",
-  //     distance: "Near Medical College",
-  //     rera: "K-RERA/PRJ/TSR/178/2023",
-  //     totalArea: "48 Cents",
-  //     totalUnits: "52 (B+G+10)",
-  //     status: "Ready",
-  //     tagColor: "#D8A95D",
-  //     smallImage: "/images/home/cas.jpg",
-  //     bigImage: "/images/home/cas.jpg",
-  //     description:
-  //       "This premium project seamlessly marries contemporary aesthetics with enduring quality.",
-  //   },
-  // ];
+export default function SignatureProjects({ data }) {
+  const [projects, setProjects] = useState(
+    data.filter((item) => item.project_type === "Residential"),
+  );
 
-  useEffect(() => {
-    ProjectsFetch().then((data) => {
-      setProjects(data.filter((item) => item.project_type === "Residential"));
-    });
-  }, []);
+  // useEffect(() => {
+  //   ProjectsFetch().then((data) => {
+  //     setProjects(data.filter((item) => item.project_type === "Residential"));
+  //   });
+  // }, []);
 
   const [hovered, setHovered] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
