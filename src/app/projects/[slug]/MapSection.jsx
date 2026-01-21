@@ -1,8 +1,9 @@
 'use client'
 
-export default function MapSection() {
+export default function MapSection({project}) {
+  if (!project?.map_iframe) return null;
 return (
-    <section className="container py-8 md:py-12 lg:py-16">
+    <section className="container py-8 md:py-12 lg:py-6">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10 items-center">
         
         <div className="lg:col-span-1">
@@ -21,7 +22,8 @@ return (
           <div className="w-full h-[260px] md:h-[320px] lg:h-[360px] rounded-2xl overflow-hidden shadow-sm">
             <iframe
               title="Thrissur Map"
-              src="https://www.google.com/maps?q=Thrissur&output=embed"
+              // src="https://www.google.com/maps?q=Thrissur&output=embed"
+              src={project.map_iframe}
               className="w-full h-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

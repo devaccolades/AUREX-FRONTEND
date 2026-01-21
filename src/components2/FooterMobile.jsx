@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function FooterMobile({ data, project_data }) {
-  console.log("testing", project_data);
+  // console.log("testing", project_data);
 
   const quickLinks = [
     { name: "Home", href: "/" },

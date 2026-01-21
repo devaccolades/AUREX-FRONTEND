@@ -13,7 +13,7 @@ import MapSection from "./MapSection";
 
 
 
-export default function NearbyConnectivity({data}) {
+export default function NearbyConnectivity({data, project}) {
   const transformLocationData = (apiData = []) => {
   return apiData.map((row) => {
     const items = [];
@@ -43,6 +43,7 @@ export default function NearbyConnectivity({data}) {
   if (blocks.length === 0) return null;
   return (
     <section className="py-8 md:py-16 bg-white">
+      <MapSection project={project} />
       <div className="container">
 
         {/* HEADING */}
@@ -55,7 +56,7 @@ export default function NearbyConnectivity({data}) {
             and healthcare centers.
           </p>
         </div> */}
-        <MapSection />
+        
 
         {/* GRID */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-6">
