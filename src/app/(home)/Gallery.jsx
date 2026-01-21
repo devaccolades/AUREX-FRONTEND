@@ -139,13 +139,15 @@ export default function GallerySection() {
             <div className="relative overflow-hidden  py-13 lg:py-30">
               {/* IMAGE MODE */}
               {/* {activeImage.type === "image" && ( */}
-              <Image
-                src={activeImage?.image}
-                alt={activeImage?.image_alt}
-                width={900}
-                height={600}
-                className="w-[242px] md:w-[343px] lg:w-[565px] h-[239px] md:h-[280px] lg:h-[460px] object-cover transition-all duration-300"
-              />
+              {activeImage?.image && (
+                <Image
+                  src={activeImage?.image}
+                  alt={activeImage?.image_alt || "Active Gallery Image"}
+                  width={900}
+                  height={600}
+                  className="w-[242px] md:w-[343px] lg:w-[565px] h-[239px] md:h-[280px] lg:h-[460px] object-cover transition-all duration-300"
+                />
+              )}
               {/* )} */}
 
               {/* VIDEO MODE */}
