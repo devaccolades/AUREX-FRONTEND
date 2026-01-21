@@ -1,6 +1,8 @@
 "use client";
 
+import ProjectEnquiryModal from "@/components2/forms/ProjectEnquiryModal";
 import Image from "next/image";
+import { useState } from "react";
 
 const tabs = [
   { label: "AMENITIES", id: "amenities" },
@@ -8,17 +10,35 @@ const tabs = [
   { label: "SPECIFICATIONS", id: "specifications" },
   { label: "LOCATION MAP", id: "location-map" },
 ];
-export default function ProjectOverviewSection() {
+export default function ProjectOverviewSection({ p }) {
   const handleScroll = (id) => {
     const section = document.getElementById(id);
     section?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
+  const handleDownload = (url) => {
+    if (!url) return;
+
+    const link = document.createElement("a");
+    link.href = url;
+    link.setAttribute("download", "");
+    link.setAttribute("target", "_blank"); // optional (safe for external URLs)
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const [modalOpen, setModalOpen] = useState(false);
   return (
     <section className="relative w-full bg-white py-14">
       <div className="">
         {/* Download Button */}
         <div className="flex justify-center mb-8">
-          <button className="flex items-center gap-2 bg-black text-white text-xs px-4 py-2 rounded-full hover:bg-gray-900 transition cursor-pointer">
+          <button
+            onClick={() => {
+              setModalOpen(true);
+            }
+            }
+            className="flex items-center gap-2 bg-black text-white text-xs px-4 py-2 rounded-full hover:bg-gray-900 transition cursor-pointer">
             DOWNLOAD BROCHURE
             <Image
               src="/images/icons/download.svg"
@@ -61,6 +81,24 @@ export default function ProjectOverviewSection() {
           </div>
         </div>
       </div>
+      {modalOpen && (
+        <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/40 backdrop-blur-sm">
+          <div className="bg-white rounded-2xl p-8 w-[90%] max-w-lg relative  z-20">
+            <button
+              className="absolute top-4 right-4 text-xl"
+              onClick={() => setModalOpen(false)}
+            >
+              ✕
+            </button>
+            <ProjectEnquiryModal projectName={p.name} showBrochure={true}
+              onSuccess={() => {
+                handleDownload(p.brochure);
+                setModalOpen(false);
+              }}
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }

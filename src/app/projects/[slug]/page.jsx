@@ -33,7 +33,7 @@ export default async function Page({ params }) {
     <div>
       <Header />
       <ProjectHero project={project} />
-      <ProjectOverviewSection />
+      <ProjectOverviewSection p={project} />
       <div id="amenities">
 
         <AmenitiesSection amenities={amenities} title={title}/>
