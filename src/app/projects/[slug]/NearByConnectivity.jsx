@@ -1,88 +1,115 @@
 "use client";
 
-import {
-  GraduationCap,
-  Hospital,
-  ShoppingBag,
-  UtensilsCrossed,
-  Bus,
-  Plane,
-  Landmark,
-  Building2,
-} from "lucide-react";
+import * as LucideIcons from "lucide-react";
+
 import MapSection from "./MapSection";
 
-const data = [
-  {
-    title: "Education",
-    icon: GraduationCap,
-    items: [
-      { name: "St. Mary's School", distance: "1.2 Km" },
-      { name: "Christ College", distance: "3.5 Km" },
-      { name: "Government Engineering College", distance: "5.0 Km" },
-    ],
-  },
-  {
-    title: "Healthcare",
-    icon: Hospital,
-    items: [
-      { name: "Jubilee Mission Hospital", distance: "2.8 Km" },
-      { name: "Amala Institute", distance: "4.2 Km" },
-      { name: "Medical Trust Hospital", distance: "3.5 Km" },
-    ],
-  },
-  {
-    title: "Shopping",
-    icon: ShoppingBag,
-    items: [
-      { name: "Sobha City Mall", distance: "4.5 Km" },
-      { name: "Big Bazaar", distance: "4.0 Km" },
-    ],
-  },
-  {
-    title: "Restaurants",
-    icon: UtensilsCrossed,
-    items: [
-      { name: "Ming Palace", distance: "2.0 Km" },
-      { name: "Dhe Puttu", distance: "3.5 Km" },
-      { name: "Burger Junction", distance: "1.8 Km" },
-    ],
-  },
-  {
-    title: "Transport",
-    icon: Bus,
-    items: [
-      { name: "Thrissur Railway Station", distance: "8.0 Km" },
-      { name: "Private Bus Stand", distance: "5.5 Km" },
-      { name: "KSRTC Bus Stand", distance: "7.2 Km" },
-    ],
-  },
-  {
-    title: "Airport",
-    icon: Plane,
-    items: [
-      { name: "Cochin International Airport", distance: "45 Km" },
-    ],
-  },
-  {
-    title: "Places of Worship",
-    icon: Landmark,
-    items: [
-      { name: "Vadakkumnathan Temple", distance: "6.5 Km" },
-      { name: "Our Lady of Dolours", distance: "7.0 Km" },
-    ],
-  },
-  {
-    title: "IT Parks",
-    icon: Building2,
-    items: [
-      { name: "Athani IT Park", distance: "10 Km" },
-      { name: "Infopark Thrissur", distance: "12 Km" },
-    ],
-  },
-];
+  const getIconComponent = (iconName) => {
+  if (!iconName) return null;
 
-export default function NearbyConnectivity() {
+  return LucideIcons[iconName] || null;
+};
+
+// const data = [
+//   {
+//     title: "Education",
+//     icon: GraduationCap,
+//     items: [
+//       { name: "St. Mary's School", distance: "1.2 Km" },
+//       { name: "Christ College", distance: "3.5 Km" },
+//       { name: "Government Engineering College", distance: "5.0 Km" },
+//     ],
+//   },
+//   {
+//     title: "Healthcare",
+//     icon: Hospital,
+//     items: [
+//       { name: "Jubilee Mission Hospital", distance: "2.8 Km" },
+//       { name: "Amala Institute", distance: "4.2 Km" },
+//       { name: "Medical Trust Hospital", distance: "3.5 Km" },
+//     ],
+//   },
+//   {
+//     title: "Shopping",
+//     icon: ShoppingBag,
+//     items: [
+//       { name: "Sobha City Mall", distance: "4.5 Km" },
+//       { name: "Big Bazaar", distance: "4.0 Km" },
+//     ],
+//   },
+//   {
+//     title: "Restaurants",
+//     icon: UtensilsCrossed,
+//     items: [
+//       { name: "Ming Palace", distance: "2.0 Km" },
+//       { name: "Dhe Puttu", distance: "3.5 Km" },
+//       { name: "Burger Junction", distance: "1.8 Km" },
+//     ],
+//   },
+//   {
+//     title: "Transport",
+//     icon: Bus,
+//     items: [
+//       { name: "Thrissur Railway Station", distance: "8.0 Km" },
+//       { name: "Private Bus Stand", distance: "5.5 Km" },
+//       { name: "KSRTC Bus Stand", distance: "7.2 Km" },
+//     ],
+//   },
+//   {
+//     title: "Airport",
+//     icon: Plane,
+//     items: [
+//       { name: "Cochin International Airport", distance: "45 Km" },
+//     ],
+//   },
+//   {
+//     title: "Places of Worship",
+//     icon: Landmark,
+//     items: [
+//       { name: "Vadakkumnathan Temple", distance: "6.5 Km" },
+//       { name: "Our Lady of Dolours", distance: "7.0 Km" },
+//     ],
+//   },
+//   {
+//     title: "IT Parks",
+//     icon: Building2,
+//     items: [
+//       { name: "Athani IT Park", distance: "10 Km" },
+//       { name: "Infopark Thrissur", distance: "12 Km" },
+//     ],
+//   },
+// ];
+
+
+
+export default function NearbyConnectivity({data}) {
+  const transformLocationData = (apiData = []) => {
+  return apiData.map((row) => {
+    const items = [];
+
+    for (let i = 1; i <= 5; i++) {
+      const name = row[`advantage_${i}`];
+      const distance = row[`distance_${i}`];
+
+      if (name && distance) {
+        items.push({ name, distance });
+      }
+    }
+
+    return {
+      title: row.category,
+      icon: row.icon, // string like "GraduationCap"
+      items,
+    };
+  }).filter(block => block.items.length > 0);
+};
+
+
+   if (!Array.isArray(data) || data.length === 0) return null;
+
+  const blocks = transformLocationData(data);
+
+  if (blocks.length === 0) return null;
   return (
     <section className="py-8 md:py-16 bg-white">
       <div className="container">
@@ -101,9 +128,9 @@ export default function NearbyConnectivity() {
 
         {/* GRID */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-6">
-          {data.map((block, idx) => {
-            const Icon = block.icon;
-
+           {blocks.map((block, idx) => {
+            const Icon = getIconComponent(block.icon);
+            if (!Icon) return null;
             return (
               <div
                 key={idx}
@@ -111,7 +138,8 @@ export default function NearbyConnectivity() {
               >
                 {/* TITLE */}
                 <div className="flex items-center gap-2 mb-4">
-                  <Icon className="w-6 h-6 text-[#E39A2E]" />
+                  {/* <Icon className="w-6 h-6 text-[#E39A2E]" /> */}
+                   {Icon && <Icon className="w-6 h-6 text-[#E39A2E]" />}
                    <h3 className="text-[16px] md:text-[18px] leading-[18px] font-semibold font-urban text-[#E09B07] mb-1">
                     {block.title}
                   </h3>

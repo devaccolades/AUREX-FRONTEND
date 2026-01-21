@@ -12,29 +12,34 @@ import ConstructionUpdates from "./ConstructionUpdate";
 import ProjectOverviewSection from "./ProjectOverview";
 import AmenitiesSection from "./Amenities";
 import MapSection from "./MapSection";
-import { ProjectBySlugFetch } from "@/services/api";
+import { ProjectAmenitiesBySlugFetch, ProjectBySlugFetch, ProjectCommonFacilitiesBySlugFetch, ProjectFloorPlansBySlugFetch, ProjectLocationAdvantagesBySlugFetch, ProjectSpecificationsBySlugFetch, ProjectUpdatesBySlugFetch, ProjectYoutubeVideosBySlugFetch,  } from "@/services/api";
 
 
 export default async function Page({ params }) {
   const { slug } = await params; // ✅ REQUIRED
 
   const project = await ProjectBySlugFetch(slug);
-
-
+  const amenities = await ProjectAmenitiesBySlugFetch(slug)
+  const facilities = await ProjectCommonFacilitiesBySlugFetch(slug);
+  const floorplan = await ProjectFloorPlansBySlugFetch(slug);
+  const locationSpec = await ProjectLocationAdvantagesBySlugFetch(slug);
+  const specifications = await ProjectSpecificationsBySlugFetch(slug);
+  const updates = await ProjectUpdatesBySlugFetch(slug);
+  const projectVideos = await ProjectYoutubeVideosBySlugFetch(slug);
 
   return (
     <div>
       <Header />
       <ProjectHero project={project}/>
       <ProjectOverviewSection />
-      <AmenitiesSection />
-      <CommonFacilities />
-      <FloorPlansSection />
-      <PrecisionBuiltSection />
+      <AmenitiesSection amenities={amenities} />
+      <CommonFacilities facilities={facilities} />
+      <FloorPlansSection floorplan={floorplan} />
+      <PrecisionBuiltSection specs={specifications} />
       {/* <MapSection /> */}
-      <NearbyConnectivity />
-      <YoutubeEmbedSection />
-      <ConstructionUpdates />
+      <NearbyConnectivity data={locationSpec} />
+      <YoutubeEmbedSection projectVideos={projectVideos} />
+      <ConstructionUpdates updates={updates} />
       <BankingPartners />
       <Footer />
       

@@ -37,9 +37,9 @@ export default function BankingPartners() {
         <Swiper
           modules={[Autoplay]}
           loop={true}
-          speed={4000}                 // smooth continuous speed
+          speed={4000}                 
           autoplay={{
-            delay: 0,                  // 👈 key for continuous scroll
+            delay: 0,                  
             disableOnInteraction: false,
           }}
           slidesPerView={2.5}
