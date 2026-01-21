@@ -12,7 +12,7 @@ import ConstructionUpdates from "./ConstructionUpdate";
 import ProjectOverviewSection from "./ProjectOverview";
 import AmenitiesSection from "./Amenities";
 import MapSection from "./MapSection";
-import { ProjectAmenitiesBySlugFetch, ProjectBySlugFetch, ProjectCommonFacilitiesBySlugFetch, ProjectFloorPlansBySlugFetch, ProjectLocationAdvantagesBySlugFetch, ProjectSpecificationsBySlugFetch, ProjectUpdatesBySlugFetch, ProjectYoutubeVideosBySlugFetch,  } from "@/services/api";
+import { ProjectAmenitiesBySlugFetch, ProjectBySlugFetch, ProjectCommonFacilitiesBySlugFetch, ProjectFloorPlansBySlugFetch, ProjectLocationAdvantagesBySlugFetch, ProjectSpecificationsBySlugFetch, ProjectUpdatesBySlugFetch, ProjectYoutubeVideosBySlugFetch, } from "@/services/api";
 
 
 export default async function Page({ params }) {
@@ -30,18 +30,31 @@ export default async function Page({ params }) {
   return (
     <div>
       <Header />
-      <ProjectHero project={project}/>
+      <ProjectHero project={project} />
       <ProjectOverviewSection />
-      <AmenitiesSection amenities={amenities} />
+      <div id="amenities">
+
+        <AmenitiesSection amenities={amenities} />
+      </div>
       <CommonFacilities facilities={facilities} />
-      <FloorPlansSection floorplan={floorplan} />
-      <PrecisionBuiltSection specs={specifications} />
-      <NearbyConnectivity data={locationSpec} project={project}/>
+      <div id="floor-plans">
+
+        <FloorPlansSection floorplan={floorplan} />
+      </div>
+
+      <div id="specifications">
+        <PrecisionBuiltSection specs={specifications} />
+      </div>
+
+      <div id="location-map">
+
+        <NearbyConnectivity data={locationSpec} project={project} />
+      </div>
       <YoutubeEmbedSection projectVideos={projectVideos} />
       <ConstructionUpdates updates={updates} />
       <BankingPartners />
       <Footer />
-      
+
     </div>
   );
 }

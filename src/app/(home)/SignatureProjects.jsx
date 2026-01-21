@@ -3,6 +3,7 @@
 import ProjectEnquiryModal from "@/components2/forms/ProjectEnquiryModal";
 import { ProjectsFetch } from "@/services/api";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function SignatureProjects() {
@@ -277,14 +278,14 @@ export default function SignatureProjects() {
                 {activeCard === p.id ? (
                   <>
                     {/* LEFT OUTLINE BUTTON */}
-                    <a
-                      href={p.brochure}
+                    <Link
+                       href={`/projects/${p.slug}`}
                       download
                       className="flex-1 w-fit px-6 py-3
                           font-urban text-[14px]
                           border border-white text-white
                           rounded-[10px] font-medium
-                          flex items-center justify-between gap-2 cursor-pointer "
+                          flex items-center justify-between gap-2 cursor-pointer"
                     >
                       <button
                         className="
@@ -294,13 +295,13 @@ export default function SignatureProjects() {
                       >
                         VIEW PROJECT DETAILS
                         <Image
-                          src="/images/icons/download.svg"
+                          src="/images/icons/arrow.svg"
                           alt="download"
-                          width={18}
-                          height={18}
+                          width={8}
+                          height={8}
                         />
                       </button>
-                    </a>
+                    </Link>
 
                     {/* RIGHT GREEN BUTTON */}
                     <button
@@ -422,14 +423,15 @@ export default function SignatureProjects() {
                   {/* <button className="px-4 py-2 text-[14px] min-w-[260px] leading-[16px] font-urban border border-white text-white rounded-[10px] font-semibold">
                     View Project →
                   </button> */}
-                  <button
+                  <Link
+                       href={`/projects/${p.slug}`}
                     className="
                           flex-1
                           px-6 py-3
                           font-urban text-[14px]
                           border border-white text-white
                           rounded-[10px] font-medium
-                          flex items-center justify-between gap-2
+                          flex items-center justify-between gap-2 cursor-pointer
                         "
                   >
                     VIEW PROJECT
@@ -439,7 +441,7 @@ export default function SignatureProjects() {
                       width={8}
                       height={8}
                     />
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
