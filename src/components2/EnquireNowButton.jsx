@@ -2,6 +2,7 @@
 import Image from "next/image";
 export default function EnquireNowButton({ onClick, className = "" }) {
   return (
+    <>
     <button
       onClick={onClick}
       className={`flex items-center gap-2 text-white  font-urban text-[12px] font-medium  hover:scale-[1.03] cursor-pointer transition ${className}`}
@@ -20,5 +21,8 @@ export default function EnquireNowButton({ onClick, className = "" }) {
         </span>
       </span>
     </button>
+
+    
+    </>
   );
 }
