@@ -1,14 +1,31 @@
 "use client";
 
+import Image from "next/image";
+
+const tabs = [
+  { label: "AMENITIES", id: "amenities" },
+  { label: "FLOOR PLANS", id: "floor-plans" },
+  { label: "SPECIFICATIONS", id: "specifications" },
+  { label: "LOCATION MAP", id: "location-map" },
+];
 export default function ProjectOverviewSection() {
+  const handleScroll = (id) => {
+    const section = document.getElementById(id);
+    section?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
   return (
     <section className="relative w-full bg-white py-14">
       <div className="">
         {/* Download Button */}
         <div className="flex justify-center mb-8">
-          <button className="flex items-center gap-2 bg-black text-white text-xs px-4 py-2 rounded-full hover:bg-gray-900 transition">
+          <button className="flex items-center gap-2 bg-black text-white text-xs px-4 py-2 rounded-full hover:bg-gray-900 transition cursor-pointer">
             DOWNLOAD BROCHURE
-            <span className="text-sm">⬇</span>
+            <Image
+                                  src="/images/icons/download.svg"
+                                  alt="download"
+                                  width={18}
+                                  height={18}
+                                />
           </button>
         </div>
 
@@ -31,16 +48,16 @@ export default function ProjectOverviewSection() {
         {/* Tabs */}
         <div className="mt-12 border-t border-gray-200">
           <div className="grid grid-cols-2 sm:grid-cols-4 text-center">
-            {["AMENITIES", "FLOOR PLANS", "SPECIFICATIONS", "LOCATION MAP"].map(
-              (tab, index) => (
-                <button
-                  key={index}
-                  className="py-4 text-sm md:text-[16px] leading-[20px] font-urban font-medium border last:border-r-0 border-gray-200 hover:bg-gray-50 transition"
-                >
-                  {tab}
-                </button>
-              )
-            )}
+            {tabs.map((tab, index) => (
+              <button
+                key={tab.id}
+                onClick={() => handleScroll(tab.id)}
+                className="py-4 text-sm md:text-[16px] font-urban font-medium border border-gray-200 hover:bg-gray-50 transition cursor-pointer"
+              >
+                {tab.label}
+              </button>
+            ))}
+
           </div>
         </div>
       </div>
