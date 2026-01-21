@@ -1,6 +1,7 @@
 "use client";
 
 import ProjectEnquiryModal from "@/components2/forms/ProjectEnquiryModal";
+import SuccessModal from "@/components2/SuccessModal";
 import { ProjectsFetch } from "@/services/api";
 import Image from "next/image";
 import Link from "next/link";
@@ -54,7 +55,7 @@ export default function SignatureProjects() {
 
   const [hovered, setHovered] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
-
+  const [successOpen, setSuccessOpen] = useState(false);
   const defaultExpanded = projects[0]?.id;
   const activeCard = hovered ? hovered : defaultExpanded;
   const [selectedProject, setSelectedProject] = useState(null);
@@ -279,7 +280,7 @@ export default function SignatureProjects() {
                   <>
                     {/* LEFT OUTLINE BUTTON */}
                     <Link
-                       href={`/projects/${p.slug}`}
+                      href={`/projects/${p.slug}`}
                       download
                       className="flex-1 w-fit px-6 py-3
                           font-urban text-[14px]
@@ -424,7 +425,7 @@ export default function SignatureProjects() {
                     View Project →
                   </button> */}
                   <Link
-                       href={`/projects/${p.slug}`}
+                    href={`/projects/${p.slug}`}
                     className="
                           flex-1
                           px-6 py-3
@@ -448,7 +449,7 @@ export default function SignatureProjects() {
           ))}
         </div>
       </section>
-     {modalOpen && selectedProject && (
+      {modalOpen && selectedProject && (
         <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/40 backdrop-blur-sm">
           <div className="bg-white rounded-2xl p-8 w-[90%] max-w-lg relative  z-20">
             <button
@@ -457,10 +458,24 @@ export default function SignatureProjects() {
             >
               ✕
             </button>
-              <ProjectEnquiryModal projectName={selectedProject.name} />
+            <ProjectEnquiryModal projectName={selectedProject.name}
+              onSuccess={() => {
+                setModalOpen(false);     // ✅ CLOSE FORM MODAL
+                setSuccessOpen(true);    // ✅ OPEN SUCCESS MODAL
+              }} />
           </div>
         </div>
       )}
+      {selectedProject && (
+        <SuccessModal
+          isOpen={successOpen}
+          projectName={selectedProject.name}
+          onClose={() => {
+            setSuccessOpen(false);
+          }}
+        />
+      )}
+
     </section>
   );
 }
