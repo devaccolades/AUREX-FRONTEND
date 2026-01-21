@@ -101,15 +101,8 @@ export default function ProjectEnquiryModal({ projectName, showBrochure = false,
         try {
             await ProjectEnquiry(formData);
 
-            Swal.fire({
-                icon: "success",
-                title: "Thank You!",
-                text: "Your enquiry has been submitted successfully.",
-                timer: 2500,
-                showConfirmButton: false,
-            });
             onSuccess?.();
-            
+
             setFormData({
                 name: "",
                 phone: "",
