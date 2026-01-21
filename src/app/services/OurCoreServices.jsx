@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 const coreServices = [
     {
@@ -68,6 +69,7 @@ export default function OurCoreServices() {
                                 </p>
                             </div>
 
+                             <Link href="/contact-us">
                             <button
                                 className={`mt-6 self-start text-[13px] leading-[13px] font-bold font-urban px-4 py-2 rounded-full transition ${service.primary
                                         ? "bg-black text-white hover:bg-black/90"
@@ -76,6 +78,7 @@ export default function OurCoreServices() {
                             >
                                 {service.buttonText}
                             </button>
+                            </Link>
                         </div>
                     ))}
                 </div>
