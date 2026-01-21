@@ -1,6 +1,7 @@
 "use client";
 
 import ProjectEnquiryModal from "@/components2/forms/ProjectEnquiryModal";
+import SuccessModal from "@/components2/SuccessModal";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -28,6 +29,7 @@ export default function ProjectOverviewSection({ p }) {
   };
 
   const [modalOpen, setModalOpen] = useState(false);
+  const [successOpen, setSuccessOpen] = useState(false);
   return (
     <section className="relative w-full bg-white py-14">
       <div className="">
@@ -83,22 +85,35 @@ export default function ProjectOverviewSection({ p }) {
       </div>
       {modalOpen && (
         <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/40 backdrop-blur-sm">
-          <div className="bg-white rounded-2xl p-8 w-[90%] max-w-lg relative  z-20">
+          <div className="bg-white rounded-2xl p-8 w-[90%] max-w-lg relative z-20">
             <button
               className="absolute top-4 right-4 text-xl"
               onClick={() => setModalOpen(false)}
             >
               ✕
             </button>
-            <ProjectEnquiryModal projectName={p.name} showBrochure={true}
+
+            <ProjectEnquiryModal
+              projectName={p.name}
+              showBrochure={true}
               onSuccess={() => {
-                handleDownload(p.brochure);
-                setModalOpen(false);
+                setModalOpen(false);     // ✅ CLOSE FORM MODAL
+                setSuccessOpen(true);    // ✅ OPEN SUCCESS MODAL
               }}
             />
           </div>
         </div>
       )}
+
+      <SuccessModal
+        isOpen={successOpen}
+        projectName={p.name}
+        onClose={() => {
+          setSuccessOpen(false);
+          handleDownload(p.brochure);
+        }}
+      />
+
     </section>
   );
 }
