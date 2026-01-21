@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 const floorPlans = {
   "2bhk": [
@@ -40,8 +40,25 @@ const floorPlans = {
   ],
 };
 
-export default function FloorPlansSection() {
-  const [activeTab, setActiveTab] = useState("2bhk");
+export default function FloorPlansSection({floorplan}) {
+  // const [activeTab, setActiveTab] = useState("2bhk");
+  // const [previewImage, setPreviewImage] = useState(null);
+    if (!Array.isArray(floorplan) || floorplan.length === 0) return null;
+
+  /* 🔹 Group plans by BHK type */
+  const groupedPlans = useMemo(() => {
+    return floorplan.reduce((acc, plan) => {
+      if (!plan?.bhk_type) return acc;
+
+      const key = plan.bhk_type.toLowerCase(); // "2bhk"
+      acc[key] = acc[key] || [];
+      acc[key].push(plan);
+      return acc;
+    }, {});
+  }, [floorplan]);
+
+  const tabs = Object.keys(groupedPlans);
+  const [activeTab, setActiveTab] = useState(tabs[0]);
   const [previewImage, setPreviewImage] = useState(null);
 
   return (
@@ -59,7 +76,8 @@ export default function FloorPlansSection() {
 
           {/* TABS */}
           <div className="inline-flex bg-gray-100 rounded-full p-1 mt-6">
-            {["2bhk", "3bhk"].map((tab) => (
+            {/* {["2bhk", "3bhk"].map((tab) => ( */}
+             {tabs.map(tab => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
@@ -74,17 +92,19 @@ export default function FloorPlansSection() {
 
           {/* FLOOR PLAN CARDS */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-            {floorPlans[activeTab].map((plan) => (
+            {/* {floorPlans[activeTab].map((plan) => ( */}
+               {groupedPlans[activeTab].map(plan => (
               <div key={plan.id} className="text-left">
 
                 {/* IMAGE */}
+                  {plan.image && (
                 <div
                   onClick={() => setPreviewImage(plan.image)}
                   className="relative w-full aspect-square rounded-2xl overflow-hidden cursor-pointer group"
                 >
                   <Image
                     src={plan.image}
-                    alt={plan.type}
+                    alt={plan.image_alt || "Floor Plan"}
                     fill
                     className="object-cover"
                   />
@@ -96,14 +116,26 @@ export default function FloorPlansSection() {
                     </span>
                   </div>
                 </div>
+                  )}
 
                 {/* TEXT */}
-                <h3 className="mt-4 text-[14px] font-semibold">
+                {/* <h3 className="mt-4 text-[14px] font-semibold">
                   {plan.type}
                 </h3>
                 <p className="text-[16px] font-bold mt-1">
                   {plan.area}
-                </p>
+                </p> */}
+                 {plan.plan_type && (
+                  <h3 className="mt-4 text-[14px] font-semibold">
+                    {plan.plan_type} – {plan.bhk_type}
+                  </h3>
+                )}
+
+                {plan.area_label && (
+                  <p className="text-[16px] font-bold mt-1">
+                    {plan.area_label}
+                  </p>
+                )}
 
                 <span className="inline-block mt-2 text-[12px] px-3 py-1 rounded-full bg-[#FFF4E5] text-[#C98B2C] font-medium">
                   Super Built-up Area
