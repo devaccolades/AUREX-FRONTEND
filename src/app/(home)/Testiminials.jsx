@@ -2,7 +2,7 @@ import Squares from "@/components2/Squares";
 import React from "react";
 import Testimonials from "./components1/Testimonials";
 
-const Testiminials = () => {
+const Testiminials = ({ testimonials }) => {
   return (
     <section className="relative">
       <div className="absolute inset-0 ">
@@ -29,7 +29,7 @@ const Testiminials = () => {
         </div>
       </div>
       <div>
-        <Testimonials />
+        <Testimonials testimonials={testimonials} />
       </div>
     </section>
   );

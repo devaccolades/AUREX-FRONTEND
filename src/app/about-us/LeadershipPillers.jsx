@@ -69,7 +69,7 @@ export default function LeadershipPillers() {
                             {/* NAME BLOCK */}
                             <div className="mt-2 xl:mt-4">
                                 <h4 className="font-bold font-urban text-[14px] lg:text-[16px]">
-                                    AJITH POOLORTH –
+                                    AJITH POOLOTH –
                                 </h4>
                                 <p className="font-urban font-normal text-[12px] lg:text-[14px] leading-[24px]">
                                     Chairman, Aurex Builders

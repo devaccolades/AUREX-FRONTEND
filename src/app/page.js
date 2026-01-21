@@ -16,10 +16,11 @@ import SignatureProjects from "./(home)/SignatureProjects";
 import Services from "./(home)/Services";
 import Header from "@/components2/Header";
 import dynamic from "next/dynamic";
-import { FaqFetch } from "@/services/api";
+import { FaqFetch, VidTestmonialsFetch } from "@/services/api";
 
 export default async function Home() {
     const faqData = await FaqFetch()
+    const testimonialData = await VidTestmonialsFetch()
 
   return (
     <div>
@@ -33,7 +34,7 @@ export default async function Home() {
       <Services />
       <WhyChooseUs />
       <Thrissur />
-      <Testiminials />
+      <Testiminials testimonials={testimonialData} />
       <DreamsInThrissur />
       <FAQ data={faqData} />
       <Footer />
