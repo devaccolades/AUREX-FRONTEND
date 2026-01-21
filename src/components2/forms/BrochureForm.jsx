@@ -3,7 +3,7 @@ import { ProjectEnquiry } from "@/services/api";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 
-export default function ProjectEnquiryModal({ projectName, showBrochure = false,onSuccess }) {
+export default function ProjectEnquiryModal({ projectName, showBrochure = false }) {
     const [formData, setFormData] = useState({
         name: "",
         phone: "",
@@ -108,8 +108,7 @@ export default function ProjectEnquiryModal({ projectName, showBrochure = false,
                 timer: 2500,
                 showConfirmButton: false,
             });
-            onSuccess?.();
-            
+
             setFormData({
                 name: "",
                 phone: "",
