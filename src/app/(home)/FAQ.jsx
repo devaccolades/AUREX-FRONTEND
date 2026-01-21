@@ -17,7 +17,7 @@ const FAQ = ({data}) => {
   console.log('faqs are :',data);
   
   return (
-    <section className="relative py-16 md:py-20   ">
+    <section className="relative py-8 md:py-16 lg:py-20   ">
       <div className="absolute inset-0 flex w-full h-full justify-start opacity-26 pointer-events-none">
         <Image
           src="/images/home/faq-bg.svg"
