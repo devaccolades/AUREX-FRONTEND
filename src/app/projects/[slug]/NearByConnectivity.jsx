@@ -11,8 +11,6 @@ import MapSection from "./MapSection";
 };
 
 
-
-
 export default function NearbyConnectivity({data, project}) {
   const transformLocationData = (apiData = []) => {
   return apiData.map((row) => {
@@ -45,18 +43,6 @@ export default function NearbyConnectivity({data, project}) {
     <section className="py-8 md:py-16 bg-white">
       <MapSection project={project} />
       <div className="container">
-
-        {/* HEADING */}
-        {/* <div className="text-center mb-6">
-          <h2 className="text-[16px] md:text-[20px] leading-[16px] font-urban font-bold uppercase text-center mb-2">
-            EVERYTHING YOU NEED, JUST AROUND THE CORNER
-          </h2>
-          <p className="text-[13px] text-black mt-2 max-w-2xl mx-auto">
-            Enjoy unmatched connectivity to Thrissur’s major landmarks, schools,
-            and healthcare centers.
-          </p>
-        </div> */}
-        
 
         {/* GRID */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-6">

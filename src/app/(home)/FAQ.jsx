@@ -81,15 +81,10 @@ const FAQ = ({data}) => {
             ))}
           </div>
 
-
-
-
         </div>
 
         {/* RIGHT SIDE */}
         <div className="space-y-10">
-          {/* {[1, 2, 3].map((item) => ( */}
-            {/* <div key={item}> */}
             <div>
               <h3 className="font-urban font-bold text-[16px] lg:text-[18px] leading-[24px] text-gray-800 t mb-1">
                Crafting Homes That Fit Your Lifestyle
@@ -126,7 +121,6 @@ const FAQ = ({data}) => {
                Each project reflects our love for Thrissur and its people. That bond shapes every space we create.
               </p>
             </div>
-          {/* ))} */}
         </div>
       </div>
     </section>
