@@ -36,8 +36,7 @@ export default async function Page({ params }) {
       <CommonFacilities facilities={facilities} />
       <FloorPlansSection floorplan={floorplan} />
       <PrecisionBuiltSection specs={specifications} />
-      {/* <MapSection /> */}
-      <NearbyConnectivity data={locationSpec} />
+      <NearbyConnectivity data={locationSpec} project={project}/>
       <YoutubeEmbedSection projectVideos={projectVideos} />
       <ConstructionUpdates updates={updates} />
       <BankingPartners />
