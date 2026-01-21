@@ -88,107 +88,130 @@ export default async function Footer() {
     >
       <div className="hidden md:block">
         <div className="grid grid-cols-1 lg:grid-cols-[25%_75%] xl:grid-cols-[20%_80%] gap-12 lg:gap-5">
-          {/* --- Left Section --- */}
           <div className="space-y-3  flex md:flex-col lg:flex-col justify-between">
-            <div className="flex items-center space-x-2">
-              <Image
-                src="/images/footer/icon1.svg"
-                alt="Aurex Builders"
-                width={50}
-                height={50}
-                className="object-contain"
-              />
-
-              <div className="max-w-[200px] lg:space-y-1">
-                <h3 className="text-[16px] lg:text-[18px] xl:text-[20px] leading-[20px] font-urban ">
-                  Aurex Builders Pvt Ltd
-                </h3>
-                <p className="text-[13px] lg:text-sm text-white mt-0 leading-[18px] ">
-                  {/* Aurum Complex, Patturaikkal, Thrissur, Kerala - 680 020 */}
-                  {data[0]?.address}
-                </p>
-              </div>
-            </div>
-
-            <Link
-              href={data?.[0]?.map_url || "#"}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center text-white cursor-pointer"
-            >
-              <Image
-                src="/images/icons/g-map.svg"
-                alt="Map Icon"
-                width={22}
-                height={22}
-                className="mr-2"
-              />
-              <span className="text-[12px] font-bold uppercase leading-[16px]">
-                View Location
-              </span>
-            </Link>
-
-            <div className="space-y-1">
-              {/* EMAIL */}
-              <div className="flex items-center gap-3">
-                <div className="w-5 h-5">
+            <div className="flex md:flex-row lg:flex-col items-center gap-2">
+              <div className=" w-full space-y-2">
+                <div className="flex items-center space-x-2">
                   <Image
-                    src="/images/icons/mail.svg"
-                    width={100}
-                    height={100}
-                    alt="call icon"
+                    src="/images/footer/icon1.svg"
+                    alt="Aurex Builders"
+                    width={50}
+                    height={50}
+                    className="object-contain"
                   />
-                </div>{" "}
-                {/* ICON placeholder */}
-                <p className="font-bold font-urban text-[12px] leading-[16px] uppercase">
-                  {data[0]?.email}
-                </p>
-              </div>
 
-              {/* PHONE */}
-              <div className="flex items-center gap-3">
-                <div className="w-5 h-5  rounded">
-                  <Image
-                    src="/images/icons/call.svg"
-                    width={16}
-                    height={16}
-                    alt="call icon"
-                  />
-                </div>{" "}
-                {/* ICON placeholder */}
-                <p className="font-bold font-urban text-[12px] leading-[16px]">
-                  {data[0]?.phone1} / {data[0]?.phone2}
-                </p>
-              </div>
-            </div>
-
-            <div className="hidden md:flex space-x-3 mt-5">
-              {socialLinks.map((item, i) => (
-                <div
-                  key={i}
-                  className="h-5 w-auto flex items-center cursor-pointer"
-                >
-                  {item.url ? (
-                    <Link href={item.url}>
-                      <Image
-                        src={`/images/footer/${item.icon}`}
-                        alt={item.key}
-                        width={20}
-                        height={20}
-                        className="h-full w-auto object-contain"
-                      />
-                    </Link>
-                  ) : (
-                    <Image
-                      src={`/images/footer/${item.icon}`}
-                      alt={item.key}
-                      width={20}
-                      height={20}
-                      className="h-full w-auto object-contain "
-                    />
-                  )}
+                  <div className="max-w-[200px] lg:space-y-1">
+                    <h3 className="text-[16px] lg:text-[18px] xl:text-[20px] leading-[20px] font-urban ">
+                      Aurex Builders Pvt Ltd
+                    </h3>
+                    <p className="text-[13px] lg:text-sm text-white mt-0 leading-[18px] ">
+                      {/* Aurum Complex, Patturaikkal, Thrissur, Kerala - 680 020 */}
+                      {data[0]?.address}
+                    </p>
+                  </div>
                 </div>
-              ))}
+
+                <Link
+                  href={data?.[0]?.map_url || "#"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-white cursor-pointer "
+                >
+                  <Image
+                    src="/images/icons/g-map.svg"
+                    alt="Map Icon"
+                    width={22}
+                    height={22}
+                    className="mr-2"
+                  />
+                  <span className="text-[12px] font-bold uppercase leading-[16px]">
+                    View Location
+                  </span>
+                </Link>
+              </div>
+              <div className=" w-full">
+                <div className="space-y-1">
+                  {/* EMAIL */}
+                  <div className="flex items-center gap-3">
+                    <div className="w-5 h-5">
+                      <Image
+                        src="/images/icons/mail.svg"
+                        width={100}
+                        height={100}
+                        alt="call icon"
+                      />
+                    </div>{" "}
+                    <p className="font-bold font-urban text-[12px] leading-[16px] uppercase">
+                      <a
+                        href={`mailto:${data[0]?.email}`}
+                        className="hover:underline cursor-pointer"
+                      >
+                        {data[0]?.email}
+                      </a>
+                    </p>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <div className="w-5 h-5  rounded">
+                      <Image
+                        src="/images/icons/call.svg"
+                        width={16}
+                        height={16}
+                        alt="call icon"
+                      />
+                    </div>{" "}
+                    <p className="font-bold font-urban text-[12px] leading-[16px]">
+                      <a
+                        href={`tel:${data[0]?.phone1}`}
+                        className="hover:underline cursor-pointer"
+                      >
+                        {data[0]?.phone1}
+                      </a>
+
+                      {data[0]?.phone2 && (
+                        <>
+                          {" / "}
+                          <a
+                            href={`tel:${data[0]?.phone2}`}
+                            className="hover:underline cursor-pointer"
+                          >
+                            {data[0]?.phone2}
+                          </a>
+                        </>
+                      )}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="hidden md:flex space-x-3 mt-5">
+                  {socialLinks.map((item, i) => (
+                    <div
+                      key={i}
+                      className="h-5 w-auto flex items-center cursor-pointer"
+                    >
+                      {item.url ? (
+                        <Link href={item.url}>
+                          <Image
+                            src={`/images/footer/${item.icon}`}
+                            alt={item.key}
+                            width={20}
+                            height={20}
+                            className="h-full w-auto object-contain"
+                          />
+                        </Link>
+                      ) : (
+                        <Image
+                          src={`/images/footer/${item.icon}`}
+                          alt={item.key}
+                          width={20}
+                          height={20}
+                          className="h-full w-auto object-contain "
+                        />
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
 
