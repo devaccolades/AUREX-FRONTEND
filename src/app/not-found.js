@@ -42,11 +42,11 @@ export default function NotFound() {
         </div>
 
         {/* Menu */}
-        <div className="font-urban font-bold lg:text-[16px] text-[14px] leading-[16px] space-y-1 text-right text-[rgba(52,52,46,1)]">
-          <p>PROJECT</p>
-          <p>SERVICES</p>
-          <p>ABOUT</p>
-          <p>CONTACT</p>
+        <div className="flex flex-col font-urban font-bold lg:text-[16px] text-[14px] leading-[16px] space-y-1 md:space-y-2 text-right text-[rgba(52,52,46,1)]">
+          <Link href="/projects">PROJECT</Link>
+          <Link href="/services">SERVICES</Link>
+          <Link href="/about-us">ABOUT</Link>
+          <Link href="/contact-us">CONTACT</Link>
         </div>
       </div>
 
@@ -79,7 +79,7 @@ export default function NotFound() {
 
         {/* Bottom right */}
         <Link
-          href="/contact"
+          href="/contact-us"
           className="font-urban font-bold lg:text-[16px] text-[14px] tracking-widest flex items-center gap-2"
         >
           LETS TALK
