@@ -5,9 +5,9 @@ import { useEffect, useState } from "react";
 import ModalForm from "@/components2/forms/ModalForm";
 import { EventGalleryFetch } from "@/services/api";
 
-export default function GallerySection() {
+export default function GallerySection({ data }) {
   const [openModal, setOpenModal] = useState(false);
-  const [gallery, setGallery] = useState([]);
+  const [gallery, setGallery] = useState(data);
   // const gallery = [
   //   {
   //     name: "Building Night View",
@@ -56,12 +56,12 @@ export default function GallerySection() {
   //   }
   // ];
 
-  useEffect(() => {
-    EventGalleryFetch().then((data) => {
-      console.log(data);
-      setGallery(data);
-    });
-  }, []);
+  // useEffect(() => {
+  //   EventGalleryFetch().then((data) => {
+  //     console.log(data);
+  //     setGallery(data);
+  //   });
+  // }, []);
 
   const [activeImage, setActiveImage] = useState(gallery[0]);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -189,12 +189,12 @@ export default function GallerySection() {
 
           {/* RIGHT SIDE THUMBNAIL SLIDER */}
           {/* <div className="col-span-2 lg:col-span-2 h-[384px] lg:h-[684px] border-x border-gray-300 overflow-y-auto hide-scrollbar space-y-4"> */}
-          <div className="h-[384px] lg:h-[700px]  border-l border-gray-300 overflow-y-auto hide-scrollbar space-y-4">
+          <div className="h-[384px] lg:h-[700px]  border-l border-gray-300 overflow-y-auto hide-scrollbar space-y-[16px]">
             {gallery.map((item, i) => (
               <div
                 key={i}
                 onClick={() => setActiveImage(item)}
-                className={`relative cursor-pointer rounded-lg overflow-hidden transition-all 
+                className={`relative cursor-pointer  overflow-hidden transition-all 
         ${activeImage?.id === item.id ? "border border-black" : "border border-transparent"}`}
               >
                 {/* IMAGE TYPE THUMBNAIL */}

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import FAQ from "./(home)/FAQ";
 
-
 import DreamsInThrissur from "./(home)/DreamsInThrissur";
 import Testiminials from "./(home)/Testiminials";
 import Footer from "../components2/Footer";
@@ -16,21 +15,28 @@ import SignatureProjects from "./(home)/SignatureProjects";
 import Services from "./(home)/Services";
 import Header from "@/components2/Header";
 import dynamic from "next/dynamic";
-import { FaqFetch, VidTestmonialsFetch } from "@/services/api";
+import {
+  EventGalleryFetch,
+  FaqFetch,
+  ProjectsFetch,
+  VidTestmonialsFetch,
+} from "@/services/api";
 
 export default async function Home() {
-    const faqData = await FaqFetch()
-    const testimonialData = await VidTestmonialsFetch()
+  const faqData = await FaqFetch();
+  const testimonialData = await VidTestmonialsFetch();
+  const ProjectsData = await ProjectsFetch();
+  const EventGalleryFetchData = await EventGalleryFetch();
 
   return (
     <div>
       <Header />
-      <HeroSection  />
+      <HeroSection data={ProjectsData} />
       <BrandAmbassador />
       <ChairmanMessage />
-      <SignatureProjects />
+      <SignatureProjects data={ProjectsData} />
       <AboutSection />
-      <GallerySection />
+      <GallerySection data={EventGalleryFetchData} />
       <Services />
       <WhyChooseUs />
       <Thrissur />

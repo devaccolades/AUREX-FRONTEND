@@ -15,11 +15,12 @@ import { useIsMobile } from "@/components2/hooks/useIsMobile";
 import { ProjectsFetch } from "@/services/api";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-
-export default function HeroSection() {
+export default function HeroSection({ data }) {
   const [openModal, setOpenModal] = useState(false);
   const [active, setActive] = useState(0);
-  const [residentialProjects, setResidentialProjects] = useState([]);
+  const [residentialProjects, setResidentialProjects] = useState(
+    data.filter((item) => item.project_type === "Residential"),
+  );
   const project = residentialProjects[active];
   const [open, setOpen] = useState(false);
   const isMobile = useIsMobile();
@@ -44,19 +45,6 @@ export default function HeroSection() {
       document.removeEventListener("touchstart", handleClickOutside);
     };
   }, []);
-
-  useEffect(() => {
-    ProjectsFetch().then((data) => {
-      setResidentialProjects(
-        data.filter((item) => item.project_type === "Residential"),
-      );
-    });
-  }, []);
-
-  useEffect(() => {
-    console.log("project Data:", residentialProjects);
-    console.log("project :", project);
-  }, [residentialProjects]);
 
   useEffect(() => {
     if (project) {
