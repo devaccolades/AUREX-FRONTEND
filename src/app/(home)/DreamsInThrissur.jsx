@@ -46,7 +46,7 @@ const DreamsInThrissur = () => {
           </div>
         </div>
         <div className="flex justify-end items-end">
-        <div className="rounded-[20px] p-[20px] min-[400px]:p-0 md:p-[26px] lg:p-[40px]  w-[280px] min-[500px]:w-[200px] md:w-[300px] lg:w-[400px] xl:w-[519px] ">
+        <div className="rounded-[20px] p-[20px]  md:p-[26px] lg:p-[40px]  w-[280px] min-[500px]:w-[200px] md:w-[300px] lg:w-[400px] xl:w-[519px] bg-[#FFFFFF]">
           <p className="font-urbarn text-[16px] lg:text-[24px] leading-[16px] lg:leading-[28px] tracking-[-4%] font-medium">
             WE ARE READY TO ANSWER ALL YOUR QUESTIONS
           </p>
