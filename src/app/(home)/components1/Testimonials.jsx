@@ -10,32 +10,32 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-const testimonials = [
-  {
-    id: 1,
-    name: "t1",
-    link: "https://www.youtube.com/shorts/wwV0l_Pxzok",
-    thumbnail: "/images/temp/img1.png",
-  },
-  {
-    id: 2,
-    name: "t2",
-    link: "https://www.youtube.com/shorts/wwV0l_Pxzok",
-    thumbnail: "/images/temp/img2.png",
-  },
-  {
-    id: 3,
-    name: "t3",
-    link: "https://www.youtube.com/shorts/wwV0l_Pxzok",
-    thumbnail: "/images/temp/img3.png",
-  },
-  {
-    id: 4,
-    name: "t4",
-    link: "https://www.youtube.com/shorts/wwV0l_Pxzok",
-    thumbnail: "/images/temp/img1.png",
-  },
-];
+// const testimonials = [
+//   {
+//     id: 1,
+//     name: "t1",
+//     link: "https://www.youtube.com/shorts/wwV0l_Pxzok",
+//     thumbnail: "/images/temp/img1.png",
+//   },
+//   {
+//     id: 2,
+//     name: "t2",
+//     link: "https://www.youtube.com/shorts/wwV0l_Pxzok",
+//     thumbnail: "/images/temp/img2.png",
+//   },
+//   {
+//     id: 3,
+//     name: "t3",
+//     link: "https://www.youtube.com/shorts/wwV0l_Pxzok",
+//     thumbnail: "/images/temp/img3.png",
+//   },
+//   {
+//     id: 4,
+//     name: "t4",
+//     link: "https://www.youtube.com/shorts/wwV0l_Pxzok",
+//     thumbnail: "/images/temp/img1.png",
+//   },
+// ];
 
 // Convert all YouTube links to embed format
 function convertToEmbed(url) {
@@ -56,7 +56,7 @@ function convertToEmbed(url) {
   return url;
 }
 
-export default function Testimonials() {
+export default function Testimonials({testimonials}) {
   const [activeVideo, setActiveVideo] = useState(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
