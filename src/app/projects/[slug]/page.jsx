@@ -56,7 +56,7 @@ export default async function Page({ params }) {
       <ProjectHero project={project} />
       <ProjectOverviewSection p={project} />
       <div id="amenities">
-        <AmenitiesSection amenities={amenities} title={title} />
+        <AmenitiesSection amenities={amenities} title={title} projectVideos={projectVideos} />
       </div>
       <CommonFacilities facilities={facilities} />
       <div id="floor-plans">
