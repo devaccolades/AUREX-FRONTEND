@@ -21,7 +21,7 @@ const menuItems = [
   },
   { label: "Gallery", path: "/gallery", icon: "/images/icons/gallery.svg" },
   { label: "About Us", path: "/about-us", icon: "/images/icons/about-us.svg" },
-  { label: "Blogs", path: "/blogs", icon: "/images/icons/blogs.svg" },
+  { label: "Blogs", path: "/blog", icon: "/images/icons/blogs.svg" },
   {
     label: "Contact Us",
     path: "/contact-us",
