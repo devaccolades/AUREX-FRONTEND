@@ -14,7 +14,7 @@ const GlassSurface = dynamic(
 
 const FAQ = ({data}) => {
   const [openIndex, setOpenIndex] = useState(0);
-  console.log('faqs are :',data);
+  // console.log('faqs are :',data);
   
   return (
     <section className="relative py-8 md:py-16 lg:py-20   ">

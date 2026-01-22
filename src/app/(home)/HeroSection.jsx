@@ -35,7 +35,7 @@ export default function HeroSection({ data }) {
       }
     }
 
-    console.log("residentialProjects:", residentialProjects);
+    // console.log("residentialProjects:", residentialProjects);
 
     document.addEventListener("mousedown", handleClickOutside);
     document.addEventListener("touchstart", handleClickOutside);
@@ -48,12 +48,12 @@ export default function HeroSection({ data }) {
 
   useEffect(() => {
     if (project) {
-      console.log("project image:", project.image);
+      // console.log("project image:", project.image);
     }
   }, [project]);
 
   const handleMouseEnter = () => {
-    console.log("Mouse entered map icon");
+    // console.log("Mouse entered map icon");
     setOpen(true);
   };
 

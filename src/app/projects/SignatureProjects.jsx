@@ -59,10 +59,13 @@ export default function SignatureProjects({data}) {
         {/* LEFT PANEL */}
         <div className="space-y-6">
           {/* FILTER */}
-          <select className="w-full border bg-black text-white border-gray-300 rounded-full px-4 py-2 text-[13px] leading-[13px] font-bold font-urban ">
+         {/* <select className="w-full border bg-black text-white border-gray-300 rounded-full px-4 py-2 text-[13px] leading-[13px] font-bold font-urban ">
             <option>ONGOING</option>
             <option>READY TO OCCUPY</option>
-          </select>
+          </select> */}
+          <div className="w-full border bg-black text-white border-gray-300 rounded-full px-4 py-2 text-[13px] leading-[13px] font-bold font-urban ">
+           <h3>Residential Projects</h3>
+          </div>
 
           {/* PROJECT LIST */}
           <div className="space-y-4">
@@ -205,10 +208,13 @@ export default function SignatureProjects({data}) {
         {/* LEFT PANEL */}
         <div className="space-y-6">
           {/* FILTER */}
-          <select className="w-full border bg-black text-white border-gray-300 rounded-full px-4 py-2 text-[13px] leading-[13px] font-bold font-urban ">
+          {/* <select className="w-full border bg-black text-white border-gray-300 rounded-full px-4 py-2 text-[13px] leading-[13px] font-bold font-urban ">
             <option>ONGOING</option>
             <option>READY TO OCCUPY</option>
-          </select>
+          </select> */}
+          <div className="w-full border bg-black text-white border-gray-300 rounded-full px-4 py-2 text-[13px] leading-[13px] font-bold font-urban ">
+           <h3>Residential Projects</h3>
+          </div>
 
           {/* PROJECT LIST */}
           <div className="space-y-4">

@@ -29,7 +29,7 @@ export async function generateMetadata({ params }) {
 
   const bannerData = result?.data || {};
 
-  console.log("Resolved bannerData:", bannerData);
+  // console.log("Resolved bannerData:", bannerData);
 
   return {
     title: bannerData?.meta_title || `Aurex Builders.`,

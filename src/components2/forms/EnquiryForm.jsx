@@ -70,7 +70,7 @@ const handleSubmit = async (e) => {
 
   try {
     const result = await LeadSubmission(formData);
-    console.log("Success:", result);
+    // console.log("Success:", result);
 
     // ✅ OPEN SUCCESS MODAL
     setIsModalOpen(true);
