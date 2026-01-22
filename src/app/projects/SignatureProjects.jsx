@@ -43,7 +43,8 @@ export default function SignatureProjects({data}) {
  
   const [activeId, setActiveId] = useState(projects[0].id);
   const activeProject = projects.find((p) => p.id === activeId);
-
+    const [modalOpen, setModalOpen] = useState(false);
+  const [successOpen, setSuccessOpen] = useState(false);
 
   return (
     <section className="py-16 relative bg-gradient-to-b from-[#FFF7EA] to-white">
