@@ -14,11 +14,8 @@ export default function AmenitiesSection({ amenities, title, projectVideos }) {
   const [openVideo, setOpenVideo] = useState(false);
   const [openForm, setOpenForm] = useState(false);
   const [successOpen, setSuccessOpen] = useState(false);
-  console.log(amenities);
 
-  useEffect(() => {
-    console.log("Project Videos prop:", projectVideos[0].video_url);
-  }, []);
+
 
   const YOUTUBE_URL = projectVideos[0].video_url;
   const getYoutubeId = (url) => {
@@ -341,7 +338,7 @@ export default function AmenitiesSection({ amenities, title, projectVideos }) {
               setOpenVideo(false);
               setOpenForm(false);
             }}
-            className="fixed top-5 right-5 text-white text-3xl z-[1000]"
+            className="fixed top-6 md:top-5 right-5 text-black md:text-white text-3xl z-[1000]"
           >
             ×
           </button>
@@ -364,9 +361,21 @@ export default function AmenitiesSection({ amenities, title, projectVideos }) {
 
             {/* FORM */}
             {openForm && (
-              <div className="bg-white rounded-2xl p-8 w-[90%]  relative">
-                <ProjectEnquiryModal projectName={title} />
-              </div>
+              // <div className="bg-white rounded-2xl p-2 md:p-4 lg:p-4 w-[80%]  relative">
+              //   <ProjectEnquiryModal projectName={title} />
+              // </div>
+              <div className="fixed inset-0 z-[999] flex items-center justify-center ">
+                        <div className="bg-white rounded-2xl p-4 w-[90%] max-w-lg relative  z-20">
+                          {/* <button
+                            className="absolute top-4 right-4 text-xl"
+                            onClick={() => setOpenModal(false)}
+                          >
+                            ✕
+                          </button> */}
+                          <ProjectEnquiryModal projectName={title}/>
+                       
+                        </div>
+                      </div>
             )}
           </div>
         </div>
