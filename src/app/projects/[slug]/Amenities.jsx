@@ -14,11 +14,8 @@ export default function AmenitiesSection({ amenities, title, projectVideos }) {
   const [openVideo, setOpenVideo] = useState(false);
   const [openForm, setOpenForm] = useState(false);
   const [successOpen, setSuccessOpen] = useState(false);
-  console.log(amenities);
 
-  useEffect(() => {
-    console.log("Project Videos prop:", projectVideos[0].video_url);
-  }, []);
+
 
   const YOUTUBE_URL = projectVideos[0].video_url;
   const getYoutubeId = (url) => {
