@@ -1,7 +1,6 @@
 "use client";
 
 import ProjectEnquiryModal from "@/components2/forms/ProjectEnquiryModal";
-import SuccessModal from "@/components2/SuccessModal";
 import { ProjectsFetch } from "@/services/api";
 import Image from "next/image";
 import Link from "next/link";
@@ -20,7 +19,7 @@ export default function SignatureProjects({ data }) {
 
   const [hovered, setHovered] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
-  const [successOpen, setSuccessOpen] = useState(false);
+
   const defaultExpanded = projects[0]?.id;
   const activeCard = hovered ? hovered : defaultExpanded;
   const [selectedProject, setSelectedProject] = useState(null);
@@ -259,14 +258,13 @@ export default function SignatureProjects({ data }) {
                   {p.short_description}
                 </p>
 
-              <div className="flex w-full gap-3 mt-3 lg:mt-5">
-                {activeCard === p.id ? (
-                  <>
-                    {/* LEFT OUTLINE BUTTON */}
-                    <Link
-                       href={`/projects/${p.slug}`}
-                      download
-                      className="flex-1 w-fit px-6 py-3
+                <div className="flex w-full gap-3 mt-3 lg:mt-5">
+                  {activeCard === p.id ? (
+                    <>
+                      {/* LEFT OUTLINE BUTTON */}
+                      <Link
+                        href={`/projects/${p.slug}`}
+                        className="flex-1 w-fit px-6 py-3
                           font-urban text-[14px]
                           border border-white text-white
                           rounded-[10px] font-medium
@@ -427,9 +425,9 @@ export default function SignatureProjects({ data }) {
                     {/* <button className="px-4 py-2 text-[14px] min-w-[260px] leading-[16px] font-urban border border-white text-white rounded-[10px] font-semibold">
                     View Project →
                   </button> */}
-                  <Link
-                       href={`/projects/${p.slug}`}
-                    className="
+                    <Link
+                      href={`/projects/${p.slug}`}
+                      className="
                           flex-1
                           px-6 py-3
                           font-urban text-[14px]
@@ -457,25 +455,15 @@ export default function SignatureProjects({ data }) {
         <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/40 backdrop-blur-sm">
           <div className="bg-white rounded-2xl p-8 w-[90%] max-w-lg relative  z-20">
             <button
-              className="absolute top-4 right-4 text-md"
+              className="absolute top-4 right-4 text-xl"
               onClick={() => setModalOpen(false)}
             >
               ✕
             </button>
-              <ProjectEnquiryModal projectName={selectedProject.name} />
+            <ProjectEnquiryModal projectName={selectedProject.name} />
           </div>
         </div>
       )}
-      {selectedProject && (
-        <SuccessModal
-          isOpen={successOpen}
-          projectName={selectedProject.name}
-          onClose={() => {
-            setSuccessOpen(false);
-          }}
-        />
-      )}
-
     </section>
   );
 }
