@@ -1,12 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  devIndicators: false,
+
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "backend.aurexbuilders.com",
-        pathname: "/**",
-      },
+    unoptimized: true,
+    domains: [
+      'backend.aurexbuilders.com',
     ],
   },
 };
