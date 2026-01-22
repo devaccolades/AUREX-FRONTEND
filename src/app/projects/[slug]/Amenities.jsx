@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import { useState, useEffect, useRef } from "react";
@@ -7,9 +5,7 @@ import Image from "next/image";
 import ModalForm from "@/components2/forms/ModalForm";
 import ProjectEnquiryModal from "@/components2/forms/ProjectEnquiryModal";
 
-
-
-export default function AmenitiesSection({amenities,title}) {
+export default function AmenitiesSection({ amenities, title }) {
   if (!Array.isArray(amenities) || amenities.length === 0) {
     return null; // ⛔ nothing to show
   }
@@ -19,7 +15,7 @@ export default function AmenitiesSection({amenities,title}) {
   const [openForm, setOpenForm] = useState(false);
   const [successOpen, setSuccessOpen] = useState(false);
   console.log(amenities);
-  
+
   const YOUTUBE_URL = "https://www.youtube.com/watch?v=KhlPNZ_rFsA";
   const getYoutubeId = (url) => {
     const match = url.match(/(?:youtu\.be\/|youtube\.com\/.*v=)([^&]+)/);
@@ -68,11 +64,6 @@ export default function AmenitiesSection({amenities,title}) {
     };
   }, [openVideo]);
 
-
-
-
-
-
   const [activeIndex, setActiveIndex] = useState(2);
   const [sizes, setSizes] = useState({
     cardW: 260,
@@ -96,7 +87,6 @@ export default function AmenitiesSection({amenities,title}) {
           perspective: 1000,
         });
       } else if (w < 640) {
-
         // Mobile
         setSizes({
           cardW: 120,
@@ -150,17 +140,12 @@ export default function AmenitiesSection({amenities,title}) {
     return () => window.removeEventListener("resize", updateSizes);
   }, []);
 
-
   const prevSlide = () => {
-    setActiveIndex((prev) =>
-      (prev - 1 + amenities.length) % amenities.length
-    );
+    setActiveIndex((prev) => (prev + 1) % amenities.length);
   };
 
   const nextSlide = () => {
-    setActiveIndex((prev) =>
-      (prev + 1) % amenities.length
-    );
+    setActiveIndex((prev) => (prev - 1 + amenities.length) % amenities.length);
   };
 
   const visibleSlides = [-2, -1, 0, 1, 2].map((pos) => {
@@ -171,7 +156,6 @@ export default function AmenitiesSection({amenities,title}) {
   return (
     <section className="pt-0 pb-8 md:pb-24 bg-gradient-to-b from-white to-[#f3f8fd] overflow-hidden">
       <div className="container text-center">
-
         {/* Heading */}
         <h2 className="text-[16px] md:text-[20px] leading-[16px] font-urban font-bold uppercase text-center mb-2">
           Redefining Everyday Living
@@ -259,10 +243,8 @@ export default function AmenitiesSection({amenities,title}) {
           </button>
         </div>
 
-
         {/* TITLE + MOBILE ARROWS */}
         <div className="mt-2 flex items-center justify-between md:justify-center gap-3">
-
           {/* LEFT ARROW — MOBILE ONLY */}
           <button
             onClick={prevSlide}
@@ -292,9 +274,7 @@ export default function AmenitiesSection({amenities,title}) {
           >
             ›
           </button>
-
         </div>
-
 
         {/* DOTS */}
         <div className="flex justify-center gap-1 mt-4">
@@ -302,15 +282,14 @@ export default function AmenitiesSection({amenities,title}) {
             <button
               key={i}
               onClick={() => setActiveIndex(i)}
-              className={`h-1 rounded-full transition-all ${i === activeIndex ? "w-6 bg-black" : "w-2 bg-gray-300"
-                }`}
+              className={`h-1 rounded-full transition-all ${
+                i === activeIndex ? "w-6 bg-black" : "w-2 bg-gray-300"
+              }`}
             />
           ))}
         </div>
 
-
         <div className="flex items-center justify-between mt-10 max-w-4xl mx-auto px-4">
-
           {/* PLAY VIDEO */}
           <button
             onClick={() => setOpenVideo(true)}
@@ -340,11 +319,8 @@ export default function AmenitiesSection({amenities,title}) {
             />
             Enquire Now
           </button>
-
         </div>
-
       </div>
-
 
       {(openVideo || openForm) && (
         <div
@@ -355,7 +331,6 @@ export default function AmenitiesSection({amenities,title}) {
             setOpenForm(false);
           }}
         >
-
           {/*CLOSE BUTTON — SCREEN CORNER */}
           <button
             onClick={() => {
@@ -372,7 +347,6 @@ export default function AmenitiesSection({amenities,title}) {
             className="rounded-xl p-1 md:p-4 w-[90%] max-w-3xl"
             onClick={(e) => e.stopPropagation()}
           >
-
             {/* VIDEO */}
             {openVideo && (
               <iframe
@@ -387,15 +361,12 @@ export default function AmenitiesSection({amenities,title}) {
             {/* FORM */}
             {openForm && (
               <div className="bg-white rounded-2xl p-8 w-[90%]  relative">
-                <ProjectEnquiryModal projectName={title}/>
+                <ProjectEnquiryModal projectName={title} />
               </div>
             )}
-
           </div>
         </div>
       )}
-
-
     </section>
   );
 }
