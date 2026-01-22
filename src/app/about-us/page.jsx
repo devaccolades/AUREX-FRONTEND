@@ -9,6 +9,7 @@ import HeroSection from './HeroSection'
 import OurJourney from './OurJourney'
 import BrandAmbassadorSection from './BrandAmbassadorSection'
 import { SeoById } from '@/services/api'
+import {Test} from './Test'
 
 
 export async function generateMetadata() {
@@ -55,15 +56,16 @@ export async function generateMetadata() {
 function page() {
   return (
     <div>
-      <Header />
-      <HeroSection />
-      <OurJourney />
+      {/* <Header /> */}
+      {/* <HeroSection /> */}
+      {/* <OurJourney />
       <MissionVision />
       <BrandAmbassadorSection />
       <LeadershipPillers />
       <WhyAurexBuilders />
       <DreamsInThrissur />
-      <Footer />
+      <Footer /> */}
+      <Test />
     </div>
   )
 }

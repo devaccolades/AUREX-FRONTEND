@@ -1,11 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useLayoutEffect } from "react";
+import gsap from "gsap";
 
 export default function HeroSection() {
   const [animated, setAnimated] = useState(false);
-
+  const ref = useRef(null)
   useEffect(() => {
     // Start animation after 5 seconds
     const timer = setTimeout(() => {
@@ -14,6 +15,19 @@ export default function HeroSection() {
 
     return () => clearTimeout(timer);
   }, []);
+
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        ref.current,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.6 }
+      )
+    })
+
+    return () => ctx.revert()
+  }, [])
 
   return (
     <section className="relative w-full overflow-hidden py-20">
@@ -70,7 +84,7 @@ export default function HeroSection() {
             animated ? "opacity-100" : "opacity-0"
           }`}
         >
-          <h2 className="font-urban text-[24px] md:text-[32px] lg:text-[40px] font-bold leading-[24px] md:leading-[32px] lg:leading-[40px] tracking-wide">
+          <h2 ref={ref} className="font-urban text-[24px] md:text-[32px] lg:text-[40px] font-bold leading-[24px] md:leading-[32px] lg:leading-[40px] tracking-wide">
             AUREX BUILDERS
           </h2> 
           <p className="mt-4 mx-auto max-w-[295px] text-black text-[12px] md:text-[13px] leading-[16px] md:leading-[18px]">

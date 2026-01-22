@@ -18,15 +18,25 @@ export default function Moments({ events, eventGallery }) {
 
   /* ---------- CATEGORIES ---------- */
   const categories = Array.from(
-    new Set(['All', events?.event_name])
-  ).filter(Boolean)
+    new Set([
+      'All',
+      ...(events?.map(event => event.event_name) || [])
+    ])
+  );  
 
   /* ---------- GALLERY DATA ---------- */
+  const eventMap = events.reduce((acc, event) => {
+  acc[event.id] = event.event_name
+  return acc
+}, {})
+
+  
   const galleryImages = eventGallery.map((item, index) => ({
     id: item.id || index,
-    category: events?.event_name,
+    category: eventMap[item.event],
     src: item.image,
   }))
+  
 
   const filtered =
     activeCategory === 'All'
@@ -65,6 +75,7 @@ export default function Moments({ events, eventGallery }) {
             className="appearance-none border border-black rounded-full pl-3 pr-6 py-[4px] md:py-[6px] bg-transparent cursor-pointer font-urban font-bold text-[13px]"
           >
             {categories.map(cat => (
+
               <option key={cat} value={cat}>
                 {cat}
               </option>
