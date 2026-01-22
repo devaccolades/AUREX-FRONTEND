@@ -10,32 +10,7 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-// const testimonials = [
-//   {
-//     id: 1,
-//     name: "t1",
-//     link: "https://www.youtube.com/shorts/wwV0l_Pxzok",
-//     thumbnail: "/images/temp/img1.png",
-//   },
-//   {
-//     id: 2,
-//     name: "t2",
-//     link: "https://www.youtube.com/shorts/wwV0l_Pxzok",
-//     thumbnail: "/images/temp/img2.png",
-//   },
-//   {
-//     id: 3,
-//     name: "t3",
-//     link: "https://www.youtube.com/shorts/wwV0l_Pxzok",
-//     thumbnail: "/images/temp/img3.png",
-//   },
-//   {
-//     id: 4,
-//     name: "t4",
-//     link: "https://www.youtube.com/shorts/wwV0l_Pxzok",
-//     thumbnail: "/images/temp/img1.png",
-//   },
-// ];
+
 
 // Convert all YouTube links to embed format
 function convertToEmbed(url) {
@@ -59,6 +34,7 @@ function convertToEmbed(url) {
 export default function Testimonials({testimonials}) {
   const [activeVideo, setActiveVideo] = useState(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  
 
   return (
     <div className="container py-10">
@@ -157,7 +133,7 @@ const Card = ({ item, activeVideo, setActiveVideo }) => {
       {isPlaying ? (
         <iframe
           className="w-full h-full rounded-[20px]"
-          src={`${convertToEmbed(item.link)}?autoplay=1`}
+          src={`${convertToEmbed(item.video_link)}?autoplay=1`}
           title={item.name}
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -168,7 +144,7 @@ const Card = ({ item, activeVideo, setActiveVideo }) => {
           <Image
             src={item.thumbnail}
             fill
-            alt={item.name}
+            alt={item.thumbnail_alt}
             className="object-cover rounded-[20px]"
           />
 

@@ -25,7 +25,7 @@ export default async function Footer() {
       name: project.name,
       href: `/projects/${project.slug}`,
     }));
-  console.log("cehcking proejct data desktop", projects);
+  // console.log("cehcking proejct data desktop", projects);
 
   const projectSections = [
     {

@@ -153,7 +153,7 @@ export default function JobApplySection({ data }) {
             payload.append("cover_letter", formData.coverLetter);
 
             // alert("Application submitted successfully!");
-            console.log(payload);
+            // console.log(payload);
             await CareersApply(payload);
 
             setFormData({

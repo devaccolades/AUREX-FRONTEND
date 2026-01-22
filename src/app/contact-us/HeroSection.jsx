@@ -64,7 +64,7 @@ export default function HeroSection() {
 
     try {
       const response = await LeadSubmission(formData);
-      console.log("Form Submitted:", formData);
+      // console.log("Form Submitted:", formData);
 
       setFormData({
         name: "",
@@ -81,7 +81,7 @@ export default function HeroSection() {
       // });
       setShowContactModal(true);
 
-      console.log("API Response:", response);
+      // console.log("API Response:", response);
     } catch (error) {
       console.error(error);
       Swal.fire({
@@ -96,7 +96,7 @@ export default function HeroSection() {
     }
   };
 
-  console.log(formData, "formdaata test");
+  // console.log(formData, "formdaata test");
 
   return (
     <section className="relative bg-gradient-to-b from-white via-yellow-100 to-yellow-30 pb-4 md:pb-8 lg:pb-10 pt-16 md:pt-20 lg:pt-24">
