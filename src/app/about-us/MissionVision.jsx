@@ -223,7 +223,7 @@ export default function MissionVision() {
         </div>
 
         {/* RIGHT – HALF VISIBLE 3D CAROUSEL */}
-        <div className="relative w-full h-[420px]">
+        <div className="relative w-full h-[300px] md:h-[400px] lg:h-[600px] overflow-x-hidden">
           {/* Perspective wrapper */}
           <div
             className="absolute inset-y-0 right-[-95%] lg:right-[-45%] xl:right-[-15%] flex items-center"
