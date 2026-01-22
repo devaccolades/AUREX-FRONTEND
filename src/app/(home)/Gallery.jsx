@@ -113,7 +113,7 @@ export default function GallerySection({ data }) {
             {/* Button */}
             <button
               onClick={() => setOpenModal(true)}
-              className="flex items-center gap-0 text-black px-5 py-2 rounded-full font-urban text-[12px] leading-[16px] font-bold hover:scale-[1.03] transition"
+              className="flex items-center gap-2 text-black px-5 py-2 rounded-full font-urban text-[12px] leading-[16px] font-bold hover:scale-[1.03] transition"
             >
               <Image
                 src="/images/home/enq.svg"
@@ -122,7 +122,7 @@ export default function GallerySection({ data }) {
                 height={20}
               />
 
-              <span className="flex items-center gap-0">
+              <span className="flex items-center gap-1">
                 ENQUIRE
                 <span className="flex bg-[#FF0000] w-8 lg:w-12 h-8 lg:h-12 rounded-full items-center justify-center text-white font-bold">
                   NOW
@@ -199,13 +199,16 @@ export default function GallerySection({ data }) {
               >
                 {/* IMAGE TYPE THUMBNAIL */}
                 {/* {item.type === "image" && ( */}
-                <Image
-                  src={item.image}
-                  alt={item.image_alt}
-                  width={300}
-                  height={180}
-                  className="w-[93px] lg:w-[179px] h-[77px] lg:h-[140px] object-cover"
-                />
+                {item.image && (
+
+                  <Image
+                    src={item.image}
+                    alt={item.image_alt}
+                    width={300}
+                    height={180}
+                    className="w-[93px] lg:w-[179px] h-[77px] lg:h-[140px] object-cover"
+                  />
+                )}
                 {/* )} */}
 
                 {/* VIDEO TYPE THUMBNAIL */}
