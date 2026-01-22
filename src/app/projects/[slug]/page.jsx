@@ -12,6 +12,7 @@ import ConstructionUpdates from "./ConstructionUpdate";
 import ProjectOverviewSection from "./ProjectOverview";
 import AmenitiesSection from "./Amenities";
 import MapSection from "./MapSection";
+import { notFound } from "next/navigation";
 import {
   ProjectAmenitiesBySlugFetch,
   ProjectBySlugFetch,
@@ -24,23 +25,35 @@ import {
 } from "@/services/api";
 
 export async function generateMetadata({ params }) {
-  const { slug } = params;
-  const result = await ProjectBySlugFetch(slug); // calls /destinations/<slug>/
+  const { slug } = await params; 
+  const project = await ProjectBySlugFetch(slug);
 
-  const bannerData = result?.data || {};
-
-  // console.log("Resolved bannerData:", bannerData);
+  if (!project) {
+    return {
+      title: "Page Not Found | Aurex Builders",
+      description: "The requested project does not exist.",
+    };
+  }
 
   return {
-    title: bannerData?.meta_title || `Aurex Builders.`,
-    description: bannerData?.meta_description || `Aurex Builders.`,
+    title: project.meta_title || project.name,
+    description: project.meta_description || "",
   };
 }
 
+
 export default async function Page({ params }) {
-  const { slug } = await params; // ✅ REQUIRED
+  // const { slug } = await params; // ✅ REQUIRED
+
+   const { slug } = params;
 
   const project = await ProjectBySlugFetch(slug);
+
+  // ✅ IF PROJECT NOT FOUND → SHOW not-found.js
+  if (!project || !project?.id) {
+    notFound();
+  }
+  // const project = await ProjectBySlugFetch(slug);
   const amenities = await ProjectAmenitiesBySlugFetch(slug);
   const facilities = await ProjectCommonFacilitiesBySlugFetch(slug);
   const floorplan = await ProjectFloorPlansBySlugFetch(slug);
