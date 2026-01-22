@@ -5,7 +5,7 @@ import Image from "next/image";
 import ModalForm from "@/components2/forms/ModalForm";
 import ProjectEnquiryModal from "@/components2/forms/ProjectEnquiryModal";
 
-export default function AmenitiesSection({ amenities, title }) {
+export default function AmenitiesSection({ amenities, title, projectVideos }) {
   if (!Array.isArray(amenities) || amenities.length === 0) {
     return null; // ⛔ nothing to show
   }
@@ -16,7 +16,11 @@ export default function AmenitiesSection({ amenities, title }) {
   const [successOpen, setSuccessOpen] = useState(false);
   console.log(amenities);
 
-  const YOUTUBE_URL = "https://www.youtube.com/watch?v=KhlPNZ_rFsA";
+  useEffect(() => {
+    console.log("Project Videos prop:", projectVideos[0].video_url);
+  }, []);
+
+  const YOUTUBE_URL = projectVideos[0].video_url;
   const getYoutubeId = (url) => {
     const match = url.match(/(?:youtu\.be\/|youtube\.com\/.*v=)([^&]+)/);
     return match ? match[1] : null;

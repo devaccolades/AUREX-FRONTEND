@@ -13,7 +13,7 @@ const DreamsInThrissur = () => {
   return (
     <section className="my-6">
       <div className="container bg-secondary py-[20px] md:py-[46px] lg:py-[64px] px-[20px] md:px-[40px] lg:px-[60px] xl:px-[66px] rounded-[20px] ">
-      <div className="flex flex-col min-[500px]:flex-row gap-4 md:gap-6 lg:gap-8 justify-between items-center">
+      <div className="flex flex-col md:flex-row gap-4 md:gap-6 lg:gap-8 justify-between items-center">
         <div className="flex flex-col items-start  w-full md:w-[350px] lg:w-[450px] mb-2 md:mb-30 lg:mb-10">
           <div>
             <h2 className="text-[32px] md:text-[42px] lg:text-[64px] leading-[36px] md:leading-[48px] lg:leading-[64px] tracking-[-4%] font-medium font-urban">
@@ -45,8 +45,8 @@ const DreamsInThrissur = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-end items-end">
-        <div className="rounded-[20px] p-[20px]  md:p-[26px] lg:p-[40px]  w-[280px] min-[500px]:w-[200px] md:w-[300px] lg:w-[400px] xl:w-[519px] bg-[#FFFFFF]">
+        <div className="flex justify-end items-end w-full">
+        <div className="rounded-[20px] p-[20px]  md:p-[26px] lg:p-[40px]  w-full md:w-[331px] lg:w-[400px] xl:w-[519px] bg-[#FFFFFF]">
           <p className="font-urbarn text-[16px] lg:text-[24px] leading-[16px] lg:leading-[28px] tracking-[-4%] font-medium">
             WE ARE READY TO ANSWER ALL YOUR QUESTIONS
           </p>
