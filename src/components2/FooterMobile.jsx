@@ -10,7 +10,7 @@ export default function FooterMobile({ data, project_data }) {
     { name: "Services", href: "/services" },
     { name: "Gallery", href: "/gallery" },
     { name: "About Us", href: "/about" },
-    { name: "Blog", href: "/blog" },
+    { name: "Blogs", href: "/blog" },
     { name: "Contact Us", href: "/contact" },
     { name: "Careers", href: "/careers" },
   ];
