@@ -457,7 +457,7 @@ export default function SignatureProjects({ data }) {
         <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/40 backdrop-blur-sm">
           <div className="bg-white rounded-2xl p-8 w-[90%] max-w-lg relative  z-20">
             <button
-              className="absolute top-4 right-4 text-xl"
+              className="absolute top-4 right-4 text-md"
               onClick={() => setModalOpen(false)}
             >
               ✕
