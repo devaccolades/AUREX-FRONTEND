@@ -76,7 +76,7 @@ export default function ProjectHero({ project }) {
     },
   ].filter((h) => h.title); // removes empty ones
 
-  console.log("check projects", project);
+  // console.log("check projects", project);
 
   return (
     <main>
