@@ -95,12 +95,15 @@ export default function Header() {
           />
         </div>
         <div className="w-[24px] h-[24px] flex justify-end">
-          <Image
-            src="/images/icons/phone.svg"
-            width={20}
-            height={20}
-            alt="phone"
-          />
+          <a href="tel:+919846007474" aria-label="Call us">
+    <Image
+      src="/images/icons/phone.svg"
+      width={20}
+      height={20}
+      alt="phone"
+      className="cursor-pointer"
+    />
+  </a>
         </div>
       </header>
 

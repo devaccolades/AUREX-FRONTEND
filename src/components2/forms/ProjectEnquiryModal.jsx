@@ -201,7 +201,7 @@ export default function ProjectEnquiryModal({ projectName, showBrochure = false,
                             name="preferred_unit"
                             value={formData.preferred_unit}
                             onChange={handleChange}
-                            placeholder="Select preferred unit type"
+                            placeholder="{2bhk, 3bhk etc}"
                             className="border-[#959595] border-1 text-[12px] leading-[100%] w-full font-urban rounded-[6px] px-[10px] py-[16px]"
                         />
                     </div>
