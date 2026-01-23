@@ -5,38 +5,37 @@ import Image from "next/image"
 
 import arrow from '../../../public/images/gallery/Rectangle.svg'
 import Preview from '../../../public/images/gallery/preview.svg'
-import arrow1 from '../../../public/images/gallery/Rectangle1.svg'
-import arrow2 from '../../../public/images/gallery/Rectangle2.svg'
-import arrow3 from '../../../public/images/gallery/Rectangle3.svg'
-import arrow4 from '../../../public/images/gallery/Rectangle4.svg'
 
 export default function Moments({ events, eventGallery }) {
-
+  console.log('errrr',eventGallery);
+  
   const [activeCategory, setActiveCategory] = useState('All')
   const [visible, setVisible] = useState(6)
   const [selectedIndex, setSelectedIndex] = useState(null)
 
   /* ---------- CATEGORIES ---------- */
-  const categories = Array.from(
-    new Set([
-      'All',
-      ...(events?.map(event => event.event_name) || [])
-    ])
-  );  
-
+  
   /* ---------- GALLERY DATA ---------- */
   const eventMap = events.reduce((acc, event) => {
-  acc[event.id] = event.event_name
-  return acc
-}, {})
-
+    acc[event.id] = event.event_name
+    return acc
+  }, {})
   
-  const galleryImages = eventGallery.map((item, index) => ({
+  
+  const galleryImages = eventGallery
+  .filter(item=> item.image)
+  .map((item, index) => ({
     id: item.id || index,
     category: eventMap[item.event],
     src: item.image,
   }))
   
+  const categories = Array.from(
+    new Set([
+      'All',
+      ...(galleryImages.map(img => img.category).filter(Boolean) || [])
+    ])
+  );  
 
   const filtered =
     activeCategory === 'All'
@@ -94,10 +93,6 @@ export default function Moments({ events, eventGallery }) {
       <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
         {filtered.slice(0, visible).map((item, index) => (
           <div className="relative " key={item.id}>
-            {/* <Image src={arrow4} alt="" className="absolute top-0 left-0" />
-            <Image src={arrow3} alt="" className="absolute top-0 right-0" />
-            <Image src={arrow2} alt="" className="absolute bottom-0 left-0" />
-            <Image src={arrow1} alt="" className="absolute bottom-0 right-0" /> */}
 
             <div
               onClick={() => setSelectedIndex(index)}

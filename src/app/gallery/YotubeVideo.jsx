@@ -72,8 +72,8 @@ export default function YoutubeVideoSection({galleryVideos}) {
             className="absolute inset-0 z-10 group"
           >
             <Image
-              src={galleryVideos.main_video_thumbnail}
-              alt={galleryVideos.main_video_alt}
+              src={galleryVideos?.main_video_thumbnail}
+              alt={galleryVideos?.main_video_alt}
               fill
               className="object-cover"
               priority
