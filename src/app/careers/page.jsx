@@ -28,13 +28,13 @@ export async function generateMetadata() {
       siteName: "Aurex Builders",
       images: seo.og_image
         ? [
-            {
-              url: seo.og_image, // FULL URL from backend
-              width: 1200,
-              height: 630,
-              alt: seo.og_title || seo.meta_title,
-            },
-          ]
+          {
+            url: seo.og_image, // FULL URL from backend
+            width: 1200,
+            height: 630,
+            alt: seo.og_title || seo.meta_title,
+          },
+        ]
         : [],
       type: "website",
     },
@@ -48,15 +48,22 @@ export async function generateMetadata() {
   };
 }
 
-export default async function page (){
+export default async function page() {
   const jobdata = await CareersFetch();
-
+  const hasJobs = Array.isArray(jobdata) && jobdata.length > 0;
   return (
     <div>
       <Header />
       <HeroSection />
-      <OpenPositionsSection data={jobdata}/>
-      <CareerCTASection />
+      {hasJobs ? (
+        <>
+          <OpenPositionsSection data={jobdata} />
+          <CareerCTASection />
+        </>
+      ) : (
+        <NoJobs />
+
+      )}
       <Footer />
     </div>
   )
