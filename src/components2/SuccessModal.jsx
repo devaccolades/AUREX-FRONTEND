@@ -8,7 +8,7 @@ export default function SuccessModal({ isOpen, projectName, onClose }) {
 
     return (
         <div
-            className="fixed inset-0 z-99 flex items-center justify-center bg-black/40 px-4"
+            className="fixed inset-0 z-99 flex items-center justify-center bg-black/40 px-4 backdrop-blur-sm"
             onClick={onClose}
         >
             <div
@@ -83,21 +83,21 @@ export default function SuccessModal({ isOpen, projectName, onClose }) {
                 {/* Buttons */}
                 <div className="mt-6">
                     <div className="flex gap-3">
-                        
-                            <Link href="/projects"
-                                onClick={onClose}
-                                className="flex flex-1 items-center justify-center rounded-full bg-white py-2.5 text-[13px] leading-[14px] font-semibold text-black"
-                            >
-                                View More Projects
-                     
+
+                        <Link href="/projects"
+                            onClick={onClose}
+                            className="flex flex-1 items-center justify-center rounded-full bg-white py-2.5 text-[13px] leading-[14px] font-semibold text-black"
+                        >
+                            View More Projects
+
                         </Link>
                         <Link href="/"
                             onClick={onClose}
                             className="flex flex-1 items-center justify-center rounded-full border border-white/80 py-2.5 text-[13px] font-semibold text-white"
-                            >
+                        >
                             Home
-            
-                            </Link>
+
+                        </Link>
                     </div>
                 </div>
             </div>

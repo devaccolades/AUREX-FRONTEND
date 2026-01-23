@@ -4,9 +4,11 @@ import { ChevronRight, DoorOpen, Download } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
+import SuccessModal from "@/components2/SuccessModal";
+import ProjectEnquiryModal from "@/components2/forms/ProjectEnquiryModal";
 
 
-export default function SignatureProjects({data}) {
+export default function SignatureProjects({ data }) {
   const projects = data?.filter(
     (project) => project.project_type === "Residential"
   ) || [];
@@ -40,11 +42,12 @@ export default function SignatureProjects({data}) {
   //       "This premium project seamlessly marries contemporary aesthetics with enduring quality.",
   //   },
   // ];
- 
+
   const [activeId, setActiveId] = useState(projects[0].id);
   const activeProject = projects.find((p) => p.id === activeId);
-    const [modalOpen, setModalOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
   const [successOpen, setSuccessOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
 
   return (
     <section className="py-16 relative bg-gradient-to-b from-[#FFF7EA] to-white">
@@ -59,12 +62,12 @@ export default function SignatureProjects({data}) {
         {/* LEFT PANEL */}
         <div className="space-y-6">
           {/* FILTER */}
-         {/* <select className="w-full border bg-black text-white border-gray-300 rounded-full px-4 py-2 text-[13px] leading-[13px] font-bold font-urban ">
+          {/* <select className="w-full border bg-black text-white border-gray-300 rounded-full px-4 py-2 text-[13px] leading-[13px] font-bold font-urban ">
             <option>ONGOING</option>
             <option>READY TO OCCUPY</option>
           </select> */}
           <div className="w-full border bg-black text-white border-gray-300 rounded-full px-4 py-2 text-[13px] leading-[13px] font-bold font-urban ">
-           <h3>Residential Projects</h3>
+            <h3>Residential Projects</h3>
           </div>
 
           {/* PROJECT LIST */}
@@ -74,11 +77,10 @@ export default function SignatureProjects({data}) {
                 key={p.id}
                 onMouseEnter={() => setActiveId(p.id)}
                 className={`cursor-pointer border rounded-2xl p-4 transition
-                             ${
-                               activeId === p.id
-                                 ? "border-[#A8731C] shadow-md"
-                                 : "border-gray-200"
-                             }`}
+                             ${activeId === p.id
+                    ? "border-[#A8731C] shadow-md"
+                    : "border-gray-200"
+                  }`}
               >
                 <Image
                   src={p.logo}
@@ -157,9 +159,10 @@ export default function SignatureProjects({data}) {
               <div className="flex gap-2 lg:gap-4 mt-4">
                 <Link href={`/projects/${activeProject.slug}`}>
 
-                {/* LEFT OUTLINE BUTTON */}
-                <button
-                  className="
+                  {/* LEFT OUTLINE BUTTON */}
+                  <button
+
+                    className="
                             flex-1
                             px-6 py-3
                             font-urban text-[12px] lg:text-[14px]
@@ -167,26 +170,30 @@ export default function SignatureProjects({data}) {
                             rounded-[10px] font-medium
                             flex items-center justify-between gap-2
                           "
-                >
-                  VIEW PROJECT DETAILS
-                  <Image
-                    src="/images/icons/arrow.svg"
-                    alt="download"
-                    width={8}
-                    height={8}
-                  />
-                </button>
+                  >
+                    VIEW PROJECT DETAILS
+                    <Image
+                      src="/images/icons/arrow.svg"
+                      alt="download"
+                      width={8}
+                      height={8}
+                    />
+                  </button>
                 </Link>
 
                 {/* RIGHT GREEN BUTTON */}
                 <button
+                  onClick={() => {
+                    setSelectedProject(activeProject);
+                    setModalOpen(true);
+                  }}
                   className="
                             flex-1
                             px-6 py-3
                             font-urban text-[12px] lg:text-[14px]
                             bg-[#0A6E50] text-white
                             rounded-[10px] font-semibold
-                            flex items-center justify-between gap-2
+                            flex items-center justify-between gap-2 cursor-pointer
                           "
                 >
                   BOOK SITE VISIT
@@ -213,7 +220,7 @@ export default function SignatureProjects({data}) {
             <option>READY TO OCCUPY</option>
           </select> */}
           <div className="w-full border bg-black text-white border-gray-300 rounded-full px-4 py-2 text-[13px] leading-[13px] font-bold font-urban ">
-           <h3>Residential Projects</h3>
+            <h3>Residential Projects</h3>
           </div>
 
           {/* PROJECT LIST */}
@@ -223,11 +230,10 @@ export default function SignatureProjects({data}) {
                 key={p.id}
                 onMouseEnter={() => setActiveId(p.id)}
                 className={`cursor-pointer border rounded-2xl p-4 transition
-                             ${
-                               activeId === p.id
-                                 ? "border-[#A8731C] shadow-md"
-                                 : "border-gray-200"
-                             }`}
+                             ${activeId === p.id
+                    ? "border-[#A8731C] shadow-md"
+                    : "border-gray-200"
+                  }`}
               >
                 <Image
                   src={p.logo}
@@ -245,78 +251,112 @@ export default function SignatureProjects({data}) {
         </div>
 
         {activeProject && (
-  <div className="relative rounded-2xl overflow-hidden shadow-lg h-[468px]">
-    <Image
-      src={activeProject.image}
-      alt={activeProject.image_alt}
-      fill
-      className="object-cover"
-    />
+          <div className="relative rounded-2xl overflow-hidden shadow-lg h-[468px]">
+            <Image
+              src={activeProject.image}
+              alt={activeProject.image_alt}
+              fill
+              className="object-cover"
+            />
 
-    {/* OVERLAY */}
-    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+            {/* OVERLAY */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
 
-    {/* CONTENT */}
-    <div className="absolute inset-0 p-[10px] flex flex-col justify-between text-white">
-      {/* TOP BADGES */}
-      <div className="flex justify-between items-start">
-        <span className="bg-[#A8731C] px-[8.5px] py-[8px] rounded-full text-[12px] font-bold">
-          {activeProject.status}
-        </span>
+            {/* CONTENT */}
+            <div className="absolute inset-0 p-[10px] flex flex-col justify-between text-white">
+              {/* TOP BADGES */}
+              <div className="flex justify-between items-start">
+                <span className="bg-[#A8731C] px-[8.5px] py-[8px] rounded-full text-[12px] font-bold">
+                  {activeProject.status}
+                </span>
 
-        <div className="flex text-[10px] font-urban">
-          <span className="bg-white text-black px-[8px] py-[8px] rounded-[24px]">
-            KERA
-          </span>
-          <span className="bg-white text-black px-[8px] py-[8px] rounded-[24px]">
-            {activeProject.k_rera}
-          </span>
-        </div>
+                <div className="flex text-[10px] font-urban">
+                  <span className="bg-white text-black px-[8px] py-[8px] rounded-[24px]">
+                    KERA
+                  </span>
+                  <span className="bg-white text-black px-[8px] py-[8px] rounded-[24px]">
+                    {activeProject.k_rera}
+                  </span>
+                </div>
+              </div>
+
+              {/* BOTTOM */}
+              <div>
+                <span className="inline-block bg-red-600 px-3 py-1 text-xs rounded-full mb-2">
+                  {activeProject.land_mark}
+                </span>
+
+                <div className="flex items-center gap-2">
+                  <Image
+                    src="/images/icons/locu.svg"
+                    alt="location"
+                    width={14}
+                    height={14}
+                  />
+                  <p className="text-[12px] opacity-80">
+                    {activeProject.location}
+                  </p>
+                </div>
+
+                <h3 className="text-[20px] font-semibold mt-1">
+                  {activeProject.name}
+                </h3>
+
+                <p className="text-xs opacity-90 mt-1">
+                  {activeProject.short_description}
+                </p>
+
+                <div className="flex gap-2 mt-4">
+                  <Link href={`/projects/${activeProject.slug}`}>
+                    <button className="border border-white px-3 py-2 rounded-xl text-[11px]">
+                      VIEW PROJECT DETAILS
+                    </button>
+                  </Link>
+
+                  <button
+                    onClick={() => {
+                      setSelectedProject(activeProject);
+                      setModalOpen(true);
+                    }}
+                    className="bg-[#006A54] px-3 py-2 rounded-xl text-[11px]">
+                    BOOK SITE VISIT
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
       </div>
-
-      {/* BOTTOM */}
-      <div>
-        <span className="inline-block bg-red-600 px-3 py-1 text-xs rounded-full mb-2">
-          {activeProject.land_mark}
-        </span>
-
-        <div className="flex items-center gap-2">
-          <Image
-            src="/images/icons/locu.svg"
-            alt="location"
-            width={14}
-            height={14}
-          />
-          <p className="text-[12px] opacity-80">
-            {activeProject.location}
-          </p>
-        </div>
-
-        <h3 className="text-[20px] font-semibold mt-1">
-          {activeProject.name}
-        </h3>
-
-        <p className="text-xs opacity-90 mt-1">
-          {activeProject.short_description}
-        </p>
-
-        <div className="flex gap-2 mt-4">
-          <Link href={`/projects/${activeProject.slug}`}>
-            <button className="border border-white px-3 py-2 rounded-xl text-[11px]">
-              VIEW PROJECT DETAILS
+      {modalOpen && selectedProject && (
+        <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/40 backdrop-blur-sm">
+          <div className="bg-white rounded-2xl p-8 w-[90%] max-w-lg relative z-20">
+            <button
+              className="absolute top-4 right-4 text-xl"
+              onClick={() => setModalOpen(false)}
+            >
+              ✕
             </button>
-          </Link>
 
-          <button className="bg-[#006A54] px-3 py-2 rounded-xl text-[11px]">
-            DOWNLOAD BROCHURE
-          </button>
+            <ProjectEnquiryModal
+              projectName={selectedProject.name}
+              onSuccess={() => {
+                setModalOpen(false);   // close enquiry modal
+                setSuccessOpen(true);  // open success modal
+              }}
+            />
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-)}
-   
-      </div>
+      )}
+      <SuccessModal
+        isOpen={successOpen}
+        projectName={selectedProject?.name}
+        onClose={() => {
+          setSuccessOpen(false);
+          setSelectedProject(null);
+        }}
+      />
+
     </section>
   );
 }

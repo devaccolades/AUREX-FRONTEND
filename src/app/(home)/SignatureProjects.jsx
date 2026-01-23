@@ -1,6 +1,7 @@
 "use client";
 
 import ProjectEnquiryModal from "@/components2/forms/ProjectEnquiryModal";
+import SuccessModal from "@/components2/SuccessModal";
 import { ProjectsFetch } from "@/services/api";
 import Image from "next/image";
 import Link from "next/link";
@@ -23,6 +24,7 @@ export default function SignatureProjects({ data }) {
   const defaultExpanded = projects[0]?.id;
   const activeCard = hovered ? hovered : defaultExpanded;
   const [selectedProject, setSelectedProject] = useState(null);
+  const [successOpen, setSuccessOpen] = useState(false);
 
   return (
     <section className="relative py-10 md:py-16 lg:py-24 xl:py-22">
@@ -105,10 +107,9 @@ export default function SignatureProjects({ data }) {
               onMouseEnter={() => setHovered(p.id)}
               onMouseLeave={() => setHovered(null)}
               className={`relative rounded-2xl transition-all duration-500 cursor-pointer overflow-hidden shadow-xl
-                ${
-                  activeCard === p.id
-                    ? "w-[511px] lg:w-[600px] xl:w-[880px] 2xl:w-[1000px] h-[347px] lg:h-[460px] xl:h-[520px]"
-                    : "w-[200px] lg:w-[300px] xl:w-[360px] 2xl:w-[420px] h-[347px] lg:h-[460px] xl:h-[520px]  opacity-85"
+                ${activeCard === p.id
+                  ? "w-[511px] lg:w-[600px] xl:w-[880px] 2xl:w-[1000px] h-[347px] lg:h-[460px] xl:h-[520px]"
+                  : "w-[200px] lg:w-[300px] xl:w-[360px] 2xl:w-[420px] h-[347px] lg:h-[460px] xl:h-[520px]  opacity-85"
                 }`}
             >
               {/* Cover Image */}
@@ -460,10 +461,23 @@ export default function SignatureProjects({ data }) {
             >
               ✕
             </button>
-            <ProjectEnquiryModal projectName={selectedProject.name} />
+            <ProjectEnquiryModal projectName={selectedProject.name}
+              onSuccess={() => {
+                setModalOpen(false);     // ✅ close enquiry modal
+                setSuccessOpen(true);    // ✅ open success modal
+              }}
+            />
           </div>
         </div>
       )}
+      <SuccessModal
+        isOpen={successOpen}
+        projectName={selectedProject?.name}
+        onClose={() => {
+          setSuccessOpen(false);
+          setSelectedProject(null);
+        }}
+      />
     </section>
   );
 }
