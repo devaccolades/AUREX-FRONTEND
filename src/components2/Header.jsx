@@ -44,15 +44,14 @@ export default function Header() {
 
   return (
     <>
-<header
-  className={`fixed top-0 left-0 w-full z-[99] flex items-center justify-between transition-all duration-300 ${
-    scrolled 
-      ? "p-6 md:p-10"  
-      : "p-8 md:p-16"
-  }`}
-  style={{
-    height: scrolled ? "60px" : "50px md:110px",
-    background: `
+      <header
+        className={`fixed top-0 left-0 w-full z-[99] flex items-center justify-between transition-all duration-300 ${scrolled
+            ? "p-6 md:p-10"
+            : "p-8 md:p-16"
+          }`}
+        style={{
+          height: scrolled ? "60px" : "50px md:110px",
+          background: `
       linear-gradient(
         to bottom,
         rgba(1,75,131,1) 0%,
@@ -65,9 +64,9 @@ export default function Header() {
         rgba(1,75,131,0) 100%
       )
     `,
-    borderBottom: "0px solid rgba(255,255,255,0.15)",
-  }}
->
+          borderBottom: "0px solid rgba(255,255,255,0.15)",
+        }}
+      >
         <div
           className="w-[24px] h-[14px] flex items-center cursor-pointer"
           onClick={() => setOpen(true)}
@@ -96,14 +95,14 @@ export default function Header() {
         </div>
         <div className="w-[24px] h-[24px] flex justify-end">
           <a href="tel:+919846007474" aria-label="Call us">
-    <Image
-      src="/images/icons/phone.svg"
-      width={20}
-      height={20}
-      alt="phone"
-      className="cursor-pointer"
-    />
-  </a>
+            <Image
+              src="/images/icons/phone.svg"
+              width={20}
+              height={20}
+              alt="phone"
+              className="cursor-pointer"
+            />
+          </a>
         </div>
       </header>
 

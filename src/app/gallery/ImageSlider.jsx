@@ -436,9 +436,9 @@ export default function ImageSlider({spaceGallery}) {
           1024: { slidesPerView: 5.3 },
         }}
       >
-        {spaceGallery.map((item, index) => {
+        {spaceGallery.filter(item => item.image)
+        .map((item, index) => {
           const isActive = hoveredIndex === index;
-
           return (
             <SwiperSlide
               key={item.id}
