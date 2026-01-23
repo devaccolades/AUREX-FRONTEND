@@ -56,16 +56,15 @@ export async function generateMetadata() {
 function page() {
   return (
     <div>
-      {/* <Header /> */}
-      {/* <HeroSection /> */}
-      {/* <OurJourney />
+      <Header />
+      <HeroSection />
+      <OurJourney />
       <MissionVision />
       <BrandAmbassadorSection />
       <LeadershipPillers />
       <WhyAurexBuilders />
       <DreamsInThrissur />
-      <Footer /> */}
-      <Test />
+      <Footer />
     </div>
   )
 }
