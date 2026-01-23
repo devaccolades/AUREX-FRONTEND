@@ -1,24 +1,28 @@
 "use client";
 
+import Link from "next/link";
+
 const coreServices = [
     {
         title: "Looking for Your Dream Home?",
         description:
         "Explore our latest projects designed to blend elegance, comfort, and functionality.",
         buttonText: "explore Our Projects",
-
+        buttonLink : "/projects"
     },
     {
         title: "Want to Design or Customize Your Space or need assistance ?",
         description:
         "Let our interior design experts help you craft spaces that truly reflect your style.",
         buttonText: "EXPLORE OUR SOLUTIONS",
+        buttonLink: "/services"
     },
     {
         title: "Need Guidance or a Quick Chat?",
         description:
         "Have questions about pricing, availability, or project details? We’re just a message away.",
         buttonText: "WHATSAPP NOW",
+        buttonLink: "https://wa.me/919846507474"
     },
 ];
 
@@ -68,14 +72,17 @@ export default function LookingFor() {
                                 </p>
                             </div>
 
-                            <button
+                            <Link
+                            href={service.buttonLink}
+                            target={service.buttonLink.startsWith("http") ? "_blank" : "_self"}
+                            rel="noopener noreferrer"
                                 className={`mt-4 self-start text-[12px] lg:text-[13px] leading-[13px] font-bold font-urban uppercase px-4 py-2 rounded-full transition ${service.primary
                                         ? "bg-black text-white hover:bg-black/90"
                                         : "border border-black text-black hover:bg-black hover:text-white"
                                     }`}
                             >
                                 {service.buttonText}
-                            </button>
+                            </Link>
                         </div>
                     ))}
                 </div>
