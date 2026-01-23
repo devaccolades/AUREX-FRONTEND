@@ -34,7 +34,14 @@ const steps = [
     title: "CONSTRUCTION & SITE UPDATES",
     description:
       "We keep you informed throughout the construction phase with regular progress updates, site visits, and quality checks.",
-    image: "/images/projects/h1.webp",
+    image: "/images/projects/h4.jpg",
+  },
+  {
+    id: "05",
+    title: "HANDOVER & AFTER-SALES CARE",
+    description:
+      "Welcome to your dream home! We conduct final inspections and ensure quality before handing over your keys — with continued maintenance support.",
+    image: "/images/projects/h5.jpg",
   },
 ];
 
