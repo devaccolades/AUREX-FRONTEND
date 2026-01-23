@@ -9,6 +9,7 @@ import HeroSection from './HeroSection'
 import OurJourney from './OurJourney'
 import BrandAmbassadorSection from './BrandAmbassadorSection'
 import { SeoById } from '@/services/api'
+import {Test} from './Test'
 
 
 export async function generateMetadata() {

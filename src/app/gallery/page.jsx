@@ -61,7 +61,8 @@ export default async function Page() {
     EventsFetch(),
     EventGalleryFetch(),
     // EventGalleryByEventIdFetch()
-  ]);
+  ]);  
+  
   return (
     <div>
       <Header />
