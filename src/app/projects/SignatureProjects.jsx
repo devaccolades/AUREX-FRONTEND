@@ -55,7 +55,7 @@ export default function SignatureProjects({data}) {
       </h2>
 
       {/* DESKTOP VIEW */}
-      <div className="container hidden md:grid grid-cols-[280px_1fr] gap-8 mt-10">
+      <div className="container hidden md:grid grid-cols-[180px_1fr] lg:grid-cols-[280px_1fr] gap-8 mt-10">
         {/* LEFT PANEL */}
         <div className="space-y-6">
           {/* FILTER */}
@@ -96,7 +96,7 @@ export default function SignatureProjects({data}) {
         </div>
 
         {/* RIGHT FEATURED PROJECT */}
-        <div className="relative h-[520px] rounded-[24px] overflow-hidden shadow-xl">
+        <div className="relative h-[460px] lg:h-[520px] rounded-[24px] overflow-hidden shadow-xl">
           <Image
             src={activeProject.image}
             alt={activeProject.image_alt}
@@ -109,7 +109,7 @@ export default function SignatureProjects({data}) {
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
 
           {/* CONTENT */}
-          <div className="absolute inset-0 p-6 flex flex-col justify-between text-white">
+          <div className="absolute inset-0 p-4 lg:p-6 flex flex-col justify-between text-white">
             {/* TOP BADGES */}
             <div className="flex justify-between items-start">
               <span className="bg-[#A8731C] px-4 py-1 rounded-full text-xs">
@@ -154,26 +154,26 @@ export default function SignatureProjects({data}) {
                 {activeProject.short_description}
               </p>
 
-              <div className="flex gap-4 mt-4">
+              <div className="flex gap-2 lg:gap-4 mt-4">
                 <Link href={`/projects/${activeProject.slug}`}>
 
                 {/* LEFT OUTLINE BUTTON */}
                 <button
                   className="
-                                         flex-1
-                                         px-6 py-3
-                                         font-urban text-[14px]
-                                         border border-white text-white
-                                         rounded-[10px] font-medium
-                                         flex items-center justify-between gap-2
-                                       "
+                            flex-1
+                            px-6 py-3
+                            font-urban text-[12px] lg:text-[14px]
+                            border border-white text-white
+                            rounded-[10px] font-medium
+                            flex items-center justify-between gap-2
+                          "
                 >
                   VIEW PROJECT DETAILS
                   <Image
-                    src="/images/icons/download.svg"
+                    src="/images/icons/arrow.svg"
                     alt="download"
-                    width={18}
-                    height={18}
+                    width={8}
+                    height={8}
                   />
                 </button>
                 </Link>
@@ -181,13 +181,13 @@ export default function SignatureProjects({data}) {
                 {/* RIGHT GREEN BUTTON */}
                 <button
                   className="
-                                        flex-1
-                                        px-6 py-3
-                                        font-urban text-[14px]
-                                        bg-[#0A6E50] text-white
-                                        rounded-[10px] font-semibold
-                                        flex items-center justify-between gap-2
-                                      "
+                            flex-1
+                            px-6 py-3
+                            font-urban text-[12px] lg:text-[14px]
+                            bg-[#0A6E50] text-white
+                            rounded-[10px] font-semibold
+                            flex items-center justify-between gap-2
+                          "
                 >
                   BOOK SITE VISIT
                   <Image
@@ -244,90 +244,78 @@ export default function SignatureProjects({data}) {
           </div>
         </div>
 
-        {projects.map((p) => (
-          <div
-            key={p.id}
-            className="relative rounded-2xl overflow-hidden shadow-lg h-[468px]"
-          >
-            <Image
-              src={p.image}
-              alt={p.image_alt}
-              fill
-              className="object-cover"
-            />
-            {/* OVERLAY */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+        {activeProject && (
+  <div className="relative rounded-2xl overflow-hidden shadow-lg h-[468px]">
+    <Image
+      src={activeProject.image}
+      alt={activeProject.image_alt}
+      fill
+      className="object-cover"
+    />
 
-            {/* CONTENT */}
-            <div className="absolute inset-0 p-[10px] flex flex-col justify-between text-white">
-              {/* TOP BADGES */}
-              <div className="flex justify-between items-start">
-                <span className="bg-[#A8731C] px-[8.5px] py-[8px] rounded-full text-[12px] leading-[13px] tracking-[0%] font-bold ">
-                  {activeProject.status}
-                </span>
+    {/* OVERLAY */}
+    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
 
-                <div className="flex text-[12px] leading-[100%] tracking-[0%] font-normal font-urban ">
-                  <span className="flex gap-2 items-center bg-white text-black px-[8px] py-[8px] rounded-[24px] border-[1px] border-[#E1E1E1]">
-                    <span>
-                      <DoorOpen size={14} strokeWidth={1.5} />
-                    </span>
-                    KERA
-                  </span>
-                  <span className="bg-white text-black px-[8px] py-[8px] rounded-[24px] ">
-                    {activeProject.rera}
-                  </span>
-                </div>
-              </div>
+    {/* CONTENT */}
+    <div className="absolute inset-0 p-[10px] flex flex-col justify-between text-white">
+      {/* TOP BADGES */}
+      <div className="flex justify-between items-start">
+        <span className="bg-[#A8731C] px-[8.5px] py-[8px] rounded-full text-[12px] font-bold">
+          {activeProject.status}
+        </span>
 
-              <div className=" text-white">
-                <span className="inline-block bg-red-600 px-3 py-[6px] px-[10px] rounded-full mb-2 font-urban text-[14px] leading-[100%] tracking-[0%] font-black">
-                  {activeProject.land_mark}
-                </span>
-                {/* <Image
-                  src={p.logo}
-                  alt="logo"
-                  width={100}
-                  height={30}
-                  className="mb-2"
-                /> */}
-                <div className="flex items-center gap-2">
-                  <Image
-                    src="/images/icons/locu.svg" // <-- your location icon path
-                    alt="location"
-                    width={14}
-                    height={14}
-                    className="opacity-80"
-                  />
+        <div className="flex text-[10px] font-urban">
+          <span className="bg-white text-black px-[8px] py-[8px] rounded-[24px]">
+            KERA
+          </span>
+          <span className="bg-white text-black px-[8px] py-[8px] rounded-[24px]">
+            {activeProject.k_rera}
+          </span>
+        </div>
+      </div>
 
-                  <p className="text-[12px] leading-[100%] opacity-80 font-urban">
-                    {p.location}
-                  </p>
-                </div>
-                <h3 className="text-[20px] font-semibold mt-1">{p.name}</h3>
-                <p className="text-xs opacity-90 mt-1">{p.short_description}</p>
+      {/* BOTTOM */}
+      <div>
+        <span className="inline-block bg-red-600 px-3 py-1 text-xs rounded-full mb-2">
+          {activeProject.land_mark}
+        </span>
 
-                <div className="w-full flex justify-between gap-[10px]">
-                  <Link href={`/projects/${activeProject.slug}`}>
+        <div className="flex items-center gap-2">
+          <Image
+            src="/images/icons/locu.svg"
+            alt="location"
+            width={14}
+            height={14}
+          />
+          <p className="text-[12px] opacity-80">
+            {activeProject.location}
+          </p>
+        </div>
 
-                  <button  
-                  className="flex gap-2 mt-4 border border-white px-[10px] py-[8px] rounded-2xl text-[11px] leading-[100%] tracking-[0%] max-w-[140px] w-full text-left">
-                    VIEW PROJECT DETAILS
-                    <span className="h-[7px]">
-                      <ChevronRight />
-                    </span>
-                  </button>
-                  </Link>
-                  <button className="flex justify-between text-left mt-4 bg-[#006A54] px-[10px] py-[8px] rounded-2xl text-[11px] leading-[100%] tracking-[0%] w-full">
-                    DOWNLOAD BROCHURE
-                    <span className="h-[7px]">
-                      <Download />
-                    </span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
+        <h3 className="text-[20px] font-semibold mt-1">
+          {activeProject.name}
+        </h3>
+
+        <p className="text-xs opacity-90 mt-1">
+          {activeProject.short_description}
+        </p>
+
+        <div className="flex gap-2 mt-4">
+          <Link href={`/projects/${activeProject.slug}`}>
+            <button className="border border-white px-3 py-2 rounded-xl text-[11px]">
+              VIEW PROJECT DETAILS
+            </button>
+          </Link>
+
+          <button className="bg-[#006A54] px-3 py-2 rounded-xl text-[11px]">
+            DOWNLOAD BROCHURE
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
+   
       </div>
     </section>
   );
