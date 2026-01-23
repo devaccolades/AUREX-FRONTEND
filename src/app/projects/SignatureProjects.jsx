@@ -160,13 +160,13 @@ export default function SignatureProjects({data}) {
                 {/* LEFT OUTLINE BUTTON */}
                 <button
                   className="
-                                         flex-1
-                                         px-6 py-3
-                                         font-urban text-[12px] lg:text-[14px]
-                                         border border-white text-white
-                                         rounded-[10px] font-medium
-                                         flex items-center justify-between gap-2
-                                       "
+                            flex-1
+                            px-6 py-3
+                            font-urban text-[12px] lg:text-[14px]
+                            border border-white text-white
+                            rounded-[10px] font-medium
+                            flex items-center justify-between gap-2
+                          "
                 >
                   VIEW PROJECT DETAILS
                   <Image
@@ -181,13 +181,13 @@ export default function SignatureProjects({data}) {
                 {/* RIGHT GREEN BUTTON */}
                 <button
                   className="
-                                        flex-1
-                                        px-6 py-3
-                                        font-urban text-[12px] lg:text-[14px]
-                                        bg-[#0A6E50] text-white
-                                        rounded-[10px] font-semibold
-                                        flex items-center justify-between gap-2
-                                      "
+                            flex-1
+                            px-6 py-3
+                            font-urban text-[12px] lg:text-[14px]
+                            bg-[#0A6E50] text-white
+                            rounded-[10px] font-semibold
+                            flex items-center justify-between gap-2
+                          "
                 >
                   BOOK SITE VISIT
                   <Image
