@@ -136,7 +136,7 @@ export default function Moments({ events, eventGallery }) {
           onClick={() => setSelectedIndex(null)}
         >
           <div
-            className="relative w-full max-w-5xl h-[80vh]"
+            className="relative w-[90%] lg:max-w-3xl xl:max-w-4xl h-[80vh]"
             onClick={(e) => e.stopPropagation()}
           >
             <Image
@@ -150,7 +150,7 @@ export default function Moments({ events, eventGallery }) {
             {selectedIndex > 0 && (
               <button
                 onClick={handlePrev}
-                className="absolute -left-10 top-1/2 -translate-y-1/2 text-white text-4xl font-bold"
+                className="absolute -left-5 md:-left-10 top-1/2 -translate-y-1/2 text-white text-4xl font-bold"
               >
                 ‹
               </button>
@@ -160,7 +160,7 @@ export default function Moments({ events, eventGallery }) {
             {selectedIndex < filtered.length - 1 && (
               <button
                 onClick={handleNext}
-                className="absolute -right-10 top-1/2 -translate-y-1/2 text-white text-4xl font-bold"
+                className="absolute -right-5 md:-right-10 top-1/2 -translate-y-1/2 text-white text-4xl font-bold"
               >
                 ›
               </button>
