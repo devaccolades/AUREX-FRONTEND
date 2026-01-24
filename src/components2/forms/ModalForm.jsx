@@ -1,10 +1,10 @@
 "use client";
 import { useState } from "react";
-import Swal from "sweetalert2";
 import { LeadSubmission } from "@/services/api";
+import ContactModal from "../ContactModal";
 
 
-export default function ModalForm({ onClose }) {
+export default function ModalForm({ onClose, onSuccess  }) {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -15,9 +15,7 @@ export default function ModalForm({ onClose }) {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  /* =======================
-     HANDLE CHANGE
-  ======================= */
+
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -33,9 +31,7 @@ export default function ModalForm({ onClose }) {
     }));
   };
 
-  /* =======================
-     VALIDATION
-  ======================= */
+
   const validate = () => {
     const newErrors = {};
 
@@ -74,16 +70,8 @@ export default function ModalForm({ onClose }) {
   setIsSubmitting(true);
 
   try {
-    const payload = {
-      name: formData.name,
-      phone: formData.phone,
-      email: formData.email,
-      message: formData.message,
-    };
+    await LeadSubmission(formData);
 
-    await LeadSubmission(payload);
-
-    // ✅ Reset form immediately
     setFormData({
       name: "",
       phone: "",
@@ -91,26 +79,16 @@ export default function ModalForm({ onClose }) {
       message: "",
     });
 
-    // ✅ Show success popup
-    await Swal.fire({
-      icon: "success",
-      title: "Thank You!",
-      text: "Your enquiry has been submitted successfully.",
-      timer: 2000,
-      showConfirmButton: false,
-    });
-
-    // ✅ Close modal AFTER alert
+    // ✅ close form first
     if (onClose) onClose();
 
+    // ✅ open contact modal AFTER unmount
+    setTimeout(() => {
+      if (onSuccess) onSuccess();
+    }, 300);
+
   } catch (error) {
-    Swal.fire({
-      icon: "error",
-      title: "Submission Failed",
-      text: "Something went wrong. Please try again.",
-      timer: 2500,
-      showConfirmButton: false,
-    });
+    console.error("Submission failed", error);
   } finally {
     setIsSubmitting(false);
   }
@@ -213,6 +191,8 @@ export default function ModalForm({ onClose }) {
                 {isSubmitting ? "Submitting..." : "Submit Enquiry"}
               </button>
             </form>
+
+             
           </div>
         </div>
   );

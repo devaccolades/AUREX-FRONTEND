@@ -6,9 +6,11 @@ import bg from "../../../public/images/home/why-bg.png";
 import { useState } from "react";
 import ModalForm from "@/components2/forms/ModalForm";
 import FixedCTAButton from "@/components2/FixedMagneticButton";
+import ContactModal from "@/components2/ContactModal";
 
 export default function WhyChooseUs() {
   const [openModal, setOpenModal] = useState(false)
+  const [showContactModal, setShowContactModal] = useState(false);
   const Box = ({ title, text, className = "" }) => (
     <div className={`relative p-3 lg:p-8 ${className}`}>
       {/* corner highlights */}
@@ -54,7 +56,7 @@ export default function WhyChooseUs() {
                 </h2>
                 
             <FixedCTAButton 
-            className="md:hidden block"
+            className="lg:hidden block"
                 text="Book a free <br /> consultation"
                 arrowSrc="/images/home/button-arrow.svg"
                 parentSelector="#why-section"
@@ -71,7 +73,7 @@ export default function WhyChooseUs() {
                 </p>
               </div>
 
-              <MagneticButton className="hidden md:block"
+              <MagneticButton className="hidden lg:block"
                 text="Book a free <br /> consultation"
                 arrowSrc="/images/home/button-arrow.svg"
                 parentSelector="#why-section"
@@ -119,10 +121,15 @@ export default function WhyChooseUs() {
               ✕
             </button>
 
-            <ModalForm />
+           <ModalForm  onSuccess={() => setShowContactModal(true)}
+                       onClose={() => setOpenModal(false)} />
           </div>
         </div>
       )}
+      <ContactModal
+        isOpen={showContactModal}
+        onClose={() => setShowContactModal(false)}
+      />
     </>
   );
 }

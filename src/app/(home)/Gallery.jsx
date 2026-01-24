@@ -4,9 +4,11 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import ModalForm from "@/components2/forms/ModalForm";
 import { EventGalleryFetch } from "@/services/api";
+import ContactModal from "@/components2/ContactModal";
 
 export default function GallerySection({ data }) {
   const [openModal, setOpenModal] = useState(false);
+  const [showContactModal, setShowContactModal] = useState(false);
   const [gallery, setGallery] = useState(data);
   // const gallery = [
   //   {
@@ -254,10 +256,16 @@ export default function GallerySection({ data }) {
               ✕
             </button>
 
-            <ModalForm />
+            <ModalForm  onSuccess={() => setShowContactModal(true)}
+            onClose={() => setOpenModal(false)} />
           </div>
         </div>
       )}
+
+      <ContactModal
+  isOpen={showContactModal}
+  onClose={() => setShowContactModal(false)}
+/>
     </section>
   );
 }

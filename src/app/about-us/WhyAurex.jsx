@@ -1,6 +1,7 @@
 
 "use client";
 
+import ContactModal from "@/components2/ContactModal";
 import ModalForm from "@/components2/forms/ModalForm";
 import MagneticButton from "@/components2/MagneticButton";
 import { Check } from "lucide-react";
@@ -9,6 +10,7 @@ import { useState } from "react";
 
 export default function WhyAurexBuilders() {
   const [openModal, setOpenModal] = useState(false);
+  const [showContactModal, setShowContactModal] = useState(false);
   const strengths = [
     {
       title: "EXPERT & PROFESSIONAL TEAM",
@@ -126,10 +128,15 @@ export default function WhyAurexBuilders() {
                     ✕
                   </button>
                   {/* <ProjectEnquiryModal /> */}
-                  <ModalForm onClose={() => setOpenModal(false)} />
+                 <ModalForm  onSuccess={() => setShowContactModal(true)}
+                             onClose={() => setOpenModal(false)} />
                 </div>
               </div>
             )}
+            <ContactModal
+              isOpen={showContactModal}
+              onClose={() => setShowContactModal(false)}
+            />
     </section>
   );
 }
