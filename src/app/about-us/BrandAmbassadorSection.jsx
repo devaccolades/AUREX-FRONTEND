@@ -54,32 +54,9 @@
               </p>
             </div>
             {/* MOBILE IMAGE (normal flow) */}
-            {/* <div className="flex flex-row justify-between my-6 md:hidden">
-              <div>
-              <Image
-                src="/images/home/b.png"
-                alt="Brand Ambassador"
-                width={220}
-                height={360}
-                className="object-contain"
-                priority
-              />
-          </div>
-            <div className="relative z-20 mt-2 md:mt-0">
-              <p className="mb-2 md:mb-6 text-black text-[12px] md:text-[13px] lg:text-[14px] leading-[18px]">
-                Our brand ambassador’s values align seamlessly with Aurex’s promise —to
-                deliver not just homes, but a lifestyle defined by comfort, elegance, and authenticity.
-              </p>
-
-              <p className="text-black text-[12px] md:text-[13px] lg:text-[14px] leading-[18px]">
-                Through this partnership, we aim to strengthen our bond with customers by blending
-                credibility, culture, and class — celebrating the art of living that makes
-                every Aurex home truly exceptional.
-              </p>
-            </div>
-  </div> */}
+            
   {/* MOBILE IMAGE + RIGHT TEXT */}
-  <div className="md:hidden flex items-start justify-between gap-2 my-6">
+  <div className="md:hidden flex items-start justify-between gap-2 my-3">
 
     {/* IMAGE */}
     <div className=" w-[100px] -mt-10">
