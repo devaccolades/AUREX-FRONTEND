@@ -3,9 +3,11 @@ import Image from "next/image";
 import { useState } from "react";
 import ModalForm from "@/components2/forms/ModalForm";
 import ProjectEnquiryModal from "@/components2/forms/ProjectEnquiryModal";
+import ContactModal from "@/components2/ContactModal";
 
 export default function AboutSection() {
   const [openModal, setOpenModal] = useState(false);
+  const [showContactModal, setShowContactModal] = useState(false);
   return (
     <section className="relative w-full bg-[#ECECEC]  text-black rounded-[40px] overflow-hidden">
       {/* Background Elephants */}
@@ -73,10 +75,15 @@ export default function AboutSection() {
               ✕
             </button>
             {/* <ProjectEnquiryModal /> */}
-            <ModalForm onClose={() => setOpenModal(false)} />
+             <ModalForm  onSuccess={() => setShowContactModal(true)}
+                                   onClose={() => setOpenModal(false)} />
           </div>
         </div>
       )}
+      <ContactModal
+              isOpen={showContactModal}
+              onClose={() => setShowContactModal(false)}
+            />
     </section>
   );
 }

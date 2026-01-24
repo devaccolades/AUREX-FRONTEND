@@ -5,6 +5,7 @@ import Image from "next/image";
 import ModalForm from "@/components2/forms/ModalForm";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ContactModal from "@/components2/ContactModal";
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
@@ -40,6 +41,7 @@ const services = [
 
 export default function Services() {
   const [openModal, setOpenModal] = useState(false);
+  const [showContactModal, setShowContactModal] = useState(false);
   const [imagesLoaded, setImagesLoaded] = useState(false);
   const containerRef = useRef(null);
   const groupsRef = useRef(null);
@@ -203,7 +205,7 @@ export default function Services() {
             <h2
               key={i}
               ref={(el) => (titleRefs.current[i] = el)}
-              className="absolute text-[40px] md:text-[60px] lg:text-[72px] font-normal text-black tracking-tight text-center leading-tight"
+              className="absolute text-[40px] md:text-[58px] lg:text-[68px] font-normal text-black tracking-tight text-center leading-tight"
               style={{
                 opacity: i === 0 ? 1 : 0,
                 transform:
@@ -282,10 +284,15 @@ export default function Services() {
             >
               ✕
             </button>
-            <ModalForm />
+            <ModalForm  onSuccess={() => setShowContactModal(true)}
+                        onClose={() => setOpenModal(false)} />
           </div>
         </div>
       )}
+      <ContactModal
+        isOpen={showContactModal}
+        onClose={() => setShowContactModal(false)}
+      />
     </section>
   );
 }

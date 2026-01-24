@@ -14,9 +14,11 @@ import ModalForm from "@/components2/forms/ModalForm";
 import { useIsMobile } from "@/components2/hooks/useIsMobile";
 import { ProjectsFetch } from "@/services/api";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import ContactModal from "@/components2/ContactModal";
 
 export default function HeroSection({ data }) {
   const [openModal, setOpenModal] = useState(false);
+  const [showContactModal, setShowContactModal] = useState(false);
   const [active, setActive] = useState(0);
   const [residentialProjects, setResidentialProjects] = useState(
     data.filter((item) => item.project_type === "Residential"),
@@ -417,10 +419,15 @@ export default function HeroSection({ data }) {
               ✕
             </button>
 
-            <ModalForm />
+            <ModalForm  onSuccess={() => setShowContactModal(true)}
+                        onClose={() => setOpenModal(false)} />
           </div>
         </div>
       )}
+      <ContactModal
+        isOpen={showContactModal}
+        onClose={() => setShowContactModal(false)}
+      />
     </section>
   );
 }
