@@ -188,7 +188,7 @@ export default function GallerySection({ data }) {
           </div>
 
           {/* RIGHT SIDE THUMBNAIL SLIDER */}
-          {/* <div className="col-span-2 lg:col-span-2 h-[384px] lg:h-[684px] border-x border-gray-300 overflow-y-auto hide-scrollbar space-y-4"> */}
+        
           <div className="h-[384px] lg:h-[700px]  border-l border-gray-300 overflow-y-auto hide-scrollbar space-y-[16px]">
             {gallery.map((item, i) => (
               <div
