@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import { X, UploadCloud } from 'lucide-react'
 import { CareersApply } from '@/services/api'
 import SuccessModal from './SuccessModal' // import your success modal
+import CareerModal from './CareerModal'
 
 export default function NoJobsModal({ onClose, data }) {
   const fileInputRef = useRef(null)
@@ -84,14 +85,18 @@ export default function NoJobsModal({ onClose, data }) {
 
     setSubmitting(true)
     try {
-      const payload = new FormData()
-      payload.append('name', formData.name)
-      payload.append('email', formData.email)
-      payload.append('phone', formData.phone)
-      payload.append('resume', formData.resume)
-      if (formData.coverLetter) payload.append('cover_letter', formData.coverLetter)
+      const payload = new FormData();
+      payload.append("name", formData.name);
+      payload.append("email", formData.email);
+      payload.append("number", formData.phone);      
+      payload.append("cv_file", formData.resume);    
+      payload.append("position", "General Application"); 
 
-      await CareersApply(payload)
+      if (formData.coverLetter) {
+        payload.append("cover_letter", formData.coverLetter);
+      }
+
+      await CareersApply(payload);
 
       // reset form
       setFormData({
@@ -114,8 +119,9 @@ export default function NoJobsModal({ onClose, data }) {
   return (
     <>
       {/* Main Modal */}
+       {!success && (
       <div
-        className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4"
+        className="fixed inset-0 z-999 flex items-center justify-center bg-black/60 px-4"
         onClick={onClose}
       >
         <div
@@ -181,9 +187,8 @@ export default function NoJobsModal({ onClose, data }) {
                 onDragOver={handleDragOver}
                 onDragLeave={handleDragLeave}
                 onDrop={handleDrop}
-                className={`mt-1 border border-dashed rounded-[20px] p-4 text-center cursor-pointer ${
-                  isDragging ? 'bg-gray-50' : ''
-                }`}
+                className={`mt-1 border border-dashed rounded-[20px] p-4 text-center cursor-pointer ${isDragging ? 'bg-gray-50' : ''
+                  }`}
               >
                 {formData.resume ? (
                   <div className="flex items-center justify-between gap-3">
@@ -229,16 +234,25 @@ export default function NoJobsModal({ onClose, data }) {
           </form>
         </div>
       </div>
+       )}
 
       {/* Success Modal */}
-      <SuccessModal
+      {/* <SuccessModal
         isOpen={success}
         projectName={data?.job_title || 'this job'}
         onClose={() => {
           setSuccess(false)
           onClose()
         }}
-      />
+      /> */}
+      <CareerModal
+  isOpen={success}
+  projectName="Green Valley Residences"
+  onClose={() => {
+    setSuccess(false);
+    onClose(); // close NoJobsModal AFTER user closes success modal
+  }}
+/>
     </>
   )
 }
