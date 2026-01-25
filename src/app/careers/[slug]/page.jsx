@@ -46,7 +46,8 @@ export async function generateMetadata() {
 }
 
 export default async function page({ params }) {
-  const slug = params.slug;
+  // const slug = params.slug;
+  const { slug } = await params; 
   const data = await CareersById(slug);  
   
   return (

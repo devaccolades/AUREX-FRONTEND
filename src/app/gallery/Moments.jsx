@@ -7,35 +7,35 @@ import arrow from '../../../public/images/gallery/Rectangle.svg'
 import Preview from '../../../public/images/gallery/preview.svg'
 
 export default function Moments({ events, eventGallery }) {
-  console.log('errrr',eventGallery);
-  
+  console.log('errrr', eventGallery);
+
   const [activeCategory, setActiveCategory] = useState('All')
   const [visible, setVisible] = useState(6)
   const [selectedIndex, setSelectedIndex] = useState(null)
 
   /* ---------- CATEGORIES ---------- */
-  
+
   /* ---------- GALLERY DATA ---------- */
   const eventMap = events.reduce((acc, event) => {
     acc[event.id] = event.event_name
     return acc
   }, {})
-  
-  
+
+
   const galleryImages = eventGallery
-  .filter(item=> item.image)
-  .map((item, index) => ({
-    id: item.id || index,
-    category: eventMap[item.event],
-    src: item.image,
-  }))
-  
+    .filter(item => item.image)
+    .map((item, index) => ({
+      id: item.id || index,
+      category: eventMap[item.event],
+      src: item.image,
+    }))
+
   const categories = Array.from(
     new Set([
       'All',
       ...(galleryImages.map(img => img.category).filter(Boolean) || [])
     ])
-  );  
+  );
 
   const filtered =
     activeCategory === 'All'
@@ -139,6 +139,12 @@ export default function Moments({ events, eventGallery }) {
             className="relative w-[90%] lg:max-w-3xl xl:max-w-4xl h-[80vh]"
             onClick={(e) => e.stopPropagation()}
           >
+            <button
+              onClick={() => setSelectedIndex(null)}
+              className="absolute top-3 right-3 z-10 text-white text-2xl"
+            >
+              ✕
+            </button>
             <Image
               src={filtered[selectedIndex].src}
               alt="Preview"

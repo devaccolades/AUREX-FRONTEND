@@ -50,7 +50,7 @@ export async function generateMetadata() {
 
 export default async function page() {
   const jobdata = await CareersFetch();
-  const hasJobs = Array.isArray(jobdata) && jobdata.length < 0;
+  const hasJobs = Array.isArray(jobdata) && jobdata.length > 0;
   return (
     <div>
       <Header />
