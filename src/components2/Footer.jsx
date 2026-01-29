@@ -101,7 +101,7 @@ export default async function Footer() {
                   />
 
                   <div className="max-w-[200px] lg:space-y-1">
-                    <h3 className="text-[16px] lg:text-[18px] xl:text-[20px] leading-[20px] font-urban ">
+                    <h3 className="text-[16px] lg:text-[18px] xl:text-[17px] leading-[20px] font-urban ">
                       Aurex Builders Pvt Ltd
                     </h3>
                     <p className="text-[13px] lg:text-sm text-white mt-0 leading-[18px] ">
