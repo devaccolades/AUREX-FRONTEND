@@ -46,8 +46,8 @@ export async function generateMetadata() {
 }
 
 export default async function page (){
-  // const data = await BlogsFetch();
-  const data =[]
+  const data = await BlogsFetch();
+  // const data =[]
   
   return (
     <>

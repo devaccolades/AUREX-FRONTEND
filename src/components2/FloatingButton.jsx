@@ -14,7 +14,7 @@ export default function FloatingButtons() {
         <>
 
             {/* <div className="absolute right-0 top-1/2 -translate-y-1/2 flex-col gap-1 hidden lg:flex"> */}
-             <div className="fixed right-0 top-1/2 -translate-y-1/2 flex-col gap-1 hidden lg:flex z-[999]">
+             <div className="fixed -right-1 md:right-0 top-1/2 -translate-y-1/2 flex flex-col gap-0 md:gap-1  z-[999]">
                 <a
                     href="https://wa.me/919846507474?text=Hi%20I%20am%20interested%20in%20your%20project"
                     target="_blank"
@@ -25,7 +25,7 @@ export default function FloatingButtons() {
                         width={44}
                         height={44}
                         alt="Chat on WhatsApp"
-                        className="cursor-pointer"
+                        className="cursor-pointer w-[32px] h-[32px] md:w-[44px] md:h-[44px]"
                     />
                 </a>
                 <button onClick={() => setOpenModal(true)}>
@@ -34,7 +34,7 @@ export default function FloatingButtons() {
                         width={44}
                         height={44}
                         alt="chat-icon"
-                        className="cursor-pointer" />
+                        className="cursor-pointer  w-[32px] h-[32px] md:w-[44px] md:h-[44px]" />
                 </button>
             </div>
 
