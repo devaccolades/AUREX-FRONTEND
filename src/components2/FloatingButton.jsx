@@ -13,7 +13,8 @@ export default function FloatingButtons() {
     return (
         <>
 
-            <div className="absolute right-0 top-1/2 -translate-y-1/2 flex-col gap-1 hidden lg:flex">
+            {/* <div className="absolute right-0 top-1/2 -translate-y-1/2 flex-col gap-1 hidden lg:flex"> */}
+             <div className="fixed right-0 top-1/2 -translate-y-1/2 flex-col gap-1 hidden lg:flex z-[999]">
                 <a
                     href="https://wa.me/919846507474?text=Hi%20I%20am%20interested%20in%20your%20project"
                     target="_blank"
