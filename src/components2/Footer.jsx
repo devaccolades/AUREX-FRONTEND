@@ -15,7 +15,7 @@ export default async function Footer() {
     { name: "Gallery", href: "/gallery" },
     { name: "About Us", href: "/about-us" },
     { name: "Blog", href: "/blog" },
-    { name: "Contact Us", href: "/contact" },
+    { name: "Contact Us", href: "/contact-us" },
     { name: "Careers", href: "/careers" },
   ];
 
