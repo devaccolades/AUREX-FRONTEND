@@ -118,13 +118,54 @@ export default function SignatureProjects({ data }) {
                 {activeProject.status}
               </span>
 
-              <div className="flex gap-2 text-xs">
-                <span className="bg-white text-black px-4 py-2 rounded-[24px]">
-                  KERA
-                </span>
-                <span className="bg-white text-black px-4 py-2 rounded-[24px]">
-                  {activeProject.k_rera}
-                </span>
+              <div
+                className="
+      absolute top-3 right-3
+      md:top-5 md:right-5
+      z-20 flex items-center
+      gap-2 md:gap-3
+    "
+              >
+                {/* RERA PILL */}
+                <div className="flex items-center">
+                  <div
+                    className="
+          bg-white rounded-[24px] shadow-sm
+          px-[8px] py-[6px]
+          lg:px-[12px] lg:py-[10px]
+        "
+                  >
+                    <span
+                      className="
+            font-urban font-semibold text-black
+            text-[11px]
+            md:text-[12px]
+            lg:text-[13px]
+          "
+                    >
+                      {activeProject.k_rera}
+                    </span>
+                  </div>
+                </div>
+
+                {/* QR CODE */}
+                <div
+                  className="
+        flex items-center justify-center rounded-md
+        bg-white/80
+        w-[40px] h-[40px]
+        md:w-[50px] md:h-[50px]
+        lg:w-[60px] lg:h-[60px]
+      "
+                >
+                  <Image
+                    src={activeProject.qr_code}
+                    alt="rera qr"
+                    width={120}
+                    height={120}
+                    className="object-contain"
+                  />
+                </div>
               </div>
             </div>
 
@@ -269,14 +310,54 @@ export default function SignatureProjects({ data }) {
                 <span className="bg-[#A8731C] px-[8.5px] py-[8px] rounded-full text-[12px] font-bold">
                   {activeProject.status}
                 </span>
+                <div
+                  className="
+      absolute top-3 right-3
+      md:top-5 md:right-5
+      z-20 flex items-center
+      gap-2 md:gap-3
+    "
+                >
+                  {/* RERA PILL */}
+                  {/* <div className="flex items-center">
+                    <div
+                      className="
+          bg-white rounded-[24px] shadow-sm
+          px-[8px] py-[6px]
+          lg:px-[12px] lg:py-[10px]
+        "
+                    >
+                      <span
+                        className="
+            font-urban font-semibold text-black
+            text-[11px]
+            md:text-[12px]
+            lg:text-[13px]
+          "
+                      >
+                        {activeProject.k_rera}
+                      </span>
+                    </div>
+                  </div> */}
 
-                <div className="flex text-[10px] font-urban">
-                  <span className="bg-white text-black px-[8px] py-[8px] rounded-[24px]">
-                    KERA
-                  </span>
-                  <span className="bg-white text-black px-[8px] py-[8px] rounded-[24px]">
-                    {activeProject.k_rera}
-                  </span>
+                  {/* QR CODE */}
+                  <div
+                    className="
+        flex items-center justify-center rounded-md
+        bg-white/80
+        w-[40px] h-[40px]
+        md:w-[50px] md:h-[50px]
+        lg:w-[60px] lg:h-[60px]
+      "
+                  >
+                    <Image
+                      src={activeProject.qr_code}
+                      alt="rera qr"
+                      width={120}
+                      height={120}
+                      className="object-contain"
+                    />
+                  </div>
                 </div>
               </div>
 

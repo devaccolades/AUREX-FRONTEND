@@ -137,15 +137,36 @@ export default function SignatureProjects({ data }) {
 
               {/* TOP BADGE ROW */}
               {activeCard === p.id && (
-                <div className="absolute top-5 left-5 right-5 flex flex-wrap gap-2 lg:gap-4 z-20">
-                  {/* PROJECT STATS ROW */}
-
-                  <div className="flex flex-wrap items-center gap-0 mt-0 lg:mt-5">
-                    <div className="flex items-center  bg-[#A8731C] text-white px-[10px] py-[10px] rounded-[24px] shadow-sm">
-                      <span className="text-[12px] lg:text-[13px] leading-[13px] font-urban font-medium">
-                        {p.status}
-                      </span>
-                    </div>
+                <div
+                  className="
+      absolute top-3 left-3 right-3
+      md:top-5 md:left-5 md:right-5
+      z-20 flex flex-wrap
+      gap-2 md:gap-3 lg:gap-4
+    "
+                >
+                  {/* STATUS PILL */}
+                  <div
+                    className="
+        flex items-center
+        bg-[#A8731C] text-white
+        rounded-[24px] shadow-sm
+        px-[8px] py-[6px]
+        md:px-[10px] md:py-[8px]
+        lg:px-[12px] lg:py-[10px]
+      "
+                  >
+                    <span
+                      className="
+          font-urban font-medium
+          text-[11px]
+          md:text-[12px]
+          lg:text-[13px]
+          leading-none
+        "
+                    >
+                      {p.status}
+                    </span>
                   </div>
 
                   {/* <div className="flex flex-wrap items-center font-urban gap-0 mt-0 lg:mt-5">
@@ -189,29 +210,61 @@ export default function SignatureProjects({ data }) {
                     </div>
                   </div>
                 </div> */}
-
-                  <div className="flex items-center font-urban gap-0 mt-0 lg:mt-5">
-                    {/* LABEL BLOCK */}
-                    <div className="flex items-center gap-2 bg-white px-[10px] py-[8px] rounded-[24px] shadow-sm">
-                      <Image
-                        src="/images/home/rera.svg"
-                        width={14}
-                        height={14}
-                        alt="units icon"
-                      />
-                      <span className="text-[12px] lg:text-[13px] leading-[13px] font-medium">
-                        K-RERA
-                      </span>
-                    </div>
-                    {/* VALUE BLOCK */}
-                    <div className="bg-white px-[10px] py-[8px] rounded-[24px] shadow-sm">
-                      <span className="text-[12px] lg:text-[13px] leading-[13px] font-semibold">
+                </div>
+              )}
+              {activeCard === p.id && (
+                <div
+                  className="
+      absolute top-3 right-3
+      md:top-5 md:right-5
+      z-20 flex items-center
+      gap-2 md:gap-3
+    "
+                >
+                  {/* RERA PILL */}
+                  <div className="flex items-center">
+                    <div
+                      className="
+          bg-white rounded-[24px] shadow-sm
+          px-[8px] py-[6px]
+          lg:px-[12px] lg:py-[10px]
+        "
+                    >
+                      <span
+                        className="
+            font-urban font-semibold text-black
+            text-[11px]
+            md:text-[12px]
+            lg:text-[13px]
+          "
+                      >
                         {p.k_rera}
                       </span>
                     </div>
                   </div>
+
+                  {/* QR CODE */}
+                  <div
+                    className="
+        flex items-center justify-center rounded-md
+        bg-white/80
+        w-[40px] h-[40px]
+        md:w-[50px] md:h-[50px]
+        lg:w-[60px] lg:h-[60px]
+      "
+                  >
+                    <Image
+                      src={p.qr_code}
+                      alt="rera qr"
+                      width={120}
+                      height={120}
+                      className="object-contain"
+                    />
+                  </div>
                 </div>
               )}
+
+
 
               {/* BOTTOM CONTENT */}
               <div className="absolute bottom-0 p-2 lg:p-6 w-full text-white z-20">
@@ -366,6 +419,76 @@ export default function SignatureProjects({ data }) {
 
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                 </div>
+                 {activeCard === p.id && (
+                <div
+                  className="
+      absolute top-3 left-3 right-3
+      md:top-5 md:left-5 md:right-5
+      z-20 flex flex-wrap
+      gap-2 md:gap-3 lg:gap-4
+    "
+                >
+                  {/* STATUS PILL */}
+                  <div
+                    className="
+        flex items-center
+        bg-[#A8731C] text-white
+        rounded-[24px] shadow-sm
+        px-[8px] py-[6px]
+        md:px-[10px] md:py-[8px]
+        lg:px-[12px] lg:py-[10px]
+      "
+                  >
+                    <span
+                      className="
+          font-urban font-medium
+          text-[11px]
+          md:text-[12px]
+          lg:text-[13px]
+          leading-none
+        "
+                    >
+                      {p.status}
+                    </span>
+                  </div>
+                  </div>
+           ) }
+
+                {activeCard === p.id && (
+
+
+
+                  <div
+                    className="
+      absolute top-3 right-3
+      md:top-5 md:right-5
+      z-20 flex items-center
+      gap-2 md:gap-3
+    "
+                  >
+                    {/* RERA PILL */}
+
+
+                    {/* QR CODE */}
+                    <div
+                      className="
+        flex items-center justify-center rounded-md
+        bg-white/80
+        w-[40px] h-[40px]
+        md:w-[50px] md:h-[50px]
+        lg:w-[60px] lg:h-[60px]
+      "
+                    >
+                      <Image
+                        src={p.qr_code}
+                        alt="rera qr"
+                        width={120}
+                        height={120}
+                        className="object-contain"
+                      />
+                    </div>
+                  </div>
+                )}
 
                 {/* CONTENT */}
                 <div className="absolute bottom-0 p-3 w-full text-white mt-[8px]">
