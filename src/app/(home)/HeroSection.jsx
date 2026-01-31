@@ -20,6 +20,9 @@ export default function HeroSection({ data }) {
   const [openModal, setOpenModal] = useState(false);
   const [showContactModal, setShowContactModal] = useState(false);
   const [active, setActive] = useState(0);
+  const [showVideo, setShowVideo] = useState(true);
+  const [startSlider, setStartSlider] = useState(false);
+
   const [residentialProjects, setResidentialProjects] = useState(
     data.filter((item) => item.project_type === "Residential"),
   );
@@ -61,27 +64,62 @@ export default function HeroSection({ data }) {
 
   if (!project) return <p>Loading...</p>;
 
+  useEffect(() => {
+    if (!startSlider || !residentialProjects.length) return;
+
+    const interval = setInterval(() => {
+      setActive((prev) =>
+        prev === residentialProjects.length - 1 ? 0 : prev + 1
+      );
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [startSlider, residentialProjects.length]);
+
+
+
   return (
     <section className="relative w-full h-[100vh] md:h-[580px] lg:h-[100vh] overflow-hidden flex items-center">
       {/* BACKGROUND IMAGE */}
-      <div ref={wrapperRef} className="hidden md:block absolute inset-0">
-        <Image
-          src={project?.image}
-          alt="Project Image"
-          fill
-          className="object-cover"
-          priority
+      {showVideo && (
+        <video
+          src="/video/hero.mp4"
+          autoPlay
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-10"
+          onEnded={() => {
+            setShowVideo(false);
+            setStartSlider(true);
+          }}
         />
-      </div>
-      <div ref={wrapperRef} className=" md:hidden absolute inset-0">
-        <Image
-          src={project?.image}
-          alt="Project Image"
-          fill
-          className="h-full object-cover object-bottom"
-          priority
-        />
-      </div>
+      )}
+
+      {!showVideo && (
+        <>
+          {/* BACKGROUND IMAGE */}
+          <div ref={wrapperRef} className="hidden md:block absolute inset-0">
+            <Image
+              src={project?.image}
+              alt="Project Image"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+
+          <div ref={wrapperRef} className="md:hidden absolute inset-0">
+            <Image
+              src={project?.image}
+              alt="Project Image"
+              fill
+              className="h-full object-cover object-bottom"
+              priority
+            />
+          </div>
+        </>
+      )}
+
 
       {/* OVERLAY GRADIENT */}
       {/* <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent z-10"></div> */}
@@ -300,11 +338,10 @@ export default function HeroSection({ data }) {
           shadow-[0_30px_60px_rgba(0,0,0,0.25)]
           transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]
           flex flex-col justify-center items-center 
-          ${
-            open
-              ? "opacity-100 translate-y-0 scale-100 pointer-events-auto"
-              : "opacity-0 translate-y-3 scale-95 pointer-events-none"
-          }
+          ${open
+                    ? "opacity-100 translate-y-0 scale-100 pointer-events-auto"
+                    : "opacity-0 translate-y-3 scale-95 pointer-events-none"
+                  }
           
           sm:w-[230px] sm:h-[165px]
           xs:w-[240px]
@@ -419,8 +456,8 @@ export default function HeroSection({ data }) {
               ✕
             </button>
 
-            <ModalForm  onSuccess={() => setShowContactModal(true)}
-                        onClose={() => setOpenModal(false)} />
+            <ModalForm onSuccess={() => setShowContactModal(true)}
+              onClose={() => setOpenModal(false)} />
           </div>
         </div>
       )}
