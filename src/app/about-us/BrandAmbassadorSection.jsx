@@ -42,12 +42,12 @@
                 PASSION & EXCELLENCE
               </h2>
 
-              <p className="text-black text-[12px] md:text-[13px] lg:text-[14px] leading-[18px] mb-2 md:mb-4">
+              <p className="text-black text-[12px] md:text-[13px] lg:text-[15px] leading-[18px] lg:leading-[22px] mb-2 md:mb-4">
                 At Aurex Builders, our brand ambassador embodies the spirit of everything we stand for — trust,
                 quality, innovation, and a deep connection with our community.
               </p>
 
-              <p className="text-black text-[12px] md:text-[13px] lg:text-[14px] leading-[18px]">
+              <p className="text-black text-[12px] md:text-[13px] lg:text-[15px] leading-[18px] lg:leading-[22px]">
                 More than a face, our ambassador represents the dreams and aspirations of every family
                 that chooses Aurex. With an unwavering belief in our philosophy of “Adorning Lives,” they
                 echo our commitment to creating spaces that inspire joy, belonging, and pride.
@@ -92,12 +92,12 @@
 
             {/* RIGHT TEXT */}
             <div className="hidden md:block relative z-20 mt-2 md:mt-0">
-              <p className="mb-2 md:mb-6 text-black text-[12px] md:text-[13px] lg:text-[14px] leading-[18px]">
+              <p className="mb-2 md:mb-6 text-black text-[12px] md:text-[13px] lg:text-[15px] leading-[18px] lg:leading-[22px]">
                 Our brand ambassador’s values align seamlessly with Aurex’s promise —to
                 deliver not just homes, but a lifestyle defined by comfort, elegance, and authenticity.
               </p>
 
-              <p className="text-black text-[12px] md:text-[13px] lg:text-[14px] leading-[18px]">
+              <p className="text-black text-[12px] md:text-[13px] lg:text-[15px] leading-[18px] lg:leading-[22px]">
                 Through this partnership, we aim to strengthen our bond with customers by blending
                 credibility, culture, and class — celebrating the art of living that makes
                 every Aurex home truly exceptional.

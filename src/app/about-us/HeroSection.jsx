@@ -87,7 +87,7 @@ export default function HeroSection() {
           <h2 ref={ref} className="font-urban text-[24px] md:text-[32px] lg:text-[40px] font-bold leading-[24px] md:leading-[32px] lg:leading-[40px] tracking-wide">
             AUREX BUILDERS
           </h2> 
-          <p className="mt-4 mx-auto max-w-[295px] text-black text-[12px] md:text-[13px] leading-[16px] md:leading-[18px]">
+          <p className="mt-4 mx-auto max-w-[345px] text-black text-[12px] md:text-[14px] lg:text-[16px] leading-[16px] md:leading-[18px] lg:leading-[22px]">
             Aurex Builders is a trusted name in the construction industry, known
             for creating exceptional residential and commercial spaces across
             Thrissur and Kerala.
@@ -105,7 +105,7 @@ export default function HeroSection() {
             }`}
           >
             <Image
-              src="/images/about/v1.webp"
+              src="/images/about/v3.webp"
               alt="Residential Project"
               fill
               className="object-cover"
@@ -120,7 +120,7 @@ export default function HeroSection() {
                 animated ? "opacity-100" : "opacity-0"
               }`}
             >
-              <h3 className="font-urban text-[24px] md:text-[32px] lg:text-[40px] font-bold leading-[24px] md:leading-[32px] lg:leading-[40px] mb-10">
+              <h3 className="mt-0 lg:mt-9 xl:mt-8 font-urban text-[24px] md:text-[32px] lg:text-[40px] xl:text-[46px] font-bold leading-[24px] md:leading-[32px] lg:leading-[40px] mb-10 lg:mb-4">
                 BUILDING <br />
                 TRUST WITH <br />
                 EVERY <br />
@@ -139,7 +139,7 @@ export default function HeroSection() {
                 }`}
               >
                 <Image
-                  src="/images/about/v3.webp"
+                  src="/images/about/v1.webp"
                   alt="Commercial Project"
                   fill
                   className="object-cover"
@@ -147,7 +147,7 @@ export default function HeroSection() {
               </div>
 
               <div
-                className={`hidden md:block text-black text-[12px] md:text-[13px] leading-[16px] md:leading-[18px] transition-opacity duration-1000 delay-700 ${
+                className={`hidden md:block text-black text-[12px] md:text-[13px] lg:text-[14px] xl:text-[18px] leading-[16px] md:leading-[18px] lg:leading-[24px] transition-opacity duration-1000 delay-700 ${
                   animated ? "opacity-100" : "opacity-0"
                 }`}
               >
