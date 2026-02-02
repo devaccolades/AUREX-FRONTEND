@@ -95,7 +95,7 @@ export default function MissionVision() {
 
 
   return (
-    <section className="w-full py-8 md:py-16 lg:py-24 bg-white ">
+    <section className="w-full py-8 md:py-16  bg-white ">
       <div className=" grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 lg:gap-6 xl:gap-8 items-center">
 
         {/* LEFT CONTENT */}
@@ -105,7 +105,7 @@ export default function MissionVision() {
           </h2>
 
           <h3 className="text-[16px] md:text-[18px] lg:text-[20px] leading-[16px] md:leading-[36px] font-extrabold font-urban mb-2">Vision</h3>
-          <p className="text-[12px] md:text-[13px] lg:text-[14px] leading-[18px]  text-black mb-8 ">
+          <p className="text-[12px] md:text-[13px] lg:text-[15px] leading-[18px] lg:leading-[22px]  text-black mb-8 ">
             To emerge as a pioneering and trusted force in the real estate
             landscape by designing thoughtful spaces that inspire, enrich, and
             elevate everyday living. We envision communities where innovation,
@@ -114,7 +114,7 @@ export default function MissionVision() {
           </p>
 
           <h3 className="text-[16px] md:text-[18px] lg:text-[20px] leading-[16px] md:leading-[36px] font-extrabold font-urban mb-2">Mission</h3>
-          <p className="text-black text-[12px] md:text-[13px] lg:text-[14px] leading-[18px]">
+          <p className="text-black text-[12px] md:text-[13px] lg:text-[16px] leading-[18px] lg:leading-[24px]">
             Our mission is to transform dreams into meaningful living
             experiences through uncompromising quality, customer-centric
             service, and sustainable innovation — ensuring every project truly

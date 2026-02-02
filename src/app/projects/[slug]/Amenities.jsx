@@ -261,9 +261,9 @@ export default function AmenitiesSection({ amenities, title, projectVideos }) {
             <h4 className="text-sm md:text-[16px] leading-[20px] font-urban font-bold">
               {amenities[activeIndex].name}
             </h4>
-            <p className="text-[12px] md:text-xs leading-[156%] text-gray-500">
+            {/* <p className="text-[12px] md:text-xs leading-[156%] text-gray-500">
               {amenities[activeIndex].subtext}
-            </p>
+            </p> */}
           </div>
 
           {/* RIGHT ARROW — MOBILE ONLY */}

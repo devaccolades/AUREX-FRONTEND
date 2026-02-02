@@ -19,7 +19,7 @@ export default function OurJourney() {
             OUR STORY.
           </h2>
 
-          <p className="text-black text-[12px] md:text-[13px] lg:text-[14px] leading-[18px]">
+          <p className="text-black text-[12px] md:text-[13px] lg:text-[15px] leading-[18px] lg:leading-[22px]">
             What began as a small initiative in the cultural capital of Kerala
             has evolved into a brand synonymous with reliability and
             craftsmanship. Over the years, Aures Builders has completed a
