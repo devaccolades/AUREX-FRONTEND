@@ -43,9 +43,9 @@ export async function generateMetadata({ params }) {
 
 
 export default async function Page({ params }) {
-  // const { slug } = await params; // ✅ REQUIRED
+  const { slug } = await params; // ✅ REQUIRED
 
-   const { slug } = params;
+  //  const { slug } = params;
 
   const project = await ProjectBySlugFetch(slug);
 

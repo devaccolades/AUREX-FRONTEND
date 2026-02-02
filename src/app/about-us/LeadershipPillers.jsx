@@ -29,14 +29,14 @@ export default function LeadershipPillers() {
 
                     {/* LEFT SIDE – White Content Box */}
                     {/* <div className="relative  md:w-[59%] lg:w-[70%] p-2 md:p-4 lg:p-4 xl:p-8 "> */}
-                    <div className="relative md:w-[59%] lg:w-[60%] p-2 md:p-4 lg:p-4 xl:p-8 flex flex-col min-h-full">
+                    <div className="relative md:w-[59%] lg:w-[60%] xl:w-[70%] p-2 md:p-4 lg:p-4 xl:p-8 flex flex-col min-h-full">
 
                         <h2 className="text-[20px] md:text-[28px] lg:text-[34px] font-medium font-urban leading-[20px] md:leading-[28px] lg:leading-[34px] mb-2 xl:mb-5">
                             Chairman’s Message
                         </h2>
 
 
-                        <div className="text-[12px] md:text-[13px] lg:text-[14px] leading-[20px]">
+                        <div className="text-[12px] md:text-[13px] lg:text-[14px] xl:text-[16px]  xl:leading-[22px] leading-[20px]">
                             <p className="text-black mb-2 xl:mb-4">
                                 At Aurex Builders, our philosophy is simple — we build to adorn lives.
                                 Each structure we create carries a purpose beyond architecture — it becomes
@@ -84,7 +84,7 @@ export default function LeadershipPillers() {
                     {/* RIGHT SIDE WITH TEAR EDGE + IMAGE */}
 
                     {/* <div className="mt-6 md:mt-0 relative h-full  md:h-auto lg:h-[464px] overflow-hidden"> */}
-                    <div className="mt-6 md:mt-0 p-0 md:p-4 relative h-[420px] md:h-auto lg:h-[464px] overflow-hidden">
+                    <div className="mt-6 md:mt-0 p-0 md:p-4 relative h-[360px] md:h-auto lg:h-[464px] overflow-hidden">
 
                         {/* Tear effect */}
                         <div className="absolute left-25  md:left-0 -top-56 md:top-0 h-full w-full md:w-[46px] lg:w-[42px] z-20 block ">
@@ -124,13 +124,13 @@ export default function LeadershipPillers() {
 
                     {/* LEFT SIDE – White Content Box */}
                     {/* <div className="relative  md:w-[59%] lg:w-[70%] p-2 md:p-4 lg:p-4 xl:p-8 "> */}
-                    <div className="relative md:w-[59%] lg:w-[60%] p-2 md:p-4 lg:p-4 xl:p-8 flex flex-col min-h-full">
+                    <div className="relative md:w-[59%] lg:w-[60%] xl:w-[70%] p-2 md:p-4 lg:p-4 xl:p-8 flex flex-col min-h-full">
 
                         <h2 className="text-[20px] md:text-[28px] lg:text-[34px] font-medium font-urban leading-[20px] md:leading-[28px] lg:leading-[34px] mb-2 xl:mb-5">
                             M D’s Leadership Journey
                         </h2>
 
-                        <div className="text-[12px] md:text-[13px] lg:text-[14px] leading-[20px]">
+                        <div className="text-[12px] md:text-[13px] lg:text-[14px] xl:text-[16px]  xl:leading-[22px] leading-[20px]">
                             <p className="text-black mb-2 xl:mb-4">
                                 Hailing from Thrissur, Kerala, Balachandran began his journey in the real estate sector
                                 at an impressively young age. With over three decades of experience in commercial and real
@@ -169,7 +169,7 @@ export default function LeadershipPillers() {
                     {/* RIGHT SIDE WITH TEAR EDGE + IMAGE */}
 
                     {/* <div className="mt-6 md:mt-0 relative h-full  md:h-auto lg:h-[464px] overflow-hidden"> */}
-                    <div className="mt-6 md:mt-0 p-0 md:p-4 relative h-[420px] md:h-auto lg:h-[464px] overflow-hidden">
+                    <div className="mt-6 md:mt-0 p-0 md:p-4 relative h-[360px] md:h-auto lg:h-[464px] overflow-hidden">
 
                         {/* Tear effect */}
                         <div className="absolute right-25  md:right-0 -top-56 md:top-0 h-full w-full md:w-[46px] lg:w-[42px] z-20 block ">
@@ -207,7 +207,7 @@ export default function LeadershipPillers() {
 
                     {/* LEFT SIDE – White Content Box */}
                     {/* <div className="relative  md:w-[59%] lg:w-[70%] p-2 md:p-4 lg:p-4 xl:p-8 "> */}
-                    <div className="relative md:w-[59%] lg:w-[60%] p-2 md:p-4 lg:p-4 xl:p-8 flex flex-col min-h-full">
+                    <div className="relative md:w-[59%] lg:w-[60%] xl:w-[70%]  p-2 md:p-4 lg:p-4 xl:p-8 flex flex-col min-h-full">
 
 
 
@@ -216,7 +216,7 @@ export default function LeadershipPillers() {
                         </h2>
 
 
-                        <div className="text-[12px] md:text-[13px] lg:text-[14px] leading-[20px]">
+                        <div className="text-[12px] md:text-[13px] lg:text-[14px] xl:text-[16px]  xl:leading-[22px] leading-[20px]">
                             <p className="text-black mb-2 xl:mb-4">
                                 Nurtured by the values and spirit of Kerala, Ajith Kumar’s entrepreneurial journey,
                                 based in Saudi Arabia, deepened his desire to uplift his homeland. His vision through
@@ -255,7 +255,7 @@ export default function LeadershipPillers() {
                     {/* RIGHT SIDE WITH TEAR EDGE + IMAGE */}
 
                     {/* <div className="mt-6 md:mt-0 relative h-full  md:h-auto lg:h-[464px] overflow-hidden"> */}
-                    <div className="mt-6 md:mt-0 p-0 md:p-4 relative h-[420px] md:h-auto lg:h-[464px] overflow-hidden">
+                    <div className="mt-6 md:mt-0 p-0 md:p-4 relative h-[360px] md:h-auto lg:h-[464px] overflow-hidden">
 
                         {/* Tear effect */}
                         <div className="absolute left-25  md:left-0 -top-56 md:top-0 h-full w-full md:w-[46px] lg:w-[42px] z-20 block ">
@@ -295,14 +295,14 @@ export default function LeadershipPillers() {
 
                     {/* LEFT SIDE – White Content Box */}
                     {/* <div className="relative  md:w-[59%] lg:w-[70%] p-2 md:p-4 lg:p-4 xl:p-8 "> */}
-                    <div className="relative md:w-[59%] lg:w-[60%] p-2 md:p-4 lg:p-4 xl:p-8 flex flex-col min-h-full">
+                    <div className="relative md:w-[59%] lg:w-[60%] xl:w-[70%] p-2 md:p-4 lg:p-4 xl:p-8 flex flex-col min-h-full">
 
 
                         <h2 className="text-[20px] md:text-[28px] lg:text-[34px] font-medium font-urban leading-[20px] md:leading-[28px] lg:leading-[34px] mb-2 xl:mb-5">
                             DIRECTOR’s Leadership Journey
                         </h2>
 
-                        <div className="text-[12px] md:text-[13px] lg:text-[14px] leading-[20px]">
+                        <div className="text-[12px] md:text-[13px] lg:text-[14px] xl:text-[16px]  xl:leading-[22px] leading-[20px]">
                             <p className="text-black mb-2 xl:mb-4">
                                 With strong leadership roots in Saudi Arabia and across the GCC, Suresh Kumar combines global business
                                 insight with a heartfelt commitment to Kerala’s growth and modern development. Through Aurex Builders,
@@ -337,7 +337,7 @@ export default function LeadershipPillers() {
                     {/* RIGHT SIDE WITH TEAR EDGE + IMAGE */}
 
                     {/* <div className="mt-6 md:mt-0 relative h-full  md:h-auto lg:h-[464px] overflow-hidden"> */}
-                    <div className="mt-6 md:mt-0 p-0 md:p-4 relative h-[420px] md:h-auto lg:h-[464px] overflow-hidden">
+                    <div className="mt-6 md:mt-0 p-0 md:p-4 relative h-[360px] md:h-auto lg:h-[464px] overflow-hidden">
 
                         {/* Tear effect */}
                         <div className="absolute right-25  md:right-0 -top-56 md:top-0 h-full w-full md:w-[46px] lg:w-[42px] z-20 block ">
