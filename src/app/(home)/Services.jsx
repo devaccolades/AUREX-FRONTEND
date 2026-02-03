@@ -193,7 +193,7 @@ export default function Services() {
         {/* Counter */}
         <div
           ref={counterRef}
-          className="text-[16px] leading-[32px] font-urban font-semibold tracking-widest mb-14 xl:mb-10 flex items-center gap-1"
+          className="absolute bottom-10 right-10 text-[16px] leading-[32px] font-urban font-semibold tracking-widest mb-14 xl:mb-10 flex items-center gap-1 "
         >
           <span className="text-[#D4A017]">01</span>
           <span className="text-black">/ 03</span>
