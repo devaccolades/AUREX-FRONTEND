@@ -11,7 +11,7 @@ const infoCards = [
   {
     icon: Mail,
     title: "Write to Us",
-    lines: ["info@aurexbuilders.com"],
+    lines: ["info@aurexbuilders.com", "sales@aurexbuilders.com"],
   },
   {
     icon: MapPin,

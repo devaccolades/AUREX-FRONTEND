@@ -77,8 +77,6 @@ export default function LeadershipPillers() {
                             </div>
                         </div>
 
-
-
                     </div>
 
                     {/* RIGHT SIDE WITH TEAR EDGE + IMAGE */}
