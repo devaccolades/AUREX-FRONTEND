@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
-const filters = ["Residential", "Commercial", "Contracts", ];
+const filters = ["Residential", "Commercial", "Contracts"];
 
 // const projects = [
 //   {
@@ -32,13 +32,11 @@ const filters = ["Residential", "Commercial", "Contracts", ];
 //   },
 // ];
 
-
-
 export default function ProjectListing({ data = [] }) {
   const [activeFilter, setActiveFilter] = useState("Commercial");
 
   const filteredProjects = data.filter(
-    (project) => project.project_type === activeFilter
+    (project) => project.project_type === activeFilter,
   );
 
   // const filteredProjects =
@@ -48,20 +46,17 @@ export default function ProjectListing({ data = [] }) {
 
   return (
     <section className="relative py-6 md:py-16 overflow-hidden">
-
       {/* BACKGROUND IMAGE */}
       <Image
-        src='/images/projects/bg.png'
+        src="/images/projects/bg.png"
         alt="Thrissur Background"
         fill
         className="object-cover rounded-[30px] "
         priority
       />
 
-
       {/* CONTENT */}
       <div className="relative z-10 container mx-auto ">
-
         {/* Heading */}
         <p className="text-[16px] md:text-[20px] leading-[16px] font-urban font-bold uppercase tracking-widest text-black mb-2">
           Our Completed Projects
@@ -74,9 +69,10 @@ export default function ProjectListing({ data = [] }) {
               key={filter}
               onClick={() => setActiveFilter(filter)}
               className={`px-4 py-1.5 rounded-full text-[12px] md:text-[13px] leading-[13px] font-bold font-urban uppercase border transition
-                ${activeFilter === filter
-                  ? "bg-black text-white border-black"
-                  : "bg-white text-black border-gray-300 hover:border-black"
+                ${
+                  activeFilter === filter
+                    ? "bg-black text-white border-black"
+                    : "bg-white text-black border-gray-300 hover:border-black"
                 }`}
             >
               {filter}
@@ -126,23 +122,22 @@ export default function ProjectListing({ data = [] }) {
                   {project.name}
                 </h3>
 
-                <p className="text-[13px] mt-2">
-                  {project.short_description}
-                </p>
+                <p className="text-[13px] mt-2">{project.short_description}</p>
               </div>
-
-              <div className="flex justify-center mt-3">
-                <a
-                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-                    project.location
-                  )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-urban text-sm font-semibold text-[#357CFF]"
-                >
-                  Get Direction
-                </a>
-              </div>
+              {activeFilter === "Residential" && (
+                <div className="flex justify-center mt-3">
+                  <a
+                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                      project.location,
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-urban text-sm font-semibold text-[#357CFF]"
+                  >
+                    Get Direction
+                  </a>
+                </div>
+              )}
             </div>
           ))}
 
@@ -205,7 +200,6 @@ export default function ProjectListing({ data = [] }) {
             </div>
           ))} */}
         </div>
-
       </div>
     </section>
   );
