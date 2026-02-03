@@ -6,9 +6,15 @@ import ModalForm from "@/components2/forms/ModalForm";
 import ProjectEnquiryModal from "@/components2/forms/ProjectEnquiryModal";
 
 export default function AmenitiesSection({ amenities, title, projectVideos }) {
-  if (!Array.isArray(amenities) || amenities.length === 0) {
-    return null; // ⛔ nothing to show
-  }
+  if (!Array.isArray(amenities) || amenities.length < 2) {
+  return null;
+}
+
+const normalizedAmenities =
+  amenities.length === 2
+    ? [...amenities, ...amenities, ...amenities]
+    : amenities;
+
   const playerRef = useRef(null);
   const apiReadyRef = useRef(false);
   const [openVideo, setOpenVideo] = useState(false);
@@ -65,7 +71,11 @@ export default function AmenitiesSection({ amenities, title, projectVideos }) {
     };
   }, [openVideo]);
 
-  const [activeIndex, setActiveIndex] = useState(2);
+  const [activeIndex, setActiveIndex] = useState(0);
+  useEffect(() => {
+  setActiveIndex(0);
+}, [normalizedAmenities]);
+
   const [sizes, setSizes] = useState({
     cardW: 260,
     cardH: 420,
@@ -141,18 +151,42 @@ export default function AmenitiesSection({ amenities, title, projectVideos }) {
     return () => window.removeEventListener("resize", updateSizes);
   }, []);
 
-  const prevSlide = () => {
-    setActiveIndex((prev) => (prev + 1) % amenities.length);
-  };
+  // const prevSlide = () => {
+  //   setActiveIndex((prev) => (prev + 1) % amenities.length);
+  // };
 
-  const nextSlide = () => {
-    setActiveIndex((prev) => (prev - 1 + amenities.length) % amenities.length);
-  };
+  // const nextSlide = () => {
+  //   setActiveIndex((prev) => (prev - 1 + amenities.length) % amenities.length);
+  // };
+  const prevSlide = () => {
+  setActiveIndex((prev) => (prev + 1) % normalizedAmenities.length);
+};
+
+const nextSlide = () => {
+  setActiveIndex(
+    (prev) =>
+      (prev - 1 + normalizedAmenities.length) %
+      normalizedAmenities.length
+  );
+};
+
+
+  // const visibleSlides = [-2, -1, 0, 1, 2].map((pos) => {
+  //   const index = (activeIndex + pos + amenities.length) % amenities.length;
+  //   return { ...amenities[index], position: pos, index };
+  // });
 
   const visibleSlides = [-2, -1, 0, 1, 2].map((pos) => {
-    const index = (activeIndex + pos + amenities.length) % amenities.length;
-    return { ...amenities[index], position: pos, index };
-  });
+  const index =
+    (activeIndex + pos + normalizedAmenities.length) %
+    normalizedAmenities.length;
+
+  return {
+    ...normalizedAmenities[index],
+    position: pos,
+    index,
+  };
+});
 
   return (
     <section className="pt-0 pb-8 md:pb-24 bg-gradient-to-b from-white to-[#f3f8fd] overflow-hidden">
@@ -259,7 +293,8 @@ export default function AmenitiesSection({ amenities, title, projectVideos }) {
           {/* TITLE + SUBTITLE */}
           <div className="text-center">
             <h4 className="text-sm md:text-[16px] leading-[20px] font-urban font-bold">
-              {amenities[activeIndex].name}
+              {/* {amenities[activeIndex].name} */}
+              {normalizedAmenities[activeIndex]?.name}
             </h4>
             {/* <p className="text-[12px] md:text-xs leading-[156%] text-gray-500">
               {amenities[activeIndex].subtext}
