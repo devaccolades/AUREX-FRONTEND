@@ -79,7 +79,7 @@ export default function Header() {
           />
         </div>
 
-        <div
+        {/* <div
           className={`flex justify-center transition-all duration-300 ${scrolled ? "w-20" : "w-16 md:w-32"
             }`}
         >
@@ -92,7 +92,28 @@ export default function Header() {
             alt="logo"
             className="transition-all duration-300"
           />
-        </div>
+        </div> */}
+
+        <div
+  className={`flex justify-center items-center transition-all duration-300 ${
+    scrolled ? "w-20" : "w-16 md:w-32"
+  }`}
+>
+  {scrolled ? (
+    <span className="font-urban text-white text-lg md:text-xl font-semibold tracking-wide transition-all duration-300">
+      Aurex
+    </span>
+  ) : (
+    <Image
+      src="/images/aurex-logo.svg"
+      width={isMobile ? 35 : 50}
+      height={isMobile ? 40 : 50}
+      alt="logo"
+      className="transition-all duration-300"
+    />
+  )}
+</div>
+
         <div className="w-[24px] h-[24px] flex justify-end">
           <a href="tel:+919846007474" aria-label="Call us">
             <Image
