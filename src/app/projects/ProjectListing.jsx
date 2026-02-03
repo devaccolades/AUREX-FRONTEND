@@ -95,6 +95,10 @@ export default function ProjectListing({ data = [] }) {
                     className="w-full h-full border-0"
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
+                    style={{
+                      pointerEvents:
+                        activeFilter === "Residential" ? "auto" : "none",
+                    }}
                     allowFullScreen
                   />
                 ) : (
