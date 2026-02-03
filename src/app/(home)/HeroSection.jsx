@@ -22,7 +22,8 @@ export default function HeroSection({ data }) {
   const [active, setActive] = useState(0);
   const [showVideo, setShowVideo] = useState(true);
   const [startSlider, setStartSlider] = useState(false);
-
+  const [isMobiles, setIsMobiles] = useState(false);
+  const [videoPlayCount, setVideoPlayCount] = useState(0);
   const [residentialProjects, setResidentialProjects] = useState(
     data.filter((item) => item.project_type === "Residential"),
   );
@@ -75,6 +76,13 @@ export default function HeroSection({ data }) {
 
     return () => clearInterval(interval);
   }, [startSlider, residentialProjects.length]);
+
+  useEffect(() => {
+  const check = () => setIsMobiles(window.innerWidth < 768);
+  check();
+  window.addEventListener("resize", check);
+  return () => window.removeEventListener("resize", check);
+}, []);
 
 
 
@@ -192,7 +200,8 @@ export default function HeroSection({ data }) {
         </div>
 
         {/* BOTTOM PROJECT INFO */}
-        {isMobile ? (
+          {!showVideo && (
+        isMobile ? (
           <div className="md:hidden absolute bottom-[16px] left-0 w-full px-0 z-30 flex justify-center">
             {/* <div className="relative bg-white/20 backdrop-blur-xl rounded-2xl border border-white/20 p-3 flex items-center gap-3 overflow-hidden"> */}
 
@@ -377,12 +386,13 @@ export default function HeroSection({ data }) {
               {/* </div> */}
             </GlassSurface>
           </div>
-        )}
+        ))}
         {/* <div className="w-ful flex justify-center py-0 px-4"> */}
 
         {/* ================= MOBILE HERO PROJECT CARD ================= */}
 
         {/* SLIDE CONTROLS */}
+        {!showVideo && (
         <div className="absolute bottom-12 lg:bottom-6 right-4 text-white md:flex hidden items-center gap-[10px]  ">
           <div className="">
             <span className="font-urban font-medium text-[14px] leading-[32px] tracking-[0%]  text-[#D6A12B] ">
@@ -415,6 +425,7 @@ export default function HeroSection({ data }) {
             <ChevronRight />
           </button>
         </div>
+        )}
         {/* mobile slide bar */}
         <div className="relative w-full z-30 md:hidden -bottom-6">
           <div className="absolute w-full bottom-[53px] left-1/2 right-1/2 -translate-x-1/2 -translate-y-1/2 lg:bottom-6  text-white flex md:hidden items-center justify-between  gap-3">
