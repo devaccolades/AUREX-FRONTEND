@@ -15,18 +15,18 @@ export default function ContactCtaSection() {
           
           {/* Email */}
           <a
-            href="mailto:assistance@aurexbuilders.com"
-            className="border border-black rounded-[24px] px-6 py-2 text-[12px] md:text-[14px] lg:text-[16px] leading-[16px] font-urban font-extrabold tracking-wide hover:bg-black hover:text-white transition"
+            href="mailto:sales@aurexbuilders.com"
+            className="border border-black uppercase rounded-[24px] px-6 py-2 text-[12px] md:text-[14px] lg:text-[16px] leading-[16px] font-urban font-extrabold tracking-wide hover:bg-black hover:text-white transition"
           >
-            ASSISTANCE@AUREXBUILDERS.COM
+            sales@aurexbuilders.com
           </a>
 
           {/* Phone */}
           <a
-            href="tel:+919249089574"
+            href="tel:+919846507474"
             className="border border-black rounded-[24px] px-6 py-2 text-[12px] md:text-[14px] lg:text-[16px] leading-[16px] font-urban font-extrabold tracking-wide hover:bg-black hover:text-white transition"
           >
-            +91 92490 89574
+            +91 98465 07474
           </a>
 
         </div>

@@ -7,7 +7,7 @@ import arrow from '../../../public/images/gallery/Rectangle.svg'
 import Preview from '../../../public/images/gallery/preview.svg'
 
 export default function Moments({ events, eventGallery }) {
-  console.log('errrr', eventGallery);
+  // console.log('errrr', eventGallery);
 
   const [activeCategory, setActiveCategory] = useState('All')
   const [visible, setVisible] = useState(6)
