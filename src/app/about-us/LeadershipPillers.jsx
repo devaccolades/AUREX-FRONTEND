@@ -18,7 +18,7 @@ export default function LeadershipPillers() {
 
             <div className="flex flex-col gap-4 md:gap-10">
                 {/* leader1 */}
-                <section className="relative container items-stretch  bg-[#F5F5F5] flex flex-col md:flex-row justify-between rounded-[10px] overflow-hidden border border-gray-400 mt-10 ">
+                <section className="relative container items-stretch  bg-[#F5F5F5] flex flex-col-reverse md:flex-row justify-between rounded-[10px] overflow-hidden border border-gray-400 mt-10 ">
 
                     {/* Corner Highlights */}
                     <span className="absolute top-0 left-0 w-4 h-4 border-t-4 border-l-4 border-black rounded-tl-[10px]" />
@@ -84,10 +84,10 @@ export default function LeadershipPillers() {
                     {/* RIGHT SIDE WITH TEAR EDGE + IMAGE */}
 
                     {/* <div className="mt-6 md:mt-0 relative h-full  md:h-auto lg:h-[464px] overflow-hidden"> */}
-                    <div className="mt-6 md:mt-0 p-0 md:p-4 relative h-[360px] md:h-auto lg:h-[464px] overflow-hidden">
+                    <div className="mt-0 md:mt-0 p-0 md:p-4 relative h-[340px] md:h-auto lg:h-[464px] overflow-hidden">
 
                         {/* Tear effect */}
-                        <div className="absolute left-25  md:left-0 -top-56 md:top-0 h-full w-full md:w-[46px] lg:w-[42px] z-20 block ">
+                        <div className="absolute right-15  md:left-0 -bottom-46 md:top-0 h-full w-full md:w-[46px] lg:w-[42px] z-20 block ">
                             <Image
                                 src="/images/about/teared.svg"
                                 alt="Tear Effect"
@@ -114,7 +114,7 @@ export default function LeadershipPillers() {
 
 
                 {/* leader2 */}
-                <section className="relative container items-stretchmt-20 bg-[#F5F5F5] flex flex-col md:flex-row-reverse justify-between rounded-[10px] overflow-hidden border border-gray-400 ">
+                <section className="relative container items-stretchmt-20 bg-[#F5F5F5] flex flex-col-reverse md:flex-row-reverse justify-between rounded-[10px] overflow-hidden border border-gray-400 ">
 
                     {/* Corner Highlights */}
                     <span className="absolute top-0 left-0 w-4 h-4 border-t-4 border-l-4 border-black rounded-tl-[10px]" />
@@ -131,14 +131,18 @@ export default function LeadershipPillers() {
                         </h2>
 
                         <div className="text-[12px] md:text-[13px] lg:text-[14px] xl:text-[16px]  xl:leading-[22px] leading-[20px]">
+
                             <p className="text-black mb-2 xl:mb-4">
-                                Hailing from Thrissur, Kerala, Balachandran began his journey in the real estate sector
-                                at an impressively young age. With over three decades of experience in commercial and real
-                                estate development, he has built a reputation founded on trust, expertise, and innovation.
-                                His forward-thinking approach and unwavering commitment have shaped countless successful projects,
-                                making him a respected and influential name in the industry. Known for his integrity and strong
-                                professional network, Balachandran continues to be a driving force-bringing value, vision, and
-                                sustainable growth to every venture he undertakes.
+                                Balachandran hails from Thrissur, Kerala, and began his journey in the real estate sector at
+                                an impressively young age. His early start laid the foundation for a career driven by ambition and vision.
+                            </p>
+                            <p className="text-black mb-2 xl:mb-4">
+                                With over three decades of experience in commercial and real estate development, he has built a reputation
+                                rooted in trust, expertise, and innovation. His forward-thinking approach has shaped numerous successful projects across the industry.
+                            </p>
+                            <p className="text-black mb-2 xl:mb-4">
+                                Known for his integrity and strong professional network, Balachandran remains a respected and influential figure in real estate.
+                                He continues to drive value, vision, and sustainable growth in every venture he undertakes.
                             </p>
 
 
@@ -158,7 +162,7 @@ export default function LeadershipPillers() {
                                     BALACHANDRAN
                                 </h4>
                                 <p className="font-urban font-normal text-[12px] lg:text-[14px] leading-[24px]">
-                                    MANAGING DIRECTOR, Aurex Builders
+                                    Managing Director, Aurex Builders
                                 </p>
                             </div>
                         </div>
@@ -169,10 +173,10 @@ export default function LeadershipPillers() {
                     {/* RIGHT SIDE WITH TEAR EDGE + IMAGE */}
 
                     {/* <div className="mt-6 md:mt-0 relative h-full  md:h-auto lg:h-[464px] overflow-hidden"> */}
-                    <div className="mt-6 md:mt-0 p-0 md:p-4 relative h-[360px] md:h-auto lg:h-[464px] overflow-hidden">
+                    <div className="mt-0 md:mt-0 p-0 md:p-4 relative h-[340px] md:h-auto lg:h-[464px] overflow-hidden">
 
                         {/* Tear effect */}
-                        <div className="absolute right-25  md:right-0 -top-56 md:top-0 h-full w-full md:w-[46px] lg:w-[42px] z-20 block ">
+                        <div className=" absolute right-15  md:right-0 -bottom-46 md:top-0 h-full w-full md:w-[46px] lg:w-[42px] z-20 block ">
                             <Image
                                 src="/images/about/teared.svg"
                                 alt="Tear Effect"
@@ -196,7 +200,7 @@ export default function LeadershipPillers() {
                 </section>
 
                 {/* leader3 */}
-                <section className="relative container items-stretch bg-[#F5F5F5] flex flex-col md:flex-row justify-between rounded-[10px] overflow-hidden border border-gray-400 mt-10 ">
+                <section className="relative container items-stretch bg-[#F5F5F5] flex flex-col-reverse md:flex-row justify-between rounded-[10px] overflow-hidden border border-gray-400 mt-10 ">
 
                     {/* Corner Highlights */}
                     <span className="absolute top-0 left-0 w-4 h-4 border-t-4 border-l-4 border-black rounded-tl-[10px]" />
@@ -218,13 +222,18 @@ export default function LeadershipPillers() {
 
                         <div className="text-[12px] md:text-[13px] lg:text-[14px] xl:text-[16px]  xl:leading-[22px] leading-[20px]">
                             <p className="text-black mb-2 xl:mb-4">
-                                Nurtured by the values and spirit of Kerala, Ajith Kumar’s entrepreneurial journey,
-                                based in Saudi Arabia, deepened his desire to uplift his homeland. His vision through
-                                Aurex Builders is to bring global innovation, advanced lifestyles, and modern infrastructure
-                                to Kerala-creating spaces that honour its culture while embracing a brighter, progressive future.
+                                Rooted in the values and spirit of Kerala, Ajith Kumar’s entrepreneurial journey took shape in Saudi Arabia.
+                                His global exposure strengthened his commitment to give back to his homeland.
                             </p>
 
-
+                            <p className="text-black mb-2 xl:mb-4">
+                                Through Aurex Builders, his vision is to introduce global innovation and advanced lifestyles to Kerala.
+                                He seeks to bridge international standards with local aspirations.
+                            </p>
+                            <p className="text-black mb-2 xl:mb-4">
+                                By bringing modern infrastructure that respects culture and tradition, Ajith Kumar aims to shape a brighter, progressive future.
+                                His work reflects a balance between heritage, growth, and forward thinking.
+                            </p>
 
 
                         </div>
@@ -240,10 +249,10 @@ export default function LeadershipPillers() {
                             {/* NAME BLOCK */}
                             <div className="mt-2 xl:mt-4">
                                 <h4 className="font-bold font-urban text-[14px] lg:text-[16px]">
-                                    Ajith KUMAR
+                                    AJITH KUMAR
                                 </h4>
                                 <p className="font-urban font-normal text-[12px] lg:text-[14px] leading-[24px]">
-                                    DIRECTOR, Aurex Builders
+                                    Director, Aurex Builders
                                 </p>
                             </div>
                         </div>
@@ -255,10 +264,10 @@ export default function LeadershipPillers() {
                     {/* RIGHT SIDE WITH TEAR EDGE + IMAGE */}
 
                     {/* <div className="mt-6 md:mt-0 relative h-full  md:h-auto lg:h-[464px] overflow-hidden"> */}
-                    <div className="mt-6 md:mt-0 p-0 md:p-4 relative h-[360px] md:h-auto lg:h-[464px] overflow-hidden">
+                    <div className="mt-0 md:mt-0 p-0 md:p-4 relative h-[340px] md:h-auto lg:h-[464px] overflow-hidden">
 
                         {/* Tear effect */}
-                        <div className="absolute left-25  md:left-0 -top-56 md:top-0 h-full w-full md:w-[46px] lg:w-[42px] z-20 block ">
+                        <div className=" absolute right-15  md:left-0 -bottom-46 md:top-0 h-full w-full md:w-[46px] lg:w-[42px] z-20 block ">
                             <Image
                                 src="/images/about/teared.svg"
                                 alt="Tear Effect"
@@ -285,7 +294,7 @@ export default function LeadershipPillers() {
                 </section>
 
                 {/* leader4 */}
-                <section className="relative container  items-stretch mt-20 bg-[#F5F5F5] flex flex-col md:flex-row-reverse justify-between rounded-[10px] overflow-hidden border border-gray-400 ">
+                <section className="relative container  items-stretch mt-20 bg-[#F5F5F5] flex flex-col-reverse md:flex-row-reverse justify-between rounded-[10px] overflow-hidden border border-gray-400 ">
 
                     {/* Corner Highlights */}
                     <span className="absolute top-0 left-0 w-4 h-4 border-t-4 border-l-4 border-black rounded-tl-[10px]" />
@@ -295,7 +304,7 @@ export default function LeadershipPillers() {
 
                     {/* LEFT SIDE – White Content Box */}
                     {/* <div className="relative  md:w-[59%] lg:w-[70%] p-2 md:p-4 lg:p-4 xl:p-8 "> */}
-                    <div className="relative md:w-[59%] lg:w-[60%] xl:w-[70%] p-2 md:p-4 lg:p-4 xl:p-8 flex flex-col min-h-full">
+                    <div className="relative md:w-[59%] lg:w-[60%] xl:w-[70%] p-2 md:p-4 lg:p-4 xl:p-8 flex flex-col min-h-full ">
 
 
                         <h2 className="text-[20px] md:text-[28px] lg:text-[34px] font-medium font-urban leading-[20px] md:leading-[28px] lg:leading-[34px] mb-2 xl:mb-5">
@@ -304,12 +313,22 @@ export default function LeadershipPillers() {
 
                         <div className="text-[12px] md:text-[13px] lg:text-[14px] xl:text-[16px]  xl:leading-[22px] leading-[20px]">
                             <p className="text-black mb-2 xl:mb-4">
-                                With strong leadership roots in Saudi Arabia and across the GCC, Suresh Kumar combines global business
-                                insight with a heartfelt commitment to Kerala’s growth and modern development. Through Aurex Builders,
-                                he envisions bringing world-class living, modern technologies, and innovative designs to Kerala-building
-                                not just structures, but a lifestyle that reflects pride, progress, and heartfelt connection.
+                                With strong leadership roots in Saudi Arabia and across the GCC, Suresh Kumar brings global business insight
+                                shaped by international experience. His journey reflects a balance of strategy, scale, and vision.
 
                             </p>
+                            <p className="text-black mb-2 xl:mb-4">
+                                Guided by a deep commitment to Kerala’s growth and modern development, he channels this expertise through Aurex Builders.
+                                His focus is on elevating standards while staying connected to local values.
+
+                            </p>
+
+                            <p className="text-black mb-2 xl:mb-4">
+                                By introducing world-class living, modern technologies, and innovative designs, Suresh Kumar aims to create more than structures.
+                                He is building a lifestyle that embodies pride, progress, and a heartfelt connection to home.
+
+                            </p>
+
 
                         </div>
 
@@ -327,7 +346,7 @@ export default function LeadershipPillers() {
                                     SURESH KUMAR
                                 </h4>
                                 <p className="font-urban font-normal text-[12px] lg:text-[14px] leading-[24px]">
-                                    DIRECTOR, Aurex Builders
+                                    Director, Aurex Builders
                                 </p>
                             </div>
                         </div>
@@ -337,10 +356,10 @@ export default function LeadershipPillers() {
                     {/* RIGHT SIDE WITH TEAR EDGE + IMAGE */}
 
                     {/* <div className="mt-6 md:mt-0 relative h-full  md:h-auto lg:h-[464px] overflow-hidden"> */}
-                    <div className="mt-6 md:mt-0 p-0 md:p-4 relative h-[360px] md:h-auto lg:h-[464px] overflow-hidden">
+                    <div className="mt-0 md:mt-0 p-0 md:p-4 relative h-[340px] md:h-auto lg:h-[464px] overflow-hidden">
 
                         {/* Tear effect */}
-                        <div className="absolute right-25  md:right-0 -top-56 md:top-0 h-full w-full md:w-[46px] lg:w-[42px] z-20 block ">
+                        <div className=" absolute right-15  md:right-0 -bottom-46 md:top-0 h-full w-full md:w-[46px] lg:w-[42px] z-20 block ">
                             <Image
                                 src="/images/about/teared.svg"
                                 alt="Tear Effect"
