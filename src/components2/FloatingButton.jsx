@@ -17,7 +17,7 @@ export default function FloatingButtons() {
             <div
                 className="
     fixed top-1/2 -translate-y-1/2 z-[999]
-    flex flex-col gap-1
+    flex flex-col gap-2
     right-0
 
     transition-all duration-300 ease-in-out
@@ -38,7 +38,7 @@ export default function FloatingButtons() {
                         width={44}
                         height={44}
                         alt="Chat on WhatsApp"
-                        className="w-[36px] h-[36px] md:w-[40px] md:h-[40px] lg:w-[44px] lg:h-[44px]"
+                        className="w-[46px] h-[46px] md:w-[40px] md:h-[40px] lg:w-[58px] lg:h-[58px]"
                     />
                 </a>
 
@@ -50,7 +50,7 @@ export default function FloatingButtons() {
                             width={44}
                             height={44}
                             alt="call"
-                            className="w-[20px] h-[20px] lg:w-[22px] lg:h-[22px] invert brightness-100"
+                            className="w-[28px] h-[28px] lg:w-[32px] lg:h-[32px] invert brightness-100"
                         />
                     </div>
                 </a>

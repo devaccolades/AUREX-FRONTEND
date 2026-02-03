@@ -155,7 +155,7 @@ export default function HeroSection({ data }) {
 
           <div className=" text-white text-center flex flex-col items-center">
             <p className="font-urban font-semibold text-[14px] leading-[14px] tracking-[0%] xl:text-[20px] xl:leading-[20px] ">
-              At the heart of Thrissur,
+              In the heart of Thrissur,
             </p>
             <h1 className="font-urban font-semibold text-[36px] leading-[35px] tracking-[0%] mt-[6px] md:max-w-[270px] xl:text-[48px] xl:leading-[43px] xl:max-w-[382px]">
               {" "}
