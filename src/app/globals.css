@@ -28,6 +28,28 @@ body {
   background-color: #ececec;
 }
 
+.rich-text-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.rich-text-wrapper th,
+.rich-text-wrapper td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.rich-text-wrapper th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.rich-text-wrapper table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
 .container {
   width: 80%;
   margin: 0 auto;
