@@ -25,7 +25,7 @@ const infoCards = [
     icon: Clock,
     title: "Office Hours",
     lines: [
-      "Monday – Saturday : 9:30 AM to 6:00 PM",
+      "Monday – Saturday : 9:30 AM to 5:30 PM",
       "Sunday : Closed",
     ],
   },
