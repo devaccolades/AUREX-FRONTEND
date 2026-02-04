@@ -100,7 +100,7 @@ export default function FloorPlansSection({floorplan}) {
                   {plan.image && (
                 <div
                   onClick={() => setPreviewImage(plan.image)}
-                  className="relative w-full aspect-square rounded-2xl overflow-hidden cursor-pointer group"
+                  className="relative w-full aspect-square rounded-2xl overflow-hidden cursor-pointer group border border-gray-300"
                 >
                   <Image
                     src={plan.image}
