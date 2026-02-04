@@ -130,7 +130,9 @@ export default function HeroSection({ data }) {
 
 
       {/* OVERLAY GRADIENT */}
-      {/* <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent z-10"></div> */}
+      {/* <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent z-10"></div> */}
+      <div className="absolute bottom-0 left-0 w-full h-[150px] bg-gradient-to-t from-black/40 to-transparent z-10"></div>
+
 
       {/* CONTENT */}
       <div className="container relative z-20 w-full h-full flex flex-col justify-between pb-6 xl:w-[80%]">
@@ -393,7 +395,7 @@ export default function HeroSection({ data }) {
 
         {/* SLIDE CONTROLS */}
         {!showVideo && (
-        <div className="absolute bottom-12 lg:bottom-6 right-4 text-white md:flex hidden items-center gap-[10px]  ">
+        <div className="absolute bottom-12 md:bottom-4 lg:bottom-6 right-4 text-white md:flex hidden items-center gap-[10px]  ">
           <div className="">
             <span className="font-urban font-medium text-[14px] leading-[32px] tracking-[0%]  text-[#D6A12B] ">
               {String(active + 1).padStart(2, "0")}

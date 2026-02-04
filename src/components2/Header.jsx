@@ -46,8 +46,8 @@ export default function Header() {
     <>
       <header
         className={`fixed top-0 left-0 w-full z-[99] flex items-center justify-between transition-all duration-300 ${scrolled
-            ? "p-6 md:p-10"
-            : "p-8 md:p-16"
+          ? "p-6 md:p-10"
+          : "p-8 md:p-16"
           }`}
         style={{
           height: scrolled ? "60px" : "50px md:110px",
@@ -169,25 +169,36 @@ export default function Header() {
           <div className="mt-5 space-y-3 ">
             {/* EMAIL */}
             <div className="flex items-center gap-3">
-              <div className="w-5 h-5  rounded">
+              <div className="w-5 h-5 rounded">
                 <Image src={mail} width={22} height={22} alt="mail icon" />
-              </div>{" "}
-              {/* ICON placeholder */}
-              <p className="font-bold font-urban text-[12px] leading-[16px]">
+              </div>
+
+              <a
+                href="mailto:sales@aurexbuilders.com "
+                className="font-bold font-urban text-[12px] leading-[16px] hover:underline"
+              >
                 SALES@AUREXBUILDERS.COM
-              </p>
+              </a>
             </div>
+
 
             {/* PHONE */}
             <div className="flex items-center gap-3">
-              <div className="w-5 h-5  rounded">
+              <div className="w-5 h-5 rounded">
                 <Image src={call} width={22} height={22} alt="call icon" />
-              </div>{" "}
-              {/* ICON placeholder */}
+              </div>
+
               <p className="font-bold font-urban text-[12px] leading-[16px]">
-                +91 98465 07474 / 98460 07474
+                <a href="tel:+919846507474" className="hover:underline">
+                  +91 98465 07474
+                </a>{" "}
+                /{" "}
+                <a href="tel:+919846007474" className="hover:underline">
+                  98460 07474
+                </a>
               </p>
             </div>
+
           </div>
 
           {/* TEXT BLOCK BELOW MAP */}
@@ -203,9 +214,12 @@ export default function Header() {
             </div>
 
             <div className="flex justify-end pb-1">
-              <button className="w-[50%] font-roboto text-[12px] font-bold leading-[156%] bg-[#EF4036] text-white px-[10px] py-2 rounded-[6px]  cursor-pointer">
+              <a
+                href="tel:+919846507474"
+                className="w-[50%] text-center font-roboto text-[12px] font-bold leading-[156%] bg-[#EF4036] text-white px-[10px] py-2 rounded-[6px] cursor-pointer"
+              >
                 Talk to Sales
-              </button>
+              </a>
             </div>
           </div>
         </div>
