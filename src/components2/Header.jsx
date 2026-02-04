@@ -79,40 +79,23 @@ export default function Header() {
           />
         </div>
 
-        {/* <div
-          className={`flex justify-center transition-all duration-300 ${scrolled ? "w-20" : "w-16 md:w-32"
+        <div
+          className={`flex justify-center transition-all duration-300 ${scrolled ? "w-40" : "w-16 md:w-32"
             }`}
         >
           <Image
             src={
-              scrolled ? "/images/aurex-white.png" : "/images/aurex-logo.svg"
+              scrolled ? "/images/aurex-text-logo.svg" : "/images/aurex-logo.svg"
             }
-            width={scrolled ? (isMobile ? 30 : 40) : isMobile ? 35 : 50}
-            height={scrolled ? (isMobile ? 30 : 40) : isMobile ? 40 : 50}
+            // width={scrolled ? (isMobile ? 30 : 40) : isMobile ? 35 : 50}
+            // height={scrolled ? (isMobile ? 30 : 40) : isMobile ? 40 : 50}
+            width={scrolled ? (isMobile ? 70 : 100) : isMobile ? 35 : 60}
+            height={scrolled ? (isMobile ? 70 : 100) : isMobile ? 40 : 60}
             alt="logo"
             className="transition-all duration-300"
           />
-        </div> */}
+        </div>
 
-        <div
-  className={`flex justify-center items-center transition-all duration-300 ${
-    scrolled ? "w-20" : "w-16 md:w-32"
-  }`}
->
-  {scrolled ? (
-    <span className="font-urban text-white text-lg md:text-xl font-semibold tracking-wide transition-all duration-300">
-      Aurex
-    </span>
-  ) : (
-    <Image
-      src="/images/aurex-logo.svg"
-      width={isMobile ? 35 : 50}
-      height={isMobile ? 40 : 50}
-      alt="logo"
-      className="transition-all duration-300"
-    />
-  )}
-</div>
 
         <div className="w-[24px] h-[24px] flex justify-end">
           <a href="tel:+919846007474" aria-label="Call us">
