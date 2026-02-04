@@ -5,27 +5,6 @@ import Image from 'next/image'
 import arrow from '../../../../public/images/blog-inner/down-arrow.svg'
 import Link from 'next/link'
 
-const relatedBlogs = [
-    {
-        id: 1,
-        category: '🧱 Construction Tips',
-        title: 'GREEN LIVING: THE FUTURE OF MODERN HOMES',
-        desc: 'Explore the world of architecture, design...',
-    },
-    {
-        id: 2,
-        category: '🧱 Construction Tips',
-        title: 'GREEN LIVING: THE FUTURE OF MODERN HOMES',
-        desc: 'Explore the world of architecture, design...',
-    },
-    {
-        id: 3,
-        category: '🧱 Construction Tips',
-        title: 'GREEN LIVING: THE FUTURE OF MODERN HOMES',
-        desc: 'Explore the world of architecture, design...',
-    },
-]
-
 export default function BlogContentSection({ data, rel }) {
     const [expanded, setExpanded] = useState(false)
 
@@ -33,12 +12,6 @@ export default function BlogContentSection({ data, rel }) {
         <div className="">
             <div className="grid grid-cols-1 md:grid-cols-4 md:gap-2 lg:gap-3 xl:gap-4">
                 <div className="md:col-span-3 border border-gray-200 ">
-                    {/* <div className="container py-6 md:py-10 lg:py-12">
-                        <h3 className="font-urban text-[16px] leading-[16px] lg:text-[20px] lg:leading-[150%] -tracking-[3%] text-[#000000] font-medium mb-4">Introduction</h3>
-                        <p className="font-inter font-normal text-[13px] md:text-[14px] lg:text-[16px] xl:text-[18px] leading-[150%] -tracking-[3%] text-[#818181]">
-                            Artificial Intelligence (AI) has emerged as a transformative force in the healthcare industry, reshaping patient care, diagnostics, and research. In this blog post, we explore the profound impact of AI in healthcare, from revolutionizing diagnostic accuracy to enhancing patient outcomes.
-                        </p>
-                    </div> */}
                     <div className='border-b border-gray-200 '></div>
                     <div className='container py-6 md:pt-10 lg:py-12'>
                         <div
@@ -46,15 +19,23 @@ export default function BlogContentSection({ data, rel }) {
   ${!expanded ? 'max-h-[420px] overflow-hidden' : ''}`}
                         >
                             <div
-                                className={`relative
-  [&_h1]:text-black [&_h2]:text-black [&_h3]:text-black
-  [&_h1]:font-extrabold [&_h2]:font-bold [&_h3]:font-semibold
-  [&_h1]:tracking-[-0.02em] [&_h2]:tracking-[-0.02em]
-  [&_p]:font-inter [&_p]:text-[#818181] [&_p]:leading-[150%]
-  [&_p]:mb-4
-  ${!expanded ? 'max-h-[420px] overflow-hidden' : ''}`}
-                                dangerouslySetInnerHTML={{ __html: data.content }}
-                            />
+  className={`relative
+    [&_h1]:text-black [&_h2]:text-black [&_h3]:text-black
+    [&_h1]:font-extrabold [&_h2]:font-bold [&_h3]:font-semibold
+    [&_h1]:tracking-[-0.02em] [&_h2]:tracking-[-0.02em]
+
+    [&_p]:font-inter [&_p]:text-[#818181] [&_p]:leading-[150%]
+    [&_p]:mb-4
+
+    /* ✅ LIST FIX */
+    [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-4
+    [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-4
+    [&_li]:mb-2
+
+    ${!expanded ? "max-h-[420px] overflow-hidden" : ""}
+  `}
+  dangerouslySetInnerHTML={{ __html: data.content }}
+/>
 
                             {!expanded && (
                                 <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent" />
