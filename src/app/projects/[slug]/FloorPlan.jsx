@@ -3,42 +3,42 @@
 import Image from "next/image";
 import { useMemo, useState } from "react";
 
-const floorPlans = {
-  "2bhk": [
-    {
-      id: 1,
-      type: "TYPE A - 2 BHK",
-      area: "1071.37 SQFT",
-      image: "/images/projects/floor.jpg",
-    },
-    {
-      id: 2,
-      type: "TYPE B - 2 BHK",
-      area: "1070.48 SQFT",
-      image: "/images/projects/floor.jpg",
-    },
-    {
-      id: 3,
-      type: "TYPE D - 2 BHK",
-      area: "951.70 SQFT",
-      image: "/images/projects/floor.jpg",
-    },
-  ],
-  "3bhk": [
-    {
-      id: 4,
-      type: "TYPE A - 3 BHK",
-      area: "1420.55 SQFT",
-      image: "/images/projects/floor.jpg",
-    },
-    {
-      id: 5,
-      type: "TYPE B - 3 BHK",
-      area: "1480.25 SQFT",
-      image: "/images/projects/floor.jpg",
-    },
-  ],
-};
+// const floorPlans = {
+//   "2bhk": [
+//     {
+//       id: 1,
+//       type: "TYPE A - 2 BHK",
+//       area: "1071.37 SQFT",
+//       image: "/images/projects/floor.jpg",
+//     },
+//     {
+//       id: 2,
+//       type: "TYPE B - 2 BHK",
+//       area: "1070.48 SQFT",
+//       image: "/images/projects/floor.jpg",
+//     },
+//     {
+//       id: 3,
+//       type: "TYPE D - 2 BHK",
+//       area: "951.70 SQFT",
+//       image: "/images/projects/floor.jpg",
+//     },
+//   ],
+//   "3bhk": [
+//     {
+//       id: 4,
+//       type: "TYPE A - 3 BHK",
+//       area: "1420.55 SQFT",
+//       image: "/images/projects/floor.jpg",
+//     },
+//     {
+//       id: 5,
+//       type: "TYPE B - 3 BHK",
+//       area: "1480.25 SQFT",
+//       image: "/images/projects/floor.jpg",
+//     },
+//   ],
+// };
 
 export default function FloorPlansSection({floorplan}) {
   // const [activeTab, setActiveTab] = useState("2bhk");
@@ -106,7 +106,7 @@ export default function FloorPlansSection({floorplan}) {
                     src={plan.image}
                     alt={plan.image_alt || "Floor Plan"}
                     fill
-                    className="object-cover"
+                    className="object-cover md:w-fit"
                   />
 
                   {/* OVERLAY */}
