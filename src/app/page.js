@@ -81,8 +81,8 @@ export default async function Home() {
       <SignatureProjects data={ProjectsData} />
       <AboutSection />
       <GallerySection data={EventGalleryFetchData} />
-      {/* <Services />
-      <ServicesMobile /> */}
+      <Services />
+      <ServicesMobile />
       <WhyChooseUs />
       <Thrissur />
       <Testiminials testimonials={testimonialData} />
