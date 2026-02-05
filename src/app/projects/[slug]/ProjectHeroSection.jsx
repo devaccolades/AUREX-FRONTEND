@@ -86,7 +86,7 @@ export default function ProjectHero({ project }) {
             src={image}
             alt={image_alt || name}
             fill
-            className="object-cover object-top -z-10"
+            className="object-cover object-center -z-10"
           />
         )}
         <div className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/60 md:hidden z-10" />

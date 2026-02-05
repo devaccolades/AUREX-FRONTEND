@@ -165,7 +165,7 @@ export default function FloatingButtons() {
         </a>
 
         {/* Call */}
-        <a href="tel:+9846007474">
+        <a href="tel:+919846507474">
           <div className="bg-[#0a6e50] flex items-center justify-center py-[6px] lg:py-[8px] rounded-l-[15px] border border-white">
             <Image
               src="/images/telephone4.png"

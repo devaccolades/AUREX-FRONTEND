@@ -1,6 +1,6 @@
 "use client";
 
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Image from "next/image";
 import ModalForm from "@/components2/forms/ModalForm";
 import gsap from "gsap";
@@ -42,48 +42,78 @@ const services = [
 export default function Services() {
   const [openModal, setOpenModal] = useState(false);
   const [showContactModal, setShowContactModal] = useState(false);
-  const [imagesLoaded, setImagesLoaded] = useState(false);
+  // const [imagesLoaded, setImagesLoaded] = useState(false);
   const containerRef = useRef(null);
   const groupsRef = useRef(null);
   const titleRefs = useRef([]);
   const counterRef = useRef(null);
   const buttonRef = useRef(null);
-  const loadedCountRef = useRef(0);
-
-  // Calculate total images
-  const totalImages = services.reduce((acc, service) => acc + service.images.length, 0);
-
-  // Handle image load
-  const handleImageLoad = () => {
-    loadedCountRef.current += 1;
-    if (loadedCountRef.current === totalImages) {
-      // Small delay to ensure DOM is fully settled
-      setTimeout(() => {
-        setImagesLoaded(true);
-      }, 100);
-    }
+  // const loadedCountRef = useRef(0);
+ 
+  const [vh, setVh] = useState(0);
+  useEffect(() => {
+  const updateHeight = () => {
+    setVh(window.innerHeight);
   };
 
-  useLayoutEffect(() => {
-    if (!imagesLoaded) return;
+  updateHeight(); // run once
 
-    const ctx = gsap.context(() => {
+  window.addEventListener("resize", updateHeight);
+
+  return () => window.removeEventListener("resize", updateHeight);
+}, []);
+
+const waitForImages = async () => {
+  const images = document.querySelectorAll("[data-slide-img] img");
+
+  await Promise.all(
+    Array.from(images).map((img) => {
+      if (img.complete) return Promise.resolve();
+
+      return new Promise((resolve) => {
+        img.onload = resolve;
+        img.onerror = resolve;
+      });
+    })
+  );
+};
+
+
+  // Calculate total images
+  // const totalImages = services.reduce((acc, service) => acc + service.images.length, 0);
+
+  // Handle image load
+  // const handleImageLoad = () => {
+  //   loadedCountRef.current += 1;
+  //   if (loadedCountRef.current === totalImages) {
+      
+  //     setTimeout(() => {
+  //       setImagesLoaded(true);
+  //     }, 100);
+  //   }
+  // };
+
+
+
+
+useLayoutEffect(() => {
+  let ctx;
+
+  const init = async () => {
+    await waitForImages();
+
+    ctx = gsap.context(() => {
       const total = services.length;
       const scrollDistance = total * 1000;
 
-      // Refresh ScrollTrigger to recalculate positions
-      ScrollTrigger.refresh();
-
       gsap.set(titleRefs.current, { transformOrigin: "50% 50% -50px" });
 
-      // Show first slide images normally
       gsap.set("[data-slide-img][data-slide='0']", {
         yPercent: 0,
         opacity: 1,
         scale: 1,
       });
 
-      // Other slides start hidden
       gsap.set("[data-slide-img]:not([data-slide='0'])", {
         yPercent: 20,
         opacity: 0,
@@ -98,9 +128,10 @@ export default function Services() {
           scrub: 1,
           pin: true,
           invalidateOnRefresh: true,
+          anticipatePin: 1,
           onUpdate: (self) => {
             const progress = self.progress;
-            const slide = Math.round(progress * (total - 1)) + 1;
+            const slide = Math.min(total, Math.floor(progress * total) + 1);
 
             if (counterRef.current) {
               counterRef.current.innerHTML = `
@@ -119,11 +150,11 @@ export default function Services() {
         const currentImgs = gsap.utils.toArray(
           `[data-slide-img][data-slide="${i}"]`
         );
+
         const nextImgs = gsap.utils.toArray(
           `[data-slide-img][data-slide="${i + 1}"]`
         );
 
-        // Title transition
         tl.to(titleRefs.current[i], {
           opacity: 0,
           rotateX: 90,
@@ -140,7 +171,6 @@ export default function Services() {
           "<"
         );
 
-        // Outgoing images
         tl.to(
           currentImgs,
           {
@@ -153,17 +183,15 @@ export default function Services() {
           "<"
         );
 
-        // Slide wrapper movement
         tl.to(
           groupsRef.current,
           {
-            y: `-${(i + 1) * 100}vh`,
+            y: `-${(i + 1) * vh}px`,
             duration: 1,
           },
           "<0.1"
         );
 
-        // Incoming images
         tl.to(
           nextImgs,
           {
@@ -180,13 +208,141 @@ export default function Services() {
       tl.set(titleRefs.current[total - 1], { opacity: 1 });
     });
 
-    return () => ctx.revert();
-  }, [imagesLoaded]);
+    ScrollTrigger.refresh();
+  };
+
+  init();
+
+  return () => ctx?.revert();
+}, [vh]);
+
+
+
+  // useLayoutEffect(() => {
+  //   if (!imagesLoaded) return;
+
+  //   const ctx = gsap.context(() => {
+  //     const total = services.length;
+  //     const scrollDistance = total * 1000;
+
+  //     // Refresh ScrollTrigger to recalculate positions
+  //     ScrollTrigger.refresh();
+
+  //     gsap.set(titleRefs.current, { transformOrigin: "50% 50% -50px" });
+
+  //     // Show first slide images normally
+  //     gsap.set("[data-slide-img][data-slide='0']", {
+  //       yPercent: 0,
+  //       opacity: 1,
+  //       scale: 1,
+  //     });
+
+  //     // Other slides start hidden
+  //     gsap.set("[data-slide-img]:not([data-slide='0'])", {
+  //       yPercent: 20,
+  //       opacity: 0,
+  //       scale: 0.98,
+  //     });
+
+  //     const tl = gsap.timeline({
+  //       scrollTrigger: {
+  //         trigger: containerRef.current,
+  //         start: "top top",
+  //         end: `+=${scrollDistance}`,
+  //         scrub: 1,
+  //         pin: true,
+  //         invalidateOnRefresh: true,
+  //         onUpdate: (self) => {
+  //           const progress = self.progress;
+  //           // const slide = Math.round(progress * (total - 1)) + 1;
+  //           const slide = Math.min(total, Math.floor(progress * total) + 1);
+
+  //           if (counterRef.current) {
+  //             counterRef.current.innerHTML = `
+  //               <span style="color:#D4A017;">0${slide}</span>
+  //               <span style="color:#000;"> / 0${total}</span>
+  //             `;
+  //           }
+  //         },
+  //       },
+  //     });
+
+  //     tl.set(counterRef.current, { opacity: 1 });
+  //     tl.set(buttonRef.current, { opacity: 1 });
+
+  //     for (let i = 0; i < total - 1; i++) {
+  //       const currentImgs = gsap.utils.toArray(
+  //         `[data-slide-img][data-slide="${i}"]`
+  //       );
+  //       const nextImgs = gsap.utils.toArray(
+  //         `[data-slide-img][data-slide="${i + 1}"]`
+  //       );
+
+  //       // Title transition
+  //       tl.to(titleRefs.current[i], {
+  //         opacity: 0,
+  //         rotateX: 90,
+  //         y: -50,
+  //         duration: 0.8,
+  //       }).to(
+  //         titleRefs.current[i + 1],
+  //         {
+  //           opacity: 1,
+  //           rotateX: 0,
+  //           y: 0,
+  //           duration: 0.8,
+  //         },
+  //         "<"
+  //       );
+
+  //       // Outgoing images
+  //       tl.to(
+  //         currentImgs,
+  //         {
+  //           yPercent: -30,
+  //           opacity: 0,
+  //           scale: 0.95,
+  //           stagger: 0.08,
+  //           duration: 0.9,
+  //         },
+  //         "<"
+  //       );
+
+  //       // Slide wrapper movement
+  //       tl.to(
+  //         groupsRef.current,
+  //         {
+  //           // y: `-${(i + 1) * 100}vh`,
+  //           y: `-${(i + 1) * vh}px`,
+  //           duration: 1,
+  //         },
+  //         "<0.1"
+  //       );
+
+  //       // Incoming images
+  //       tl.to(
+  //         nextImgs,
+  //         {
+  //           yPercent: 0,
+  //           opacity: 1,
+  //           scale: 1,
+  //           stagger: 0.08,
+  //           duration: 0.9,
+  //         },
+  //         "<0.25"
+  //       );
+  //     }
+
+  //     tl.set(titleRefs.current[total - 1], { opacity: 1 });
+  //   });
+
+  //   return () => ctx.revert();
+  // }, [imagesLoaded]);
 
   return (
     <section
       ref={containerRef}
-      className="relative w-full h-screen border-t border-gray-300 overflow-hidden bg-white"
+      className="hidden md:block relative w-full h-screen border-t border-gray-300 overflow-hidden bg-white"
     >
       {/* CENTER STACK : Counter → Title → Button */}
       <div className="absolute inset-0 flex flex-col items-center justify-center z-40">
@@ -245,7 +401,8 @@ export default function Services() {
         <div
           ref={groupsRef}
           className="absolute left-0 top-0 w-full"
-          style={{ height: `${services.length * 100}vh` }}
+          // style={{ height: `${services.length * 100}vh` }}
+          style={{ height: `${services.length * vh}px` }}
         >
           {services.map((service, slideIndex) => (
             <div key={slideIndex} className="relative w-full h-screen">
@@ -265,7 +422,7 @@ export default function Services() {
                     alt=""
                     fill
                     className="object-cover shadow-xl"
-                    onLoad={handleImageLoad}
+                    // onLoad={handleImageLoad}
                     priority={slideIndex === 0}
                   />
                 </div>

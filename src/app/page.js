@@ -21,6 +21,7 @@ import { SeoById,
   ProjectsFetch,
   VidTestmonialsFetch,
 } from "@/services/api";
+import ServicesMobile from "./(home)/ServicesNew";
 
 
 export async function generateMetadata() {
@@ -81,6 +82,7 @@ export default async function Home() {
       <AboutSection />
       <GallerySection data={EventGalleryFetchData} />
       <Services />
+      <ServicesMobile />
       <WhyChooseUs />
       <Thrissur />
       <Testiminials testimonials={testimonialData} />
