@@ -342,7 +342,7 @@ useLayoutEffect(() => {
   return (
     <section
       ref={containerRef}
-      className="relative w-full h-screen border-t border-gray-300 overflow-hidden bg-white"
+      className="hidden md:block relative w-full h-screen border-t border-gray-300 overflow-hidden bg-white"
     >
       {/* CENTER STACK : Counter → Title → Button */}
       <div className="absolute inset-0 flex flex-col items-center justify-center z-40">
