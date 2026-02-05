@@ -5,7 +5,7 @@ import ContactModal from '../ContactModal';
 
 export default function EnquiryForm() {
     const [formData, setFormData] = useState({
-        fullName: '',
+        name: '',
         phone: '',
         email: '',
         message: ''
@@ -35,8 +35,8 @@ export default function EnquiryForm() {
     const validate = () => {
         let newErrors = {};
 
-        if (!formData.fullName.trim()) {
-            newErrors.fullName = "Full Name is required";
+        if (!formData.name.trim()) {
+            newErrors.name = "Full Name is required";
         }
 
         if (!formData.phone) {
@@ -77,7 +77,7 @@ const handleSubmit = async (e) => {
 
     // Clear the form
     setFormData({
-      fullName: "",
+      name: "",
       phone: "",
       email: "",
       message: "",
@@ -98,14 +98,14 @@ const handleSubmit = async (e) => {
             <div>
                 <p className="text-[12px] lg:text-[16px] leading-[16px] font-urban tracking-[0.3px] mb-[8px] font-medium">Full Name*</p>
                 <input
-                    name="fullName"
+                    name="name"
                     type="text"
-                    value={formData.fullName}
+                    value={formData.name}
                     onChange={handleChange}
                     placeholder="Enter your full name"
-                    className={`border-1 text-[12px] w-full font-urban rounded-[6px] px-[10px] py-[16px] outline-none transition-all ${errors.fullName ? 'border-red-500 bg-red-50' : 'border-[#959595]'}`}
+                    className={`border-1 text-[12px] w-full font-urban rounded-[6px] px-[10px] py-[16px] outline-none transition-all ${errors.name ? 'border-red-500 bg-red-50' : 'border-[#959595]'}`}
                 />
-                {errors.fullName && <p className="text-red-500 text-[11px] mt-1">{errors.fullName}</p>}
+                {errors.name && <p className="text-red-500 text-[11px] mt-1">{errors.name}</p>}
             </div>
 
             {/* Phone Number */}
