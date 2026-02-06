@@ -7,6 +7,8 @@ import { EventGalleryFetch } from "@/services/api";
 import ContactModal from "@/components2/ContactModal";
 
 export default function GallerySection({ data }) {
+  const [previewOpen, setPreviewOpen] = useState(false);
+
   const [openModal, setOpenModal] = useState(false);
   const [showContactModal, setShowContactModal] = useState(false);
   const [gallery, setGallery] = useState(data);
@@ -147,9 +149,11 @@ export default function GallerySection({ data }) {
                   alt={activeImage?.image_alt || "Active Gallery Image"}
                   width={900}
                   height={600}
+                  onClick={() => setPreviewOpen(true)}
                   className="w-[242px] md:w-[343px] lg:w-[565px] h-[239px] md:h-[280px] lg:h-[460px] object-cover transition-all duration-300"
                 />
               )}
+  
               {/* )} */}
 
               {/* VIDEO MODE */}
@@ -266,6 +270,36 @@ export default function GallerySection({ data }) {
   isOpen={showContactModal}
   onClose={() => setShowContactModal(false)}
 />
+
+{previewOpen && activeImage?.image && (
+  <div
+    className="fixed inset-0 z-[9999] bg-black/90 flex items-center justify-center p-4"
+    onClick={() => setPreviewOpen(false)}
+  >
+    {/* Close Button */}
+    <button
+      onClick={() => setPreviewOpen(false)}
+      className="absolute top-6 right-6 text-white text-3xl z-20"
+    >
+      ✕
+    </button>
+
+    {/* Preview Image */}
+    <div
+      className="max-w-5xl w-full"
+      onClick={(e) => e.stopPropagation()} // prevent closing when clicking image
+    >
+      <Image
+        src={activeImage.image}
+        alt={activeImage.image_alt || "Preview"}
+        width={1400}
+        height={900}
+        className="w-full h-auto object-contain rounded-lg"
+      />
+    </div>
+  </div>
+)}
+
     </section>
   );
 }

@@ -132,7 +132,7 @@ export default function Moments({ events, eventGallery }) {
       {/* ================= PREVIEW MODAL ================= */}
       {selectedIndex !== null && (
         <div
-          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center px-4"
+          className="fixed inset-0 z-9999 bg-black/80 flex items-center justify-center px-4"
           onClick={() => setSelectedIndex(null)}
         >
           <div
