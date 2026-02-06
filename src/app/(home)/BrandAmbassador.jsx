@@ -148,7 +148,7 @@ export default function BrandAmbassador() {
       </div>
       {openVideo && (
         <div
-          className="fixed inset-0 bg-black/70 z-[999] flex items-center justify-center p-4"
+          className="fixed inset-0 bg-black/70 z-[9999] flex items-center justify-center p-4"
           onClick={() => setOpenVideo(false)}
         >
           <div
