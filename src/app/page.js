@@ -75,7 +75,7 @@ export default async function Home() {
   return (
     <div>
       <Header />
-      <HeroSection data={ProjectsData} />//
+      <HeroSection data={ProjectsData} />
       <BrandAmbassador />
       <ChairmanMessage />
       <SignatureProjects data={ProjectsData} />
