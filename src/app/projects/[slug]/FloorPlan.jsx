@@ -149,7 +149,7 @@ export default function FloorPlansSection({floorplan}) {
 
       {/* IMAGE PREVIEW MODAL */}
       {previewImage && (
-        <div className="fixed inset-0 z-[999] bg-black/70 flex items-center justify-center px-4">
+        <div className="fixed inset-0 z-[9999] bg-black/70 flex items-center justify-center px-4">
           
           {/* CLOSE */}
           <button
@@ -160,7 +160,7 @@ export default function FloorPlansSection({floorplan}) {
           </button>
 
           {/* IMAGE */}
-          <div className="relative w-full max-w-4xl h-[80vh] bg-white rounded-xl overflow-hidden">
+          <div className="relative w-full max-w-4xl h-[80vh]  rounded-xl overflow-hidden">
             <Image
               src={previewImage}
               alt="Floor Plan Preview"

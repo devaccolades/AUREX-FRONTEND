@@ -83,17 +83,18 @@ export default function Header() {
           className={`flex justify-center transition-all duration-300 ${scrolled ? "w-40" : "w-16 md:w-32"
             }`}
         >
+           <Link href="/">
           <Image
             src={
               scrolled ? "/images/aurex-text-logo.svg" : "/images/aurex-logo.svg"
             }
-            // width={scrolled ? (isMobile ? 30 : 40) : isMobile ? 35 : 50}
-            // height={scrolled ? (isMobile ? 30 : 40) : isMobile ? 40 : 50}
+        
             width={scrolled ? (isMobile ? 70 : 100) : isMobile ? 35 : 60}
             height={scrolled ? (isMobile ? 70 : 100) : isMobile ? 40 : 60}
             alt="logo"
             className="transition-all duration-300"
           />
+          </Link>
         </div>
 
 

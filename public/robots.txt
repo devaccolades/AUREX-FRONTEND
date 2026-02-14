@@ -1,0 +1,5 @@
+User-agent: *
+
+Disallow: /?
+Disallow: /*?
+Sitemap: https://aurexbuilders.com/sitemap.xml
