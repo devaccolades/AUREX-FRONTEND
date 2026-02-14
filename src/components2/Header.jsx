@@ -87,14 +87,15 @@ export default function Header() {
             src={
               scrolled ? "/images/aurex-text-logo.svg" : "/images/aurex-logo.svg"
             }
-            // width={scrolled ? (isMobile ? 30 : 40) : isMobile ? 35 : 50}
-            // height={scrolled ? (isMobile ? 30 : 40) : isMobile ? 40 : 50}
+        
             width={scrolled ? (isMobile ? 70 : 100) : isMobile ? 35 : 60}
             height={scrolled ? (isMobile ? 70 : 100) : isMobile ? 40 : 60}
             alt="logo"
             className="transition-all duration-300"
           />
         </div>
+
+
 
 
         <div className="w-[24px] h-[24px] flex justify-end">
