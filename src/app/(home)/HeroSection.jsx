@@ -91,7 +91,7 @@ export default function HeroSection({ data }) {
       {/* BACKGROUND IMAGE */}
       {showVideo && (
         <video
-          src="/video/hero1.mp4"
+          src="/video/hero-loop.mp4"
           autoPlay
           muted
           playsInline
