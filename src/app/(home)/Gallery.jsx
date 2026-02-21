@@ -92,7 +92,7 @@ export default function GallerySection({ data }) {
       ></div>
       {/* <div className="relative containers mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-10 items-start border-x border-gray-200"> */}
 
-      <div className="relative container mx-auto    grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-10 items-start  border-x border-gray-200">
+      <div className="relative container mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-10 items-start  border-x border-gray-200">
         {/* LEFT CONTENT */}
         <div className="col-span-12 md:col-span-5 lg:col-span-5 py-8 lg:py-28">
           <p className="text-[#006A54] font-poppins font-regular text-[16px]  leading-[20px]">
@@ -145,6 +145,7 @@ export default function GallerySection({ data }) {
               {/* {activeImage.type === "image" && ( */}
               {activeImage?.image && (
                 <Image
+                  loading="lazy"
                   src={activeImage?.image}
                   alt={activeImage?.image_alt || "Active Gallery Image"}
                   width={900}
@@ -208,6 +209,7 @@ export default function GallerySection({ data }) {
                 {item.image && (
 
                   <Image
+                    loading="lazy"
                     src={item.image}
                     alt={item.image_alt}
                     width={300}

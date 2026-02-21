@@ -1,13 +1,13 @@
 "use client";
 
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import ModalForm from "@/components2/forms/ModalForm";
 import ContactModal from "@/components2/ContactModal";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
 /* ---------------- DATA ---------------- */
 
@@ -66,15 +66,21 @@ export default function ServicesAlt() {
 
   const handleLoad = () => {
     loadedRef.current += 1;
-    if (loadedRef.current === visibleImages) {
+    // if (loadedRef.current === visibleImages) {
+    if (loadedRef.current >= visibleImages) {
       requestAnimationFrame(() => setReady(true));
     }
   };
 
   /* ---------------- GSAP ---------------- */
 
-  useLayoutEffect(() => {
-    if (!ready) return;
+  // useEffect(() => {
+  //   if (!ready) return;
+  useEffect(() => {
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  if (!ready) return;
 
     const ctx = gsap.context(() => {
       const total = services.length;
@@ -117,10 +123,16 @@ export default function ServicesAlt() {
             const slide =
               Math.round(self.progress * (total - 1)) + 1;
 
-            counterRef.current.innerHTML = `
-              <span style="color:#D4A017;">0${slide}</span>
-              <span style="color:#000;"> / 0${total}</span>
-            `;
+            // counterRef.current.innerHTML = `
+            //   <span style="color:#D4A017;">0${slide}</span>
+            //   <span style="color:#000;"> / 0${total}</span>
+            // `;
+            if (counterRef.current) {
+  counterRef.current.innerHTML = `
+    <span style="color:#D4A017;">0${slide}</span>
+    <span style="color:#000;"> / 0${total}</span>
+  `;
+}
           },
         },
       });
@@ -186,8 +198,13 @@ export default function ServicesAlt() {
           "<0.25"
         );
       }
-    });
+      ScrollTrigger.refresh();
 
+setTimeout(() => {
+  ScrollTrigger.refresh();
+}, 300);
+    });
+    
     const resizeRefresh = () => ScrollTrigger.refresh();
     window.addEventListener("resize", resizeRefresh);
 
@@ -196,6 +213,9 @@ export default function ServicesAlt() {
       ctx.revert();
     };
   }, [ready]);
+  // useEffect(() => {
+  // if (!ready) return;
+
 
   /* ---------------- JSX ---------------- */
 
