@@ -6,12 +6,14 @@ import ModalForm from "@/components2/forms/ModalForm";
 import { EventGalleryFetch } from "@/services/api";
 import ContactModal from "@/components2/ContactModal";
 
+
+console.log("GallerySection rendered");
 export default function GallerySection({ data }) {
   const [previewOpen, setPreviewOpen] = useState(false);
 
   const [openModal, setOpenModal] = useState(false);
   const [showContactModal, setShowContactModal] = useState(false);
-  const [gallery, setGallery] = useState(data);
+
   // const gallery = [
   //   {
   //     name: "Building Night View",
@@ -60,27 +62,25 @@ export default function GallerySection({ data }) {
   //   }
   // ];
 
-  // useEffect(() => {
-  //   EventGalleryFetch().then((data) => {
-  //     console.log(data);
-  //     setGallery(data);
-  //   });
-  // }, []);
+  const gallery = data || [];
+  const [activeImage, setActiveImage] = useState(null);
 
-  const [activeImage, setActiveImage] = useState(gallery[0]);
+  useEffect(() => {
+    if (gallery.length > 0) {
+      setActiveImage(gallery[0]);
+    }
+  }, [gallery]);
+
+  // const [activeImage, setActiveImage] = useState(gallery[0]);
   const [isPlaying, setIsPlaying] = useState(false);
   const handleSelect = (item) => {
     setActiveImage(item);
     setIsPlaying(false);
   };
 
-  useEffect(() => {
-    setActiveImage(gallery[0]);
-  }, [gallery]);
 
-  useEffect(() => {
-    console.log("active image changed:", activeImage?.image);
-  }, [activeImage]);
+
+
   return (
     <section className=" relative">
       <div
@@ -90,7 +90,7 @@ export default function GallerySection({ data }) {
           backgroundSize: "1400px 800px",
         }}
       ></div>
-      {/* <div className="relative containers mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-10 items-start border-x border-gray-200"> */}
+
 
       <div className="relative container mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-10 items-start  border-x border-gray-200">
         {/* LEFT CONTENT */}
@@ -145,16 +145,19 @@ export default function GallerySection({ data }) {
               {/* {activeImage.type === "image" && ( */}
               {activeImage?.image && (
                 <Image
-                  loading="lazy"
+                  // loading="lazy"
                   src={activeImage?.image}
                   alt={activeImage?.image_alt || "Active Gallery Image"}
                   width={900}
                   height={600}
+                  sizes="(max-width: 768px) 100vw, 565px"
+                  quality={75}
+                  priority
                   onClick={() => setPreviewOpen(true)}
                   className="w-[242px] md:w-[343px] lg:w-[565px] h-[239px] md:h-[280px] lg:h-[460px] object-cover transition-all duration-300"
                 />
               )}
-  
+
               {/* )} */}
 
               {/* VIDEO MODE */}
@@ -195,7 +198,7 @@ export default function GallerySection({ data }) {
           </div>
 
           {/* RIGHT SIDE THUMBNAIL SLIDER */}
-        
+
           <div className="h-[384px] lg:h-[700px]  border-l border-gray-300 overflow-y-auto hide-scrollbar space-y-[16px]">
             {gallery.map((item, i) => (
               <div
@@ -262,45 +265,45 @@ export default function GallerySection({ data }) {
               ✕
             </button>
 
-            <ModalForm  onSuccess={() => setShowContactModal(true)}
-            onClose={() => setOpenModal(false)} />
+            <ModalForm onSuccess={() => setShowContactModal(true)}
+              onClose={() => setOpenModal(false)} />
           </div>
         </div>
       )}
 
       <ContactModal
-  isOpen={showContactModal}
-  onClose={() => setShowContactModal(false)}
-/>
-
-{previewOpen && activeImage?.image && (
-  <div
-    className="fixed inset-0 z-[9999] bg-black/90 flex items-center justify-center p-4"
-    onClick={() => setPreviewOpen(false)}
-  >
-    {/* Close Button */}
-    <button
-      onClick={() => setPreviewOpen(false)}
-      className="absolute top-6 right-6 text-white text-3xl z-20"
-    >
-      ✕
-    </button>
-
-    {/* Preview Image */}
-    <div
-      className="max-w-5xl w-full"
-      onClick={(e) => e.stopPropagation()} // prevent closing when clicking image
-    >
-      <Image
-        src={activeImage.image}
-        alt={activeImage.image_alt || "Preview"}
-        width={1400}
-        height={900}
-        className="w-full h-auto object-contain rounded-lg"
+        isOpen={showContactModal}
+        onClose={() => setShowContactModal(false)}
       />
-    </div>
-  </div>
-)}
+
+      {previewOpen && activeImage?.image && (
+        <div
+          className="fixed inset-0 z-[9999] bg-black/90 flex items-center justify-center p-4"
+          onClick={() => setPreviewOpen(false)}
+        >
+          {/* Close Button */}
+          <button
+            onClick={() => setPreviewOpen(false)}
+            className="absolute top-6 right-6 text-white text-3xl z-20"
+          >
+            ✕
+          </button>
+
+          {/* Preview Image */}
+          <div
+            className="max-w-5xl w-full"
+            onClick={(e) => e.stopPropagation()} // prevent closing when clicking image
+          >
+            <Image
+              src={activeImage.image}
+              alt={activeImage.image_alt || "Preview"}
+              width={1400}
+              height={900}
+              className="w-full h-auto object-contain rounded-lg"
+            />
+          </div>
+        </div>
+      )}
 
     </section>
   );
