@@ -82,9 +82,8 @@ export default async function Home() {
       <AboutSection />
       <GallerySection data={EventGalleryFetchData} />
       {/* <Services /> */}
-      {/* <ServicesAlt /> */}
-      <WhyChooseUs />
       <ServicesAlt />
+      <WhyChooseUs />
       <Thrissur />
       <Testiminials testimonials={testimonialData} />
       <DreamsInThrissur /> 
