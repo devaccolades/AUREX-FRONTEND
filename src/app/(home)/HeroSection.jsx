@@ -95,6 +95,7 @@ export default function HeroSection({ data }) {
           autoPlay
           muted
           playsInline
+          poster="/video/thumbnail.webp" 
           className="absolute inset-0 w-full h-full object-cover z-10"
           onEnded={() => {
             setShowVideo(false);
@@ -130,7 +131,6 @@ export default function HeroSection({ data }) {
 
 
       {/* OVERLAY GRADIENT */}
-      {/* <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent z-10"></div> */}
       <div className="absolute bottom-0 left-0 w-full h-[150px] bg-gradient-to-t from-black/40 to-transparent z-10"></div>
 
 
@@ -140,20 +140,7 @@ export default function HeroSection({ data }) {
 
         <div className="flex flex-col gap-[17px] mt-[94px] md:mt-[204px] md:flex-row md:items-center md:justify-between xl:mt-[211px]">
           {/* LEFT TEXT */}
-          {/* <div className="text-white font-urban flex justify-start flex-col text-center ">
-            <p className="text-[14px] lg:text-[20px] leading-[16px] lg:leading-[48px] opacity-90">
-              At the heart of Thrissur,
-            </p>
-
-            <h1 className=" text-[40px] lg:text-[48px] font-semibold leading-[40px] md:leading-[48px] ">
-              inspired by your dreams.
-            </h1>
-
-            <p className="mt-[8px] text-[12px] lg:text-[14px] leading-[100%] tracking-[0%] md:mt-3 max-w-[270px] mx-auto">
-              At Aurex Builders, we bring the spirit of Thrissur into every
-              project
-            </p>
-          </div> */}
+          
 
           <div className=" text-white text-center flex flex-col items-center">
             <p className="font-urban font-semibold text-[14px] leading-[14px] tracking-[0%] xl:text-[20px] xl:leading-[20px] ">
@@ -170,19 +157,7 @@ export default function HeroSection({ data }) {
           </div>
 
           {/* RIGHT TEXT */}
-          {/* <div className="text-center  font-urban text-white">
-            <p className="font-urban font-bold text-[12px] leading-[16px] tracking-[0%] opacity-80 mt-2">
-              AMENITIES THAT DEFINE
-            </p>
-
-            <h2 className=" text-[32px] md:text-[36px]  font-urban font-semibold">
-              PREMIUM LIVING!
-            </h2>
-            <EnquireNowButton
-              onClick={() => setOpenModal(true)}
-              className="mx-auto"
-            />
-          </div> */}
+         
 
           <div className="flex flex-col items-center text-white font-urban">
             <p className="text-[12px] leading-[16px] tracking-[0%] font-bold ">

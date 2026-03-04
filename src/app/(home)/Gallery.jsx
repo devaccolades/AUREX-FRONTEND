@@ -7,7 +7,6 @@ import { EventGalleryFetch } from "@/services/api";
 import ContactModal from "@/components2/ContactModal";
 
 
-console.log("GallerySection rendered");
 export default function GallerySection({ data }) {
   const [previewOpen, setPreviewOpen] = useState(false);
 
