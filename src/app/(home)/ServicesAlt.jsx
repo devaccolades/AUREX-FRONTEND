@@ -6,10 +6,12 @@ import ModalForm from "@/components2/forms/ModalForm";
 import ContactModal from "@/components2/ContactModal";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
-// gsap.registerPlugin(ScrollTrigger);
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
-/* ---------------- DATA ---------------- */
 
 const services = [
   {
@@ -45,7 +47,7 @@ const services = [
 /* ---------------- COMPONENT ---------------- */
 
 export default function ServicesAlt() {
-  const [openModal, setOpenModal] = useState(false);
+const [openModal, setOpenModal] = useState(false);
   const [showContactModal, setShowContactModal] = useState(false);
   const [ready, setReady] = useState(false);
 
@@ -54,170 +56,118 @@ export default function ServicesAlt() {
   const titleRefs = useRef([]);
   const counterRef = useRef(null);
   const buttonRef = useRef(null);
-
   const loadedRef = useRef(0);
 
-  /* ---- preload slide 0 + 1 only ---- */
-
+  /* ---- Image Load Logic ---- */
   const visibleSlides = 2;
-  const visibleImages = services
+  const totalImagesToWait = services
     .slice(0, visibleSlides)
     .reduce((a, s) => a + s.images.length, 0);
 
   const handleLoad = () => {
     loadedRef.current += 1;
-    // if (loadedRef.current === visibleImages) {
-    if (loadedRef.current >= visibleImages) {
-      requestAnimationFrame(() => setReady(true));
+    if (loadedRef.current >= totalImagesToWait) {
+      setReady(true);
     }
   };
 
-  /* ---------------- GSAP ---------------- */
+  /* ---------------- GSAP ANIMATION ---------------- */
 
-  // useEffect(() => {
-  //   if (!ready) return;
-  useEffect(() => {
+  useGSAP(() => {
+    if (!ready) return;
 
-  gsap.registerPlugin(ScrollTrigger);
+    const total = services.length;
+    const scrollDistance = total * 1000; // Increased for smoother feel
 
-  if (!ready) return;
+    // Initial setups using autoAlpha (visibility + opacity) for performance
+    gsap.set(titleRefs.current, {
+      transformOrigin: "50% 50% -50px",
+      backfaceVisibility: "hidden",
+    });
 
-    const ctx = gsap.context(() => {
-      const total = services.length;
-      const scrollDistance = total * 900;
+    gsap.set("[data-slide-img]", {
+      autoAlpha: 0,
+      scale: 0.98,
+      yPercent: 20,
+      force3D: true,
+    });
 
-      gsap.set(titleRefs.current, {
-        transformOrigin: "50% 50% -50px",
-        willChange: "transform, opacity",
-        force3D: true,
-      });
+    // Set first slide active
+    gsap.set("[data-slide-img][data-slide='0']", {
+      autoAlpha: 1,
+      scale: 1,
+      yPercent: 0,
+    });
 
-      gsap.set("[data-slide-img]", {
-        willChange: "transform, opacity",
-        force3D: true,
-      });
-
-      gsap.set("[data-slide='0']", {
-        yPercent: 0,
-        opacity: 1,
-        scale: 1,
-      });
-
-      gsap.set("[data-slide-img]:not([data-slide='0'])", {
-        yPercent: 20,
-        opacity: 0,
-        scale: 0.98,
-      });
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top top",
-          end: `+=${scrollDistance}`,
-          scrub: 1,
-          pin: true,
-          anticipatePin: 1,
-          fastScrollEnd: true,
-          invalidateOnRefresh: true,
-          onUpdate: (self) => {
-            const slide =
-              Math.round(self.progress * (total - 1)) + 1;
-
-            // counterRef.current.innerHTML = `
-            //   <span style="color:#D4A017;">0${slide}</span>
-            //   <span style="color:#000;"> / 0${total}</span>
-            // `;
-            if (counterRef.current) {
-  counterRef.current.innerHTML = `
-    <span style="color:#D4A017;">0${slide}</span>
-    <span style="color:#000;"> / 0${total}</span>
-  `;
-}
-          },
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top top",
+        end: `+=${scrollDistance}`,
+        scrub: 0.5, // Lower number = more "snappy", higher = smoother
+        pin: true,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+        onUpdate: (self) => {
+          const slide = Math.round(self.progress * (total - 1)) + 1;
+          if (counterRef.current) {
+            counterRef.current.innerHTML = `
+              <span style="color:#D4A017;">0${slide}</span>
+              <span style="color:#000;"> / 0${total}</span>
+            `;
+          }
         },
-      });
+      },
+    });
 
-      tl.set([counterRef.current, buttonRef.current], {
-        opacity: 1,
-      });
+    // Fade in UI elements
+    tl.to([counterRef.current, buttonRef.current], { 
+        autoAlpha: 1, 
+        duration: 0.2 
+    }, 0);
 
-      for (let i = 0; i < total - 1; i++) {
-        const currentImgs = gsap.utils.toArray(
-          `[data-slide-img][data-slide="${i}"]`
-        );
-        const nextImgs = gsap.utils.toArray(
-          `[data-slide-img][data-slide="${i + 1}"]`
-        );
+    // Build the sliding sequences
+    for (let i = 0; i < total - 1; i++) {
+      const currentImgs = `[data-slide-img][data-slide="${i}"]`;
+      const nextImgs = `[data-slide-img][data-slide="${i + 1}"]`;
 
-        tl.to(titleRefs.current[i], {
-          opacity: 0,
+      tl.to(titleRefs.current[i], {
+          autoAlpha: 0,
           rotateX: 90,
-          y: -50,
+          yPercent: -50,
           duration: 0.8,
-        }).to(
-          titleRefs.current[i + 1],
-          {
-            opacity: 1,
+        })
+        .to(titleRefs.current[i + 1], {
+            autoAlpha: 1,
             rotateX: 0,
-            y: 0,
+            yPercent: 0,
             duration: 0.8,
-          },
-          "<"
-        );
-
-        tl.to(
-          currentImgs,
-          {
+          }, "<")
+        .to(currentImgs, {
             yPercent: -30,
-            opacity: 0,
+            autoAlpha: 0,
             scale: 0.95,
-            stagger: 0.08,
+            stagger: 0.05,
             duration: 0.9,
-          },
-          "<"
-        );
-
-        tl.to(
-          groupsRef.current,
-          {
+          }, "<")
+        .to(groupsRef.current, {
             y: `-${(i + 1) * 100}vh`,
             duration: 1,
-          },
-          "<0.1"
-        );
-
-        tl.to(
-          nextImgs,
-          {
+            ease: "power2.inOut",
+          }, "<0.1")
+        .to(nextImgs, {
             yPercent: 0,
-            opacity: 1,
+            autoAlpha: 1,
             scale: 1,
-            stagger: 0.08,
+            stagger: 0.05,
             duration: 0.9,
-          },
-          "<0.25"
-        );
-      }
-      ScrollTrigger.refresh();
+          }, "<0.25");
+    }
 
-setTimeout(() => {
-  ScrollTrigger.refresh();
-}, 300);
-    });
-    
-    const resizeRefresh = () => ScrollTrigger.refresh();
-    window.addEventListener("resize", resizeRefresh);
+    // Refresh triggers after initialization
+    ScrollTrigger.refresh();
 
-    return () => {
-      window.removeEventListener("resize", resizeRefresh);
-      ctx.revert();
-    };
-  }, [ready]);
-  // useEffect(() => {
-  // if (!ready) return;
-
-
-  /* ---------------- JSX ---------------- */
+  }, { dependencies: [ready], scope: containerRef });
 
   return (
     <section
@@ -317,7 +267,8 @@ setTimeout(() => {
                       loading={
                         slideIndex < 2 ? "eager" : "lazy"
                       }
-                      onLoadingComplete={handleLoad}
+                      // onLoadingComplete={handleLoad}
+                      onLoad={handleLoad}
                     />
                   </div>
                 </div>
