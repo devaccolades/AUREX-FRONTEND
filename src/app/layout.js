@@ -1,7 +1,7 @@
 import { Urbanist, Inter, Poppins , Anek_Malayalam, Roboto } from "next/font/google";
 import "./globals.css";
 import FloatingButtons from "@/components2/FloatingButton";
-
+import Script from "next/script";
 
 
 const urban = Urbanist({
@@ -44,6 +44,22 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+       <head>
+        {/* Google Tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-11091045463"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-ads-config" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-11091045463');
+          `}
+        </Script>
+      </head>
       <body
         className={`${urban.variable} ${inter.variable} ${poppins.variable} ${anekMalayalam.variable} ${roboto.variable} antialiased`}
       >
