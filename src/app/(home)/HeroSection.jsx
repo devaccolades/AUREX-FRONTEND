@@ -110,7 +110,7 @@ export default function HeroSection({ data }) {
           <div ref={wrapperRef} className="hidden md:block absolute inset-0">
             <Image
               src={project?.image}
-              alt="Project Image"
+              alt="best builders in Thrissur "
               fill
               className="object-cover"
               priority
@@ -120,7 +120,7 @@ export default function HeroSection({ data }) {
           <div ref={wrapperRef} className="md:hidden absolute inset-0">
             <Image
               src={project?.image}
-              alt="Project Image"
+              alt="best builders in Thrissur "
               fill
               className="h-full object-cover object-bottom"
               priority
@@ -146,10 +146,10 @@ export default function HeroSection({ data }) {
             <p className="font-urban font-semibold text-[14px] leading-[14px] tracking-[0%] xl:text-[20px] xl:leading-[20px] ">
               In the heart of Thrissur,
             </p>
-            <h1 className="font-urban font-semibold text-[36px] leading-[35px] tracking-[0%] mt-[6px] md:max-w-[270px] xl:text-[48px] xl:leading-[43px] xl:max-w-[382px]">
+            <h3 className="font-urban font-semibold text-[36px] leading-[35px] tracking-[0%] mt-[6px] md:max-w-[270px] xl:text-[48px] xl:leading-[43px] xl:max-w-[382px]">
               {" "}
               inspired by your dreams.
-            </h1>
+            </h3>
             <p className="mt-[15px] font-poppins text-[14px] leading-[100%] tracking-[0%] max-w-[249px] md:text-[12px] md:mt-[13px] xl:mt-[26px] xl:text-[14px]">
               At Aurex Builders, we bring the spirit of Thrissur into every
               project
@@ -198,7 +198,7 @@ export default function HeroSection({ data }) {
                     {project.logo && (
                       <Image
                         src={project.logo}
-                        alt="logo"
+                        alt="best builders in Thrissur "
                         fill
                         className="object-cover md:object-contain"
                       />
@@ -221,7 +221,7 @@ export default function HeroSection({ data }) {
                     {project.qr_code && (
                       <Image
                         src={project.qr_code}
-                        alt="qr"
+                        alt="best builders in Thrissur "
                         fill
                         className="object-contain"
                       />
@@ -237,7 +237,7 @@ export default function HeroSection({ data }) {
                   <div className="relative w-10 h-10 bg-white rounded-full p-2 shrink-0 cursor-pointer z-40">
                     <Image
                       src="/images/home/g-map.svg"
-                      alt="map"
+                      alt="best builders in Thrissur "
                       fill
                       className="object-contain"
                     />
@@ -263,7 +263,7 @@ export default function HeroSection({ data }) {
                 {project.logo && (
                   <Image
                     src={project?.logo}
-                    alt={project?.logo_alt || "Project Logo"}
+                    alt={project?.logo_alt || "best builders in Thrissur "}
                     fill
                     className="object-contain h-full w-full"
                   />
@@ -286,7 +286,7 @@ export default function HeroSection({ data }) {
                   {project.qr_code && (
                     <Image
                       src={project.qr_code}
-                      alt="QR Code"
+                      alt="best builders in Thrissur "
                       fill
                       className="object-contain "
                     />
@@ -305,7 +305,7 @@ export default function HeroSection({ data }) {
               >
                 <Image
                   src="/images/home/g-map.svg"
-                  alt="map"
+                  alt="best builders in Thrissur "
                   fill
                   className="object-contain"
                 />

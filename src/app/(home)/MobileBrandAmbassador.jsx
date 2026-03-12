@@ -31,12 +31,17 @@ export function MobileBrandAmbassador() {
                 </h2>
 
                 <p className="text-gray-700 text-[12px] leading-[150%] mb-0">
-                    Aurex builders ensures to fulfill the dream of our customers by gifting them with quality home spaces,
+                    {/* Aurex builders ensures to fulfill the dream of our customers by gifting them with quality home spaces,
                     contemporary architecture, environment- friendly designs, timely delivery, after-sales service and return
                     on investment. Aurex builders brings you a new world of happiness, security and prosperity, delivering finest
                     apartments, flats, townhouses and luxury villas that match the requirements of customers with the unique
                     signature of a futuristic brand. Our main motive is to fulfill the dreams of the entire customers for all
-                    the segment people.
+                    the segment people. */}
+                     At Aurex Builders, we understand what a home truly means to you and your family. As trusted home builders in Thrissur, 
+           we deliver quality living spaces designed with contemporary architecture, eco-friendly materials, and smart spatial planning.
+            From timely project handovers to dedicated after-sales support, our team ensures your journey to homeownership is smooth, 
+            transparent, and deeply rewarding. We build premium flats, luxury villas, and grand apartments that match every lifestyle and budget. Our
+          team stands among the best builders in Thrissur - committed to making premium living accessible to all.
                 </p>
             </motion.div>
 
@@ -48,7 +53,7 @@ export function MobileBrandAmbassador() {
                 <motion.div style={{ scale }} className="origin-top">
                     <Image
                         src="/images/home/b.png"
-                        alt="Brand Ambassador"
+                        alt="home builders Thrissur"
                         width={900}
                         height={900}
                         className="w-full h-full object-cover object-top"
@@ -73,7 +78,7 @@ export function MobileBrandAmbassador() {
                 >
                     <Image
                         src="/images/home/thumb.png"
-                        alt="Video Thumbnail"
+                        alt="home builders Thrissur"
                         width={300}
                         height={200}
                         className="w-full h-full object-cover"
