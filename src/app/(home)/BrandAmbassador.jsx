@@ -60,11 +60,12 @@ export default function BrandAmbassador() {
           </h2>
 
           <p className="text-gray-700 font-inter text-[12px] xl:text-[16px] leading-[156%] max-w-md">
-            Aurex builders ensures to fulfill the dream of our customers by gifting them with quality home spaces, contemporary architecture,
-           environment- friendly designs, timely delivery, after-sales service and return on investment. Aurex builders brings you a new world 
-           of happiness, security and prosperity, delivering finest apartments, flats, townhouses and luxury villas that match the requirements 
-           of customers with the unique signature of a futuristic brand. Our main motive is to fulfill the dreams of the entire customers for
-           all the segment people.
+        
+           At Aurex Builders, we understand what a home truly means to you and your family. As trusted home builders in Thrissur, 
+           we deliver quality living spaces designed with contemporary architecture, eco-friendly materials, and smart spatial planning.
+            From timely project handovers to dedicated after-sales support, our team ensures your journey to homeownership is smooth, 
+            transparent, and deeply rewarding. We build premium flats, luxury villas, and grand apartments that match every lifestyle and budget. Our
+team stands among the best builders in Thrissur - committed to making premium living accessible to all.
           </p>
         </motion.div>
 
@@ -87,7 +88,7 @@ export default function BrandAmbassador() {
           <motion.div style={{ scale }} className="origin-[0.1_0] -translate-x-18 w-full h-full">
             <Image
               src="/images/home/b.png"
-              alt="Bhavana"
+              alt="home builders Thrissur"
               width={900}
               height={900}
               className="w-full h-full object-cover object-top"
@@ -127,7 +128,7 @@ export default function BrandAmbassador() {
           >
             <Image
               src="/images/home/thumb.png"
-              alt="Video Thumbnail"
+              alt="home builders Thrissur"
               width={300}
               height={200}
               className="w-full h-full object-cover"

@@ -54,34 +54,43 @@ export default function ChairmanMessage() {
               className="text-black mb-2 xl:mb-4"
               variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }}
             >
-              At Aurex Builders, we believe in building more than structures — we build dreams,
+              {/* At Aurex Builders, we believe in building more than structures — we build dreams,
               trust, and lasting relationships. Our vision, "Adorning Lives," reflects our passion
-              to create spaces that inspire and enrich the communities we serve.
+              to create spaces that inspire and enrich the communities we serve. */}
+              At Aurex Builders, we believe that every structure we raise carries a deeper purpose. We build
+dreams, cultivate trust, and form lasting relationships. Our vision - 'Adorning Lives' - reflects our dedication to
+creating spaces that inspire and enrich the communities of Thrissur and beyond.
+
             </motion.p>
 
-            {/* <p className="text-black mb-2 xl:mb-4"> */}
+           
             <motion.p
               className="text-black mb-2 xl:mb-4"
               variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }}
             >
-              Every project we undertake carries a promise of quality, integrity, and innovation.
+              {/* Every project we undertake carries a promise of quality, integrity, and innovation.
               Guided by these values, we continue to craft landmarks that stand the test of time
-              and touch lives in meaningful ways.
-            {/* </p> */}
+              and touch lives in meaningful ways. */}
+         Every project we undertake is guided by our commitment to quality, integrity, and innovation.
+Together
+with our clients, team, and partners, we are shaping a future where every Aurex home becomes a
+symbol
+of beauty, purpose, and pride.
+
           </motion.p>
 
-            {/* <p className="text-black mb-2 xl:mb-4"> */}
-            <motion.p
+            
+            {/* <motion.p
               className="text-black mb-2 xl:mb-4"
               variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }}
             >
               Our journey is driven by people — our clients, our team, and our partners — whose
               trust fuels our commitment to excellence. Together, we aim to shape a future where
               every Aurex creation becomes a symbol of beauty, purpose, and pride.
-            {/* </p> */}
-            </motion.p>
+            
+            </motion.p> */}
 
-          {/* </div> */}</motion.div>
+          </motion.div>
 
 
           {/* NAME BLOCK */}
