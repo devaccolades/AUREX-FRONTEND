@@ -26,17 +26,13 @@ export function MobileBrandAmbassador() {
 
             {/* TEXT TOP */}
             <motion.div style={{ opacity, y }} className="mt-2">
-                <h2 className="text-[24px] font-urban font-medium leading-[20px] mb-2">
-                    MANIFESTING YOUR <br /> DREAM INTO A <br /> MAGNIFICENT REALITY
-                </h2>
+                <h1 className="text-[24px] font-urban font-medium leading-[20px] mb-2 uppercase">
+                    {/* MANIFESTING YOUR <br /> DREAM INTO A <br /> MAGNIFICENT REALITY */}
+                    Find Your Perfect Home with the Best
+                </h1>
 
                 <p className="text-gray-700 text-[12px] leading-[150%] mb-0">
-                    {/* Aurex builders ensures to fulfill the dream of our customers by gifting them with quality home spaces,
-                    contemporary architecture, environment- friendly designs, timely delivery, after-sales service and return
-                    on investment. Aurex builders brings you a new world of happiness, security and prosperity, delivering finest
-                    apartments, flats, townhouses and luxury villas that match the requirements of customers with the unique
-                    signature of a futuristic brand. Our main motive is to fulfill the dreams of the entire customers for all
-                    the segment people. */}
+                    
                      At Aurex Builders, we understand what a home truly means to you and your family. As trusted home builders in Thrissur, 
            we deliver quality living spaces designed with contemporary architecture, eco-friendly materials, and smart spatial planning.
             From timely project handovers to dedicated after-sales support, our team ensures your journey to homeownership is smooth, 
@@ -67,9 +63,9 @@ export function MobileBrandAmbassador() {
                     WE ARE PLEASED TO <br /> INTRODUCE OUR <br /> BRAND AMBASSADOR.
                 </h3>
 
-                <h1 className="text-[66px] font-urban font-medium leading-[40px]">
+                <h2 className="text-[66px] font-urban font-medium leading-[40px]">
                     BHAVANA
-                </h1>
+                </h2>
 
                 {/* SMALL THUMB VIDEO BUTTON */}
                 <div
