@@ -12,10 +12,10 @@ const GlassSurface = dynamic(
   }
 );
 
-const FAQ = ({data}) => {
+const FAQ = ({ data }) => {
   const [openIndex, setOpenIndex] = useState(0);
   // console.log('faqs are :',data);
-  
+
   return (
     <section className="relative py-8 md:py-16 lg:py-20   ">
       <div className="absolute inset-0 flex w-full h-full justify-start opacity-26 pointer-events-none">
@@ -33,7 +33,7 @@ const FAQ = ({data}) => {
             FREQUENTLY ASKED QUESTIONS
           </h2>
 
-        
+
 
           <div className="space-y-4">
             {data.map((faq, index) => (
@@ -48,14 +48,14 @@ const FAQ = ({data}) => {
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
                   className="w-full flex justify-between items-start text-left p-3 lg:p-4"
                 >
-                  <span
+                  <h3
                     className={`max-w-[220px] md:max-[400px] lg:max-w-[370px] xl:max-w-[420px]  font-bold text-[14px] md:text-[16px] leading-[18px] md:leading-[24px] font-urban transition-all duration-300 ${openIndex === index
-                        ? "text-[18px] md:text-[20px] text-gray-900"
-                        : "text-[14px] md:text-[18px] text-gray-800"
+                      ? "text-[18px] md:text-[20px] text-gray-900"
+                      : "text-[14px] md:text-[18px] text-gray-800"
                       }`}
                   >
                     {index + 1}. {faq.question}
-                  </span>
+                  </h3>
                   {openIndex === index ? (
                     <Minus className="h-4 md:h-8 w-4 md:w-8 text-black font-bold" />
                   ) : (
@@ -85,42 +85,62 @@ const FAQ = ({data}) => {
 
         {/* RIGHT SIDE */}
         <div className="space-y-10">
-            <div>
-              <h3 className="font-urban font-bold text-[16px] lg:text-[18px] leading-[24px] text-gray-800 t mb-1">
-               Crafting Homes That Fit Your Lifestyle
-              </h3>
-              <p className="text-gray-600  font-normal text-[12px] lg:text-[14px] leading-[18px]">
-                Aurex Builders designs homes that match how you live today. Every layout feels open, bright, and easy to move through.
-                We plan spaces that work for families, couples, and busy professionals. Our designs focus on comfort, light, and smart 
-                use of space. You will find roomy kitchens, calm bedrooms, and living areas made for real life. We think about storage, 
-                airflow, and daily habits. This helps us create homes that feel natural to live in. Your home should support your routine, 
-                not restrict it. That is our design promise.
-              </p>
-            </div>
-             <div>
-              <h3 className="font-urban font-bold text-[16px] lg:text-[18px] leading-[24px] text-gray-800 t mb-1">
-                Quality Construction You Can Truly Trust
-              </h3>
-              <p className="text-gray-600  font-normal text-[12px] lg:text-[14px] leading-[18px]">
-                We build with care, skill, and strong materials that last. Our team checks every stage of work with strict quality steps.
-                From the base to the final finish, we follow proven methods. We work with trusted suppliers for steel, cement, and fittings.
-                This helps ensure safety and long life. Our site teams inspect work daily to keep standards high. We never rush important steps.
-               A strong home needs time and focus. You deserve a space that feels safe and solid. With Aurex Builders, you can trust what stands 
-               behind every wall.
-              </p>
-            </div>
-             <div>
-              <h3 className="font-urban font-bold text-[16px] lg:text-[18px] leading-[24px] text-gray-800 t mb-1">
-                Modern Spaces Rooted in Thrissur Values
-              </h3>
-              <p className="text-gray-600  font-normal text-[12px] lg:text-[14px] leading-[18px]">
-                Thrissur has a rich culture and warm community spirit. We bring that soul into every project we build.
-               Our homes mix modern style with local charm. You get sleek designs that still feel familiar. We choose 
-               calm colours and clean lines. At the same time, we respect local tastes and needs. Our projects blend 
-               into the city with grace. We aim to build more than homes. We build places where memories grow. 
-               Each project reflects our love for Thrissur and its people. That bond shapes every space we create.
-              </p>
-            </div>
+          <div>
+            <h3 className="font-urban font-bold text-[16px] lg:text-[18px] leading-[24px] text-gray-800 t mb-1">
+              CRAFTING HOMES THAT FIT YOUR LIFESTYLE IN THRISSUR
+            </h3>
+            <p className="text-gray-600  font-normal text-[12px] lg:text-[14px] leading-[18px]">
+              We design homes that move with the rhythm of modern life. Every room is conceived to feel open,
+              light- filled, and intuitive - from spacious, well-ventilated bedrooms to roomy kitchens built for
+              everyday living. Smart storage solutions, thoughtful airflow, and natural light optimization make
+              every Aurex home a space that supports your routine, not restricts it.
+            </p>
+          </div>
+          <div>
+            <h3 className="font-urban font-bold text-[16px] lg:text-[18px] leading-[24px] text-gray-800 t mb-1">
+              QUALITY CONSTRUCTION YOU CAN TRULY TRUST
+            </h3>
+            <p className="text-gray-600  font-normal text-[12px] lg:text-[14px] leading-[18px]">
+              We build with care, using certified materials tested for lasting strength and safety. Our site teams
+              conduct rigorous quality inspections at every construction stage. We source from trusted suppliers
+              for steel, cement, and premium fittings. A strong, safe home takes time and focus - and we never
+              rush the steps that matter most.
+
+            </p>
+          </div>
+          <div>
+            <h3 className="font-urban font-bold text-[16px] lg:text-[18px] leading-[24px] text-gray-800 t mb-1">
+              MODERN SPACES ROOTED IN THRISSUR'S CULTURAL HERITAGE
+            </h3>
+            <p className="text-gray-600  font-normal text-[12px] lg:text-[14px] leading-[18px]">
+              Thrissur is Kerala's cultural capital - a
+              city pulsating with heritage, art, and warm community spirit. At Aurex Builders, we channel that rich
+              soul into every home we design. Our projects blend modern elegance with the familiar warmth of
+              Thrissur living - drawing inspiration from the city's vibrant festivals, timeless temples, and the
+              warmth of its people.
+
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-urban font-bold text-[16px] lg:text-[18px] leading-[24px] text-gray-800 t mb-1">
+               OUR COMMITMENT: QUALITY HOMES, TRUSTED BUILDERS IN THRISSUR
+            </h2>
+            <p className="text-gray-600  font-normal text-[12px] lg:text-[14px] leading-[18px]">
+              We go beyond construction. We build landmarks that stand strong for
+generations, earn trust through
+transparency, and create meaningful community impact. As leading home
+builders in Thrissur, every
+project carries our unwavering promise of quality - from the first brick laid
+to the final key handed over.
+Our clients and partners are the driving force behind our growth. Your
+trust pushes us to raise the bar
+every single day. We are shaping a Thrissur where every Aurex home
+stands as a proud emblem of
+beauty and purposeful living.
+
+            </p>
+          </div>
         </div>
       </div>
     </section>

@@ -22,6 +22,7 @@ import { SeoById,
   VidTestmonialsFetch,
 } from "@/services/api";
 import ServicesAlt from "./(home)/ServicesAlt";
+import Callback from "./(home)/CallBack";
 
 
 export async function generateMetadata() {
@@ -88,6 +89,7 @@ export default async function Home() {
       <Testiminials testimonials={testimonialData} />
       <DreamsInThrissur /> 
       <FAQ data={faqData} /> 
+      <Callback />
       <Footer />
     </div>
   );

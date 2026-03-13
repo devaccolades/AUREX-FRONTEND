@@ -35,22 +35,17 @@ export default function AboutSection() {
           <span className="text-gray-500">Us</span>
         </h4>
         <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-semibold font-urban leading-[24px] md:leading-[32px] lg:leading-[40px] mb-4">
-          MANIFESTING <br className="md:hidden block" /> YOUR DREAM{" "}
-          <br className="hidden md:block" /> INTO{" "}
-          <br className="md:hidden block" /> A MAGNIFICENT{" "}
-          <br className="md:hidden block" /> REALITY
+          A LEGACY OF EXCELLENCE IN LUXURY HOME BUILDING IN THRISSUR
         </h2>
 
         <p className="text-black font-inter leading-[156%] text-[13px] md:text-[14px]mb-4 lg:mb-10">
-          Aurex builders ensures to fulfill the dream of our customers by
-          gifting them with quality home spaces, contemporary architecture,
-          environment- friendly designs, timely delivery, after-sales service
-          and return on investment. Aurex builders brings you a new world of
-          happiness, security and prosperity, delivering finest apartments,
-          flats, townhouses and luxury villas that match the requirements of
-          customers with the unique signature of a futuristic brand. Our main
-          motive is to fulfill the dreams of the entire customers for all the
-          segment people.
+
+          You deserve a home built with genuine passion and uncompromising precision. As leading luxury home
+          builders in Thrissur, we focus on every detail - from sustainable architecture and energy-efficient design
+          to rich, handcrafted interiors and lush landscaped spaces.
+          Our properties range from thoughtfully designed family flats to grand luxury villas, each meeting the
+          unique needs and aspirations of our buyers. Step into a world of clean design, peaceful living, and
+          curated outdoor spaces - the hallmark of premier luxury home builders in Thrissur.
         </p>
 
         <button
@@ -75,15 +70,15 @@ export default function AboutSection() {
               ✕
             </button>
             {/* <ProjectEnquiryModal /> */}
-             <ModalForm  onSuccess={() => setShowContactModal(true)}
-                                   onClose={() => setOpenModal(false)} />
+            <ModalForm onSuccess={() => setShowContactModal(true)}
+              onClose={() => setOpenModal(false)} />
           </div>
         </div>
       )}
       <ContactModal
-              isOpen={showContactModal}
-              onClose={() => setShowContactModal(false)}
-            />
+        isOpen={showContactModal}
+        onClose={() => setShowContactModal(false)}
+      />
     </section>
   );
 }
