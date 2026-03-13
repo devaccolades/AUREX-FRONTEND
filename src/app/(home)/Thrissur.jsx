@@ -34,7 +34,7 @@ export default function Thrissur() {
                         />
 
                         <div className="">
-                            <h1 className=" font-anek absolute text-white text-[34px] xl:text-[48px] font-medium leading-[36px] lg:leading-[48px] -ml-73 md:-ml-70 lg:-ml-86 xl:-ml-96 mt-40 md:mt-16 lg:mt-26 ">
+                            <h2 className=" font-anek absolute text-white text-[34px] xl:text-[48px] font-medium leading-[36px] lg:leading-[48px] -ml-73 md:-ml-70 lg:-ml-86 xl:-ml-96 mt-40 md:mt-16 lg:mt-26 ">
                                 തൃശ്ശൂരിന്റെ <br />
                                 ഹൃദയത്തിൽ,
                                 <br className="md:hidden" />    {/* shows only on mobile */}
@@ -43,7 +43,7 @@ export default function Thrissur() {
                                 </span>
                                 നിങ്ങളുടെ<br />
                                 സ്വപ്നങ്ങൾക്കായി.
-                            </h1>
+                            </h2>
                         </div>
 
                     </div>

@@ -55,9 +55,10 @@ export default function BrandAmbassador() {
           style={{ opacity: textOpacity, y: textY }}
           className="flex flex-col justify-center items-start"
         >
-          <h2 className="text-[24px] xl:text-[40px] font-urban font-medium leading-[20px]  md:leading-[24px] xl:leading-[40px] mb-20 xl:mb-66">
-            MANIFESTING YOUR <br /> DREAM INTO A <br /> MAGNIFICENT REALITY
-          </h2>
+          <h1 className="text-[24px] xl:text-[40px] font-urban font-medium leading-[20px]  md:leading-[24px] xl:leading-[40px] uppercase mb-20 xl:mb-66">
+            {/* MANIFESTING YOUR <br /> DREAM INTO A <br /> MAGNIFICENT REALITY */}
+            Find Your Perfect Home with the Best
+          </h1>
 
           <p className="text-gray-700 font-inter text-[12px] xl:text-[16px] leading-[156%] max-w-md">
         
@@ -106,9 +107,9 @@ team stands among the best builders in Thrissur - committed to making premium li
             WE ARE PLEASED TO <br /> INTRODUCE OUR <br /> BRAND AMBASSADOR.
           </h3>
 
-          <h1 className="text-[76px] xl:text-[122px] font-urban py-10 font-medium leading-[40px]">
+          <h2 className="text-[76px] xl:text-[122px] font-urban py-10 font-medium leading-[40px]">
             BHAVANA
-          </h1>
+          </h2>
 
           {/* SMALL BOTTOM-RIGHT IMAGE */}
           {/* <div className="absolute bottom-0 right-0 md:right-[-40px] md:bottom-[60px] w-[140px] h-[90px] rounded-lg overflow-hidden shadow-lg">

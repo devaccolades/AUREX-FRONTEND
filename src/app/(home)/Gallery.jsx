@@ -98,10 +98,10 @@ export default function GallerySection({ data }) {
           <p className="text-[#006A54] font-poppins font-regular text-[16px]  leading-[20px]">
             #Gallery
           </p>
-          <h1 className="text-[32px] md:text-[40px] xl:text-[64px] font-urban font-medium leading-[32px] md:leading-[40px] xl:leading-[60px] mt-2">
+          <h2 className="text-[32px] md:text-[40px] xl:text-[64px] font-urban font-medium leading-[32px] md:leading-[40px] xl:leading-[60px] mt-2">
             Where Every <br className="hidden md:block" /> Corner Tells{" "}
             <br className="hidden md:block" /> a Story
-          </h1>
+          </h2>
           <p className="text-black text-[13px] lg:text-[14px]  leading-[124%] lg:leading-[156%] mt-4 max-w-sm">
             Step into a world of clean design and peaceful living. Explore lush green landscapes, curated outdoor
 spaces, and richly appointed interiors crafted by
