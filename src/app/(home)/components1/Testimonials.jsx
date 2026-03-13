@@ -144,7 +144,8 @@ const Card = ({ item, activeVideo, setActiveVideo }) => {
           <Image
             src={item.thumbnail}
             fill
-            alt={item.thumbnail_alt}
+            // alt={item.thumbnail_alt}
+            alt="home builders Thrissur"
             className="object-cover rounded-[20px]"
           />
 
@@ -156,7 +157,7 @@ const Card = ({ item, activeVideo, setActiveVideo }) => {
               src="/images/testimonials/play.svg"
               width={70}
               height={70}
-              alt="play"
+              alt="home builders Thrissur"
               className="h-[22px] md:h-[42px] w-[22px] md:w-[42px]"
             />
           </div>

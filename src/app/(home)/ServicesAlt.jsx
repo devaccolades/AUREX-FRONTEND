@@ -214,7 +214,7 @@ const [openModal, setOpenModal] = useState(false);
         >
           <Image
             src="/images/home/enq.svg"
-            alt="Arrow"
+            alt="best builders in Thrissur "
             width={20}
             height={20}
           />
@@ -256,7 +256,7 @@ const [openModal, setOpenModal] = useState(false);
                   <div className="w-full h-full shadow-xl">
                     <Image
                       src={img.src}
-                      alt=""
+                      alt="best builders in Thrissur "
                       fill
                       sizes="(max-width:768px) 140px,
                              (max-width:1024px) 200px,

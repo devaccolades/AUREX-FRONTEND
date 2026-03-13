@@ -10,7 +10,7 @@ export default function Thrissur() {
             {/* Background Image */}
             <Image
                 src={bgImage}
-                alt="Thrissur Background"
+                alt="home builders Thrissur"
                 fill
                 className="object-cover"
                 priority
@@ -29,7 +29,7 @@ export default function Thrissur() {
                         {/* Map Image (fixed at bottom-left area) */}
                         <Image
                             src={mapImage}
-                            alt="Kerala Map Highlight"
+                            alt="home builders Thrissur"
                             className="w-100 md:w-140 lg:w-100 object-cover translate-y-28 md:translate-y-35 ml-0 md:-ml-10 lg:ml-0 xl:ml-16"
                         />
 

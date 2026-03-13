@@ -122,7 +122,7 @@ premier home builders in Thrissur.
             >
               <Image
                 src="/images/home/enq.svg"
-                alt="Arrow"
+                alt="home builders Thrissur"
                 width={20}
                 height={20}
               />
@@ -148,7 +148,8 @@ premier home builders in Thrissur.
                 <Image
                   // loading="lazy"
                   src={activeImage?.image}
-                  alt={activeImage?.image_alt || "Active Gallery Image"}
+                  // alt={activeImage?.image_alt || "home builders Thrissur"}
+                  alt="home builders Thrissur"
                   width={900}
                   height={600}
                   sizes="(max-width: 768px) 100vw, 565px"
@@ -215,7 +216,8 @@ premier home builders in Thrissur.
                   <Image
                     loading="lazy"
                     src={item.image}
-                    alt={item.image_alt}
+                    // alt={item.image_alt}
+                    alt="home builders Thrissur"
                     width={300}
                     height={180}
                     className="w-[93px] lg:w-[179px] h-[77px] lg:h-[140px] object-cover"
@@ -297,7 +299,8 @@ premier home builders in Thrissur.
           >
             <Image
               src={activeImage.image}
-              alt={activeImage.image_alt || "Preview"}
+              // alt={activeImage.image_alt || "Preview"}
+              alt = "home builders Thrissur"
               width={1400}
               height={900}
               className="w-full h-auto object-contain rounded-lg"

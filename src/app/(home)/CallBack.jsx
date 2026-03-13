@@ -37,7 +37,7 @@ export default function Callback() {
                             >
                                 <Image
                                     src="/images/home/button-arrow.svg"
-                                    alt="Arrow"
+                                    alt="best builders in Thrissur"
                                     width={28}
                                     height={28}
                                 />
@@ -71,7 +71,7 @@ export default function Callback() {
                             {/* ARROW */}
                             <div className="absolute bottom-12 md:bottom-18 right-22 md:right-32 ">
                                 <Image src="/images/home/button-arrow.svg"
-                                    alt="Arrow" width={20} height={20}
+                                    alt="best builders in Thrissur" width={20} height={20}
                                     className="w-[16px] md:w-[20px] h-[16px] md:h-[20px] " />
                             </div>
                         </button>
