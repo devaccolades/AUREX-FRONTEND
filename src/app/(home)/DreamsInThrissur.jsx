@@ -38,7 +38,7 @@ const DreamsInThrissur = () => {
                     src={bank}
                     height={120}
                     width={140}
-                    alt="bank img"
+                    alt="best builders in Thrissur"
                     className="h-[45px] md:h-[54px] w-auto object-contain"
                   />
                 ))}

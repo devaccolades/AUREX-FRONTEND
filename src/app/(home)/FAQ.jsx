@@ -21,7 +21,7 @@ const FAQ = ({ data }) => {
       <div className="absolute inset-0 flex w-full h-full justify-start opacity-26 pointer-events-none">
         <Image
           src="/images/home/faq-bg.svg"
-          alt="decor-left"
+          alt="home builders Thrissur"
           fill
           className="object-cover md:object-contain md:object-left w-full h-full"
         />

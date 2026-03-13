@@ -108,7 +108,7 @@ export default function ChairmanMessage() {
            
             <Image
               src="/images/home/signature.png"
-              alt="signature"
+              alt="best builders in Thrissur"
               width={200}
               height={100}
               className="rotate-[-8deg] opacity-999"
@@ -125,7 +125,7 @@ export default function ChairmanMessage() {
           <div className="absolute left-25  md:left-0 -top-56 md:top-0 h-full w-full md:w-[46px] lg:w-[42px] z-20 block ">
             <Image
               src="/images/home/Vector.svg"
-              alt="Tear Effect"
+              alt="best builders in Thrissur"
               fill
               className="object-fill md:object-cover rotate-90 md:rotate-180 scale-x-[-1] md:scale-x-[1]"
             />
@@ -135,7 +135,7 @@ export default function ChairmanMessage() {
           <div className="relative md:w-fit h-full">
             <Image
               src="/images/home/chairman.png"
-              alt="Chairman Photo"
+              alt="best builders in Thrissur"
               width={100}
               height={100}
               className="object-cover object-top grayscale w-full h-[420px] md:w-[333px] md:h-full"

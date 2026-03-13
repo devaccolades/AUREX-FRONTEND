@@ -32,7 +32,7 @@ export default function SignatureProjects({ data }) {
       <div className="absolute inset-0 flex w-full h-full justify-start opacity-10 pointer-events-none">
         <Image
           src="/images/home/Group (3).svg"
-          alt="decor-left"
+          alt="best builders in Thrissur "
           fill
           className="object-cover md:object-contain md:object-left w-full h-full"
         />
@@ -44,7 +44,7 @@ export default function SignatureProjects({ data }) {
         <div className="absolute top-6 left-2 md:left-6 lg:left-10 rotate-0">
           <Image
             src="/images/icons/topLeft.svg"
-            alt="corner"
+            alt="best builders in Thrissur "
             width={24}
             height={24}
           />
@@ -54,7 +54,7 @@ export default function SignatureProjects({ data }) {
         <div className="absolute top-6 right-2 md:right-6 lg:right-10 rotate-0">
           <Image
             src="/images/icons/topRight.svg"
-            alt="corner"
+            alt="best builders in Thrissur "
             width={24}
             height={24}
           />
@@ -64,7 +64,7 @@ export default function SignatureProjects({ data }) {
         <div className="absolute bottom-4 lg:bottom-6 right-2 md:right-6 lg:right-10 rotate-0">
           <Image
             src="/images/icons/downRight.svg"
-            alt="corner"
+            alt="best builders in Thrissur "
             width={24}
             height={24}
           />
@@ -74,7 +74,7 @@ export default function SignatureProjects({ data }) {
         <div className="absolute bottom-4 lg:bottom-6 left-2 md:left-6 lg:left-10 rotate-0">
           <Image
             src="/images/icons/downLeft.svg"
-            alt="corner"
+            alt="best builders in Thrissur "
             width={24}
             height={24}
           />
@@ -119,7 +119,8 @@ builders in Thrissur have crafted for you.
               {/* Cover Image */}
               <Image
                 src={activeCard === p.id ? p.image : p.image}
-                alt={p.name}
+                // alt={p.name}
+                alt="best builders in Thrissur "
                 fill
                 className="object-cover"
               />
@@ -132,7 +133,7 @@ builders in Thrissur have crafted for you.
                 <div className="absolute top-4 right-4 z-30  rounded-full w-[36px] h-[36px] flex items-center justify-center ">
                   <Image
                     src="/images/icons/top-right.svg" // <-- your icon path
-                    alt="open"
+                    alt="best builders in Thrissur "
                     width={30}
                     height={30}
                   />
@@ -259,7 +260,7 @@ builders in Thrissur have crafted for you.
                   >
                     <Image
                       src={p.qr_code}
-                      alt="rera qr"
+                      alt="best builders in Thrissur "
                       width={120}
                       height={120}
                       className="object-contain"
@@ -274,7 +275,8 @@ builders in Thrissur have crafted for you.
               <div className="absolute bottom-0 p-2 lg:p-6 w-full text-white z-20">
                 <Image
                   src={p.logo}
-                  alt={p.logo_alt}
+                  // alt={p.logo_alt}
+                  alt="best builders in Thrissur "
                   width={100}
                   height={30}
                   className="mb-1 lg:mb-3 w-[80px] lg:w-[103px] h-[32px] lg:h-[42px] opacity-90"
@@ -298,7 +300,7 @@ builders in Thrissur have crafted for you.
                 <div className="flex items-center gap-2 mt-[4px]">
                   <Image
                     src="/images/icons/locu.svg" // <-- your location icon path
-                    alt="location"
+                    alt="best builders in Thrissur "
                     width={14}
                     height={14}
                     className="opacity-100 h-[14px] w-[10px]"
@@ -337,7 +339,7 @@ builders in Thrissur have crafted for you.
                           VIEW PROJECT DETAILS
                           <Image
                             src="/images/icons/arrow.svg"
-                            alt="download"
+                            alt="best builders in Thrissur "
                             width={8}
                             height={8}
                           />
@@ -362,7 +364,7 @@ builders in Thrissur have crafted for you.
                         BOOK SITE VISIT
                         <Image
                           src="/images/icons/arrow-up.svg"
-                          alt="arrow"
+                          alt="best builders in Thrissur "
                           width={18}
                           height={18}
                         />
@@ -385,7 +387,7 @@ builders in Thrissur have crafted for you.
                       VIEW PROJECT
                       <Image
                         src="/images/icons/arrow.svg"
-                        alt="download"
+                        alt="best builders in Thrissur "
                         width={8}
                         height={8}
                       />
@@ -416,7 +418,8 @@ builders in Thrissur have crafted for you.
                 <div className="h-[400px] w-full relative">
                   <Image
                     src={p.image}
-                    alt={p.image_alt}
+                    // alt={p.image_alt}
+                    alt="best builders in Thrissur "
                     fill
                     className="object-cover"
                   />
@@ -485,7 +488,7 @@ builders in Thrissur have crafted for you.
                     >
                       <Image
                         src={p.qr_code}
-                        alt="rera qr"
+                        alt="best builders in Thrissur "
                         width={120}
                         height={120}
                         className="object-contain"
@@ -499,7 +502,8 @@ builders in Thrissur have crafted for you.
                   {/* LOGO */}
                   <Image
                     src={p.logo}
-                    alt={p.logo_alt}
+                    // alt={p.logo_alt}
+                    alt="best builders in Thrissur "
                     width={83}
                     height={34}
                     className="mb-2 opacity-90"
@@ -527,7 +531,7 @@ builders in Thrissur have crafted for you.
                   <div className="flex items-center gap-[8px] mt-[8px]">
                     <Image
                       src="/images/icons/locu.svg" // <-- your location icon path
-                      alt="location"
+                      alt="best builders in Thrissur "
                       width={14}
                       height={14}
                       className="h-[14px] w-[10px]"
@@ -567,7 +571,7 @@ builders in Thrissur have crafted for you.
                       VIEW PROJECT
                       <Image
                         src="/images/icons/arrow.svg"
-                        alt="download"
+                        alt="best builders in Thrissur "
                         width={8}
                         height={8}
                       />

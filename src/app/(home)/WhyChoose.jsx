@@ -45,7 +45,7 @@ export default function WhyChooseUs() {
               <div className="absolute  left-[2px] md:left-[10px] -top-[300px]  md:top-0 h-full w-full md:w-1/4 opacity-20">
                 <Image
                   src={bg}
-                  alt="Elephant background"
+                  alt="home builders Thrissur"
                   fill
                   className="object-contain md:object-cover object-left  scale-x-[-1]"
                 />

@@ -14,14 +14,14 @@ export default function AboutSection() {
       <div className="absolute  flex w-full  justify-between opacity-80 pointer-events-none">
         <Image
           src="/images/home/left-ele.png"
-          alt="decor-left"
+          alt="best builders in Thrissur"
           width={800}
           height={800}
           className="w-[118px] md:w-[241px] lg:w-[330px] xl:w-[356px] object-contain "
         />
         <Image
           src="/images/home/right-ele.png"
-          alt="decor-right"
+          alt="best builders in Thrissur"
           width={800}
           height={800}
           className="w-[118px] md:w-[241px] lg:w-[330px] xl:w-[356px] object-contain  "
