@@ -102,9 +102,10 @@ export default function GallerySection({ data }) {
             Where Every <br className="hidden md:block" /> Corner Tells{" "}
             <br className="hidden md:block" /> a Story
           </h1>
-          <p className="text-black text-[13px] lg:text-[14px]  leading-[156%] mt-4 max-w-sm">
-            Step inside a world where modern design meets timeless tranquility.
-            From lush landscapes to luxurious interiors.
+          <p className="text-black text-[13px] lg:text-[14px]  leading-[124%] lg:leading-[156%] mt-4 max-w-sm">
+            Step into a world of clean design and peaceful living. Explore lush green landscapes, curated outdoor
+spaces, and richly appointed interiors crafted by
+premier home builders in Thrissur.
           </p>
 
           <div className="flex items-center justify-between ">

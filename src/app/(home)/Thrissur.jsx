@@ -57,10 +57,14 @@ export default function Thrissur() {
                                 Thrissur Pooram to the timeless grace of its temples and palaces, the
                                 city embodies a heritage that inspires every creation we build.
                                 <br /><br />
-                                At Aurex Builders, being rooted in Thrissur means embracing a legacy
+                                {/* At Aurex Builders, being rooted in Thrissur means embracing a legacy
                                 of beauty, craftsmanship, and celebration. Our designs draw inspiration
                                 from the city’s vibrant festivals, timeless architecture, and the
-                                warmth of its people — blending modern elegance with cultural soul.
+                                warmth of its people — blending modern elegance with cultural soul. */}
+                                Thrissur holds a rich history of art and fine building. This great city inspires everything we create. We
+fully embrace this deep legacy of local beauty and craft. Our designs pull fresh ideas from local
+festivals and classic spaces. As the best builders Thrissur holds dear, we mix modern style with local
+soul
                             </p>
                         </div>
                     </div>

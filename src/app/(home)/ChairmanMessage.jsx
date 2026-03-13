@@ -16,29 +16,29 @@ export default function ChairmanMessage() {
           transition={{ duration: 0.7, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-        {/* <div className="relative  md:w-[59%] lg:w-[60%] p-2 md:p-4 lg:p-4 xl:p-8 "> */}
-          
+          {/* <div className="relative  md:w-[59%] lg:w-[60%] p-2 md:p-4 lg:p-4 xl:p-8 "> */}
+
           {/* Text Content */}
           <p className="font-poppins text-[12px] md:text-[14px] lg:text-[16px] mb-1 xl:mb-2">
             <span className="text-[#006A54]">#Chairman's</span>{" "}
             <span className="text-gray-500">Message</span>
           </p>
 
-<motion.h2
+          <motion.h2
             className="text-[20px] md:text-[28px] lg:text-[34px] font-medium font-urban leading-[20px] md:leading-[28px] lg:leading-[34px] mb-2 xl:mb-5"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
           >
-          {/* <h2 className="text-[20px] md:text-[28px] lg:text-[34px] font-medium font-urban leading-[20px] md:leading-[28px] lg:leading-[34px] mb-2 xl:mb-5"> */}
+            {/* <h2 className="text-[20px] md:text-[28px] lg:text-[34px] font-medium font-urban leading-[20px] md:leading-[28px] lg:leading-[34px] mb-2 xl:mb-5"> */}
             BUILDING MORE THAN <br className="hidden sm:block" />
             STRUCTURES — ADORNING LIVES
-          {/* </h2> */}
+            {/* </h2> */}
           </motion.h2>
 
 
-<motion.div
+          <motion.div
             className="text-[12px] md:text-[13px] lg:text-[14px] leading-[20px]"
             initial="hidden"
             whileInView="visible"
@@ -48,55 +48,43 @@ export default function ChairmanMessage() {
               visible: { transition: { staggerChildren: 0.15 } },
             }}
           >
-          {/* <div className="text-[12px] md:text-[13px] lg:text-[14px] leading-[20px]"> */}
-            {/* <p className="text-black mb-2 xl:mb-4"> */}
+
             <motion.p
               className="text-black mb-2 xl:mb-4"
               variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }}
             >
-              {/* At Aurex Builders, we believe in building more than structures — we build dreams,
-              trust, and lasting relationships. Our vision, "Adorning Lives," reflects our passion
-              to create spaces that inspire and enrich the communities we serve. */}
               At Aurex Builders, we believe that every structure we raise carries a deeper purpose. We build
-dreams, cultivate trust, and form lasting relationships. Our vision - 'Adorning Lives' - reflects our dedication to
-creating spaces that inspire and enrich the communities of Thrissur and beyond.
+              dreams, cultivate trust, and form lasting relationships. Our vision - 'Adorning Lives' - reflects our dedication to
+              creating spaces that inspire and enrich the communities of Thrissur and beyond
 
             </motion.p>
 
-           
+
             <motion.p
               className="text-black mb-2 xl:mb-4"
               variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }}
             >
-              {/* Every project we undertake carries a promise of quality, integrity, and innovation.
-              Guided by these values, we continue to craft landmarks that stand the test of time
-              and touch lives in meaningful ways. */}
-         Every project we undertake is guided by our commitment to quality, integrity, and innovation.
-Together
-with our clients, team, and partners, we are shaping a future where every Aurex home becomes a
-symbol
-of beauty, purpose, and pride.
+              Every project we undertake is guided by our commitment to quality, integrity, and innovation.
+              Together with our clients, team, and partners, we are shaping a future where every Aurex home becomes a
+              symbol of beauty, purpose, and pride.
+            </motion.p>
 
-          </motion.p>
 
-            
-            {/* <motion.p
+            <motion.p
               className="text-black mb-2 xl:mb-4"
               variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }}
             >
-              Our journey is driven by people — our clients, our team, and our partners — whose
-              trust fuels our commitment to excellence. Together, we aim to shape a future where
-              every Aurex creation becomes a symbol of beauty, purpose, and pride.
-            
-            </motion.p> */}
+              As we grow, our promise remains unchanged: to place people at the centre of
+              everything we create. We ensure that every home we deliver is a place where life truly flourishes.
+
+            </motion.p>
 
           </motion.div>
 
 
           {/* NAME BLOCK */}
-          {/* <div className="mt-2 xl:mt-4"> */}
           <motion.div
-            className="mt-2 xl:mt-4"
+            className="mt-4 xl:mt-4"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
@@ -106,18 +94,18 @@ of beauty, purpose, and pride.
             <p className="font-urban font-bold text-[14px] lg:text-[16px] leading-[24px]">
               Chairman, Aurex Builders
             </p>
-            </motion.div>
-          {/* </div> */}
+          </motion.div>
+         
 
           {/* SIGNATURE (POSITIONED EXACTLY LIKE IMAGE) */}
           <motion.div
-            className="absolute bottom-4 md:bottom-6 right-6 lg:-right-10 w-[78px] md:w-[80px] lg:w-[90px] xl:w-[140px]"
+            className="absolute bottom-2 md:bottom-6 right-6 lg:-right-10 w-[70px] md:w-[80px] lg:w-[90px] xl:w-[140px]"
             initial={{ opacity: 0, rotate: -15 }}
             whileInView={{ opacity: 1, rotate: -8 }}
             transition={{ delay: 0.7 }}
             viewport={{ once: true }}
           >
-          {/* <div className=" absolute bottom-4 md:bottom-6 right-6 lg:-right-10 w-[78px] md:w-[80px] lg:w-[90px] xl:w-[140px]"> */}
+           
             <Image
               src="/images/home/signature.png"
               alt="signature"
@@ -125,7 +113,7 @@ of beauty, purpose, and pride.
               height={100}
               className="rotate-[-8deg] opacity-999"
             />
-          {/* </div> */}
+            {/* </div> */}
           </motion.div>
 
         </motion.div>

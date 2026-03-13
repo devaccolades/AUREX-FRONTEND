@@ -87,12 +87,16 @@ export default function SignatureProjects({ data }) {
           <span className="text-[#006A54]">#Residential </span>
           <span className="text-gray-600">Projects</span>
         </h4>
-        <h2 className="text-[32px] md:text-[38px] font-urban font-medium leading-[32px] md:leading-[48px] text-black">
-          OUR SIGNATURE PROJECTS
+        {/* <h2 className="text-[32px] md:text-[38px] font-urban font-medium leading-[32px] md:leading-[48px] text-black"> */}
+        <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-semibold font-urban leading-[24px] md:leading-[32px] lg:leading-[40px] mb-2">
+          OUR SIGNATURE RESIDENTIAL <br className="lg:hidden block" />
+          PROJECTS IN THRISSUR
         </h2>
-        <p className="text-black text-[14px] leading-[100%] opacity-90 mb-0 md:mb-10">
-          Turning your ideas into reality through meticulous planning and expert
-          execution.
+        <p className="text-black text-[13px] md:text-[14px] leading-[130%] md:leading-[156%] lg:leading-[100%] opacity-90 mb-0 md:mb-10">
+          Discover how Aurex Builders transforms inspired ideas into exceptional homes. Every project is
+conceived with precision planning, expert engineering, and a deep respect for the families who will
+call it home. From premium 2BHK and 3BHK apartments to grand luxury villas - explore what the best
+builders in Thrissur have crafted for you.
         </p>
       </div>
 
