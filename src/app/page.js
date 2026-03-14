@@ -27,11 +27,15 @@ import Callback from "./(home)/CallBack";
 
 export async function generateMetadata() {
   const seo = await SeoById("home");
+  const canonicalUrl = "https://aurexbuilders.com/";
 
   if (!seo) {
     return {
       title: "Aurex Builders",
       description: "Aurex Builders",
+      alternates: {
+        canonical: canonicalUrl,
+      },
     };
   }
 
@@ -39,10 +43,15 @@ export async function generateMetadata() {
     title: seo.meta_title,
     description: seo.meta_description,
 
+    alternates: {
+      canonical: canonicalUrl,
+    },
+
     openGraph: {
       title: seo.og_title || seo.meta_title,
       description: seo.og_description || seo.meta_description,
-      url: "https://aurex.accoladesweb.com",
+      // url: "https://aurexbuilders.com/",
+      url: canonicalUrl,
       siteName: "Aurex Builders",
       images: seo.og_image
         ? [
