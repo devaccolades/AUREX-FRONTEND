@@ -84,7 +84,8 @@ export default function ProjectHero({ project }) {
         {image && (
           <Image
             src={image}
-            alt={image_alt || name}
+            // alt={image_alt || name}
+            alt="Flats for Sale in Thrissur"
             fill
             // className="object-cover object-center -z-10"
             className="object-cover object-[50%_90%]"
@@ -103,7 +104,10 @@ export default function ProjectHero({ project }) {
 
           {location && (
             <div className="w-fit flex gap-2 py-2 px-2.5 bg-white/10 backdrop-blur-[9.7px] border border-gray-400 rounded-3xl">
-              <Image src={loc} alt="icon" />
+              <Image src={loc} 
+              // alt="icon" 
+              alt="Flats for Sale in Thrissur"
+              />
               <h3 className="text-white text-[13px] font-bold capitalize">
                 {location}
               </h3>
@@ -117,7 +121,7 @@ export default function ProjectHero({ project }) {
               {qr_code && (
                 <Image
                   src={qr_code}
-                  alt="RERA QR"
+                  alt="Flats for Sale in Thrissur"
                   width={40}
                   height={40}
                   className="w-10 h-10"
@@ -148,7 +152,7 @@ export default function ProjectHero({ project }) {
 
         <Image
           src={bottom}
-          alt="bottom design"
+          alt="Flats for Sale in Thrissur"
           className="absolute bottom-0 left-0 w-full h-[50px] md:h-[120px] object-cover object-top z-10"
         />
 
@@ -171,7 +175,7 @@ export default function ProjectHero({ project }) {
                 <div className="p-2.5 rounded-lg bg-[#E09B07]">
                   <Image
                     src={item.icon}
-                    alt="icon"
+                    alt="Flats for Sale in Thrissur"
                     className="w-5 h-5 lg:w-6 lg:h-6 text-white"
                   />
                 </div>
@@ -194,7 +198,7 @@ export default function ProjectHero({ project }) {
         <div className="flex gap-2 items-center ">
           <Image
             src={project.qr_code}
-            alt="icon"
+            alt="Flats for Sale in Thrissur"
             width={40}
             height={40}
             className="w-10 h-10"
@@ -237,7 +241,7 @@ export default function ProjectHero({ project }) {
               <div className="p-3 rounded-lg bg-[#E09B07]">
                 <Image
                   src={item.icon}
-                  alt="icon"
+                  alt="Flats for Sale in Thrissur"
                   className="w-6 h-6 text-white"
                 />
               </div>
@@ -261,7 +265,7 @@ export default function ProjectHero({ project }) {
             className="flex flex-col items-start gap-2.5 p-5 rounded-[20px] bg-[#FAF5E9]"
           >
             <div className="p-3 rounded-lg bg-[#FAEDD2] flex items-center justify-center">
-              <Image src={item.icon} alt={item.title} width={24} height={24} />
+              <Image src={item.icon} alt="Flats for Sale in Thrissur" width={24} height={24} />
             </div>
 
             <div className="space-y-1">

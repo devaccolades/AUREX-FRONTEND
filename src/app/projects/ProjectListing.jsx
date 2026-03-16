@@ -5,35 +5,9 @@ import Image from "next/image";
 
 const filters = ["Residential", "Commercial", "Contracts"];
 
-// const projects = [
-//   {
-//     id: 1,
-//     title: "AURUM COMPLEX",
-//     location: "Puthukkad, Thrissur",
-//     category: "Commercial",
-//     mapEmbed:
-//       "https://www.google.com/maps?q=Puthukkad%20Thrissur&output=embed",
-//   },
-//   {
-//     id: 2,
-//     title: "AURUM GALLERIA",
-//     location: "Athani, Thrissur",
-//     category: "Contracts",
-//     mapEmbed:
-//       "https://www.google.com/maps?q=Athani%20Thrissur&output=embed",
-//   },
-//   {
-//     id: 3,
-//     title: "AURUM COMPLEX",
-//     location: "Puthukkad, Thrissur",
-//     category: "Residential",
-//     mapEmbed:
-//       "https://www.google.com/maps?q=Puthukkad%20Thrissur&output=embed",
-//   },
-// ];
 
 export default function ProjectListing({ data = [] }) {
-  const [activeFilter, setActiveFilter] = useState("Commercial");
+  const [activeFilter, setActiveFilter] = useState("Residential");
 
   const filteredProjects = data.filter(
     (project) => project.project_type === activeFilter,
@@ -49,7 +23,7 @@ export default function ProjectListing({ data = [] }) {
       {/* BACKGROUND IMAGE */}
       <Image
         src="/images/projects/bg.png"
-        alt="Thrissur Background"
+        alt="Flats for Sale in Thrissur"
         fill
         className="object-cover rounded-[30px] "
         priority
@@ -113,7 +87,7 @@ export default function ProjectListing({ data = [] }) {
                 <div className="flex items-center gap-2">
                   <Image
                     src="/images/projects/loc.svg"
-                    alt="location"
+                    alt="Flats for Sale in Thrissur"
                     width={10}
                     height={10}
                   />

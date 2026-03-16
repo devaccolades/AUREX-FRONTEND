@@ -104,7 +104,8 @@ export default function FloorPlansSection({floorplan}) {
                 >
                   <Image
                     src={plan.image}
-                    alt={plan.image_alt || "Floor Plan"}
+                    // alt={plan.image_alt || "Floor Plan"}
+                    alt="Flats for Sale in Thrissur"
                     fill
                     className="object-cover md:w-fit"
                   />
@@ -163,7 +164,7 @@ export default function FloorPlansSection({floorplan}) {
           <div className="relative w-full max-w-4xl h-[80vh]  rounded-xl overflow-hidden">
             <Image
               src={previewImage}
-              alt="Floor Plan Preview"
+              alt="Flats for Sale in Thrissur"
               fill
               className="object-contain"
             />

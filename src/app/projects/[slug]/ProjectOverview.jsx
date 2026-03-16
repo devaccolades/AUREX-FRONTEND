@@ -44,7 +44,7 @@ export default function ProjectOverviewSection({ p }) {
             DOWNLOAD BROCHURE
             <Image
               src="/images/icons/download.svg"
-              alt="download"
+              alt="Flats for Sale in Thrissur"
               width={18}
               height={18}
             />

@@ -89,7 +89,8 @@ export default function HomeBuyingJourney() {
                   >
                     <Image
                       src={step.image}
-                      alt={step.title}
+                      // alt={step.title}
+                      alt="Flats for Sale in Thrissur"
                       fill
                       className="object-cover"
                     />

@@ -84,7 +84,8 @@ export default function SignatureProjects({ data }) {
               >
                 <Image
                   src={p.logo}
-                  alt={p.image_alt}
+                  // alt={p.image_alt}
+                  alt="Flats for Sale in Thrissur"
                   width={140}
                   height={40}
                   className="mx-auto mb-2"
@@ -101,7 +102,8 @@ export default function SignatureProjects({ data }) {
         <div className="relative h-[460px] lg:h-[520px] rounded-[24px] overflow-hidden shadow-xl">
           <Image
             src={activeProject.image}
-            alt={activeProject.image_alt}
+            // alt={activeProject.image_alt}
+            alt="Flats for Sale in Thrissur"
             fill
             className="object-cover"
             priority
@@ -160,7 +162,7 @@ export default function SignatureProjects({ data }) {
                 >
                   <Image
                     src={activeProject.qr_code}
-                    alt="rera qr"
+                    alt="Flats for Sale in Thrissur"
                     width={120}
                     height={120}
                     className="object-contain"
@@ -177,8 +179,8 @@ export default function SignatureProjects({ data }) {
 
               <div className="flex items-center gap-2">
                 <Image
-                  src="/images/icons/locu.svg" // <-- your location icon path
-                  alt="location"
+                  src="/images/icons/locu.svg" 
+                  alt="Flats for Sale in Thrissur"
                   width={14}
                   height={14}
                   className="opacity-80"
@@ -215,7 +217,7 @@ export default function SignatureProjects({ data }) {
                     VIEW PROJECT DETAILS
                     <Image
                       src="/images/icons/arrow.svg"
-                      alt="download"
+                      alt="Flats for Sale in Thrissur"
                       width={8}
                       height={8}
                     />
@@ -240,7 +242,7 @@ export default function SignatureProjects({ data }) {
                   BOOK SITE VISIT
                   <Image
                     src="/images/icons/arrow-up.svg"
-                    alt="arrow"
+                    alt="Flats for Sale in Thrissur"
                     width={18}
                     height={18}
                   />
@@ -278,7 +280,8 @@ export default function SignatureProjects({ data }) {
               >
                 <Image
                   src={p.logo}
-                  alt={p.logo_alt}
+                  // alt={p.logo_alt}
+                  alt="Flats for Sale in Thrissur"
                   width={140}
                   height={40}
                   className="mx-auto mb-2"
@@ -295,7 +298,8 @@ export default function SignatureProjects({ data }) {
           <div className="relative rounded-2xl overflow-hidden shadow-lg h-[468px]">
             <Image
               src={activeProject.image}
-              alt={activeProject.image_alt}
+              // alt={activeProject.image_alt}
+              alt="Flats for Sale in Thrissur"
               fill
               className="object-cover"
             />
@@ -352,7 +356,7 @@ export default function SignatureProjects({ data }) {
                   >
                     <Image
                       src={activeProject.qr_code}
-                      alt="rera qr"
+                      alt="Flats for Sale in Thrissur"
                       width={120}
                       height={120}
                       className="object-contain"
@@ -370,7 +374,7 @@ export default function SignatureProjects({ data }) {
                 <div className="flex items-center gap-2">
                   <Image
                     src="/images/icons/locu.svg"
-                    alt="location"
+                    alt="Flats for Sale in Thrissur"
                     width={14}
                     height={14}
                   />
