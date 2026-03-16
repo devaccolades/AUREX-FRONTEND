@@ -12,35 +12,35 @@ const steps = [
     id: "01",
     title: "CONSULTATION & REQUIREMENT GATHERING",
     description:
-      "We begin by understanding your lifestyle, needs, and investment goals. Our team helps you choose the right project and apartment type that suits your vision.",
+    "Our team begins by understanding your lifestyle needs, family size, preferred configuration, and investment budget. Whether you are looking for a compact 2 BHK flat in Thrissur or a spacious 3 BHK apartment with premium amenities, we help you identify the right project and the right unit before you commit to anything.",
     image: "/images/projects/h1.webp",
   },
   {
     id: "02",
     title: "SITE VISIT & PROJECT SELECTION",
     description:
-      "Visit our model apartments or ongoing projects. Experience the design, quality, and location advantages firsthand before making your decision.",
+    "Tour our ongoing flat projects in Thrissur first-hand with a dedicated Aurex guide. Experience the actual layout, natural lighting, construction quality, and location advantages of each development before making your decision. No pressure, no rush — we want you to feel completely certain.",
     image: "/images/projects/h2.jpg",
   },
   {
     id: "03",
     title: "BOOKING & DOCUMENTATION",
     description:
-      "Once you finalize your choice, our sales and legal teams assist with transparent paperwork, ensuring a smooth and hassle-free booking process.",
+    "Our dedicated legal and sales team manages RERA verification, sale agreement drafting, and transparent pricing documentation — ensuring a completely smooth, surprise-free booking process for your flat in Thrissur. Every document is explained clearly before you sign.",
     image: "/images/projects/h3.webp",
   },
   {
     id: "04",
     title: "CONSTRUCTION & SITE UPDATES",
     description:
-      "We keep you informed throughout the construction phase with regular progress updates, site visits, and quality checks.",
+      "Receive regular project milestone updates, site photos, and on-site quality inspection reports as your flat in Thrissur takes shape. Our project management team conducts daily quality checks at every construction stage — keeping you fully informed and confident throughout the build.",
     image: "/images/projects/h4.jpg",
   },
   {
     id: "05",
     title: "HANDOVER & AFTER-SALES CARE",
     description:
-      "Welcome to your dream home! We conduct final inspections and ensure quality before handing over your keys — with continued maintenance support.",
+      "Receive a fully completed, snagging-checked flat on your agreed handover date. Our after-sales team remains actively available for 12 months post-handover — addressing any concerns, coordinating warranty requests, and ensuring your transition into your new home is as smooth as possible.",
     image: "/images/projects/h5.jpg",
   },
 ];
@@ -52,12 +52,12 @@ export default function HomeBuyingJourney() {
 
         {/* Heading */}
         <div className="mb-6 md:mb-10 max-w-xl">
-          <h2 className="text-[24px] md:text-[32px] leading-[24px] md:leading-[36px] font-urban font-medium">
-            OUR HOME BUYING JOURNEY
+          <h2 className="uppercase text-[24px] md:text-[32px] leading-[24px] md:leading-[36px] font-urban font-medium">
+            Your Seamless Journey to Buying Flats in Thrissur
           </h2>
           <p className="mt-2 text-sm leading-[100%] text-black">
-            From your first visit to key handover — we make every step simple,
-            transparent, and rewarding.
+            From your first enquiry to the day you receive your keys — and long after — Aurex makes every step of your home-buying journey transparent, straightforward, and genuinely rewarding.
+
           </p>
         </div>
 
@@ -84,7 +84,7 @@ export default function HomeBuyingJourney() {
 
                   {/* Image */}
                   <div
-                    className={`relative w-full h-[200px] overflow-hidden ${isEven ? "order-2" : "order-1"
+                    className={`relative w-full h-[250px] overflow-hidden ${isEven ? "order-2" : "order-1"
                       }`}
                   >
                     <Image

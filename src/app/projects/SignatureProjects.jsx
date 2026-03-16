@@ -53,9 +53,19 @@ export default function SignatureProjects({ data }) {
     <section className="py-16 relative bg-gradient-to-b from-[#FFF7EA] to-white">
       {/* HEADING */}
 
-      <h2 className="text-[16px] md:text-[20px] leading-[16px] font-urban font-bold uppercase text-center mb-4 md:mb-8">
-        OUR SIGNATURE PROJECTS
+<div className="mb-10">
+      <h2 className=" text-[16px] md:text-[20px] leading-[16px] font-urban font-bold uppercase text-center mb-4 md:mb-2">
+       Our Signature Residential Projects
       </h2>
+     
+        <p className="container text-black text-[13px] md:text-[14px] leading-[130%] md:leading-[156%] text-center  mb-0 md:mb-10">
+          Explore Aurex Builders' portfolio of RERA-registered flats for sale in Thrissur — 2 BHK and 
+          3 BHK premium apartments and smart commercial spaces built for modern Kerala living. 
+           Each project delivers open-plan 2 BHK and 3 BHK 
+           layouts with abundant natural light, smart storage, premium finishes, and green landscaped surroundings 
+           — designed to give your family a secure, peaceful, and deeply comfortable modern home.
+        </p>
+        </div>
 
       {/* DESKTOP VIEW */}
       <div className="container hidden md:grid grid-cols-[180px_1fr] lg:grid-cols-[280px_1fr] gap-8 mt-10">
@@ -263,7 +273,7 @@ export default function SignatureProjects({ data }) {
             <option>READY TO OCCUPY</option>
           </select> */}
           <div className="w-full border bg-black text-white border-gray-300 rounded-full px-4 py-2 text-[13px] leading-[13px] font-bold font-urban ">
-            <h3>Residential Projects</h3>
+            <h2>Residential Projects</h2>
           </div>
 
           {/* PROJECT LIST */}

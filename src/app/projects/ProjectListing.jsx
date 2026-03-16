@@ -32,8 +32,12 @@ export default function ProjectListing({ data = [] }) {
       {/* CONTENT */}
       <div className="relative z-10 container mx-auto ">
         {/* Heading */}
-        <p className="text-[16px] md:text-[20px] leading-[16px] font-urban font-bold uppercase tracking-widest text-black mb-2">
-          Our Completed Projects
+        <h2 className="text-[16px] md:text-[20px] leading-[16px] font-urban font-bold uppercase tracking-widest text-black mb-2">
+           Explore Our Completed Masterpieces
+        </h2>
+         <p className=" text-black text-[13px] md:text-[14px] leading-[130%] md:leading-[156%] text-left  mb-0 md:mb-10">
+          Aurex is primarily based in Thrissur and has delivered landmark residential and commercial projects
+           across Kerala — each standing as proof of our on-time delivery record and uncompromising construction standards.
         </p>
 
         {/* Filters */}

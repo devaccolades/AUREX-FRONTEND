@@ -27,7 +27,7 @@ export default function HeroSection() {
     absolute
     bottom-1
    left-1/2 -translate-x-1/2
-    z-30
+    z-40
     flex
     items-center
     gap-4
@@ -43,10 +43,11 @@ export default function HeroSection() {
           <p className="text-[12px] text-black leading-tight text-center">
             Years of Industry <br /> Experience
           </p>
-
-          <button className="whitespace-nowrap mt-0 w-fit px-4 py-2 rounded-full bg-black text-white font-urban text-[12px] hover:bg-gray-800 transition">
-            Explore Projects
-          </button>
+          <a href="tel:+919846507474">
+            <button className="whitespace-nowrap mt-0 w-fit px-4 py-2 rounded-full bg-black text-white font-urban text-[12px] hover:bg-gray-800 transition">
+              Book a Free Site Visit Today
+            </button>
+          </a>
         </div>
       </div>
 
@@ -54,19 +55,26 @@ export default function HeroSection() {
 
 
       {/*  CENTER HEADING  */}
-      <div className="relative z-10 container mx-auto pt-34 text-center">
+      <div className="relative z-10 container mx-auto pt-24 md:pt-34 text-center">
         <p className="font-poppins uppercase tracking-widest text-sm text-[#B57C42] mb-1">
           #Projects
-        </p>
 
-        <h1 className="text-[24px] md:text-[32px] lg:text-[40px] font-urban font-semibold leading-[24px] md:leading-[32px] lg:leading-[40px]">
-          BUILDING LANDMARKS. <br />
-          <span className="font-bold">CREATING LEGACIES.</span>
+        </p>
+        <h1 className="font-poppins uppercase tracking-widest text-[11px] md:text-sm text-black mb-1">
+          Flats for Sale in Thrissur — Luxury Apartments  by Aurex Builders
+
         </h1>
 
+        <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-urban font-semibold leading-[24px] md:leading-[32px] lg:leading-[40px]">
+          BUILDING LANDMARKS. <br />
+          <span className="font-bold">CREATING LEGACIES.</span>
+        </h2>
+
+
         <p className="mt-2 text-black text-[12px] md:text-[13px] lg:text-[14px] leading-[18px] max-w-md mx-auto">
-          Explore our diverse portfolio of residential, commercial, and
-          contract projects that redefine excellence.
+          With 20+ years of industry experience and 250+ homes delivered, every Aurex project is
+          engineered with architectural precision, on-time handover, and a lifetime of quality built in.
+
         </p>
       </div>
 
@@ -84,16 +92,17 @@ export default function HeroSection() {
 
 
       {/* RIGHT EXPERIENCE CARD */}
-      <div className="hidden md:block absolute right-6 md:right-16 top-[55%] lg:text-[45%] z-10 text-center">
+      <div className="hidden md:block absolute right-6 md:right-16 top-[55%] lg:text-[45%] z-20 text-center">
         <h2 className="text-[44px] md:text-[64px] lg:text-[64px] leading-[40px] font-urban font-bold">20+</h2>
 
         <p className="text-12px] md:text-[13px] lg:text-sm text-black mt-1 leading-[16px] md:leading-[18px]">
           Years of Industry <br /> Experience
         </p>
-
-        <button className="mt-3 px-3 md:px-6 py-2 rounded-full bg-black text-white font-urban text-[12px] md:text-[13px] leading-[12px] md:leading-[13px] hover:bg-gray-800 transition">
-          Explore Projects
-        </button>
+        <a href="tel:+919846507474">
+          <button className="mt-3 px-3 md:px-6 py-2 rounded-full bg-black text-white font-urban text-[12px] md:text-[13px] leading-[12px] md:leading-[13px] hover:bg-gray-800 transition">
+            Book a Free Site Visit Today
+          </button>
+        </a>
       </div>
 
     </section>
