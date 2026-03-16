@@ -80,11 +80,11 @@ export default function HomeBuyingJourney() {
 
             return (
               <SwiperSlide key={step.id}>
-                <div className="bg-white rounded-[20px] border border-gray-200 min-h-[420px] overflow-hidden flex flex-col">
+                <div className="bg-white rounded-[20px] border border-gray-200 min-h-[470px] overflow-hidden flex flex-col">
 
                   {/* Image */}
                   <div
-                    className={`relative w-full h-[250px] overflow-hidden ${isEven ? "order-2" : "order-1"
+                    className={`relative w-full h-[200px] overflow-hidden ${isEven ? "order-2" : "order-1"
                       }`}
                   >
                     <Image

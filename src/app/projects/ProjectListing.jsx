@@ -4,7 +4,14 @@ import { useState } from "react";
 import Image from "next/image";
 
 const filters = ["Residential", "Commercial", "Contracts"];
+const tabDescriptions = {
+  Residential:
+    "Our completed residential portfolio includes Yahvi — a 7,000 sq ft luxury individual villa in Athanni, Thrissur — designed for families seeking privacy, space, and premium finishes in a tranquil setting. Each ready-to-move flat and villa project reflects the same rigorous quality standards applied across all Aurex developments, from structural engineering to interior detailing.",
 
+  Commercial:
+    "Aravind Arcade (Sokthan, Thrissur) and Adithya Arcade (Shornur Road, Thrissur) are completed commercial landmarks that demonstrate Aurex's versatility beyond residential projects. Both developments deliver highly functional, architecturally considered spaces that drive real business value for their occupants and investors.",
+
+};
 
 export default function ProjectListing({ data = [] }) {
   const [activeFilter, setActiveFilter] = useState("Residential");
@@ -41,7 +48,7 @@ export default function ProjectListing({ data = [] }) {
         </p>
 
         {/* Filters */}
-        <div className="flex flex-wrap gap-1 md:gap-3 mb-4 md:mb-10">
+        <div className="flex flex-wrap gap-1 md:gap-3 mb-4 ">
           {filters.map((filter) => (
             <button
               key={filter}
@@ -58,6 +65,11 @@ export default function ProjectListing({ data = [] }) {
           ))}
         </div>
 
+        {tabDescriptions[activeFilter] && (
+  <p className="text-black text-[13px] md:text-[14px] leading-[130%] md:leading-[156%] text-left mb-4">
+    {tabDescriptions[activeFilter]}
+  </p>
+)}
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6">
           {filteredProjects.map((project) => (
