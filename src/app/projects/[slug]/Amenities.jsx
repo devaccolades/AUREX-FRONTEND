@@ -257,7 +257,8 @@ const nextSlide = () => {
                 >
                   <Image
                     src={slide.image}
-                    alt={slide.image_alt || "Amenity Image"}
+                    // alt={slide.image_alt || "Amenity Image"}
+                    alt="Flats for Sale in Thrissur"
                     fill
                     className="object-cover"
                   />
@@ -334,7 +335,7 @@ const nextSlide = () => {
           >
             <Image
               src="/images/icons/yt.svg"
-              alt="corner"
+              alt="Flats for Sale in Thrissur"
               width={20}
               height={20}
             />
@@ -349,7 +350,7 @@ const nextSlide = () => {
           >
             <Image
               src="/images/icons/msg.svg"
-              alt="corner"
+              alt="Flats for Sale in Thrissur"
               width={20}
               height={20}
             />

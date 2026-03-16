@@ -9,7 +9,7 @@ export default function HeroSection() {
       {/*Background */}
       <Image
         src="/images/projects/p-hero.jpg"
-        alt="Projects Background"
+        alt="Flats for Sale in Thrissur"
         fill
         priority
         className="object-cover"
@@ -74,7 +74,7 @@ export default function HeroSection() {
       <div className="absolute bottom-[-40px] md:bottom-[-180px] lg:bottom-[-240px] xl:bottom-[-160px] left-[-50px] md:-left-10 z-10 w-[300px] md:w-[440px] lg:w-[500px] xl:w-[560px]">
         <Image
           src="/images/home/b.png"
-          alt="Brand Ambassador"
+          alt="Flats for Sale in Thrissur"
           width={520}
           height={600}
           priority

@@ -38,7 +38,8 @@ export default function ConstructionUpdates({ updates = [] }) {
         image: u.image.startsWith("http")
           ? u.image
           : `${process.env.NEXT_PUBLIC_API_URL}${u.image}`,
-        alt: u.image_alt || "Project update",
+        // alt: u.image_alt || "Project update",
+        alt: "Flats for Sale in Thrissur"
       }));
   }, [updates]);
 
@@ -143,7 +144,8 @@ export default function ConstructionUpdates({ updates = [] }) {
                   >
                     <Image
                       src={item.image}
-                      alt={item.alt}
+                      // alt={item.alt}
+                      alt="Flats for Sale in Thrissur"
                       fill
                       className="object-cover"
                       sizes="(min-width:1024px) 20vw, 40vw"

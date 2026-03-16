@@ -56,7 +56,7 @@ export default function BankingPartners() {
               <div className="flex items-center justify-center ">
                 <Image
                   src={logo}
-                  alt="Bank Partner"
+                  alt="Flats for Sale in Thrissur"
                   height={30}
                   width={30}
                   className="object-contain  w-auto"
