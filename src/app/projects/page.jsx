@@ -8,9 +8,10 @@ import HomeBuyingJourney from "./HomeBuyingJourney";
 import BankingPartners from "./BankingPartners";
 import SignatureProjects from "./SignatureProjects";
 
-import { ProjectsFetch, SeoById } from "@/services/api";
+import { ProjectsFetch, SeoById , FaqFetch} from "@/services/api";
 import ProjectWhyChooseUs from "./ProjectWhyChoose";
 import Callback from "./Callback";
+import FAQ from "../(home)/FAQ";
 
 
 export async function generateMetadata() {
@@ -55,6 +56,7 @@ export async function generateMetadata() {
 }
 
 export default async function page() {
+  const faqData = await FaqFetch();
   const projectsData = await ProjectsFetch();
   // const branchDetails = await BranchDetailsFetch();
   return (
@@ -66,6 +68,7 @@ export default async function page() {
       <HomeBuyingJourney />
       <ProjectWhyChooseUs />
       <BankingPartners />
+      <FAQ data={faqData} pageName="projects"/>
       <Callback />
       <Footer />
     </div>
