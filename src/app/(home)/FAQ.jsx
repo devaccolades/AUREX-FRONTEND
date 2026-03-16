@@ -12,9 +12,12 @@ const GlassSurface = dynamic(
   }
 );
 
-const FAQ = ({ data }) => {
+// const FAQ = ({ data }) => {
+  const FAQ = ({ data, pageName }) => {
   const [openIndex, setOpenIndex] = useState(0);
-  // console.log('faqs are :',data);
+  const filteredFaqs = data.filter(
+  (faq) => faq.page_name?.toLowerCase() === pageName.toLowerCase()
+);
 
   return (
     <section className="relative py-8 md:py-16 lg:py-20   ">
@@ -36,7 +39,8 @@ const FAQ = ({ data }) => {
 
 
           <div className="space-y-4">
-            {data.map((faq, index) => (
+            {/* {data.map((faq, index) => ( */}
+            {filteredFaqs.map((faq, index) => (
               <GlassSurface
                 key={faq.id}
                 borderRadius={18}

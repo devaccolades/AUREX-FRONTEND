@@ -97,7 +97,7 @@ export default async function Home() {
       <Thrissur />
       <Testiminials testimonials={testimonialData} />
       <DreamsInThrissur /> 
-      <FAQ data={faqData} /> 
+      <FAQ data={faqData} pageName="home"/> 
       <Callback />
       <Footer />
     </div>
