@@ -9,6 +9,9 @@ import BankingPartners from "./BankingPartners";
 import SignatureProjects from "./SignatureProjects";
 
 import { ProjectsFetch, SeoById } from "@/services/api";
+import ProjectWhyChooseUs from "./ProjectWhyChoose";
+import Callback from "./Callback";
+
 
 export async function generateMetadata() {
   const seo = await SeoById("projects");
@@ -61,8 +64,9 @@ export default async function page() {
       <SignatureProjects data={projectsData} />
       <ProjectListing data={projectsData} />
       <HomeBuyingJourney />
-      <WhyChooseUs />
+      <ProjectWhyChooseUs />
       <BankingPartners />
+      <Callback />
       <Footer />
     </div>
   );
