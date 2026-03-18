@@ -24,21 +24,20 @@ export default function  HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 h-full flex items-center">
-        <div className="container mx-auto px-2 md:px-6">
-          <div className="max-w-xl text-white">
+        <div className="container mx-auto px-0 md:px-6">
+          <div className="max-w-md text-white">
             <p className="font-poppins text-white text-[12px] md:text-[14px] lg:text-[16px] font-medium mb-1 md:mb-3">
               #Our Services
             </p>
 
-            <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-urban font-semibold leading-[24px] md:leading-[32px] lg:leading-[40px] mb-2">
-              ALL YOU NEED FOR <br /> YOUR DREAM HOME
-            </h2>
+            <h1 className="text-[24px] md:text-[32px] lg:text-[40px] font-urban font-semibold leading-[24px] md:leading-[32px] lg:leading-[40px] mb-2">
+             Interior Designers in Thrissur & Complete Property Services by Aurex Builders
+
+            </h1>
 
             <p className="max-w-md text-[13px] md:text-[14px] leading-[18px]  text-white mb-2">
-              From the first sketch to after-sales care, Aurum Builders provides
-              complete property solutions that redefine comfort, quality, and
-              trust. Each service we offer reflects our commitment to excellence
-              and our philosophy of adorning lives.
+              Aurex Builders provides everything you need under one roof — from award-winning interior designers in Thrissur to reliable aftercare services, seamless project management, and full rental support. Whether you are buying your first home or investing in property across Kerala, our expert team guides you from the first sketch to final handover with complete transparency and care.
+
             </p>
 
              <EnquireNowButton onClick={() => setOpenModal(true)} className="" />

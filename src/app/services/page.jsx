@@ -5,7 +5,8 @@ import Footer from '@/components2/Footer'
 import OurCoreServices from './OurCoreServices'
 import ExtendedExpertiseSection from './ExtendedExpertise'
 import ContactCtaSection from './ContactCTA'
-import { SeoById } from '@/services/api'
+import { SeoById, FaqFetch } from '@/services/api'
+import FAQ from '../(home)/FAQ'
 
 export async function generateMetadata() {
   const seo = await SeoById("services");
@@ -48,17 +49,19 @@ export async function generateMetadata() {
   };
 }
 
-function page() {
+export default async function page() {
+  const faqData = await FaqFetch();
   return (
     <div>
       <Header />
       <HeroSection />
       <OurCoreServices />
       <ExtendedExpertiseSection />
+      <FAQ data={faqData} pageName="services"/>
       <ContactCtaSection />
       <Footer />
     </div>
   )
 }
 
-export default page
+
