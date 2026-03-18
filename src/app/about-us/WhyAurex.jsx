@@ -13,32 +13,28 @@ export default function WhyAurexBuilders() {
   const [showContactModal, setShowContactModal] = useState(false);
   const strengths = [
     {
-      title: "EXPERT & PROFESSIONAL TEAM",
-      desc: "Experienced architects, engineers & designers",
+      title: "Expert Professional Team",
+      desc: "Our team includes certified architects, licensed structural engineers, and experienced interior designers — all dedicated to your project from day one.",
     },
     {
-      title: "TIMELY COMPLETION",
-      desc: "Commitment to delivering on schedule",
+      title: "On-Time Project Delivery",
+      desc: "We maintain a 95%+ on-time delivery record across all projects, with full transparency into timelines at every stage of construction.",
     },
     {
-      title: "INNOVATIVE APPROACH",
-      desc: "Fresh ideas, sustainable designs",
+      title: "Smart, Sustainable Designs",
+      desc: "Every Aurex home is designed for Kerala's climate — maximising natural light, ventilation, and energy efficiency using eco-approved materials.",
     },
     {
-      title: "UNCOMPROMISING QUALITY",
-      desc: "Best-in-class materials and processes",
+      title: "Uncompromising Build Quality",
+      desc: "We use only Grade-A materials from certified suppliers, backed by a structural warranty on every home we deliver.",
     },
     {
-      title: "OPEN COMMUNICATION",
-      desc: "Transparent updates and honest advice",
+      title: "Transparent Communication",
+      desc: "Receive real-time project updates via your dedicated project manager — no surprises, no hidden costs, ever.",
     },
     {
-      title: "VALUE FOR MONEY",
-      desc: "Premium living within your reach",
-    },
-    {
-      title: "CUSTOMER SATISFACTION",
-      desc: "Every home handed over with gratitude",
+      title: "True Value for Money",
+      desc: "Premium homes in Thrissur's most sought-after locations — designed to match your lifestyle and your budget.",
     },
   ];
 
@@ -54,9 +50,7 @@ export default function WhyAurexBuilders() {
           </h2>
 
           <p className="mt-6 text-black max-w-md text-[12px] md:text-[13px] lg:text-[14px] leading-[18px]  ">
-            Choosing Aurex means choosing excellence, transparency, and
-            peace of mind. We ensure every client experiences the joy of
-            owning a home that truly reflects their aspirations.
+            Choosing Aurex means choosing absolute excellence and deep peace.
           </p>
 
           <div className=" mt-6">
@@ -78,7 +72,7 @@ export default function WhyAurexBuilders() {
                 {/* ARROW */}
                 <div className="absolute bottom-12 md:bottom-18 right-22 md:right-28">
                     <Image src="/images/home/button-arrow.svg"
-                     alt="Arrow" width={20} height={20}
+                     alt="trusted-construction-company-thrissur-aurex-project" width={20} height={20}
                      className="w-[16px] md:w-[20px] h-[16px] md:h-[20px] " />
                 </div>
             </button>
@@ -104,9 +98,9 @@ export default function WhyAurexBuilders() {
                 </span>
 
                 {/* Title */}
-                <p className=" max-w-sm font-bold text-black text-[13px] md:text-[14px] lg:text-[16px] leading-[14px] md:leading-[14px] lg:leading-[24px]">
+                <h3 className=" max-w-sm font-bold text-black text-[13px] md:text-[14px] lg:text-[16px] leading-[14px] md:leading-[14px] lg:leading-[24px]">
                   {item.title}
-                </p>
+                </h3>
 
                 {/* Description */}
                 <p className="text-[12px] md:text-[13px] lg:text-[14px] leading-[16px] md:leading-[18px]  text-black font-regular">

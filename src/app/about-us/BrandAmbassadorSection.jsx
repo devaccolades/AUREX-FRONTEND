@@ -10,7 +10,7 @@
         <div className="absolute inset-0 w-[50%] left-0 z-0">
           <Image
             src="/images/about/bg-lines-1.png"
-            alt="Background lines"
+            alt="trusted-construction-company-thrissur-aurex-project"
             fill
             className="object-cover opacity-40"
           />
@@ -19,7 +19,7 @@
         <div className="absolute h-full top-0 w-[50%] right-0 z-0">
           <Image
             src="/images/about/bg-lines-2.png"
-            alt="Background lines overlay"
+            alt="trusted-construction-company-thrissur-aurex-project"
             fill
             className="object-cover opacity-40"
           />
@@ -43,14 +43,13 @@
               </h2>
 
               <p className="text-black text-[12px] md:text-[13px] lg:text-[15px] leading-[18px] lg:leading-[22px] mb-2 md:mb-4">
-                At Aurex Builders, our brand ambassador embodies the spirit of everything we stand for — trust,
-                quality, innovation, and a deep connection with our community.
+                Aurex Builders is proud to welcome Bhavana — one of Malayalam cinema's most beloved actresses — as our brand ambassador,
+                 embodying our core values of trust, quality, and community.
               </p>
 
               <p className="text-black text-[12px] md:text-[13px] lg:text-[15px] leading-[18px] lg:leading-[22px]">
-                More than a face, our ambassador represents the dreams and aspirations of every family
-                that chooses Aurex. With an unwavering belief in our philosophy of “Adorning Lives,” they
-                echo our commitment to creating spaces that inspire joy, belonging, and pride.
+                Through this partnership, we celebrate the art of authentic living — blending local culture with world-class elegance to make every Aurex home truly exceptionalMore than a brand partnership, this is a shared vision. Bhavana represents the dreams and aspirations of every family that chooses Aurex — echoing our commitment to creating homes that inspire joy, belonging, and pride. Together, we celebrate the true art of authentic Kerala living, blending rich local culture with world-class elegance to make every Aurex home truly exceptional.
+
               </p>
             </div>
             {/* MOBILE IMAGE (normal flow) */}
@@ -62,7 +61,7 @@
     <div className=" w-[100px] -mt-10">
       <Image
         src="/images/home/b.png"
-        alt="Brand Ambassador"
+        alt="trusted-construction-company-thrissur-aurex-project"
         width={300}
         height={480}
         className="w-[108px] h-[302px] object-cover"
@@ -78,9 +77,12 @@
       </p>
 
       <p className="text-black text-[12px] leading-[18px]">
-        Through this partnership, we aim to strengthen our bond with customers by blending
+        {/* Through this partnership, we aim to strengthen our bond with customers by blending
         credibility, culture, and class — celebrating the art of living that makes
-        every Aurex home truly exceptional.
+        every Aurex home truly exceptional. */}
+        More than a face, our ambassador represents the dreams and aspirations of every family
+                that chooses Aurex. With an unwavering belief in our philosophy of “Adorning Lives,” they
+                echo our commitment to creating spaces that inspire joy, belonging, and pride. 
       </p>
     </div>
 
@@ -98,9 +100,9 @@
               </p>
 
               <p className="text-black text-[12px] md:text-[13px] lg:text-[15px] leading-[18px] lg:leading-[22px]">
-                Through this partnership, we aim to strengthen our bond with customers by blending
-                credibility, culture, and class — celebrating the art of living that makes
-                every Aurex home truly exceptional.
+                More than a face, our ambassador represents the dreams and aspirations of every family
+                that chooses Aurex. With an unwavering belief in our philosophy of “Adorning Lives,” they
+                echo our commitment to creating spaces that inspire joy, belonging, and pride. 
               </p>
             </div>
           </div>
@@ -122,7 +124,7 @@
           >
             <Image
               src="/images/home/b.png"
-              alt="Brand Ambassador"
+              alt="trusted-construction-company-thrissur-aurex-project"
               width={900}
               height={900}
               className="object-contain"

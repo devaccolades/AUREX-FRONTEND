@@ -104,21 +104,23 @@ export default function MissionVision() {
             Our Vision & Mission
           </h2>
 
-          <h3 className="text-[16px] md:text-[18px] lg:text-[20px] leading-[16px] md:leading-[36px] font-extrabold font-urban mb-2">Vision</h3>
+          <h3 className="text-[16px] md:text-[18px] lg:text-[20px] leading-[16px] md:leading-[36px] font-extrabold font-urban mb-2">
+           Our Vision — Sustainable Homes That Inspire Thrissur Communities
+            </h3>
           <p className="text-[12px] md:text-[13px] lg:text-[15px] leading-[18px] lg:leading-[22px]  text-black mb-8 ">
-            To emerge as a pioneering and trusted force in the real estate
-            landscape by designing thoughtful spaces that inspire, enrich, and
-            elevate everyday living. We envision communities where innovation,
-            sustainability, and craftsmanship come together for a better
-            tomorrow.
+            Our vision is to lead Thrissur's real estate market by designing sustainable, thoughtfully planned 
+            homes that enrich everyday life. We invest in green building methods, smart space planning, and
+             community-first development — creating structures that stand proud for generations.
           </p>
 
-          <h3 className="text-[16px] md:text-[18px] lg:text-[20px] leading-[16px] md:leading-[36px] font-extrabold font-urban mb-2">Mission</h3>
+          <h3 className="text-[16px] md:text-[18px] lg:text-[20px] leading-[16px] md:leading-[36px] font-extrabold font-urban mb-2">
+            Our Mission — Quality Construction in Thrissur, Zero Compromises
+            </h3>
           <p className="text-black text-[12px] md:text-[13px] lg:text-[16px] leading-[18px] lg:leading-[24px]">
-            Our mission is to transform dreams into meaningful living
-            experiences through uncompromising quality, customer-centric
-            service, and sustainable innovation — ensuring every project truly
-            adorns lives.
+            Our mission is to deliver quality construction in Thrissur that exceeds every expectation. 
+            From initial consultation to final handover, our licensed team ensures your project is 
+            completed on time, within budget, and to the highest safety and design standards — giving you complete peace of mind.
+
           </p>
         </div>
 
@@ -154,7 +156,7 @@ export default function MissionVision() {
                   <div className="relative w-full h-full rounded-xl  ">
                     <Image
                       src={src}
-                      alt=""
+                      alt="trusted-construction-company-thrissur-aurex-project"
                       fill
                       className="object-cover"
                     />
