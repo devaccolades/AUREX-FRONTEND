@@ -9,10 +9,12 @@ export default function LeadershipPillers() {
         <div className="py-6  mb-5">
             <div className="w-full text-center flex flex-col items-center justify-center">
                 <h2 className="text-[24px] md:text-[28px] lg:text-[32px] font-medium font-urban leading-[28px] md:leading-[32px] lg:leading-[36px] text-center">
-                    Our 4 Leadership Pillars
+                    Leadership Behind Thrissur's Trusted Construction Company — Meet Our Team
+
                 </h2>
                 <p className="text-black mb-2 xl:mb-4 text-[12px] md:text-[13px] lg:text-[14px] leading-[20px]">
-                    Their shared vision, experience, and dedication form the backbone of Aurex Builders — inspiring every project and every promise we make.
+                   Their shared vision, experience, and dedication form the backbone of Aurex Builders — inspiring every project and every promise we make.
+
                 </p>
             </div>
 
@@ -38,15 +40,13 @@ export default function LeadershipPillers() {
 
                         <div className="text-[12px] md:text-[13px] lg:text-[14px] xl:text-[16px]  xl:leading-[22px] leading-[20px]">
                             <p className="text-black mb-2 xl:mb-4">
-                                At Aurex Builders, our philosophy is simple — we build to adorn lives.
-                                Each structure we create carries a purpose beyond architecture — it becomes
-                                a part of someone’s journey, dream, and identity.
+                                We build to carefully adorn lives. Every structure we craft holds a deep, special purpose. 
+                                We deliver high quality with a very clear conscience. I am deeply proud of our honest and highly skilled team.                               
                             </p>
 
                             <p className="text-black mb-2 xl:mb-4">
-                                Our focus has always been on delivering quality with conscience, where innovation
-                                meets tradition and design meets emotion. I am proud of our dedicated team that continues
-                                to set benchmarks in integrity, craftsmanship, and client satisfaction.
+                                Together, we actively shape a brighter future one brick at a time. We treat every new home like our very own.
+                                  We build strong bonds with every family we serve.
                             </p>
 
                             <p className="text-black mb-2 xl:mb-4">
@@ -88,7 +88,7 @@ export default function LeadershipPillers() {
                         <div className="absolute right-15  md:left-0 -bottom-46 md:top-0 h-full w-full md:w-[46px] lg:w-[42px] z-20 block ">
                             <Image
                                 src="/images/about/teared.svg"
-                                alt="Tear Effect"
+                                alt="trusted-construction-company-thrissur-aurex-project"
                                 fill
                                 className="object-fill md:object-cover rotate-90 md:rotate-180 scale-x-[-1] md:scale-x-[1]"
                             />
@@ -99,7 +99,7 @@ export default function LeadershipPillers() {
                         <div className="relative md:w-fit bg-white rounded-[5px] h-full">
                             <Image
                                 src="/images/about/leader1.png"
-                                alt="Chairman Photo"
+                                alt="trusted-construction-company-thrissur-aurex-project"
                                 width={100}
                                 height={100}
                                 className="object-cover object-top  w-full h-[420px] md:w-[333px] md:h-full rounded-[5px]"
@@ -131,12 +131,15 @@ export default function LeadershipPillers() {
                         <div className="text-[12px] md:text-[13px] lg:text-[14px] xl:text-[16px]  xl:leading-[22px] leading-[20px]">
 
                             <p className="text-black mb-2 xl:mb-4">
-                                Balachandran hails from Thrissur, Kerala, and began his journey in the real estate sector at
-                                an impressively young age. His early start laid the foundation for a career driven by ambition and vision.
+                                Balachandran brings over three decades of deep real estate experience. 
+                                He built a massive reputation rooted in pure, absolute trust.
+                                 His forward-thinking approach drives huge value in every single venture.
+                                  
                             </p>
                             <p className="text-black mb-2 xl:mb-4">
-                                With over three decades of experience in commercial and real estate development, he has built a reputation
-                                rooted in trust, expertise, and innovation. His forward-thinking approach has shaped numerous successful projects across the industry.
+                                He successfully ensures sustainable growth across all our new building projects.
+                                   He knows exactly how to navigate complex building challenges. 
+                                   His calm guidance keeps our massive projects perfectly on track.
                             </p>
                             <p className="text-black mb-2 xl:mb-4">
                                 Known for his integrity and strong professional network, Balachandran remains a respected and influential figure in real estate.
@@ -177,7 +180,7 @@ export default function LeadershipPillers() {
                         <div className=" absolute right-15  md:right-0 -bottom-46 md:top-0 h-full w-full md:w-[46px] lg:w-[42px] z-20 block ">
                             <Image
                                 src="/images/about/teared.svg"
-                                alt="Tear Effect"
+                                alt="trusted-construction-company-thrissur-aurex-project"
                                 fill
                                 className="object-fill md:object-cover rotate-90  md:rotate-180 scale-x-[-1] md:scale-x-[-1]"
                             />
@@ -187,7 +190,7 @@ export default function LeadershipPillers() {
                         <div className="relative md:w-fit bg-white rounded-[5px] h-full">
                             <Image
                                 src="/images/about/leader2.png"
-                                alt="Chairman Photo"
+                                alt="trusted-construction-company-thrissur-aurex-project"
                                 width={100}
                                 height={100}
                                 className="object-cover object-top  w-full h-[420px] md:w-[333px] md:h-full rounded-[5px]"
@@ -220,13 +223,16 @@ export default function LeadershipPillers() {
 
                         <div className="text-[12px] md:text-[13px] lg:text-[14px] xl:text-[16px]  xl:leading-[22px] leading-[20px]">
                             <p className="text-black mb-2 xl:mb-4">
-                                Rooted in the values and spirit of Kerala, Ajith Kumar’s entrepreneurial journey took shape in Saudi Arabia.
-                                His global exposure strengthened his commitment to give back to his homeland.
+                                Ajith Kumar brings rich global business exposure back to Kerala. 
+                                He boldly bridges high international standards with strong local aspirations. 
+                                He introduces modern infrastructure that deeply respects our rich culture. 
+                                
                             </p>
 
                             <p className="text-black mb-2 xl:mb-4">
-                                Through Aurex Builders, his vision is to introduce global innovation and advanced lifestyles to Kerala.
-                                He seeks to bridge international standards with local aspirations.
+                                His bold vision perfectly balances heritage with fast, forward thinking. 
+                                He constantly pushes our team to reach higher design goals. 
+                                He wants every local family to enjoy world-class home comforts.
                             </p>
                             <p className="text-black mb-2 xl:mb-4">
                                 By bringing modern infrastructure that respects culture and tradition, Ajith Kumar aims to shape a brighter, progressive future.
@@ -268,7 +274,7 @@ export default function LeadershipPillers() {
                         <div className=" absolute right-15  md:left-0 -bottom-46 md:top-0 h-full w-full md:w-[46px] lg:w-[42px] z-20 block ">
                             <Image
                                 src="/images/about/teared.svg"
-                                alt="Tear Effect"
+                                alt="trusted-construction-company-thrissur-aurex-project"
                                 fill
                                 className="object-fill md:object-cover rotate-90 md:rotate-180 scale-x-[-1] md:scale-x-[1]"
                             />
@@ -279,7 +285,7 @@ export default function LeadershipPillers() {
                         <div className="relative md:w-fit bg-white rounded-[5px] h-full">
                             <Image
                                 src="/images/about/leader3.png"
-                                alt="Chairman Photo"
+                                alt="trusted-construction-company-thrissur-aurex-project"
                                 width={100}
                                 height={100}
                                 className="object-cover object-top  w-full h-[420px] md:w-[333px] md:h-full rounded-[5px]"
@@ -311,13 +317,17 @@ export default function LeadershipPillers() {
 
                         <div className="text-[12px] md:text-[13px] lg:text-[14px] xl:text-[16px]  xl:leading-[22px] leading-[20px]">
                             <p className="text-black mb-2 xl:mb-4">
-                                With strong leadership roots in Saudi Arabia and across the GCC, Suresh Kumar brings global business insight
-                                shaped by international experience. His journey reflects a balance of strategy, scale, and vision.
+                               Suresh Kumar brings deep global insight straight from the GCC. 
+                               He strongly focuses on elevating local living standards in Kerala. 
+                               He introduces world-class designs and highly smart building technologies. 
+                               
+
 
                             </p>
                             <p className="text-black mb-2 xl:mb-4">
-                                Guided by a deep commitment to Kerala’s growth and modern development, he channels this expertise through Aurex Builders.
-                                His focus is on elevating standards while staying connected to local values.
+                                He builds a grand lifestyle that embodies deep local pride. 
+                               He believes great architecture completely transforms daily human life. 
+                               He works hard to deliver unmatched elegance and deep comfort.
 
                             </p>
 
@@ -360,7 +370,7 @@ export default function LeadershipPillers() {
                         <div className=" absolute right-15  md:right-0 -bottom-46 md:top-0 h-full w-full md:w-[46px] lg:w-[42px] z-20 block ">
                             <Image
                                 src="/images/about/teared.svg"
-                                alt="Tear Effect"
+                                alt="trusted-construction-company-thrissur-aurex-project"
                                 fill
                                 className="object-fill md:object-cover rotate-90  md:rotate-180 scale-x-[-1] md:scale-x-[-1]"
                             />
@@ -370,7 +380,7 @@ export default function LeadershipPillers() {
                         <div className="relative md:w-fit bg-white rounded-[5px] h-full">
                             <Image
                                 src="/images/about/leader4.png"
-                                alt="Chairman Photo"
+                                alt="trusted-construction-company-thrissur-aurex-project"
                                 width={100}
                                 height={100}
                                 className="object-cover object-top  w-full h-[420px] md:w-[333px] md:h-full rounded-[5px]"

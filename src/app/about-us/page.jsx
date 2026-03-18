@@ -8,7 +8,9 @@ import WhyAurexBuilders from './WhyAurex'
 import HeroSection from './HeroSection'
 import OurJourney from './OurJourney'
 import BrandAmbassadorSection from './BrandAmbassadorSection'
-import { SeoById } from '@/services/api'
+import { SeoById , FaqFetch} from '@/services/api'
+import FAQ from '../(home)/FAQ'
+import CTA from './CTASection'
 
 
 
@@ -53,7 +55,8 @@ export async function generateMetadata() {
   };
 }
 
-function page() {
+export default async function page() {
+   const faqData = await FaqFetch();
   return (
     <div>
       <Header />
@@ -64,9 +67,10 @@ function page() {
       <LeadershipPillers />
       <WhyAurexBuilders />
       <DreamsInThrissur />
+      <FAQ data={faqData} pageName="about-us"/>
+      <CTA />
       <Footer />
     </div>
   )
 }
 
-export default page

@@ -22,38 +22,43 @@ export default function ExtendedExpertiseSection() {
             {/* LEFT CONTENT */}
             <div className="relative pr-2 md:pr-0 pl-2 md:pl-8 py-8">
               <h2 className="text-[20px] lg:text-[32px] font-medium leading-[20px] lg:leading-[38px] font-urban mb-4  md:mb-10">
-                BEYOND CONSTRUCTION — <br />
+                BEYOND CONSTRUCTION: <br />
                 OUR EXTENDED EXPERTISE
               </h2>
 
               <div className="space-y-8 max-w-md">
                 <div>
                   <h4 className="text-sm lg:text-[16px] leading-[20px] font-bold font-urban mb-1">
-                    PROJECT MANAGEMENT
+                    PROJECT MANAGEMENT - From Blueprint to Handover, On Time & On Budget
                   </h4>
-                  <p className="text-[12px] lg:text-[13px] text-black leading-[100%]">
-                    Seamless coordination from planning to delivery, ensuring
-                    timelines and budgets are always on track.
+                  <p className="text-[12px] lg:text-[13px] text-black leading-[130%]">
+                    Our dedicated project managers oversee every phase of construction — 
+                    from site planning and material procurement to worker scheduling and quality checks.
+                     You receive regular progress updates so you always know exactly where your project stands, without the stress.
                   </p>
                 </div>
 
                 <div>
                   <h4 className="text-sm lg:text-[16px] leading-[20px] font-bold font-urban mb-1">
-                    STRUCTURAL & ARCHITECTURAL DESIGN
+                    STRUCTURAL & ARCHITECTURAL DESIGN - Precision Engineering for Every Thrissur Home
                   </h4>
-                  <p className="text-[12px] lg:text-[13px] text-black leading-[100%]">
-                    From concept sketches to final execution, our in-house
-                    experts ensure precision in every detail.
+                  <p className="text-[12px] lg:text-[13px] text-black leading-[130%]">
+                    Our in-house architects and structural engineers handle everything from concept
+                     sketches to working drawings and on-site execution. Every design is engineered for 
+                     Kerala's climate, soil conditions, and RERA compliance — ensuring safety, longevity, 
+                     and aesthetic excellence in every build.
                   </p>
                 </div>
 
                 <div>
                   <h4 className="text-sm lg:text-[16px] leading-[20px] font-bold font-urban mb-1">
-                    AFTER-SALES SUPPORT
+                    AFTER-SALES SUPPORT - A Relationship That Lasts Beyond Your Keys
                   </h4>
-                  <p className="text-[12px] lg:text-[13px] text-black leading-[100%]">
-                    Dedicated support to resolve post-handover queries, ensuring
-                    100% homeowner satisfaction.
+                  <p className="text-[12px] lg:text-[13px] text-black leading-[130%]">
+                    Our after-sales support team is dedicated to resolving post-handover queries
+                     with speed and care. From warranty claims to routine maintenance scheduling, 
+                     we make sure every Aurex homeowner in Thrissur enjoys a seamless and stress-free 
+                     ownership experience.
                   </p>
                 </div>
               </div>

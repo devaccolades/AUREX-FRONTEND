@@ -59,7 +59,7 @@ export default function HeroSection() {
       <div className="absolute left-0 top-0 h-full w-[45%] opacity-40 z-0 pointer-events-none">
         <Image
           src="/images/about/bg1.svg"
-          alt="Thrissur Map"
+          alt="trusted-construction-company-thrissur-aurex-project"
           fill
           className="object-contain object-left"
         />
@@ -69,7 +69,7 @@ export default function HeroSection() {
       <div className="absolute right-0 top-80 h-full w-[40%] opacity-30 z-0 pointer-events-none">
         <Image
           src="/images/about/bg2.png"
-          alt="Blueprint"
+          alt="trusted-construction-company-thrissur-aurex-project"
           height={200}
           width={800}
           className="object-contain object-center"
@@ -84,13 +84,20 @@ export default function HeroSection() {
             animated ? "opacity-100" : "opacity-0"
           }`}
         >
-          <h2 ref={ref} className="font-urban text-[24px] md:text-[32px] lg:text-[40px] font-bold leading-[24px] md:leading-[32px] lg:leading-[40px] tracking-wide">
-            AUREX BUILDERS
-          </h2> 
-          <p className="mt-4 mx-auto max-w-[345px] text-black text-[12px] md:text-[14px] lg:text-[16px] leading-[16px] md:leading-[18px] lg:leading-[22px]">
-            Aurex Builders is a trusted name in the construction industry, known
+          <h1 ref={ref} className="px-2 font-urban text-[24px] md:text-[32px] lg:text-[40px] font-bold leading-[24px] md:leading-[32px] lg:leading-[40px] tracking-wide">
+            AUREX BUILDERS - Thrissur's Trusted Construction Company for Premium Homes & Commercial Spaces
+
+          </h1> 
+          <p className="mt-4 mx-auto px-2 md:max-w-[545px] text-black text-[12px] md:text-[14px] lg:text-[16px] leading-[16px] md:leading-[18px] lg:leading-[22px]">
+            {/* Aurex Builders is a trusted name in the construction industry, known
             for creating exceptional residential and commercial spaces across
-            Thrissur and Kerala.
+            Thrissur and Kerala. */}
+            Aurex Builders is Thrissur's trusted construction company for families who
+            refuse to compromise on quality. We design and build premium residential homes,
+           luxury villas, and modern commercial spaces across Thrissur and Kerala. With a team
+            of certified architects and licensed engineers, we turn your vision into a structure
+             built to last — delivered on time, every time.
+
           </p>
         </div>
 
@@ -106,7 +113,7 @@ export default function HeroSection() {
           >
             <Image
               src="/images/about/v3.webp"
-              alt="Residential Project"
+              alt="trusted-construction-company-thrissur-aurex-project"
               fill
               className="object-cover"
             />
@@ -140,7 +147,7 @@ export default function HeroSection() {
               >
                 <Image
                   src="/images/about/v1.webp"
-                  alt="Commercial Project"
+                  alt="trusted-construction-company-thrissur-aurex-project"
                   fill
                   className="object-cover"
                 />
@@ -179,7 +186,7 @@ export default function HeroSection() {
             >
               <Image
                 src="/images/about/v1.webp"
-                alt="Residential Project"
+                alt="trusted-construction-company-thrissur-aurex-project"
                 fill
                 className="object-cover"
               />
@@ -226,7 +233,7 @@ export default function HeroSection() {
             >
               <Image
                 src="/images/about/v3.webp"
-                alt="Commercial Project"
+                alt="trusted-construction-company-thrissur-aurex-project"
                 fill
                 className="object-cover"
               />

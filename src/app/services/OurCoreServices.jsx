@@ -4,24 +4,24 @@ import Link from "next/link";
 const coreServices = [
     {
         title: "RENTAL & RESALE ASSISTANCE",
-        subtitle: "Maximize Value. Minimize Effort.",
+        subtitle: "Maximise Your Property Value in Thrissur",
         description:
-            "From accurate property valuations to connecting you with the right tenants or buyers, Aurex makes rental and resale effortless. Experience smooth transactions backed by expert advice and transparent support.",
+        "Renting or reselling a property in Thrissur should be straightforward — and with Aurex Builders, it is. We provide accurate market valuations, connect you with verified tenants and buyers, and handle all documentation on your behalf. Our transparent advisory approach ensures you get the best return on your property investment with minimal effort on your part.",
         buttonText: "GET ASSISTANCE",
 
     },
     {
-        title: "INTERIOR DESIGNING",
-        subtitle: "Transforming Spaces into Experiences.",
+        title: "Trusted Aftercare Services",
+        subtitle: "We Continue to Care Long After Handover",
         description:
-            "We bring your personality into your living space. Our designers blend elegance and function to craft homes that inspire comfort and joy.",
+            "At Aurex Builders, our commitment does not end at handover. Our dedicated aftercare services team conducts scheduled maintenance checks, handles prompt repairs, and resolves post-handover queries — ensuring your home remains in perfect condition for years to come. From structural touch-ups to plumbing, electrical support, and waterproofing checks, we are your long-term property partner across Thrissur and Kerala.",
         buttonText: "ENQUIRE NOW",
     },
     {
-        title: "MAINTENANCE ASSISTANCE",
-        subtitle: "We Continue to Care – Even After Handover.",
+        title: "Interior Designing",
+        subtitle: "Transforming Spaces Into Dream Homes.",
         description:
-            "Our after-sales team ensures your property remains perfect through timely maintenance, inspections, and repair support — because your comfort doesn’t end at delivery.",
+        "We blend functionality with elegance — curating the perfect combination of colours, lighting, materials, and textures to create spaces that feel warm, personal, and distinctly yours. From modular kitchens to full-home styling, our team delivers custom interior solutions that inspire joy every single day.",
         buttonText: "REQUEST ASSISTANCE",
     },
 ];
@@ -56,7 +56,7 @@ export default function OurCoreServices() {
                             "
                         >
                             <div className="gap-2 md:gap-4 lg:gap-6">
-                                <h3 className="text-[14px] lg:text-[20px] leading-[14px] md:leading-[20px] font-urban font-bold mb-1 md:mb-2">
+                                <h3 className="uppercase text-[14px] lg:text-[20px] leading-[14px] md:leading-[20px] font-urban font-bold mb-1 md:mb-2">
                                     {service.title}
                                 </h3>
 

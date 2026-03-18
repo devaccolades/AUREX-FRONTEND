@@ -15,16 +15,15 @@ export default function OurJourney() {
           </p>
 
           <h2 className="text-[20px] md:text-[24px] lg:text-[36px] font-urban font-semibold leading-[20px] md:leading-[24px] lg:leading-[36px] mb-2 md:mb-6">
-            EVERY BRICK TELLS <br className="hidden md:block" />
-            OUR STORY.
+            Our Story — How We Became Thrissur's Most Trusted Construction Company
           </h2>
 
-          <p className="text-black text-[12px] md:text-[13px] lg:text-[15px] leading-[18px] lg:leading-[22px]">
-            What began as a small initiative in the cultural capital of Kerala
-            has evolved into a brand synonymous with reliability and
-            craftsmanship. Over the years, Aures Builders has completed a
-            series of residential and commercial projects in Thrissur, setting
-            new benchmarks in construction quality and customer satisfaction.
+          <p className="text-black text-[12px] md:text-[13px] lg:text-[15px] leading-[18px] lg:leading-[22px]">           
+            What began as a small local initiative in the heart of Thrissur has grown into one of Kerala's 
+            most recognised real estate brands. As a trusted construction company in Thrissur, 
+            Aurex Builders has completed 50+ residential and commercial projects — consistently 
+            earning 5-star client reviews. We blend deep local knowledge with international 
+            design standards, setting new benchmarks in construction quality and customer satisfaction across Kerala.
             <br /><br />
             We take pride in being part of Thrissur’s growth story, combining
             local insights with global standards in design and construction.
@@ -38,7 +37,7 @@ export default function OurJourney() {
           <div className="relative w-full h-[320px] md:h-[385px] lg:h-[436px]  overflow-hidden">
             <Image
               src="/images/about/main.jpg" 
-              alt="Main Building"
+              alt="trusted-construction-company-thrissur-aurex-project"
               fill
               className="object-cover"
               priority
@@ -65,7 +64,7 @@ export default function OurJourney() {
     ">
             <Image
               src="/images/about/small.jpg" // replace with your image
-              alt="Secondary Building"
+              alt="trusted-construction-company-thrissur-aurex-project"
               width={300}
               height={400}
               className="object-cover w-full h-full"
