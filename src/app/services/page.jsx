@@ -8,6 +8,7 @@ import ContactCtaSection from './ContactCTA'
 import { SeoById, FaqFetch } from '@/services/api'
 import FAQ from '../(home)/FAQ'
 
+
 export async function generateMetadata() {
   const seo = await SeoById("services");
 
