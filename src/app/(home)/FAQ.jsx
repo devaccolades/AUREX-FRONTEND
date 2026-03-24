@@ -13,11 +13,11 @@ const GlassSurface = dynamic(
 );
 
 // const FAQ = ({ data }) => {
-  const FAQ = ({ data, pageName }) => {
+const FAQ = ({ data, pageName }) => {
   const [openIndex, setOpenIndex] = useState(0);
   const filteredFaqs = data.filter(
-  (faq) => faq.page_name?.toLowerCase() === pageName.toLowerCase()
-);
+    (faq) => faq.page_name?.toLowerCase() === pageName.toLowerCase()
+  );
 
   return (
     <section className="relative py-8 md:py-16 lg:py-20   ">
@@ -128,20 +128,38 @@ const GlassSurface = dynamic(
 
           <div>
             <h2 className="font-urban font-bold text-[16px] lg:text-[18px] leading-[24px] text-gray-800 t mb-1">
-               OUR COMMITMENT: QUALITY HOMES, TRUSTED BUILDERS IN THRISSUR
+              OUR COMMITMENT: QUALITY HOMES, TRUSTED BUILDERS IN THRISSUR
             </h2>
             <p className="text-gray-600  font-normal text-[12px] lg:text-[14px] leading-[18px]">
               We go beyond construction. We build landmarks that stand strong for
-generations, earn trust through
-transparency, and create meaningful community impact. As leading home
-builders in Thrissur, every
-project carries our unwavering promise of quality - from the first brick laid
-to the final key handed over.
-Our clients and partners are the driving force behind our growth. Your
-trust pushes us to raise the bar
-every single day. We are shaping a Thrissur where every Aurex home
-stands as a proud emblem of
-beauty and purposeful living.
+              generations, earn trust through
+              transparency, and create meaningful community impact. As leading home
+              builders in Thrissur, every
+              project carries our unwavering promise of quality - from the first brick laid
+              to the final key handed over.
+              Our clients and partners are the driving force behind our growth. Your
+              trust pushes us to raise the bar
+              every single day. We are shaping a Thrissur where every Aurex home
+              stands as a proud emblem of
+              beauty and purposeful living.
+
+            </p>
+          </div>
+
+           <div>
+            <h2 className="uppercase font-urban font-bold text-[16px] lg:text-[18px] leading-[24px] text-gray-800 t mb-1">
+               Building Luxury Living in Thrissur with Excellence and Trust – Aurex Builders
+            </h2>
+            <p className="text-gray-600  font-normal text-[12px] lg:text-[14px] leading-[18px]">
+              Aurex Builders is Thrissur's premier luxury home builder specializing in residential 
+              apartments, villas, and commercial construction. Located at Aurum Complex, Patturaikkal,
+               we deliver premium 2BHK and 3BHK flats, custom luxury villas, and design-build services 
+               across Thrissur including Chembukkavu, Mulankunnathukavu, and surrounding areas. Our 
+               comprehensive services include interior designing, rental and resale assistance, 
+               maintenance support, project management, and architectural design. With flagship projects 
+               like Aurex Cascade City (RERA: K-RERA/PRJ/TSR/263/2024) and Aurex Liard, we combine contemporary 
+               design with Kerala's cultural heritage. Led by Chairman Ajith Pooloth and backed by 
+               partnerships with leading banks, we deliver timely, quality construction with dedicated after-sales care.
 
             </p>
           </div>
