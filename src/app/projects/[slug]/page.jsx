@@ -14,6 +14,7 @@ import AmenitiesSection from "./Amenities";
 import MapSection from "./MapSection";
 import { notFound } from "next/navigation";
 import {
+  FaqFetch,
   ProjectAmenitiesBySlugFetch,
   ProjectBySlugFetch,
   ProjectCommonFacilitiesBySlugFetch,
@@ -23,6 +24,7 @@ import {
   ProjectUpdatesBySlugFetch,
   ProjectYoutubeVideosBySlugFetch,
 } from "@/services/api";
+import FAQ from "@/app/(home)/FAQ";
 
 export async function generateMetadata({ params }) {
   const { slug } = await params; 
@@ -61,6 +63,7 @@ export default async function Page({ params }) {
   const specifications = await ProjectSpecificationsBySlugFetch(slug);
   const updates = await ProjectUpdatesBySlugFetch(slug);
   const projectVideos = await ProjectYoutubeVideosBySlugFetch(slug);
+  const faqData = await FaqFetch();
 
   const title = project?.name || "Project Details";
   return (
@@ -85,6 +88,7 @@ export default async function Page({ params }) {
       </div>
       <YoutubeEmbedSection projectVideos={projectVideos} />
       <ConstructionUpdates updates={updates} />
+      {/* <FAQ data={faqData} pageName={`projects/${slug}`} /> */}
       <BankingPartners />
       <Footer />
     </div>
