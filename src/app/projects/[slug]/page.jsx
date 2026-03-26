@@ -26,6 +26,7 @@ import {
   ProjectYoutubeVideosBySlugFetch,
 } from "@/services/api";
 import FAQ from "@/app/(home)/FAQ";
+import Callback from "@/app/(home)/CallBack";
 
 export async function generateMetadata({ params }) {
   const { slug } = await params; 
@@ -90,7 +91,8 @@ export default async function Page({ params }) {
       </div>
       <YoutubeEmbedSection projectVideos={projectVideos} />
       <ConstructionUpdates updates={updates} />
-      {/* <FAQ data={faqData} pageName={`projects/${slug}`} /> */}
+      <FAQ data={faqData} pageName={`projects/${slug}`} />
+      <Callback />
       <BankingPartners />
       <Footer />
     </div>
