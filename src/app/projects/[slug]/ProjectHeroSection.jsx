@@ -98,9 +98,9 @@ export default function ProjectHero({ project }) {
               {status}
             </button>
           )}
-          <h1 className="w-full lg:w-[70%] text-wrap space-y-1 font-urban font-semibold text-white text-[32px] md:text-[36px] lg:text-[48px] leading-[100%]">
+          <p className="w-full lg:w-[70%] text-wrap space-y-1 font-urban font-semibold text-white text-[32px] md:text-[36px] lg:text-[48px] leading-[100%]">
             {project.name}
-          </h1>
+          </p>
 
           {location && (
             <div className="w-fit flex gap-2 py-2 px-2.5 bg-white/10 backdrop-blur-[9.7px] border border-gray-400 rounded-3xl">
@@ -130,21 +130,21 @@ export default function ProjectHero({ project }) {
 
               {k_rera && (
                 <div className="flex flex-col w-full ">
-                  <h1 className="w-full text-wrap space-y-1 font-urban font-extrabold  md:text-white text-[12px] leading-[100%]">
+                  <p className="w-full text-wrap space-y-1 font-urban font-extrabold  md:text-white text-[12px] leading-[100%]">
                     RERA REG. NO
-                  </h1>
-                  <h1 className="w-full text-wrap space-y-1 font-urban font-extrabold text-black md:text-white text-[12px] leading-[100%] whitespace-nowrap">
+                  </p>
+                  <p className="w-full text-wrap space-y-1 font-urban font-extrabold text-black md:text-white text-[12px] leading-[100%] whitespace-nowrap">
                     {project.k_rera}
-                  </h1>
+                  </p>
                 </div>
               )}
             </div>
           )}
           <div className="max-w-[250px] flex flex-col">
-            <h3 className="font-urban font-medium text-[13px] leading-[156%] text-black md:text-white ">
+            <h1 className="font-urban  font-semibold text-[16px]  leading-[156%] text-black md:text-white ">
               {project.sub_text}
-            </h3>
-            <p className="font-urban font-semibold text-[16px] leading-[156%] text-white">
+            </h1>
+            <p className="font-urban font-semibold text-[13px] leading-[156%] text-white">
               {project.short_description}
             </p>
           </div>
@@ -204,19 +204,19 @@ export default function ProjectHero({ project }) {
             className="w-10 h-10"
           />
           <div className="flex flex-col w-full">
-            <h1 className="w-full text-wrap space-y-1 font-urban font-extrabold text-black text-[12px] leading-[100%]">
+            <p className="w-full text-wrap space-y-1 font-urban font-extrabold text-black text-[12px] leading-[100%]">
               RERA REG. NO
-            </h1>
-            <h1 className="w-full text-wrap space-y-1 font-urban font-extrabold text-black text-[12px] leading-[100%] whitespace-nowrap">
+            </p>
+            <p className="w-full text-wrap space-y-1 font-urban font-extrabold text-black text-[12px] leading-[100%] whitespace-nowrap">
               {project.k_rera}
-            </h1>
+            </p>
           </div>
         </div>
         <div className="w-full flex flex-col">
-          <h3 className="font-urban font-medium text-[13px] leading-[156%] text-black">
+          <h1 className="font-urban font-semibold text-[16px] leading-[156%] text-black">
             {project.sub_text}
-          </h3>
-          <p className="font-urban font-semibold text-[16px] leading-[120%] text-black">
+          </h1>
+          <p className="font-urban font-semibold text-[13px] leading-[120%] text-black">
             {project.short_description}
           </p>
         </div>

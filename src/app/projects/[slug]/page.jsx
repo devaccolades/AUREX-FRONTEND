@@ -21,33 +21,46 @@ import {
   ProjectFloorPlansBySlugFetch,
   ProjectLocationAdvantagesBySlugFetch,
   ProjectSpecificationsBySlugFetch,
+  ProjectsStaticContentFetchBySlugFetch,
   ProjectUpdatesBySlugFetch,
   ProjectYoutubeVideosBySlugFetch,
 } from "@/services/api";
 import FAQ from "@/app/(home)/FAQ";
+import Callback from "@/app/(home)/CallBack";
 
 export async function generateMetadata({ params }) {
-  const { slug } = await params; 
+  const { slug } = await params;
   const project = await ProjectBySlugFetch(slug);
+  const baseUrl = "https://aurexbuilders.com";
 
   if (!project) {
     return {
       title: "Page Not Found | Aurex Builders",
       description: "The requested project does not exist.",
+      alternates: {
+        canonical: `${baseUrl}/projects/${slug}`,
+      },
     };
   }
 
   return {
     title: project.meta_title || project.name,
     description: project.meta_description || "",
+    alternates: {
+      canonical: `${baseUrl}/projects/${slug}`,
+    },
+    openGraph: {
+      title: project.meta_title || project.name,
+      description: project.meta_description || "",
+      url: `${baseUrl}/projects/${slug}`,
+      type: "website",
+    },
   };
 }
 
 
 export default async function Page({ params }) {
-  const { slug } = await params; // ✅ REQUIRED
-
-  //  const { slug } = params;
+  const { slug } = await params; 
 
   const project = await ProjectBySlugFetch(slug);
 
@@ -64,31 +77,33 @@ export default async function Page({ params }) {
   const updates = await ProjectUpdatesBySlugFetch(slug);
   const projectVideos = await ProjectYoutubeVideosBySlugFetch(slug);
   const faqData = await FaqFetch();
+  const staticData = await ProjectsStaticContentFetchBySlugFetch(slug);
 
   const title = project?.name || "Project Details";
   return (
     <div>
       <Header />
       <ProjectHero project={project} />
-      <ProjectOverviewSection p={project} />
+      <ProjectOverviewSection p={project} staticData={staticData}/>
       <div id="amenities">
-        <AmenitiesSection amenities={amenities} title={title} projectVideos={projectVideos} />
+        <AmenitiesSection amenities={amenities} title={title} projectVideos={projectVideos} staticData={staticData}/>
       </div>
-      <CommonFacilities facilities={facilities} />
+      <CommonFacilities facilities={facilities} staticData={staticData} />
       <div id="floor-plans">
-        <FloorPlansSection floorplan={floorplan} />
+        <FloorPlansSection floorplan={floorplan} staticData={staticData} />
       </div>
 
       <div id="specifications">
-        <PrecisionBuiltSection specs={specifications} />
+        <PrecisionBuiltSection specs={specifications} staticData={staticData} />
       </div>
 
       <div id="location-map">
-        <NearbyConnectivity data={locationSpec} project={project} />
+        <NearbyConnectivity data={locationSpec} project={project} staticData={staticData} />
       </div>
       <YoutubeEmbedSection projectVideos={projectVideos} />
       <ConstructionUpdates updates={updates} />
-      {/* <FAQ data={faqData} pageName={`projects/${slug}`} /> */}
+      <FAQ data={faqData} pageName={`projects/${slug}`} />
+      <Callback />
       <BankingPartners />
       <Footer />
     </div>

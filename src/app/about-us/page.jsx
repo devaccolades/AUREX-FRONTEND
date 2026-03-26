@@ -31,7 +31,7 @@ export async function generateMetadata() {
     openGraph: {
       title: seo.og_title || seo.meta_title,
       description: seo.og_description || seo.meta_description,
-      url: "https://aurexbuilders.com/",
+      url: "https://aurexbuilders.com/about-us",
       siteName: "Aurex Builders",
       images: seo.og_image
         ? [

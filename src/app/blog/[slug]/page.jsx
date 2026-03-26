@@ -8,11 +8,15 @@ import { BlogsById, BlogsFetch } from '@/services/api';
 export async function generateMetadata({ params }) {
   const slug = params.slug;
   const blog = await BlogsById(slug);
+  const baseUrl = "https://aurexbuilders.com";
 
   if (!blog) {
     return {
       title: "Blog | Aurex Builders",
       description: "Read latest updates and insights from Aurex Builders",
+      alternates: {
+        canonical: `${baseUrl}/blog/${slug}`,
+      },
     };
   }
 
@@ -21,13 +25,19 @@ export async function generateMetadata({ params }) {
     blog.meta_description ||
     blog.content?.replace(/<[^>]+>/g, "").slice(0, 160);
 
+    
+
   return {
     title,
     description,
+    alternates: {
+      canonical: `${baseUrl}/blog/${slug}`, // ✅ canonical added
+    },
     openGraph: {
       title,
-      description,
+      description,    
       type: "article",
+      url: `${baseUrl}/blog/${slug}`,
       images: blog.image
         ? [
             {

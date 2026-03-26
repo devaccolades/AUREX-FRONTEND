@@ -225,3 +225,11 @@ export const EventGalleryFetch = async () => {
 export const EventGalleryByEventIdFetch = async (eventId) => {
   return fetchData(`/event-gallery/${eventId}/`);
 };
+
+export const ProjectsStaticContentFetch = async () => {
+  return fetchData(`/projects/project-page-titles-description/`);
+};
+
+export const ProjectsStaticContentFetchBySlugFetch = async (slug) => {
+  return fetchData(`/projects/project-page-titles-description/${slug}/`);
+};

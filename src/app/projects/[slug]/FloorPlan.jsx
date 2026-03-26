@@ -3,44 +3,9 @@
 import Image from "next/image";
 import { useMemo, useState } from "react";
 
-// const floorPlans = {
-//   "2bhk": [
-//     {
-//       id: 1,
-//       type: "TYPE A - 2 BHK",
-//       area: "1071.37 SQFT",
-//       image: "/images/projects/floor.jpg",
-//     },
-//     {
-//       id: 2,
-//       type: "TYPE B - 2 BHK",
-//       area: "1070.48 SQFT",
-//       image: "/images/projects/floor.jpg",
-//     },
-//     {
-//       id: 3,
-//       type: "TYPE D - 2 BHK",
-//       area: "951.70 SQFT",
-//       image: "/images/projects/floor.jpg",
-//     },
-//   ],
-//   "3bhk": [
-//     {
-//       id: 4,
-//       type: "TYPE A - 3 BHK",
-//       area: "1420.55 SQFT",
-//       image: "/images/projects/floor.jpg",
-//     },
-//     {
-//       id: 5,
-//       type: "TYPE B - 3 BHK",
-//       area: "1480.25 SQFT",
-//       image: "/images/projects/floor.jpg",
-//     },
-//   ],
-// };
 
-export default function FloorPlansSection({floorplan}) {
+
+export default function FloorPlansSection({floorplan, staticData}) {
   // const [activeTab, setActiveTab] = useState("2bhk");
   // const [previewImage, setPreviewImage] = useState(null);
     if (!Array.isArray(floorplan) || floorplan.length === 0) return null;
@@ -68,10 +33,15 @@ export default function FloorPlansSection({floorplan}) {
 
           {/* HEADING */}
           <h2 className="text-[16px] md:text-[20px] leading-[16px] font-urban font-bold uppercase text-center mb-2">
+            {staticData?.[0]?.floor_title || (
+              <>
             CHOOSE THE HOME THAT FITS YOUR LIFESTYLE
+            </>
+            )}
           </h2>
           <p className="text-[13px] text-black mt-2 max-w-2xl mx-auto">
-            Whether you prefer compact elegance or spacious luxury, we offer thoughtfully designed layouts for every need.
+             {staticData?.[0]?.floor_description ||
+            `Whether you prefer compact elegance or spacious luxury, we offer thoughtfully designed layouts for every need.`}
           </p>
 
           {/* TABS */}

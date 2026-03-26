@@ -1,6 +1,4 @@
 "use client";
-
-
 import * as LucideIcons from "lucide-react";
 
   const getIconComponent = (iconName) => {
@@ -9,10 +7,7 @@ import * as LucideIcons from "lucide-react";
   return LucideIcons[iconName] || null;
 };
 
-
-
-
-export default function PrecisionBuiltSection({specs}) {
+export default function PrecisionBuiltSection({specs, staticData}) {
    if (!Array.isArray(specs) || specs.length === 0) {
     return null;
   }
@@ -24,11 +19,16 @@ export default function PrecisionBuiltSection({specs}) {
         {/* HEADING */}
         <div className="text-start  mb-4 md:mb-8 lg:mb-10">
           <h2 className="text-[16px] md:text-[20px] leading-[16px] font-urban font-bold uppercase text-start">
+            {staticData?.[0]?.spec_title || (
+              <>
             BUILT WITH PRECISION, DESIGNED FOR PERFECTION
+            </>
+            )}
           </h2>
           <p className="mt-2 text-[12px] md:text-sm leading-[18px] text-gray-600 text-start">
-            From the foundation to the finishing, every detail is engineered to
-            ensure lasting strength, safety, and elegance.
+            {staticData?.[0]?.spec_description ||
+            `From the foundation to the finishing, every detail is engineered to
+            ensure lasting strength, safety, and elegance.`}
           </p>
         </div>
 
