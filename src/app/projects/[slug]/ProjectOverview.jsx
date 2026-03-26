@@ -11,7 +11,7 @@ const tabs = [
   { label: "SPECIFICATIONS", id: "specifications" },
   { label: "LOCATION MAP", id: "location-map" },
 ];
-export default function ProjectOverviewSection({ p }) {
+export default function ProjectOverviewSection({ p, staticData }) {
   const handleScroll = (id) => {
     const section = document.getElementById(id);
     section?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -53,17 +53,22 @@ export default function ProjectOverviewSection({ p }) {
 
         {/* Heading */}
         <div className="container text-center ">
-          <h2 className="text-2xl md:text-3xl lg:text-[40px] lg:leading-[40px] md:leading-[30px]  leading-[20px] font-urban font-semibold ">
-            A HOME THAT REFLECTS <br />
-            YOUR ASPIRATIONS
+          <h2 className="uppercase text-2xl md:text-3xl lg:text-[40px] lg:leading-[40px] md:leading-[30px] leading-[20px] font-urban font-semibold ">
+           {staticData?.[0]?.overview_title || (
+              <>
+                A HOME THAT REFLECTS <br />
+                YOUR ASPIRATIONS
+              </>
+            )}
           </h2>
 
           <p className="mt-4 text-sm leading-[18px]  ">
-            Nestled in one of Thrissur’s most sought-after locations, Aurex
-            Liard combines architectural finesse with functional design to
-            deliver a perfect home for you and your family. With world-class
-            amenities, advanced security, and exceptional build quality, this
-            project promises a life of peace, prosperity, and pride.
+           {staticData?.[0]?.overview_description ||
+              `Nestled in one of Thrissur’s most sought-after locations, Aurex
+              Liard combines architectural finesse with functional design to
+              deliver a perfect home for you and your family. With world-class
+              amenities, advanced security, and exceptional build quality, this
+              project promises a life of peace, prosperity, and pride.`}
           </p>
         </div>
 

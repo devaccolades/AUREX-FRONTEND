@@ -11,7 +11,7 @@ import MapSection from "./MapSection";
 };
 
 
-export default function NearbyConnectivity({data, project}) {
+export default function NearbyConnectivity({data, project, staticData}) {
   const transformLocationData = (apiData = []) => {
   return apiData.map((row) => {
     const items = [];
@@ -41,7 +41,7 @@ export default function NearbyConnectivity({data, project}) {
   if (blocks.length === 0) return null;
   return (
     <section className="py-8 md:py-16 bg-white">
-      <MapSection project={project} />
+      <MapSection project={project} staticData={staticData}/>
       <div className="container">
 
         {/* GRID */}

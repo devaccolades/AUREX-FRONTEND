@@ -5,7 +5,7 @@ import Image from "next/image";
 import ModalForm from "@/components2/forms/ModalForm";
 import ProjectEnquiryModal from "@/components2/forms/ProjectEnquiryModal";
 
-export default function AmenitiesSection({ amenities, title, projectVideos }) {
+export default function AmenitiesSection({ amenities, title, projectVideos, staticData }) {
   if (!Array.isArray(amenities) || amenities.length < 2) {
   return null;
 }
@@ -193,10 +193,15 @@ const nextSlide = () => {
       <div className="container text-center">
         {/* Heading */}
         <h2 className="text-[16px] md:text-[20px] leading-[16px] font-urban font-bold uppercase text-center mb-2">
+           {staticData?.[0]?.amenities_title || (
+            <>
           Redefining Everyday Living
+          </>
+           )}
         </h2>
         <p className="text-[13px] text-gray-500 mb-2">
-          Experience a world of comfort with premium amenities
+           {staticData?.[0]?.amenities_description ||
+          `Experience a world of comfort with premium amenities`}
         </p>
 
         {/* CAROUSEL */}
