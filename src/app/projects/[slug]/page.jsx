@@ -29,27 +29,38 @@ import FAQ from "@/app/(home)/FAQ";
 import Callback from "@/app/(home)/CallBack";
 
 export async function generateMetadata({ params }) {
-  const { slug } = await params; 
+  const { slug } = await params;
   const project = await ProjectBySlugFetch(slug);
+  const baseUrl = "https://aurexbuilders.com";
 
   if (!project) {
     return {
       title: "Page Not Found | Aurex Builders",
       description: "The requested project does not exist.",
+      alternates: {
+        canonical: `${baseUrl}/projects/${slug}`,
+      },
     };
   }
 
   return {
     title: project.meta_title || project.name,
     description: project.meta_description || "",
+    alternates: {
+      canonical: `${baseUrl}/projects/${slug}`,
+    },
+    openGraph: {
+      title: project.meta_title || project.name,
+      description: project.meta_description || "",
+      url: `${baseUrl}/projects/${slug}`,
+      type: "website",
+    },
   };
 }
 
 
 export default async function Page({ params }) {
-  const { slug } = await params; // ✅ REQUIRED
-
-  //  const { slug } = params;
+  const { slug } = await params; 
 
   const project = await ProjectBySlugFetch(slug);
 
