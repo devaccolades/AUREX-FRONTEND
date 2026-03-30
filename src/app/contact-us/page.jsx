@@ -57,7 +57,7 @@ async function page() {
       <HeroSection />
       <ContactInfoCards />
       <WhatsAppCTA />
-      <FAQ data={faqData} />
+      <FAQ data={faqData} pageName="home"/>
       <Footer />
     </div>
   )
