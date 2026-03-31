@@ -27,6 +27,7 @@ import {
 } from "@/services/api";
 import FAQ from "@/app/(home)/FAQ";
 import Callback from "@/app/(home)/CallBack";
+import NewAmenities from "./AmenitiesNew";
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
@@ -86,8 +87,10 @@ export default async function Page({ params }) {
       <ProjectHero project={project} />
       <ProjectOverviewSection p={project} staticData={staticData}/>
       <div id="amenities">
-        <AmenitiesSection amenities={amenities} title={title} projectVideos={projectVideos} staticData={staticData}/>
+        {/* <AmenitiesSection amenities={amenities} title={title} projectVideos={projectVideos} staticData={staticData}/> */}
+         <NewAmenities amenities={amenities} staticData={staticData} />
       </div>
+     
       <CommonFacilities facilities={facilities} staticData={staticData} />
       <div id="floor-plans">
         <FloorPlansSection floorplan={floorplan} staticData={staticData} />
