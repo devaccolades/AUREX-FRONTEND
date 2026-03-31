@@ -31,7 +31,7 @@ export default function ProjectOverviewSection({ p, staticData }) {
   const [modalOpen, setModalOpen] = useState(false);
   const [successOpen, setSuccessOpen] = useState(false);
   return (
-    <section className="relative w-full bg-white py-14">
+    <section className="relative w-full bg-white pt-14">
       <div className="">
         {/* Download Button */}
         <div className="flex justify-center mb-8">
