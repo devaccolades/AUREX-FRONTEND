@@ -7,10 +7,10 @@ export default function NewAmenities({ amenities, staticData }) {
 
   return (
     <section
-      className="relative py-10 md:py-16 bg-[#FFFAEF] bg-cover bg-center text-white"
+      className="relative py-10 md:py-16  bg-cover bg-center text-white rounded-[30px]"
       style={{ backgroundImage: "url('/images/projects/amenities/bg.webp')" }}
     >
-      <div className="absolute inset-0 bg-black/40 z-0"></div>
+      <div className="absolute inset-0 bg-black/40 z-0 rounded-[30px]"></div>
 
       {/* Content */}
       <div className="relative z-10 container text-center">
