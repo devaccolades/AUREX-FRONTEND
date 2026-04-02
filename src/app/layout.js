@@ -1,4 +1,4 @@
-import { Urbanist, Inter, Poppins , Anek_Malayalam, Roboto } from "next/font/google";
+import { Urbanist, Inter, Poppins, Anek_Malayalam, Roboto } from "next/font/google";
 import "./globals.css";
 import FloatingButtons from "@/components2/FloatingButton";
 import Script from "next/script";
@@ -23,12 +23,12 @@ const poppins = Poppins({
 const anekMalayalam = Anek_Malayalam({
   variable: "--font-anek-malayalam",
   subsets: ["malayalam"],
-  weight: ["100","200","300","400","500","600","700","800"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
 });
 
 const roboto = Roboto({
   variable: "--font-roboto",
-  weight: ["100","300","400","500","700","900"],
+  weight: ["100", "300", "400", "500", "700", "900"],
   subsets: ["latin"],
 });
 
@@ -44,7 +44,22 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-       <head>
+      <head>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-S5KXVDPEVY"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-S5KXVDPEVY');
+          `}
+        </Script>
+
         {/* Google Tag (gtag.js) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-11091045463"
