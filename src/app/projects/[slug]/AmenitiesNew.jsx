@@ -6,15 +6,21 @@ export default function NewAmenities({ amenities, staticData }) {
   if (!Array.isArray(amenities) || amenities.length === 0) return null;
 
   return (
-    <section className="py-10 md:py-16 bg-[#FFFAEF]">
-      <div className="container text-center">
+    <section
+      className="relative py-10 md:py-16  bg-cover bg-center text-white rounded-[30px]"
+      style={{ backgroundImage: "url('/images/projects/amenities/bg.webp')" }}
+    >
+      <div className="absolute inset-0 bg-black/40 z-0 rounded-[30px]"></div>
+
+      {/* Content */}
+      <div className="relative z-10 container text-center">
 
         {/* Heading */}
-       <h2 className="text-[16px] md:text-[20px] leading-[16px] font-urban font-bold uppercase text-center mb-2">
+        <h2 className="text-white text-[16px] md:text-[20px] leading-[16px] font-urban font-bold uppercase text-center mb-2">
           {staticData?.[0]?.amenities_title || "Redefining Everyday Living"}
         </h2>
 
-         <p className="text-[13px] text-gray-500 mb-6">
+        <p className="text-white text-[13px]  mb-6 lg:mb-10">
           {staticData?.[0]?.amenities_description ||
             "Experience a world of comfort with a rich array of facilities"}
         </p>
@@ -22,18 +28,18 @@ export default function NewAmenities({ amenities, staticData }) {
         {/* Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
           {amenities.map((item, index) => {
-            const Icon = Icons[item.icon] || Icons.HelpCircle; 
+            const Icon = Icons[item.icon] || Icons.HelpCircle;
 
             return (
               <div
                 key={index}
-                className="bg-[#FAF5E9] rounded-2xl p-4 flex flex-col items-center gap-2 hover:shadow-md transition"
+                className=" rounded-2xl p-4 flex flex-col items-center gap-2  transition"
               >
-                <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#FAEDD2]">
-                  <Icon className="w-5 h-5 text-yellow-600" />
+                <div className="w-12 h-12 flex items-center justify-center rounded-xl ">
+                  <Icon className="w-6 md:w-8 h-6 md:h-8 text-white" />
                 </div>
 
-                <p className="font-urban text-[16px] lg:text-[18px] leading-[18px] font-semibold text-center">
+                <p className="text-white font-urban text-[16px] lg:text-[18px] leading-[18px] font-semibold text-center">
                   {item.name}
                 </p>
               </div>

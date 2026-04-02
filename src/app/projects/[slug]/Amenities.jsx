@@ -192,17 +192,17 @@ const nextSlide = () => {
     <section className="pt-0 pb-8 md:pb-24 bg-gradient-to-b from-white to-[#f3f8fd] overflow-hidden">
       <div className="container text-center">
         {/* Heading */}
-        <h2 className="text-[16px] md:text-[20px] leading-[16px] font-urban font-bold uppercase text-center mb-2">
+        {/* <h2 className="text-[16px] md:text-[20px] leading-[16px] font-urban font-bold uppercase text-center mb-2">
            {staticData?.[0]?.amenities_title || (
             <>
           Redefining Everyday Living
           </>
            )}
-        </h2>
-        <p className="text-[13px] text-gray-500 mb-2">
+        </h2> */}
+        {/* <p className="text-[13px] text-gray-500 mb-2">
            {staticData?.[0]?.amenities_description ||
           `Experience a world of comfort with premium amenities`}
-        </p>
+        </p> */}
 
         {/* CAROUSEL */}
         <div
