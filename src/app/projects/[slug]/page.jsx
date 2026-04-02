@@ -87,7 +87,7 @@ export default async function Page({ params }) {
       <ProjectHero project={project} />
       <ProjectOverviewSection p={project} staticData={staticData}/>
       <div id="amenities">
-        {/* <AmenitiesSection amenities={amenities} title={title} projectVideos={projectVideos} staticData={staticData}/> */}
+        <AmenitiesSection amenities={amenities} title={title} projectVideos={projectVideos} staticData={staticData}/>
          <NewAmenities amenities={amenities} staticData={staticData} />
       </div>
      
