@@ -108,9 +108,9 @@ export default function FloorPlansSection({floorplan, staticData}) {
                   </p>
                 )}
 
-                <span className="inline-block mt-2 text-[12px] px-3 py-1 rounded-full bg-[#FFF4E5] text-[#C98B2C] font-medium">
+                {/* <span className="inline-block mt-2 text-[12px] px-3 py-1 rounded-full bg-[#FFF4E5] text-[#C98B2C] font-medium">
                   Super Built-up Area
-                </span>
+                </span> */}
               </div>
             ))}
           </div>
