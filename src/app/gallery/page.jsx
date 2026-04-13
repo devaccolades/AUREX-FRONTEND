@@ -5,7 +5,7 @@ import ImageSlider from './ImageSlider'
 import YoutubeVideoSection from './YotubeVideo'
 import LookingFor from './LookingFor'
 import Moments from './Moments'
-import { EventGalleryByEventIdFetch, EventGalleryFetch, EventsFetch, GalleryVideosFetch, SpaceGalleryFetch, SeoById } from '@/services/api'
+import { EventGalleryByEventIdFetch, EventGalleryFetch, EventsFetch, GalleryVideosFetch, SpaceGalleryFetch, SeoById, EventVideosFetch } from '@/services/api'
 
 export async function generateMetadata() {
   const seo = await SeoById("gallery");
@@ -54,21 +54,24 @@ export default async function Page() {
     galleryVideos,
     events,
     eventGallery,
+    eventVideos,
     // EventGalleryByEvent
   ] = await Promise.all([
     SpaceGalleryFetch(),
     GalleryVideosFetch(),
     EventsFetch(),
     EventGalleryFetch(),
+    EventVideosFetch(),
     // EventGalleryByEventIdFetch()
   ]);  
+ 
   
   return (
     <div>
       <Header />
-      <ImageSlider spaceGallery={spaceGallery} galleryVideos={galleryVideos} />
+      <ImageSlider spaceGallery={spaceGallery} galleryVideos={galleryVideos}  />
       <YoutubeVideoSection galleryVideos={galleryVideos} />
-      <Moments events={events} eventGallery={eventGallery} />
+      <Moments events={events} eventGallery={eventGallery} eventVideos={eventVideos} />
       <LookingFor />
       <Footer />
     </div>

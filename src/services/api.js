@@ -226,6 +226,14 @@ export const EventGalleryByEventIdFetch = async (eventId) => {
   return fetchData(`/event-gallery/${eventId}/`);
 };
 
+export const EventVideosFetch = async () => {
+  return fetchData(`/gallery/videos/`);
+};
+
+export const EventVideosByEventIdFetch = async (eventId) => {
+  return fetchData(`/gallery/videos/${eventId}/`);
+};
+
 export const ProjectsStaticContentFetch = async () => {
   return fetchData(`/projects/project-page-titles-description/`);
 };
