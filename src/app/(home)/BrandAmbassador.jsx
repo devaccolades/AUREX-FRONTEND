@@ -55,10 +55,10 @@ export default function BrandAmbassador() {
           style={{ opacity: textOpacity, y: textY }}
           className="flex flex-col justify-center items-start"
         >
-          <h1 className="text-[24px] xl:text-[40px] font-urban font-medium leading-[20px]  md:leading-[24px] xl:leading-[40px] uppercase mb-20 xl:mb-66">
+          <h2 className="text-[24px] xl:text-[40px] font-urban font-medium leading-[20px]  md:leading-[24px] xl:leading-[40px] uppercase mb-20 xl:mb-66">
             {/* MANIFESTING YOUR <br /> DREAM INTO A <br /> MAGNIFICENT REALITY */}
             Find Your Perfect Home with the Best
-          </h1>
+          </h2>
 
           <p className="text-gray-700 font-inter text-[12px] xl:text-[16px] leading-[156%] max-w-md">
         
