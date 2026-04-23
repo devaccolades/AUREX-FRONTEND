@@ -27,8 +27,8 @@ export function MobileBrandAmbassador() {
             {/* TEXT TOP */}
             <motion.div style={{ opacity, y }} className="mt-2">
                 <h2 className="text-[24px] font-urban font-medium leading-[20px] mb-2 uppercase">
-                    {/* MANIFESTING YOUR <br /> DREAM INTO A <br /> MAGNIFICENT REALITY */}
-                    Find Your Perfect Home with the Best
+                    MANIFESTING YOUR <br /> DREAM INTO A <br /> MAGNIFICENT REALITY
+                    {/* Find Your Perfect Home with the Best Builders in Thrissur */}
                 </h2>
 
                 <p className="text-gray-700 text-[12px] leading-[150%] mb-0">

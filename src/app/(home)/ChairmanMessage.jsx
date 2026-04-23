@@ -5,7 +5,10 @@ import { motion } from "framer-motion";
 
 export default function ChairmanMessage() {
   return (
-    <div className="py-6  mb-5">
+    <div className="py-16  mb-5">
+      <h1 className="uppercase text-center text-[24px] md:text-[32px] lg:text-[40px] font-semibold font-urban leading-tight mb-6 max-w-[900px] mx-auto">
+        Find Your Perfect Home with the Best Builders in Thrissur
+      </h1>
       <section className="container flex flex-col md:flex-row justify-between rounded-[10px] overflow-hidden border border-gray-200 ">
 
         {/* LEFT SIDE – White Content Box */}
@@ -95,7 +98,7 @@ export default function ChairmanMessage() {
               Chairman, Aurex Builders
             </p>
           </motion.div>
-         
+
 
           {/* SIGNATURE (POSITIONED EXACTLY LIKE IMAGE) */}
           <motion.div
@@ -105,7 +108,7 @@ export default function ChairmanMessage() {
             transition={{ delay: 0.7 }}
             viewport={{ once: true }}
           >
-           
+
             <Image
               src="/images/home/signature.png"
               alt="best builders in Thrissur"
