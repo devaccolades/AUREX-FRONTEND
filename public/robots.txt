@@ -1,5 +1,30 @@
 User-agent: *
 
-Disallow: /?
-Disallow: /*?
+Disallow: /admin/
+Disallow: /backend/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /logs/
+Disallow: /search/
+
+Disallow: /*?utm_
+Disallow: /*?fbclid=
+Disallow: /*?gclid=
+
 Sitemap: https://aurexbuilders.com/sitemap.xml
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+
+User-agent: Claude-SearchBot
+Allow: /
