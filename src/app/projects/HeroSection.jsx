@@ -21,7 +21,7 @@ export default function HeroSection() {
 
 
       {/*  MOBILE EXPERIENCE CARD  */}
-      <div
+      {/* <div
         className="
     md:hidden
     absolute
@@ -33,12 +33,12 @@ export default function HeroSection() {
     gap-4
   "
       >
-        {/* LEFT: 20+ */}
+        
         <h2 className="text-[64px] leading-[44px] font-urban font-bold text-black">
           20+
         </h2>
 
-        {/* RIGHT: text + button */}
+       
         <div className="flex flex-col">
           <p className="text-[12px] text-black leading-tight text-center">
             Years of Industry <br /> Experience
@@ -49,7 +49,7 @@ export default function HeroSection() {
             </button>
           </a>
         </div>
-      </div>
+      </div> */}
 
 
 
@@ -72,8 +72,7 @@ export default function HeroSection() {
 
 
         <p className="mt-2 text-black text-[12px] md:text-[13px] lg:text-[14px] leading-[18px] max-w-md mx-auto">
-          With 20+ years of industry experience and 250+ homes delivered, every Aurex project is
-          engineered with architectural precision, on-time handover, and a lifetime of quality built in.
+         Every Aurex project is engineered with architectural precision, on-time handover, and a lifetime of quality built in.
 
         </p>
       </div>
@@ -92,7 +91,7 @@ export default function HeroSection() {
 
 
       {/* RIGHT EXPERIENCE CARD */}
-      <div className="hidden md:block absolute right-6 md:right-16 top-[55%] lg:text-[45%] z-20 text-center">
+      {/* <div className="hidden md:block absolute right-6 md:right-16 top-[55%] lg:text-[45%] z-20 text-center">
         <h2 className="text-[44px] md:text-[64px] lg:text-[64px] leading-[40px] font-urban font-bold">20+</h2>
 
         <p className="text-12px] md:text-[13px] lg:text-sm text-black mt-1 leading-[16px] md:leading-[18px]">
@@ -103,7 +102,7 @@ export default function HeroSection() {
             Book a Free Site Visit Today
           </button>
         </a>
-      </div>
+      </div> */}
 
     </section>
   );

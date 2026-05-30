@@ -59,7 +59,7 @@ export default function SignatureProjects({ data }) {
       </h2>
      
         <p className="container text-black text-[13px] md:text-[14px] leading-[130%] md:leading-[156%] text-center  mb-0 md:mb-10">
-          Explore Aurex Builders' portfolio of RERA-registered flats for sale in Thrissur — 2 BHK and 
+          Explore Aurex Builders flats for sale in Thrissur — 2 BHK and 
           3 BHK premium apartments and smart commercial spaces built for modern Kerala living. 
            Each project delivers open-plan 2 BHK and 3 BHK 
            layouts with abundant natural light, smart storage, premium finishes, and green landscaped surroundings 
