@@ -15,9 +15,16 @@ const GlassSurface = dynamic(
 // const FAQ = ({ data }) => {
 const FAQ = ({ data, pageName }) => {
   const [openIndex, setOpenIndex] = useState(0);
+
+    // If pageName is not provided, don't render the FAQ section
+  if (!pageName) return null;
+  
   const filteredFaqs = data.filter(
     (faq) => faq.page_name?.toLowerCase() === pageName.toLowerCase()
   );
+
+  // If no FAQs exist for this page, don't render the section
+  if (filteredFaqs.length === 0) return null;
 
   return (
     <section className="relative py-8 md:py-16 lg:py-20   ">
