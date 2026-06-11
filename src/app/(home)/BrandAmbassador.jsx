@@ -47,7 +47,7 @@ export default function BrandAmbassador() {
         />
       </div>
 
-      <div className="container relative grid grid-cols-1 md:grid-cols-3 gap-0 mx-16">
+      <div className="container relative grid grid-cols-1 md:grid-cols-3 gap-0 mx-16 ">
 
         {/* LEFT CONTENT */}
         <motion.div
@@ -55,7 +55,7 @@ export default function BrandAmbassador() {
           style={{ opacity: textOpacity, y: textY }}
           className="flex flex-col justify-center items-start"
         >
-          <h2 className="hidden md:block text-[24px] xl:text-[40px] font-urban font-medium leading-[20px]  md:leading-[24px] xl:leading-[40px] uppercase mb-20 xl:mb-66">
+          <h2 className="hidden md:block text-[24px] xl:text-[40px] font-urban font-medium leading-[20px]  md:leading-[24px] xl:leading-[40px] uppercase mb-20 lg:mb-40 xl:mb-66">
             MANIFESTING YOUR <br /> DREAM INTO A <br /> MAGNIFICENT REALITY
             {/* Find Your Perfect Home with the Best */}
           </h2>
@@ -75,24 +75,24 @@ team stands among the best builders in Thrissur - committed to making premium li
           ref={ref}
           className="
             relative 
-            max-w-[520px] 
-            mt-20 lg:mt-20
+            max-w-[420px] 
+            mt-30 lg:mt-30
             xxl:mt-0
-            h-[400px]
-            lg:h-[600px]
-            xl:h-[800px]
+            h-[300px]
+            lg:h-[500px]
+            xl:h-[700px]
             overflow-visible
             z-10
             will-change-transform
           "
         >
-          <motion.div style={{ scale }} className="origin-[0.1_0] -translate-x-18 w-full h-full">
+          <motion.div style={{ scale }} className="origin-[0.1_0] -translate-x-10 w-full h-full">
             <Image
-              src="/images/home/b.png"
+              src="/images/home/b2.png"
               alt="home builders Thrissur"
-              width={900}
-              height={900}
-              className="w-full h-full object-cover object-top"
+              width={600}
+              height={600}
+              className="w-full h-full object-contain object-top"
             />
           </motion.div>
         </div>
@@ -103,7 +103,7 @@ team stands among the best builders in Thrissur - committed to making premium li
           style={{ opacity: textOpacity, y: textY }}
           className="relative w-full right-20 flex flex-col justify-center items-start py-0 text-left"
         >
-          <h3 className="text-[20px] xl:text-[32px] font-urban font-semibold py-2 leading-[20px] xl:leading-[32px] -mt-32 lg:-mt-30 xl:-mt-80">
+          <h3 className="text-[20px] xl:text-[32px] font-urban font-semibold py-2 leading-[20px] xl:leading-[32px] -mt-42 lg:-mt-60 xl:-mt-80">
             WE ARE PLEASED TO <br /> INTRODUCE OUR <br /> BRAND AMBASSADOR.
           </h3>
 
@@ -111,16 +111,7 @@ team stands among the best builders in Thrissur - committed to making premium li
             BHAVANA
           </h2>
 
-          {/* SMALL BOTTOM-RIGHT IMAGE */}
-          {/* <div className="absolute bottom-0 right-0 md:right-[-40px] md:bottom-[60px] w-[140px] h-[90px] rounded-lg overflow-hidden shadow-lg">
-            <Image
-              src="/images/home/thumb.png"
-              alt="Bhavana small"
-              width={300}
-              height={200}
-              className="w-full h-full object-cover"
-            />
-          </div> */}
+          
           <div
             className="relative z-10 bottom-[-110px] right-[-150px] lg:right-[-280px] lg:bottom-[-200px] 
              w-[140px] h-[90px] rounded-lg overflow-hidden shadow-lg 

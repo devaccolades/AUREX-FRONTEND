@@ -44,11 +44,11 @@ export function MobileBrandAmbassador() {
             {/* MAIN IMAGE WITH ZOOM */}
             <div
                 ref={ref}
-                className="relative h-[360px] w-full overflow-hidden -mt-16"
+                className="relative h-[460px] w-full overflow-hidden -mt-16"
             >
                 <motion.div style={{ scale }} className="origin-top">
                     <Image
-                        src="/images/home/b.png"
+                        src="/images/home/b2.png"
                         alt="home builders Thrissur"
                         width={900}
                         height={900}
