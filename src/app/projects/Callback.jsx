@@ -23,7 +23,7 @@ export default function Callback() {
                             </h2>
 
                             <p className="text-sm text-black max-w-md">
-                                 RERA-approved | On-time delivery | 250+ Happy Families | 20+ Years of Excellence
+                                  On-time delivery | 250+ Happy Families | 20+ Years of Excellence
                             </p>
 
                             {/* MOBILE + MD BUTTON — SAME START POINT */}
