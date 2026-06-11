@@ -101,7 +101,7 @@ builders in Thrissur have crafted for you.
       </div>
 
       {/* CARD SECTION */}
-      <div className="container items-center justify-center md:flex hidden gap-1 lg:gap-4 overflow-hidden no-scrollbar  ">
+      <div className="container items-center justify-center md:flex hidden gap-1 lg:gap-2 overflow-hidden no-scrollbar  ">
         {projects.map((p) => {
           const text = p.land_mark;
           const match = text.match(/^(\d+\s*\w+)\s*(.*)$/);
@@ -314,9 +314,9 @@ builders in Thrissur have crafted for you.
                   {p.name}
                 </h3>
 
-                <p className="text-[12px] lg:text-[13px] leading-[100%] mt-[4px] font-normal lg:mt-2 max-w-[500px]  ">
+                {/* <p className="text-[12px] lg:text-[13px] leading-[100%] mt-[4px] font-normal lg:mt-2 max-w-[500px]  ">
                   {p.short_description}
-                </p>
+                </p> */}
 
                 <div className="flex w-full gap-3 mt-3 lg:mt-5">
                   {activeCard === p.id ? (
@@ -548,9 +548,9 @@ builders in Thrissur have crafted for you.
                   </h3>
 
                   {/* DESCRIPTION */}
-                  <p className=" text-[12px] leading-[100%] mt-[8px] font-normal">
+                  {/* <p className=" text-[12px] leading-[100%] mt-[8px] font-normal">
                     {p.short_description}
-                  </p>
+                  </p> */}
 
                   {/* BUTTONS */}
                   <div className="flex items-start justify-between mt-[20px]">
