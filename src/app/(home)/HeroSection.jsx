@@ -160,6 +160,15 @@ export default function HeroSection({ data }) {
          
 
           <div className="flex flex-col items-center text-white font-urban">
+
+             {!showVideo && project?.name === "Aurex Brookside" && (
+  <div className="mb-4">
+    <span className="bg-[#A8731C] text-white px-5 py-2 rounded-full text-[14px] font-bold tracking-wider uppercase">
+      {project.status}
+    </span>
+  </div>
+)}
+            
             <p className="text-[12px] leading-[16px] tracking-[0%] font-bold ">
               AMENITIES THAT DEFINE
             </p>
