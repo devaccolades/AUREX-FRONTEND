@@ -28,6 +28,7 @@ import {
 import FAQ from "@/app/(home)/FAQ";
 import Callback from "@/app/(home)/CallBack";
 import NewAmenities from "./AmenitiesNew";
+import CTASection from "./CTASection";
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
@@ -105,8 +106,9 @@ export default async function Page({ params }) {
       </div>
       <YoutubeEmbedSection projectVideos={projectVideos} />
       <ConstructionUpdates updates={updates} />
+            <CTASection />
       <FAQ data={faqData} pageName={`projects/${slug}`} />
-      <Callback />
+      {/* <Callback /> */}
       <BankingPartners />
       <Footer />
     </div>

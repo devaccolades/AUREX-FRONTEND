@@ -262,8 +262,8 @@ const nextSlide = () => {
                 >
                   <Image
                     src={slide.image}
-                    // alt={slide.image_alt || "Amenity Image"}
-                    alt="Flats for Sale in Thrissur"
+                    alt={slide.image_alt || "Amenity Image"}
+                    // alt="Flats for Sale in Thrissur"
                     fill
                     className="object-cover"
                   />
