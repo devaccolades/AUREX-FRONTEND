@@ -213,9 +213,9 @@ export default function ProjectHero({ project }) {
           </div>
         </div>
         <div className="w-full flex flex-col">
-          <h1 className="font-urban font-semibold text-[16px] leading-[156%] text-black">
+          <h2 className="font-urban font-semibold text-[16px] leading-[156%] text-black">
             {project.sub_text}
-          </h1>
+          </h2>
           <p className="font-urban font-semibold text-[13px] leading-[120%] text-black">
             {project.short_description}
           </p>
