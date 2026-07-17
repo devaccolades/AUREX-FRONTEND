@@ -40,12 +40,10 @@ export default function CTASection() {
 
           <div className="mt-2 flex flex-col items-center justify-center gap-4 flex-row">
             <Link
-              href="https://wa.me/919846507474"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/projects"
               className="group inline-flex items-center gap-3 rounded-lg border border-black  px-4 py-2 text-[14px] md:text-[16px] font-medium text-black transition-all duration-300 hover:bg-black hover:text-white"
             >
-              Whatsapp Us
+              View All Projects
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
 
