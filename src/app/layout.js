@@ -1,8 +1,13 @@
-import { Urbanist, Inter, Poppins, Anek_Malayalam, Roboto } from "next/font/google";
+import {
+  Urbanist,
+  Inter,
+  Poppins,
+  Anek_Malayalam,
+  Roboto,
+} from "next/font/google";
 import "./globals.css";
 import FloatingButtons from "@/components2/FloatingButton";
 import Script from "next/script";
-
 
 const urban = Urbanist({
   variable: "--font-urbanist",
@@ -32,12 +37,11 @@ const roboto = Roboto({
   subsets: ["latin"],
 });
 
-
 export const metadata = {
   title: "Aurex Builders",
   description: "Aurex Builders",
   // icons: {
-  //   icon: "/favicon.ico",              
+  //   icon: "/favicon.ico",
   // },
 };
 
@@ -61,17 +65,32 @@ export default function RootLayout({ children }) {
         </Script>
 
         {/* Google Tag (gtag.js) */}
-        <Script
+        {/* <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-11091045463"
           strategy="afterInteractive"
-        />
+        /> */}
+    {/* Google Tag Manager  */}
+     <Script
+          src="https://www.googletagmanager.com/gtag/js?id=GTM-NQMS2QLD"
+          strategy="afterInteractive"
+        /> 
 
-        <Script id="google-ads-config" strategy="afterInteractive">
+ {/* End Google Tag Manager  */}
+
+        {/* <Script id="google-ads-config" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'AW-11091045463');
+          `}
+        </Script> */}
+         <Script id="google-ads-config" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'GTM-NQMS2QLD');
           `}
         </Script>
 
@@ -101,6 +120,18 @@ export default function RootLayout({ children }) {
       <body
         className={`${urban.variable} ${inter.variable} ${poppins.variable} ${anekMalayalam.variable} ${roboto.variable} antialiased`}
       >
+
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-NQMS2QLD"
+            height="0"
+            width="0"
+            style="display:none;visibility:hidden"
+          ></iframe>
+        </noscript>
+        {/* End Google Tag Manager (noscript)  */}
+
         {children}
         <FloatingButtons />
         <noscript>
