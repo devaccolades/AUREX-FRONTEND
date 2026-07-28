@@ -182,11 +182,8 @@ const gaussianBlurRef = useRef(null);
     return CSS.supports('backdrop-filter', 'blur(10px)');
   };
 
-  const getContainerStyles = () => {
+  const getGlassStyles = () => {
     const baseStyles = {
-      ...style,
-      width: typeof width === 'number' ? `${width}px` : width,
-      height: typeof height === 'number' ? `${height}px` : height,
       borderRadius: `${borderRadius}px`,
       '--glass-frost': backgroundOpacity,
       '--glass-saturation': saturation
@@ -266,7 +263,7 @@ const gaussianBlurRef = useRef(null);
   };
 
   const glassSurfaceClasses =
-    'relative flex items-center justify-center transition-opacity duration-[260ms] ease-out';
+    'relative isolate flex items-center justify-center transition-opacity duration-[260ms] ease-out';
 
   const focusVisibleClasses = isDarkMode
     ? 'focus-visible:outline-2 focus-visible:outline-[#0A84FF] focus-visible:outline-offset-2'
@@ -276,9 +273,20 @@ const gaussianBlurRef = useRef(null);
     <div
       ref={containerRef}
       className={`${glassSurfaceClasses} ${focusVisibleClasses} ${className}`}
-      style={getContainerStyles()}>
+      style={{
+        ...style,
+        width: typeof width === 'number' ? `${width}px` : width,
+        height: typeof height === 'number' ? `${height}px` : height,
+        borderRadius: `${borderRadius}px`
+      }}>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0 rounded-[inherit]"
+        style={getGlassStyles()}
+      />
       <svg
-        className="w-full h-full pointer-events-none absolute inset-0 opacity-0 -z-10"
+        aria-hidden="true"
+        className="w-0 h-0 pointer-events-none absolute opacity-0"
         xmlns="http://www.w3.org/2000/svg">
         <defs>
           <filter
@@ -348,18 +356,9 @@ const gaussianBlurRef = useRef(null);
           </filter>
         </defs>
       </svg>
-      {/* <div
-        className="w-full h-full flex items-center justify-center p-2 rounded-[inherit] relative z-10">
+      <div className="relative z-10 flex h-full w-full items-center justify-center rounded-[inherit] p-2">
         {children}
-      </div> */}
-      <div
-      className={
-        "w-full h-full flex items-center justify-center p-2 rounded-[inherit] relative z-10 " +
-        className
-      }
-    >
-      {children}
-    </div>
+      </div>
     </div>
   );
 };
