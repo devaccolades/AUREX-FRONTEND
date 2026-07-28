@@ -203,13 +203,13 @@ export default function HeroSection({ data }) {
               <div className="flex flex-col  gap-3 flex-1">
                 {/* ===== ROW 1: LOGO + NAME + LOCATION ===== */}
                 <div className="flex items-center justify-between gap-2">
-                  <div className="relative w-[72px] h-[30px] ">
+                  <div className="relative w-[72px] h-[30px] shrink-0">
                     {project.logo && (
                       <Image
                         src={project.logo}
                         alt="best builders in Thrissur "
                         fill
-                        className="object-cover md:object-contain"
+                        className="object-contain"
                       />
                     )}
                   </div>
@@ -264,9 +264,10 @@ export default function HeroSection({ data }) {
               padding={"10px"}
               backgroundOpacity={0.5}
               // borderRadius={'10px'}
-              className="w-full !flex !flex-col md:!flex-row !items-center !h-auto text-white gap-[10px] rounded-[10px]"
+              className="w-full !h-auto text-white rounded-[10px]"
             >
               {/* <GlassSurface  className="w-full flex flex-col md:flex-row items-center md:items-center p-4 md:p-0 gap-4 md:gap-10 text-white"> */}
+              <div className="flex w-full flex-col items-center gap-[16px] md:flex-row md:justify-between md:gap-[24px]">
               {/* LOGO */}
               <div className="relative w-[73px] h-[30px] z-50 mx-auto md:mx-0">
                 {project.logo && (
@@ -370,6 +371,7 @@ export default function HeroSection({ data }) {
                 />
               </motion.div>
               {/* </div> */}
+              </div>
             </GlassSurface>
           </div>
         ))}
