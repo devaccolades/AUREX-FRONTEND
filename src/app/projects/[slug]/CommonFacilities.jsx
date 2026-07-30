@@ -2,16 +2,15 @@
 
 import * as LucideIcons from "lucide-react";
 
-  const getIconComponent = (iconName) => {
-  if (!iconName) return null;
+const getIconComponent = (iconName) => {
+  const normalizedIconName =
+    typeof iconName === "string" ? iconName.trim() : "";
 
-  return LucideIcons[iconName] || null;
+  return LucideIcons[normalizedIconName] || LucideIcons.Sparkles;
 };
 
-
-
-export default function CommonFacilities({facilities}) {
-   if (!Array.isArray(facilities) || facilities.length === 0) {
+export default function CommonFacilities({ facilities }) {
+  if (!Array.isArray(facilities) || facilities.length === 0) {
     return null;
   }
 
@@ -27,9 +26,9 @@ export default function CommonFacilities({facilities}) {
         {/* GRID */}
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4 lg:gap-6">
           {facilities.map((item, index) => {
-              const Icon = getIconComponent(item.icon);
+            const Icon = getIconComponent(item?.icon_name);
 
-            if (!item?.name && !Icon) return null;
+            if (!item?.name) return null;
 
             return (
               <div
@@ -37,14 +36,9 @@ export default function CommonFacilities({facilities}) {
                 className="bg-white border border-gray-100 rounded-2xl p-3 md:p-4 flex flex-col md:flex-row items-start gap-2 lg:gap-4 shadow-sm hover:shadow-md transition"
               >
                 {/* ICON */}
-                {/* <div className="w-8 xl:w-10 h-8 xl:h-10 rounded-[10px] bg-[#FFF4E5] flex items-center justify-center shrink-0">
+                <div className="w-8 xl:w-10 h-8 xl:h-10 rounded-[10px] bg-[#FFF4E5] flex items-center justify-center shrink-0">
                   <Icon className="w-4 lg:w-6 h-4 lg:h-6 text-[#E39A2E]" />
-                </div> */}
-                  {Icon && (
-                  <div className="w-8 xl:w-10 h-8 xl:h-10 rounded-[10px] bg-[#FFF4E5] flex items-center justify-center shrink-0">
-                    <Icon className="w-4 lg:w-6 h-4 lg:h-6 text-[#E39A2E]" />
-                  </div>
-                )}
+                </div>
 
                 {/* TEXT */}
                 <div>

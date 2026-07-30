@@ -1,10 +1,11 @@
 "use client";
 import * as LucideIcons from "lucide-react";
 
-  const getIconComponent = (iconName) => {
-  if (!iconName) return null;
+const getIconComponent = (iconName) => {
+  const normalizedIconName =
+    typeof iconName === "string" ? iconName.trim() : "";
 
-  return LucideIcons[iconName] || null;
+  return LucideIcons[normalizedIconName] || LucideIcons.Sparkles;
 };
 
 export default function PrecisionBuiltSection({specs, staticData}) {
@@ -36,9 +37,9 @@ export default function PrecisionBuiltSection({specs, staticData}) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3 md:gap-6">
 
           {specs.map((item, index) => {
-            const Icon = getIconComponent(item.icon);
+            const Icon = getIconComponent(item?.icon_name);
 
-            if (!item?.name && !Icon) return null;
+            if (!item?.title && !item?.description) return null;
 
             return (
               <div
