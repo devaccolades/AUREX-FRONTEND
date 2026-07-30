@@ -112,9 +112,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {/* <!-- End Meta Pixel Code --> */}
       </head>
 
-  
-
-<noscript>
+      <body
+        className={`${urban.variable} ${inter.variable} ${poppins.variable} ${anekMalayalam.variable} ${roboto.variable} antialiased`}
+      >
+        <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-NQMS2QLD"
             height="0"
@@ -125,9 +126,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }}
           />
         </noscript>
-      <body
-        className={`${urban.variable} ${inter.variable} ${poppins.variable} ${anekMalayalam.variable} ${roboto.variable} antialiased`}
-      >
         {children}
         <FloatingButtons />
         <noscript>

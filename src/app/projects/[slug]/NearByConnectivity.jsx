@@ -4,10 +4,11 @@ import * as LucideIcons from "lucide-react";
 
 import MapSection from "./MapSection";
 
-  const getIconComponent = (iconName) => {
-  if (!iconName) return null;
+const getIconComponent = (iconName) => {
+  const normalizedIconName =
+    typeof iconName === "string" ? iconName.trim() : "";
 
-  return LucideIcons[iconName] || null;
+  return LucideIcons[normalizedIconName] || LucideIcons.Sparkles;
 };
 
 
@@ -27,16 +28,21 @@ export default function NearbyConnectivity({data, project, staticData}) {
 
     return {
       title: row.category,
-      icon: row.icon, // string like "GraduationCap"
+      iconName: row.icon_name,
       items,
     };
   }).filter(block => block.items.length > 0);
 };
 
+  const locationData = Array.isArray(data)
+    ? data
+    : Array.isArray(data?.value)
+      ? data.value
+      : [];
 
-   if (!Array.isArray(data) || data.length === 0) return null;
+  if (locationData.length === 0) return null;
 
-  const blocks = transformLocationData(data);
+  const blocks = transformLocationData(locationData);
 
   if (blocks.length === 0) return null;
   return (
@@ -47,8 +53,8 @@ export default function NearbyConnectivity({data, project, staticData}) {
         {/* GRID */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-6">
            {blocks.map((block, idx) => {
-            const Icon = getIconComponent(block.icon);
-            if (!Icon) return null;
+            const Icon = getIconComponent(block.iconName);
+
             return (
               <div
                 key={idx}
@@ -56,8 +62,7 @@ export default function NearbyConnectivity({data, project, staticData}) {
               >
                 {/* TITLE */}
                 <div className="flex items-center gap-2 mb-4">
-                  {/* <Icon className="w-6 h-6 text-[#E39A2E]" /> */}
-                   {Icon && <Icon className="w-6 h-6 text-[#E39A2E]" />}
+                   <Icon className="w-6 h-6 text-[#E39A2E]" />
                    <h3 className="text-[16px] md:text-[18px] leading-[18px] font-semibold font-urban text-[#E09B07] mb-1">
                     {block.title}
                   </h3>
