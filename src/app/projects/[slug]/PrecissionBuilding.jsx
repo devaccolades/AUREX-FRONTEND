@@ -8,8 +8,14 @@ const getIconComponent = (iconName) => {
   return LucideIcons[normalizedIconName] || LucideIcons.Sparkles;
 };
 
-export default function PrecisionBuiltSection({specs, staticData}) {
-   if (!Array.isArray(specs) || specs.length === 0) {
+export default function PrecisionBuiltSection({ specs, staticData }) {
+  const specificationItems = Array.isArray(specs)
+    ? specs
+    : Array.isArray(specs?.value)
+      ? specs.value
+      : [];
+
+  if (specificationItems.length === 0) {
     return null;
   }
 
@@ -36,7 +42,7 @@ export default function PrecisionBuiltSection({specs, staticData}) {
         {/* GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3 md:gap-6">
 
-          {specs.map((item, index) => {
+          {specificationItems.map((item, index) => {
             const Icon = getIconComponent(item?.icon_name);
 
             if (!item?.title && !item?.description) return null;

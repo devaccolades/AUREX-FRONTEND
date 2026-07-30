@@ -10,7 +10,13 @@ const getIconComponent = (iconName) => {
 };
 
 export default function CommonFacilities({ facilities }) {
-  if (!Array.isArray(facilities) || facilities.length === 0) {
+  const facilityItems = Array.isArray(facilities)
+    ? facilities
+    : Array.isArray(facilities?.value)
+      ? facilities.value
+      : [];
+
+  if (facilityItems.length === 0) {
     return null;
   }
 
@@ -25,7 +31,7 @@ export default function CommonFacilities({ facilities }) {
 
         {/* GRID */}
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4 lg:gap-6">
-          {facilities.map((item, index) => {
+          {facilityItems.map((item, index) => {
             const Icon = getIconComponent(item?.icon_name);
 
             if (!item?.name) return null;

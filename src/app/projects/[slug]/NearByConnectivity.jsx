@@ -34,10 +34,15 @@ export default function NearbyConnectivity({data, project, staticData}) {
   }).filter(block => block.items.length > 0);
 };
 
+  const locationData = Array.isArray(data)
+    ? data
+    : Array.isArray(data?.value)
+      ? data.value
+      : [];
 
-   if (!Array.isArray(data) || data.length === 0) return null;
+  if (locationData.length === 0) return null;
 
-  const blocks = transformLocationData(data);
+  const blocks = transformLocationData(locationData);
 
   if (blocks.length === 0) return null;
   return (
